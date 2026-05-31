@@ -1,0 +1,55 @@
+# All thresholds in one place. Every signal-relevant magic number lives here.
+# Quarterly review and tune.
+
+regime:
+  # When >= history_days_required days of history exist, use percentile thresholds
+  # on the ticker's own GEX distribution. Below that, use the market-cap fallback.
+  history_days_required: 60
+  percentile_deep_positive: 80   # GEX above this percentile → deep positive
+  percentile_deep_negative: 20   # GEX below this percentile → deep negative
+  # Fallback (market-cap based) — "deep" if |GEX| > pct_of_market_cap * mcap
+  fallback_pct_of_market_cap: 0.01
+  # Distance-to-flip thresholds (as fraction of spot)
+  distance_to_flip_near: 0.005   # within 0.5% of flip → transitional zone
+
+# Stage 3 — level map
+levels:
+  wall_persistence_days: 3       # same wall strike (within tolerance) for N days
+  wall_strike_tolerance_pct: 0.005   # 0.5% to be considered "same" strike
+
+# Stage 4 — flow & positioning (z-score thresholds)
+flow:
+  put_call_ratio_zscore_panic: 1.5
+  put_skew_zscore_high: 1.0
+  unusual_activity_zscore: 2.0
+
+# Stage 5 — price/volume confirmation
+confirm:
+  volume_zscore_capitulation: 1.5
+  vix_5day_change_pct: 0.15
+  no_event_window_days: 5
+
+# Stage 6 — playbooks
+playbooks:
+  A_washout:
+    proximity_to_put_wall_pct: 0.005   # within 0.5% of put wall
+    initial_size_pct: 0.50
+  B_gamma_reclaim:
+    volume_zscore_reclaim: 1.0         # min volume z-score on the reclaim day
+    gex_ma_window: 5                   # sessions for the GEX moving-average inflection
+    initial_size_pct: 0.75
+  C_compression:
+    min_compression_days: 5            # consecutive deep_positive sessions required
+    steep_contango_min_slope: 2.0      # 3M IVX minus 7d IVX, in vol points
+    catalyst_window_days: 10           # "catalyst within N sessions"
+    initial_size_pct: 0.50
+
+# Stage 7 — sizing
+sizing:
+  default_risk_per_trade_bps: 50
+  nav_usd: 100000000                   # book NAV in USD — CALIBRATE to actual book size
+
+# Stage 8 — monitoring / exits
+monitor:
+  scale_out_volume_zscore: 2.0         # call wall hit + vol z above this → scale 50%
+  scale_out_fraction: 0.50
