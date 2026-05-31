@@ -118,12 +118,37 @@ def _skew_25d(chain: pd.DataFrame, spot: float, r: float) -> float:
     return iv_put_25 - iv_call_25
 
 
-def _term_structure_slope(ticker_obj, spot: float) -> float:
-    """3-month IVX minus 7-day IVX. Positive = contango (normal); negative = backwardation."""
+def _term_structure_slope(ticker_obj, spot: float, long_target_days: int = 90) -> float:
+    """3-month IVX minus 7-day IVX. Positive = contango (normal); negative = backwardation.
+
+    Guards against the engine's IVX extrapolation: calculate_iv_index() reads
+    ticker_obj.options directly and, when NO expiry reaches `long_target_days`,
+    silently falls back to the two longest available expiries and extrapolates —
+    returning a finite value that *looks* like a 90d read but isn't. That would feed
+    Playbook C's contango gate a fabricated slope. We therefore require a genuine
+    long-dated expiry (within a tolerance below the target) before trusting the long
+    leg; otherwise return NaN, which Stage 6 treats as "no signal" (never as a pass).
+    """
     try:
+        from datetime import date as _date, datetime as _dt
+        expiries = getattr(ticker_obj, "options", None) or []
+        today = _date.today()
+        max_dte = -1
+        for e in expiries:
+            try:
+                dte = (_dt.strptime(e, "%Y-%m-%d").date() - today).days
+            except (ValueError, TypeError):
+                continue
+            if dte > max_dte:
+                max_dte = dte
+        # Need a real expiry near/at the long target — allow a 10-day shortfall so a
+        # ~83d longest expiry still counts, but a 50d one (pure extrapolation) does not.
+        if max_dte < long_target_days - 10:
+            return float("nan")
+
         ivx = _engine().calculate_iv_index
         ivx_7 = ivx(ticker_obj, spot, target_days=7, option_type="both")
-        ivx_90 = ivx(ticker_obj, spot, target_days=90, option_type="both")
+        ivx_90 = ivx(ticker_obj, spot, target_days=long_target_days, option_type="both")
     except Exception as e:
         logger.warning("term structure calc failed: %s", e)
         return float("nan")

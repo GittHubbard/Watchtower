@@ -15,7 +15,10 @@ Design notes:
 from __future__ import annotations
 from pathlib import Path
 from datetime import date as date_cls
+import logging
 import pandas as pd
+
+logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
@@ -135,10 +138,15 @@ def read_chain_snapshot(symbol: str, asof: date_cls) -> pd.DataFrame | None:
     from datetime import timedelta
     tdir = CHAINS_DIR / f"ticker={symbol}"
     if not tdir.exists():
+        logger.warning("No prior chain snapshot dir for %s; OI-delta will be NaN.", symbol)
         return None
     for back in range(1, 8):
         d = asof - timedelta(days=back)
         p = _chain_path(symbol, d)
         if p.exists():
             return pd.read_parquet(p)
+    logger.warning(
+        "No prior chain snapshot for %s within 7 days before %s; OI-delta will be NaN.",
+        symbol, asof,
+    )
     return None

@@ -13,10 +13,10 @@ Forward returns are computed from yfinance daily closes. Run nightly via
 
 Schema for the features parquet (one row per ticker per date):
     ticker, asof, spot,
-    regime, gex_total, gex_zscore, distance_to_flip_pct, flip_level,
+    regime, prev_regime, regime_transition, gex_total, distance_to_flip_pct, flip_level,
     call_wall, call_wall_gex, put_wall, put_wall_gex,
     call_wall_dod_change, put_wall_dod_change,
-    ivx_7d, ivx_30d, hv_30d, skew_z, pcr,
+    skew_z, pcr,
     volume_z, atr_pct, vix_close, vix_3d_change,
     days_to_earnings, days_to_macro, within_event_window,
     fwd_ret_1d, fwd_ret_5d, fwd_ret_20d           (backfilled later — null on write)
@@ -41,7 +41,8 @@ logger = logging.getLogger(__name__)
 FEATURE_COLUMNS = [
     "ticker", "asof", "spot",
     # Stage 2 — regime
-    "regime", "gex_total", "gex_zscore", "distance_to_flip_pct", "flip_level",
+    "regime", "prev_regime", "regime_transition",
+    "gex_total", "distance_to_flip_pct", "flip_level",
     # Stage 3 — level map
     "call_wall", "call_wall_gex", "put_wall", "put_wall_gex",
     "call_wall_secondary", "put_wall_secondary",
@@ -54,8 +55,6 @@ FEATURE_COLUMNS = [
     "skew_25d", "skew_25d_z",
     "term_structure_slope",
     "new_oi_strike_count", "oi_delta_call", "oi_delta_put",
-    # Engine-derived IV/HV context (populated by orchestrator from engine output)
-    "ivx_7d", "ivx_30d", "hv_30d",
     # Stage 5 — confirmation
     "volume_z", "atr_pct", "atr_20d_pct", "range_expansion", "close_location",
     "ma20_dist_pct", "ma50_dist_pct", "ma200_dist_pct",
@@ -132,8 +131,14 @@ def backfill_forward_returns(asof: date_cls, horizons: tuple = (1, 5, 20)) -> in
         d = date_cls.fromisoformat(d_str)
         if d >= asof:
             continue  # cannot have forward returns for today or the future
-        if (asof - d).days < max(horizons):
-            continue  # not enough calendar days elapsed yet
+        # max(horizons) is in TRADING days; require enough CALENDAR days elapsed
+        # that that many trading days have certainly passed (~5/7 ratio + holidays).
+        # The raw calendar-day count used previously let, e.g., fwd_ret_20d fill
+        # against only ~14 trading days of data, producing a plausible-but-wrong value.
+        # _forward_return's own end_pos guard is the exact backstop once we get here.
+        min_calendar_days = int(max(horizons) * 1.5) + 5
+        if (asof - d).days < min_calendar_days:
+            continue  # not enough trading days have elapsed yet
 
         df = pd.read_parquet(p)
         missing_mask = df[[f"fwd_ret_{h}d" for h in horizons]].isna().any(axis=1)
@@ -145,7 +150,7 @@ def backfill_forward_returns(asof: date_cls, horizons: tuple = (1, 5, 20)) -> in
                 hist = yf.Ticker(ticker).history(
                     start=d.isoformat(),
                     end=(d + timedelta(days=buffer_days)).isoformat(),
-                    auto_adjust=False,
+                    auto_adjust=True,  # split/div-adjusted: raw closes corrupt fwd returns across a corporate action
                 )
                 if hist.empty:
                     continue
