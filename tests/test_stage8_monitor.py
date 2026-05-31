@@ -102,6 +102,25 @@ def test_wall_migration_triggers_adjust():
     assert adjust[0]["suggested_stop"] == 498.0  # playbook A → put wall
 
 
+def test_playbook_B_adjust_levels_only_fires_when_flip_moved():
+    # For Playbook B, stop tracks the flip level (not the put wall).
+    # The alert should NOT fire when flip == cur_stop, even when put_wall != stop.
+    feats_stable = _features(put_wall=440.0, flip_level=460.0)  # put_wall far from stop
+    actions = s8.evaluate_position(
+        _position(playbook_id="B", stop=460.0), feats_stable, THRESHOLDS
+    )
+    assert not any(a["action"] == "adjust_levels" for a in actions)
+
+    # Alert DOES fire when the flip level has moved from the entry stop.
+    feats_flip_moved = _features(put_wall=440.0, flip_level=465.0)
+    actions2 = s8.evaluate_position(
+        _position(playbook_id="B", stop=460.0), feats_flip_moved, THRESHOLDS
+    )
+    adjust = [a for a in actions2 if a["action"] == "adjust_levels"]
+    assert len(adjust) == 1
+    assert adjust[0]["suggested_stop"] == 465.0  # playbook B → flip
+
+
 def test_closed_position_yields_no_actions():
     actions = s8.evaluate_position(_position(status="closed"), _features(spot=494.0, put_wall=495.0), THRESHOLDS)
     assert actions == []

@@ -114,8 +114,13 @@ def evaluate_position(position: dict, features: dict, thresholds: dict | None = 
         })
 
     # 5 — wall migration → recompute suggested stop/targets
+    # For Playbook A the stop tracks the put wall; for B/C it tracks the flip level.
+    # Compare each playbook's reference wall to the recorded stop so the alert fires
+    # only when that specific level has moved since entry — not on every bar where
+    # two different levels (e.g. flip vs put wall) happen to differ.
     cur_stop = _f(position, "stop")
-    if np.isfinite(put_wall) and np.isfinite(cur_stop) and abs(put_wall - cur_stop) > 1e-9:
+    ref_wall = put_wall if position.get("playbook_id") == "A" else flip
+    if np.isfinite(ref_wall) and np.isfinite(cur_stop) and abs(ref_wall - cur_stop) > 1e-9:
         actions.append({
             "action": "adjust_levels",
             "reason": "Walls migrated since entry; review stop/targets.",

@@ -61,7 +61,7 @@ FEATURE_COLUMNS = [
     "vix_close", "vix_5d_change_pct",
     # Stage 1 — calendar
     "days_to_earnings", "days_to_macro", "next_macro", "within_event_window",
-    "days_to_opex", "days_to_vixp", "is_opex_day", "is_vixp_day",
+    "days_to_opex", "days_to_vixp", "is_opex_day", "is_opex_minus_1", "is_vixp_day",
     # Stage 9 — backfilled
     "fwd_ret_1d", "fwd_ret_5d", "fwd_ret_20d",
 ]
