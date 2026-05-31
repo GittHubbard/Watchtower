@@ -56,9 +56,11 @@ def test_regime_transition_persists_round_trip(tmp_features_dir):
 def test_dead_columns_removed_from_schema():
     for dead in ("gex_zscore", "ivx_7d", "ivx_30d", "hv_30d"):
         assert dead not in s9.FEATURE_COLUMNS, f"{dead} should have been removed"
-    # And the live transition columns are present.
+    # Live transition columns are present.
     assert "prev_regime" in s9.FEATURE_COLUMNS
     assert "regime_transition" in s9.FEATURE_COLUMNS
+    # is_opex_minus_1 is returned by event_flags and must be persisted.
+    assert "is_opex_minus_1" in s9.FEATURE_COLUMNS
 
 
 # ---- Fix #6: forward returns not computed before enough trading days pass ----

@@ -46,7 +46,7 @@ def fetch_underlying_history(symbol: str, end_date: date_cls, days: int = 260) -
         import yfinance as yf
         start = (end_date - timedelta(days=int(days * 1.6))).isoformat()  # buffer for weekends/holidays
         end_inclusive = (end_date + timedelta(days=1)).isoformat()
-        df = yf.Ticker(symbol).history(start=start, end=end_inclusive, auto_adjust=False)
+        df = yf.Ticker(symbol).history(start=start, end=end_inclusive, auto_adjust=True)
     except Exception as e:
         logger.warning("yfinance history fetch failed for %s: %s", symbol, e)
         return pd.DataFrame()
