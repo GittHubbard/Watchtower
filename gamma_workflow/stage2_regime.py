@@ -79,7 +79,7 @@ def _resolve_thresholds(
     if history_df is not None and not history_df.empty:
         # gex_total column may be NaN on early days — drop them
         gex_series = history_df.loc[history_df["ticker"] == ticker, "gex_total"].dropna()
-        n_days = len(gex_series.unique())  # one row per day, but be defensive
+        n_days = len(gex_series)  # one row per day; count days, not distinct GEX values
         if n_days >= min_days:
             upper = float(np.percentile(gex_series, p_high))
             lower = float(np.percentile(gex_series, p_low))

@@ -169,7 +169,7 @@ def event_flags(symbol: str, asof: date_cls) -> dict:
 
     Keys:
         days_to_opex, days_to_vixp           : ints, always populated
-        is_opex_day, is_opex_minus_1, is_opex_plus_1, is_vixp_day  : bools
+        is_opex_day, is_opex_minus_1, is_vixp_day  : bools
         days_to_earnings                     : int | None
         days_to_macro, next_macro            : int|None, str|None
         within_event_window                  : bool, True if any binary within 5d
@@ -187,7 +187,6 @@ def event_flags(symbol: str, asof: date_cls) -> dict:
         "days_to_vixp": d_vixp,
         "is_opex_day": d_opex == 0,
         "is_opex_minus_1": d_opex == 1,
-        "is_opex_plus_1": d_opex == -1,  # not reachable from days_to_next; placeholder
         "is_vixp_day": d_vixp == 0,
         "days_to_earnings": d_earn,
         "days_to_macro": d_macro,

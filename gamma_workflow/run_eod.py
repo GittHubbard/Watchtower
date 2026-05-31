@@ -69,7 +69,11 @@ def acquire_market_data(symbol: str, asof: date_cls, r: float) -> dict | None:
         ticker_obj = yf.Ticker(symbol)
         spot = float(ticker_obj.fast_info["lastPrice"])
 
-        chain = eng.build_refined_options_chain(ticker_obj)
+        # max_days=90 (vs the engine's 45d default) is deliberate: the term-structure
+        # slope (Stage 4) needs a real ~90d expiry in reach for a true "3M − 7d" read,
+        # which feeds Playbook C's contango gate. This also widens the GEX/wall basis to
+        # ~1 quarter of dealer positioning, which is intended. Do NOT revert to 45.
+        chain = eng.build_refined_options_chain(ticker_obj, max_days=90)
         if chain is None or chain.empty:
             logger.warning("%s: no options chain after filtering; skipping.", symbol)
             return None
