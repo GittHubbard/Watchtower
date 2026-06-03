@@ -55,16 +55,36 @@ FEATURE_COLUMNS = [
     "skew_25d", "skew_25d_z",
     "term_structure_slope",
     "new_oi_strike_count", "oi_delta_call", "oi_delta_put",
+    # Stage 4 — IV/HV (Feature 1). ivx_30d in percent, hv_30d decimal, ratio dimensionless.
+    "ivx_30d", "iv_hv_ratio_30d", "iv_hv_ratio_z",
     # Stage 5 — confirmation
     "volume_z", "atr_pct", "atr_20d_pct", "range_expansion", "close_location",
+    "hv_30d",
     "ma20_dist_pct", "ma50_dist_pct", "ma200_dist_pct",
     "vix_close", "vix_5d_change_pct",
+    # Stage 5.5 — technical indicators (Feature 2)
+    "macd", "macd_signal", "macd_hist", "rsi_14", "cmf_20",
+    "bb_upper", "bb_mid", "bb_lower", "bb_width",
+    # Stage 5.5 — fundamentals (Feature 3)
+    "forward_pe", "eps_surprise_avg_4q", "eps_beat_streak", "eps_estimate_trend",
+    "net_income_margin_ttm", "debt_to_equity", "revenue_growth_yoy",
+    "analyst_consensus", "analyst_coverage_count", "analyst_pct_buy",
+    "analyst_upgrades_3m", "analyst_downgrades_3m", "analyst_steady_3m",
     # Stage 1 — calendar
     "days_to_earnings", "days_to_macro", "next_macro", "within_event_window",
     "days_to_opex", "days_to_vixp", "is_opex_day", "is_opex_minus_1", "is_vixp_day",
-    # Stage 9 — backfilled
-    "fwd_ret_1d", "fwd_ret_5d", "fwd_ret_20d",
+    # Stage 9 — backfilled forward returns, benchmark returns, and alpha (Feature 4)
+    "fwd_ret_1d", "fwd_ret_5d", "fwd_ret_20d", "fwd_ret_60d", "fwd_ret_90d",
+    "benchmark_ret_1d", "benchmark_ret_5d", "benchmark_ret_20d",
+    "benchmark_ret_60d", "benchmark_ret_90d",
+    "alpha_1d", "alpha_5d", "alpha_20d", "alpha_60d", "alpha_90d",
 ]
+
+# Forward-return horizons (trading days). Benchmark + alpha are computed on the
+# same horizons. Adding/removing a horizon here automatically extends the columns
+# above (keep them in sync).
+FORWARD_HORIZONS = (1, 5, 20, 60, 90)
+DEFAULT_BENCHMARK = "SPY"
 
 
 def _empty_row() -> dict:
@@ -112,61 +132,121 @@ def _forward_return(closes: pd.Series, asof: pd.Timestamp, horizon_days: int) ->
     return float(p1 / p0 - 1.0)
 
 
-def backfill_forward_returns(asof: date_cls, horizons: tuple = (1, 5, 20)) -> int:
-    """For every prior date file in storage, populate fwd_ret_* where missing.
+def _min_calendar_days_for(horizon: int) -> int:
+    """Calendar days that must elapse before `horizon` TRADING days have certainly
+    passed (~5/7 weekday ratio plus a holiday cushion). Filling a horizon earlier
+    produces a plausible-but-wrong return computed against too few trading days."""
+    return int(horizon * 1.5) + 5
 
-    Returns the number of rows updated. Idempotent — only fills NaNs.
 
-    Strategy: load each historical features file, group by ticker, fetch daily
-    closes from yfinance covering [date, date + max(horizons) + buffer], compute
-    the forward returns, write back.
+def _fetch_closes(ticker: str, start: date_cls, end: date_cls) -> pd.Series | None:
+    """Split/div-adjusted daily closes for [start, end], date-indexed. None on
+    empty/failure. auto_adjust=True — raw closes corrupt returns across corporate
+    actions."""
+    try:
+        hist = yf.Ticker(ticker).history(
+            start=start.isoformat(), end=end.isoformat(), auto_adjust=True,
+        )
+    except Exception as e:
+        logger.warning("Close fetch failed for %s: %s", ticker, e)
+        return None
+    if hist is None or hist.empty:
+        return None
+    closes = hist["Close"]
+    closes.index = pd.to_datetime(closes.index.date)  # drop tz/time
+    return closes
+
+
+def backfill_forward_returns(
+    asof: date_cls,
+    horizons: tuple = FORWARD_HORIZONS,
+    benchmark_ticker: str | None = None,
+) -> int:
+    """For every prior date file in storage, populate fwd_ret_*, benchmark_ret_*,
+    and alpha_* where missing. Returns the number of rows updated. Idempotent.
+
+    Per-horizon gating: each horizon is filled only once enough calendar days have
+    elapsed for that many trading days to have passed. Short horizons therefore
+    backfill promptly even when long horizons (60/90d) are still pending — gating
+    on max(horizons) would otherwise delay every column for months.
+
+    alpha_Nd = fwd_ret_Nd − benchmark_ret_Nd, where the benchmark (default SPY) is
+    configurable via thresholds `backfill.benchmark_ticker`. The benchmark close
+    series is fetched ONCE per run and reused across every ticker and date, rather
+    than re-fetched per ticker-file.
     """
     from .storage import FEATURES_DIR  # local to avoid circulars at import time
 
-    updated = 0
-    buffer_days = max(horizons) + 10  # weekends + holidays
+    benchmark_ticker = benchmark_ticker or DEFAULT_BENCHMARK
+    buffer_days = _min_calendar_days_for(max(horizons)) + 10  # weekends + holidays
 
+    # Pass 1 — decide which files have at least one horizon ready, WITHOUT fetching.
+    # (Fetching only when something is ready keeps us off the network on no-op runs.)
+    ready_files: list[tuple] = []
     for p in sorted(FEATURES_DIR.glob("date=*.parquet")):
-        d_str = p.stem.split("=", 1)[1]
-        d = date_cls.fromisoformat(d_str)
+        d = date_cls.fromisoformat(p.stem.split("=", 1)[1])
         if d >= asof:
             continue  # cannot have forward returns for today or the future
-        # max(horizons) is in TRADING days; require enough CALENDAR days elapsed
-        # that that many trading days have certainly passed (~5/7 ratio + holidays).
-        # The raw calendar-day count used previously let, e.g., fwd_ret_20d fill
-        # against only ~14 trading days of data, producing a plausible-but-wrong value.
-        # _forward_return's own end_pos guard is the exact backstop once we get here.
-        min_calendar_days = int(max(horizons) * 1.5) + 5
-        if (asof - d).days < min_calendar_days:
-            continue  # not enough trading days have elapsed yet
+        elapsed = (asof - d).days
+        ready = tuple(h for h in horizons if elapsed >= _min_calendar_days_for(h))
+        if ready:
+            ready_files.append((p, d, ready))
 
+    if not ready_files:
+        logger.info("Forward-return backfill: no dates with elapsed horizons yet.")
+        return 0
+
+    # Benchmark series fetched once over the full span any ready file could need.
+    earliest = min(d for _, d, _ in ready_files)
+    bench_closes = _fetch_closes(
+        benchmark_ticker, earliest, asof + timedelta(days=buffer_days),
+    )
+    if bench_closes is None:
+        logger.warning(
+            "Benchmark %s closes unavailable; alpha/benchmark_ret will stay NaN.",
+            benchmark_ticker,
+        )
+
+    updated = 0
+    for p, d, ready in ready_files:
         df = pd.read_parquet(p)
-        missing_mask = df[[f"fwd_ret_{h}d" for h in horizons]].isna().any(axis=1)
+        # Ensure every target column exists (older files predate these columns).
+        for h in horizons:
+            for col in (f"fwd_ret_{h}d", f"benchmark_ret_{h}d", f"alpha_{h}d"):
+                if col not in df.columns:
+                    df[col] = np.nan
+
+        ready_ret_cols = [f"fwd_ret_{h}d" for h in ready]
+        missing_mask = df[ready_ret_cols].isna().any(axis=1)
         if not missing_mask.any():
             continue
 
+        asof_ts = pd.Timestamp(d)
+        # Benchmark forward returns for this date — computed once, shared by all tickers.
+        bench_fwd = {
+            h: (_forward_return(bench_closes, asof_ts, h)
+                if bench_closes is not None else float("nan"))
+            for h in ready
+        }
+
         for ticker, sub in df[missing_mask].groupby("ticker"):
-            try:
-                hist = yf.Ticker(ticker).history(
-                    start=d.isoformat(),
-                    end=(d + timedelta(days=buffer_days)).isoformat(),
-                    auto_adjust=True,  # split/div-adjusted: raw closes corrupt fwd returns across a corporate action
+            closes = _fetch_closes(ticker, d, d + timedelta(days=buffer_days))
+            if closes is None:
+                continue
+            idx_rows = sub.index
+            for h in ready:
+                fr = _forward_return(closes, asof_ts, h)
+                bf = bench_fwd[h]
+                df.loc[idx_rows, f"fwd_ret_{h}d"] = fr
+                df.loc[idx_rows, f"benchmark_ret_{h}d"] = bf
+                df.loc[idx_rows, f"alpha_{h}d"] = (
+                    fr - bf if (np.isfinite(fr) and np.isfinite(bf)) else float("nan")
                 )
-                if hist.empty:
-                    continue
-                closes = hist["Close"]
-                # Normalize index to date (drop tz/time)
-                closes.index = pd.to_datetime(closes.index.date)
-                asof_ts = pd.Timestamp(d)
-                for h in horizons:
-                    col = f"fwd_ret_{h}d"
-                    idx_rows = sub.index
-                    df.loc[idx_rows, col] = _forward_return(closes, asof_ts, h)
-                updated += len(sub)
-            except Exception as e:
-                logger.warning("Forward-return backfill failed for %s on %s: %s", ticker, d, e)
+            updated += len(sub)
 
         df.to_parquet(p, index=False)
 
-    logger.info("Forward-return backfill: updated %d rows", updated)
+    logger.info(
+        "Forward-return backfill: updated %d rows (benchmark=%s)", updated, benchmark_ticker,
+    )
     return updated

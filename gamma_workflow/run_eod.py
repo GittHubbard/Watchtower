@@ -35,6 +35,7 @@ from . import stage2_regime as s2
 from . import stage3_level_map as s3
 from . import stage4_flow as s4
 from . import stage5_confirm as s5
+from . import stage5_5_context as s55
 from . import stage6_playbooks as s6
 from . import stage7_ticket as s7
 from . import stage8_monitor as s8
@@ -143,14 +144,23 @@ def assemble_feature_row(
         thresholds=thresholds,
     )
 
-    # Stage 4 — flow
+    # Stage 5 — confirmation (runs before Stage 4 so hv_30d feeds the IV/HV ratio)
+    confirm = s5.compute_confirmation(symbol, asof, history=market.get("underlying_history"))
+
+    # Stage 4 — flow (hv_30d from Stage 5 lets the IV/HV ratio + z be formed here,
+    # off the single history read compute_flow already performs)
     flow = s4.compute_flow(
         symbol=symbol, asof=asof, chain=chain, spot=spot, r=r,
         ticker_obj=market.get("ticker_obj"), prev_chain=market.get("prev_chain"),
+        hv_30d=confirm.get("hv_30d", float("nan")),
     )
 
-    # Stage 5 — confirmation
-    confirm = s5.compute_confirmation(symbol, asof, history=market.get("underlying_history"))
+    # Stage 5.5 — technical + fundamental context (Features 2 & 3). Scalars are
+    # logged; the (stub) commentary strings ride along in-memory for the ticket.
+    context = s55.compute_stage5_5(
+        history=market.get("underlying_history"), asof=asof,
+        raw_bundle=market.get("fundamentals_raw"), ticker_config=ticker_config,
+    )
 
     # Stage 1 — calendar
     flags = cal.event_flags(symbol, asof)
@@ -165,8 +175,9 @@ def assemble_feature_row(
         "regime_transition": regime.get("regime_transition"),
         "distance_to_flip_pct": regime["distance_to_flip_pct"],
         **levels,        # call_wall, put_wall, secondaries, hvl, migration, persistence, flip_level
-        **flow,          # pcr, z-scores, skew, term structure, oi deltas, new_oi_count
-        **confirm,       # volume_z, atr, ma distances, vix
+        **flow,          # pcr, z-scores, skew, term structure, oi deltas, new_oi_count, iv/hv
+        **confirm,       # volume_z, atr, ma distances, vix, hv_30d
+        **context,       # technicals + fundamentals scalars (+ stub commentary)
         **flags,         # days_to_*, within_event_window, etc.
     }
     return row
@@ -202,9 +213,28 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
         market = acquire_market_data(symbol, asof, r)
         if market is None:
             continue
+
+        # Stage 5.5 fundamentals fetch (network) — gated by config and skipped for
+        # index ETFs, which have no meaningful fundamentals. Companion to
+        # acquire_market_data so it can be turned off independently.
+        fund_enabled = bool(thresholds.get("fundamentals", {}).get("enabled", True))
+        fundamentals_applicable = fund_enabled and tcfg.get("kind") != "index_etf"
+        if fundamentals_applicable:
+            market["fundamentals_raw"] = s55.acquire_fundamentals(symbol, market.get("ticker_obj"))
+        else:
+            market["fundamentals_raw"] = None
+
         try:
             row = assemble_feature_row(symbol, asof, market, tcfg, r, thresholds)
             rows.append(row)
+            # Persist the fundamentals/analyst evolution history (only on change).
+            if fundamentals_applicable:
+                try:
+                    analyst_payload, fin_payload = s55.split_for_cache(row)
+                    storage.append_fundamentals_if_changed(symbol, "analyst", analyst_payload, asof)
+                    storage.append_fundamentals_if_changed(symbol, "financials", fin_payload, asof)
+                except Exception as e:
+                    logger.warning("Fundamentals cache update failed for %s: %s", symbol, e)
         except Exception as e:
             logger.error("Feature assembly failed for %s: %s", symbol, e)
 
@@ -242,9 +272,10 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
     # Stage 8 — monitor open positions
     alerts = _run_monitor(rows, asof, thresholds)
 
-    # Stage 9 — forward-return backfill on prior days
+    # Stage 9 — forward-return + benchmark + alpha backfill on prior days
     try:
-        backfill_forward_returns(asof)
+        benchmark = thresholds.get("backfill", {}).get("benchmark_ticker", "SPY")
+        backfill_forward_returns(asof, benchmark_ticker=benchmark)
     except Exception as e:
         logger.warning("Forward-return backfill failed: %s", e)
 

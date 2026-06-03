@@ -157,6 +157,23 @@ def _term_structure_slope(ticker_obj, spot: float, long_target_days: int = 90) -
     return float(ivx_90 - ivx_7)
 
 
+def _ivx_30d(ticker_obj, spot: float, target_days: int = 30) -> float:
+    """30-day IV index from the engine (the IV leg of the IV/HV ratio, Feature 1).
+
+    Unlike the term-structure long leg, a ~30d expiry is essentially always present
+    in liquid names, so no extrapolation guard is needed — but we still NaN out on
+    any failure or non-finite result so Stage 6 treats it as 'no signal'.
+    """
+    if ticker_obj is None:
+        return float("nan")
+    try:
+        v = _engine().calculate_iv_index(ticker_obj, spot, target_days=target_days, option_type="both")
+    except Exception as e:
+        logger.warning("ivx_30d calc failed: %s", e)
+        return float("nan")
+    return float(v) if np.isfinite(v) else float("nan")
+
+
 def _new_oi_strike_count(chain: pd.DataFrame) -> int:
     """Number of strikes where today's volume exceeds today's OI — strong signal
     that new positioning is being put on at that strike (the OI hasn't settled
@@ -195,11 +212,16 @@ def compute_flow(
     r: float,
     ticker_obj=None,
     prev_chain: pd.DataFrame | None = None,
+    hv_30d: float = float("nan"),
 ) -> dict:
     """End-to-end Stage 4. `chain` is the refined options chain from engine_shim.
 
-    `ticker_obj` is a yfinance Ticker — needed only for the term-structure IVX
-    calls. If None, term_structure_slope is NaN.
+    `ticker_obj` is a yfinance Ticker — needed only for the term-structure and
+    30d IVX calls. If None, term_structure_slope and ivx_30d are NaN.
+
+    `hv_30d` is the 30-day realized vol from Stage 5 (the HV leg of the IV/HV
+    ratio). Pass it in so the ratio + its z-score are computed here alongside the
+    other flow z-scores, off the single history read this function already does.
 
     z-scores are computed against the prior 30 days of features in storage; if
     fewer than 20 prior days are available, the relevant *_z fields are NaN.
@@ -212,6 +234,17 @@ def compute_flow(
     term_slope = _term_structure_slope(ticker_obj, spot) if ticker_obj is not None else float("nan")
     new_oi_count = _new_oi_strike_count(chain)
     oi_delta_c, oi_delta_p = _oi_deltas(chain, prev_chain)
+
+    # IV/HV ratio (Feature 1): rich (>1) vs cheap (<1) options relative to realized
+    # vol. IV leg from the engine's 30d index; HV leg passed in from Stage 5.
+    # UNITS: calculate_iv_index returns IVX as a PERCENT (e.g. 25.0 == 25%); Stage 5
+    # hv_30d is a DECIMAL (e.g. 0.30 == 30%). Each column is stored in its native
+    # unit; we divide ivx by 100 here so the ratio is dimensionless (≈1 when IV==HV).
+    ivx_30 = _ivx_30d(ticker_obj, spot)
+    if np.isfinite(ivx_30) and np.isfinite(hv_30d) and hv_30d > 0:
+        iv_hv_ratio = (ivx_30 / 100.0) / hv_30d
+    else:
+        iv_hv_ratio = float("nan")
 
     # --- z-scores vs prior 30 days of stored features --------------------------
     start = asof - timedelta(days=45)
@@ -239,4 +272,9 @@ def compute_flow(
         "new_oi_strike_count": new_oi_count,
         "oi_delta_call": oi_delta_c,
         "oi_delta_put": oi_delta_p,
+        # IV/HV (Feature 1). iv_hv_ratio_z is NaN until 20 days of ratio history
+        # exist; Stage 6 uses the z-gate once available and the raw ratio before then.
+        "ivx_30d": ivx_30,
+        "iv_hv_ratio_30d": iv_hv_ratio,
+        "iv_hv_ratio_z": _z("iv_hv_ratio_30d", iv_hv_ratio),
     }

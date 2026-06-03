@@ -7,10 +7,11 @@ emits markdown trade tickets for human review.
 ## Status
 
 **Complete pipeline.** All stages (1 calendar, 2 regime, 3 levels, 4 flow,
-5 confirmation, 6 playbooks, 7 ticket, 8 monitor, 9 logging) plus the EOD
-orchestrator are built and tested (96 tests). The only piece that requires your
-environment is the engine (`GeminiRevisionGammaProfile3.py`) — drop it at the
-repo root and the orchestrator's data-acquisition layer wires into it.
+5 confirmation, 5.5 technical/fundamental context, 6 playbooks, 7 ticket,
+8 monitor, 9 logging) plus the EOD orchestrator are built and tested (127 tests).
+The only piece that requires your environment is the engine
+(`GeminiRevisionGammaProfile3.py`) — drop it at the repo root and the
+orchestrator's data-acquisition layer wires into it.
 
 ## Layout
 
@@ -23,12 +24,13 @@ gamma_workflow/        # python package
   stage1_calendar.py   # OPEX, VIXP (deterministic), earnings (yfinance), macro (CSV)
   stage2_regime.py     # 4-state regime classifier + transition tracking
   stage3_level_map.py  # walls (primary+secondary, 2% sep) + migration + persistence + HVL
-  stage4_flow.py       # skew (25d), PCR + z-scores, OI delta, term structure
-  stage5_confirm.py    # volume z, ATR, MA distance, VIX 5d change
+  stage4_flow.py       # skew (25d), PCR + z-scores, OI delta, term structure, IV/HV ratio
+  stage5_confirm.py    # volume z, ATR, MA distance, VIX 5d change, HV(30d)
+  stage5_5_context.py  # technicals (MACD/RSI/CMF/Bollinger) + fundamentals (analyst/earnings/health)
   stage6_playbooks.py  # rule engine — Playbooks A/B/C
-  stage7_ticket.py     # sizing + markdown trade ticket builder
+  stage7_ticket.py     # sizing + markdown trade ticket builder (+ notes & commentary)
   stage8_monitor.py    # open-position exit/trail/scale logic
-  stage9_logging.py    # feature vector logger + forward-returns backfill
+  stage9_logging.py    # feature logger + forward-returns/benchmark/alpha backfill
   run_eod.py           # orchestrator: stages 1->9, called by the GitHub Action
 
 config/
@@ -41,6 +43,7 @@ data/                  # committed parquet + tickets, partitioned by date
   features/date=YYYY-MM-DD.parquet
   signals/date=YYYY-MM-DD.parquet
   chains/ticker=XXX/date=YYYY-MM-DD.parquet   # for OI-delta day-over-day
+  fundamentals/ticker=XXX/{analyst,financials}/date=*.json  # change-only evolution cache
   tickets/YYYY-MM-DD_TICKER_PLAYBOOK.md
   positions.json       # PM-maintained open positions (Stage 8 input)
   rates/dgs3mo.parquet

@@ -121,6 +121,11 @@ def build_ticket(
         "gates_passed": signal["gates_passed"],
         "regime": features.get("regime"),
         "regime_transition": features.get("regime_transition"),
+        # Per-signal notes (e.g. IV/HV strength reducer, Feature 1).
+        "notes": list(signal.get("notes", [])),
+        # Stage 5.5 commentary — transient (not in the parquet schema); rendered if present.
+        "technical_commentary": features.get("technical_commentary"),
+        "analyst_commentary": features.get("analyst_commentary"),
     }
     return ticket, render_markdown(ticket)
 
@@ -156,6 +161,22 @@ def render_markdown(ticket: dict) -> str:
         if ticket.get("regime_transition") else ""
     )
 
+    # Per-signal notes (e.g. the IV/HV strength reducer). Rendered as a callout.
+    notes = [n for n in ticket.get("notes", []) if n]
+    notes_section = ""
+    if notes:
+        notes_section = "\n## Notes\n\n" + "\n".join(f"> ⚠️ {n}" for n in notes) + "\n"
+
+    # Stage 5.5 commentary (technicals + analyst evolution). Optional free text.
+    commentary_parts = []
+    if ticket.get("technical_commentary"):
+        commentary_parts.append(f"**Technicals**: {ticket['technical_commentary']}")
+    if ticket.get("analyst_commentary"):
+        commentary_parts.append(f"**Analyst view**: {ticket['analyst_commentary']}")
+    commentary_section = ""
+    if commentary_parts:
+        commentary_section = "\n## Commentary\n\n" + "\n\n".join(commentary_parts) + "\n"
+
     md = f"""# Trade Ticket — {ticket['ticker']} — Playbook {ticket['playbook_id']}
 
 **Date**: {ticket['asof']}
@@ -190,7 +211,7 @@ def render_markdown(ticket: dict) -> str:
 
 - **Regime**: {ticket['regime']}{transition_line}
 {gates_lines}
-
+{notes_section}{commentary_section}
 ## Management notes
 
 - Stop is the invalidation level above; re-evaluate as walls migrate (Stage 8).

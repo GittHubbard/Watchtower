@@ -54,8 +54,15 @@ def test_regime_transition_persists_round_trip(tmp_features_dir):
 
 
 def test_dead_columns_removed_from_schema():
-    for dead in ("gex_zscore", "ivx_7d", "ivx_30d", "hv_30d"):
+    # gex_zscore and ivx_7d remain dead (never implemented).
+    for dead in ("gex_zscore", "ivx_7d"):
         assert dead not in s9.FEATURE_COLUMNS, f"{dead} should have been removed"
+    # ivx_30d / hv_30d were removed as dead placeholders in PR #1 but are now LIVE
+    # columns implemented by Feature 1 (IV/HV ratio) — assert they're present.
+    assert "ivx_30d" in s9.FEATURE_COLUMNS
+    assert "hv_30d" in s9.FEATURE_COLUMNS
+    assert "iv_hv_ratio_30d" in s9.FEATURE_COLUMNS
+    assert "iv_hv_ratio_z" in s9.FEATURE_COLUMNS
     # Live transition columns are present.
     assert "prev_regime" in s9.FEATURE_COLUMNS
     assert "regime_transition" in s9.FEATURE_COLUMNS
