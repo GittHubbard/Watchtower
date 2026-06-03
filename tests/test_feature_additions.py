@@ -402,3 +402,55 @@ def test_stage5_5_scalars_persisted(tmp_features_dir):
     assert np.isfinite(r["analyst_pct_buy"])
     # Commentary stubs are transient — not part of the parquet schema.
     assert "technical_commentary" not in back.columns
+
+
+# =============================================================================
+# Stage 5.5 Commentary generation tests
+# =============================================================================
+
+def _ohlcv_full(n=250, base=100.0, slope=0.5):
+    """OHLCV with enough bars for all indicators including SMA200."""
+    idx = pd.bdate_range(end=pd.Timestamp(date(2026, 5, 27)), periods=n)
+    close = base + slope * np.arange(n)
+    return pd.DataFrame({
+        "Open": close, "High": close + 1.0, "Low": close - 1.0,
+        "Close": close, "Volume": [1_000_000.0] * n,
+    }, index=idx)
+
+
+def test_technical_commentary_populated():
+    """compute_technicals returns non-empty technical_commentary when history is sufficient."""
+    out = s55.compute_technicals(_ohlcv_full(250), date(2026, 5, 27), symbol="NVDA")
+    assert isinstance(out["technical_commentary"], str)
+    assert len(out["technical_commentary"]) > 0
+    # Should contain key sections
+    assert "Technical Signal" in out["technical_commentary"]
+    assert "Trend" in out["technical_commentary"]
+    assert "Score" in out["technical_commentary"]
+
+
+def test_analyst_commentary_populated():
+    """compute_fundamentals returns non-empty analyst_commentary when analyst scalars are present."""
+    out = s55.compute_fundamentals(_raw_bundle(), {"kind": "single_name"}, date(2026, 5, 27), symbol="NVDA")
+    assert isinstance(out["analyst_commentary"], str)
+    assert len(out["analyst_commentary"]) > 0
+    assert "Analyst View" in out["analyst_commentary"]
+    assert "Coverage" in out["analyst_commentary"]
+
+
+def test_technical_commentary_empty_on_short_history():
+    """Returns empty string when history is too short (< 26 bars)."""
+    out = s55.compute_technicals(_ohlcv(10), date(2026, 5, 27))
+    assert out["technical_commentary"] == ""
+
+
+def test_technical_commentary_warmup_note():
+    """With only 30 bars of history, commentary notes warmup/insufficient data for some indicators."""
+    out = s55.compute_technicals(_ohlcv(30), date(2026, 5, 27), symbol="TEST")
+    # 30 bars: MACD computable (>=26), RSI computable, but SMA200 not available
+    commentary = out["technical_commentary"]
+    # Should be non-empty (enough bars for basic indicators)
+    assert isinstance(commentary, str)
+    assert len(commentary) > 0
+    # Should note that SMA200 is unavailable (warmup caveat)
+    assert "warmup" in commentary.lower() or "unavailable" in commentary.lower() or "bars" in commentary.lower()

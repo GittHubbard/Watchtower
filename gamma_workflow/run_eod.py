@@ -156,10 +156,12 @@ def assemble_feature_row(
     )
 
     # Stage 5.5 — technical + fundamental context (Features 2 & 3). Scalars are
-    # logged; the (stub) commentary strings ride along in-memory for the ticket.
+    # logged; the commentary strings ride along in-memory for the ticket.
     context = s55.compute_stage5_5(
         history=market.get("underlying_history"), asof=asof,
         raw_bundle=market.get("fundamentals_raw"), ticker_config=ticker_config,
+        symbol=symbol,
+        ivx_30d=flow.get("ivx_30d", float("nan")),
     )
 
     # Stage 1 — calendar
