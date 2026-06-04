@@ -785,7 +785,12 @@ def _detect_divergence_active(
                 quality = "standard"
 
             if is_hidden:
-                # Hidden divergence: immediate confirmed state (no state machine)
+                # Hidden divergence: confirmed immediately at pivot p2 (no state
+                # machine). Apply the SAME effect_bars recency gate that regular
+                # divergences get below, measured from p2 — otherwise a hidden div
+                # from months ago stays "confirmed" forever and keeps scoring.
+                if (n - 1) - p2 > effect_bars:
+                    continue
                 results.append({
                     "type": div_type,
                     "state": "confirmed",
@@ -849,10 +854,15 @@ def _detect_divergence_active(
 
 
 def _run_divergence_suite(
-    close: pd.Series, high: pd.Series, low: pd.Series, volume: pd.Series, sma20: pd.Series
+    close: pd.Series, high: pd.Series, low: pd.Series, volume: pd.Series, sma20: pd.Series,
+    effect_bars: int = 15,
 ) -> dict[str, list[dict]]:
     """Run divergence detection for RSI, MACD line, MACD hist, CMF, OBV.
     Both regular and hidden divergences. Returns {name: [events]}.
+
+    `effect_bars` is the recency window: confirmed divergences (regular AND
+    hidden) older than this many bars are dropped. Scoring uses the default 15;
+    pass a large value (e.g. for charting) to retain the full history.
     """
     try:
         rsi = _rsi_series(close)
@@ -923,6 +933,7 @@ def _run_divergence_suite(
         for name, indicator, div_type, q_fn, _inc in suite:
             results[name] = _detect_divergence_active(
                 close, indicator, div_type, sma20,
+                effect_bars=effect_bars,
                 quality_fn=q_fn,
                 atr_series=atr,
                 close_series=close,
