@@ -27,9 +27,12 @@ gamma_workflow/        # python package
   stage3_level_map.py  # walls (primary+secondary, 2% sep) + migration + persistence + HVL
   stage4_flow.py       # skew (25d), PCR + z-scores, OI delta, term structure, IV/HV ratio
   stage5_confirm.py    # volume z, ATR, MA distance, VIX 5d change, HV(30d)
-  stage5_5_context.py  # Stage 5.5: technicals (MACD/RSI/CMF/Bollinger + ADX/OBV/aVWAP/
-                       #   divergence scoring) + fundamentals (analyst/earnings/health);
-                       #   generates markdown commentary for the ticket
+  stage5_5_context.py  # Stage 5.5: technicals (9 trend classifiers — price 7-state,
+                       #   MACD w/ cross detect, RSI, BB w/ squeeze, CMF 4-tier,
+                       #   vol_pct, OBV, aVWAP; 5-indicator divergence suite incl.
+                       #   hidden; Schmitt-trigger hysteresis) + fundamentals
+                       #   (analyst/earnings/health); emits per-ticker tech-signal
+                       #   ticket and routes upward/downward watchlist transitions
   stage6_playbooks.py  # rule engine — Playbooks A/B/C
   stage7_ticket.py     # sizing + markdown trade ticket builder (+ IV/HV notes & commentary)
   stage8_monitor.py    # open-position exit/trail/scale logic
@@ -49,7 +52,10 @@ config/
 data/                  # committed parquet + tickets, partitioned by date
   features/date=YYYY-MM-DD.parquet
   signals/date=YYYY-MM-DD.parquet
-  chains/ticker=XXX/date=YYYY-MM-DD.parquet   # for OI-delta day-over-day
+  chains/ticker=XXX/date=YYYY-MM-DD.parquet     # for OI-delta day-over-day
+  chains/ticker=XXX/tickets/YYYY-MM-DD_XXX_techsignal.md  # Stage 5.5 per-ticker signal ticket
+  Upward-Watchlist/YYYY-MM-DD/                  # tickers transitioning toward bullish
+  Downward-Watchlist/YYYY-MM-DD/                # tickers transitioning toward bearish
   fundamentals/ticker=XXX/{analyst,financials}/date=*.json  # change-only evolution cache
   tickets/YYYY-MM-DD_TICKER_PLAYBOOK.md
   positions.json       # PM-maintained open positions (Stage 8 input)
@@ -86,29 +92,98 @@ code changes.
 ## Stage 5.5 — Technical & Fundamental Context
 
 Stage 5.5 runs after Stage 5 (confirmation) and before Stage 6 (playbooks). It does
-not gate the playbooks; it enriches the ticket with context for human review.
+not gate the playbooks; it enriches the ticket with context for human review and
+emits a standalone per-ticker tech-signal ticket.
 
 **Scalar features** (logged to parquet, available for future signal research):
 
 | Group | Scalars |
 |-------|---------|
 | Technicals | `macd`, `macd_signal`, `macd_hist`, `rsi_14`, `cmf_20`, `bb_upper/mid/lower/width` |
+| Signal summary | `tech_recommendation` (STRONG_BUY/BUY/HOLD/SELL/STRONG_SELL), `tech_score` (−10..+10) |
 | Analyst | `analyst_consensus`, `analyst_coverage_count`, `analyst_pct_buy`, `analyst_upgrades/downgrades/steady_3m` |
 | Earnings | `forward_pe`, `eps_surprise_avg_4q`, `eps_beat_streak`, `eps_estimate_trend` |
 | Balance sheet | `net_income_margin_ttm`, `debt_to_equity`, `revenue_growth_yoy` |
 
-**Ticket commentary** (in-memory only, rendered in `## Commentary` section):
+### Trend classification (9 indicators)
 
-- *Technical commentary*: ADX regime, vol regime (IV percentile vs realized vol), trend
-  classifications across 8 indicators (price, MACD, RSI, CMF, OBV, Bollinger, volume,
-  anchored VWAP), divergence detection (RSI/MACD/CMF/OBV with PENDING→CONFIRMED→EXPIRED
-  state machine), 2-D regime-gated scoring, and caveats (event risk, vol crush, staleness).
-- *Analyst commentary*: coverage count, % Buy/Overweight, 90-day upgrade/downgrade/steady
+| Indicator | States |
+|-----------|--------|
+| Price (7-state) | `STRONG_UP` / `UP` / `UP_EXHAUSTING` / `NEUTRAL` / `DOWN_EXHAUSTING` / `DOWN` / `STRONG_DOWN` (ATR-normalized SMA50 slope on full MA stack) |
+| MACD | `BULL_CROSS` / `BEAR_CROSS` (detected via prev bar) / `BULLISH` / `BEARISH` / `NEUTRAL` + `macd_above_zero` |
+| RSI | `BULLISH` (20–30) / `BEARISH` (70–80) / `OVERSOLD` (≤20) / `OVERBOUGHT` (≥80) / `NEUTRAL` |
+| Bollinger | `UPPER_BREAK` / `LOWER_BREAK` / `SQUEEZE` / `EXPANSION` (120-bar bb_width percentile, top/bottom 20%) / `NEUTRAL` |
+| CMF (4-tier) | `STRONG_ACCUM` (>0.10) / `ACCUM` (>0.05) / `DIST` / `STRONG_DIST` (<−0.10) / `NEUTRAL` |
+| Volume | `SURGE` (vol_pct ≥0.85) / `DRY` (≤0.15) / `NORMAL` + `vol_confirms_up`/`vol_confirms_down` flags (60-bar rolling percentile rank) |
+| OBV | `BULLISH` / `BEARISH` / `NEUTRAL` (OBV vs SMA20 + slope) |
+| Anchored VWAP | `RECLAIM_HIGH` / `BREAKDOWN_LOW` / `ABOVE_BOTH` / `BELOW_BOTH` / `TESTING_SUPPORT` / `TESTING_RESISTANCE` |
+| ADX regime | `TRENDING` (≥25) / `WEAK_TREND` (≥20) / `RANGING` |
+
+### Divergence suite (5 indicators × 2 types)
+
+RSI, MACD line, MACD histogram, CMF, OBV — each scanned for **regular** and **hidden**
+divergences (MACD line: regular only). Pivot pairs are filtered by ATR-normalized price
+move ≥ 0.25 to suppress noise.
+
+- **Regular divergences** run through a `PENDING → CONFIRMED → EXPIRED` state machine
+  (20-bar expiry, 15-bar effect window). Only `CONFIRMED` events score.
+- **Hidden divergences** confirm immediately at the right-shoulder; SMA50 slope must
+  agree (bullish hidden needs an up-trending SMA50, bearish hidden needs down-trending).
+- **Quality tier** (`strong` vs `standard`) is set from the p1 indicator value (e.g. RSI
+  bull-div is `strong` if p1 RSI < 30). `strong` adds a +0.5 score bonus.
+
+### Scoring (master spec §5)
+
+```
+trend_score   = price + macd (+ cross bonus, ±0.5 above-zero) + cmf + obv + avwap + vol_confirms
+base_trend    = trend_score × conv_mult     (1.25× when MACD-hist direction agrees with trend)
+mr_score      = RSI (BULLISH ±1, OVERBOUGHT/OVERSOLD ±0.5 contra) + BB (±0.5)
+mr_contrib    = mr_weight[adx_regime][vol_regime] × mr_score   (2-D regime gate)
+div_score     = Σ confirmed events (reg ±2, hidden ±1, strong +0.5, ≥2 same-side ±1 stacking)
+raw           = base_trend + mr_contrib + div_score
+score         = clamp(raw, −10, +10)
+```
+
+**Recommendation** (Schmitt-trigger hysteresis, `tech_recommendation` column):
+
+| State | Enter | Exit (drop one tier) |
+|-------|-------|----------------------|
+| `STRONG_BUY` | score ≥ 5.5 | score < 4.5 |
+| `BUY` | score ≥ 2.5 | score < 1.5 |
+| `HOLD` | — | — |
+| `SELL` | score ≤ −2.5 | score > −1.5 |
+| `STRONG_SELL` | score ≤ −5.5 | score > −4.5 |
+
+Yesterday's `tech_recommendation` is read from `data/features/` to seed the
+hysteresis state.
+
+### Ticket output (Stage 5.5 → disk)
+
+Each ticker gets a markdown tech-signal ticket every run:
+
+- **Always written**: `data/chains/ticker=XXX/tickets/YYYY-MM-DD_XXX_techsignal.md`
+  — full commentary (regime, trend breakdown, divergence events, MR gate, score
+  arithmetic, caveats).
+- **Watchlist routing** when the recommendation transitions vs yesterday:
+  - `data/Upward-Watchlist/YYYY-MM-DD/`: `HOLD→BUY`, `HOLD→STRONG_BUY`,
+    `BUY→STRONG_BUY`
+  - `data/Downward-Watchlist/YYYY-MM-DD/`: `BUY→SELL`, `STRONG_BUY→SELL`,
+    `STRONG_BUY→STRONG_SELL`, `SELL→STRONG_SELL`
+
+The Stage 7 playbook ticket also gets a one-line tech signal summary in its
+header (`**Tech Signal**: BUY (+3.4)  |  [full analysis in data/chains/...]`).
+
+**In-ticket commentary** (rendered when a playbook fires):
+
+- *Technical commentary*: ADX × vol regime, MR weight, 9-indicator trend breakdown,
+  aVWAP anchor ages, RSI/BB MR labels, divergence event list, score arithmetic
+  line, caveats (warmup, ADX/IV missing).
+- *Analyst commentary*: coverage count, % Buy/Overweight, 90-day rating-change
   counts, and a trend narrative built from the evolution cache.
 
 **Index ETF handling** (SPY, QQQ, IWM, etc.):
 
-- Technical commentary runs normally — all indicators are pure OHLCV.
+- Technical commentary and tech-signal ticket run normally — all indicators are pure OHLCV.
 - Fundamental scalars are all NaN; analyst commentary is empty.
 - The fundamentals network fetch is skipped entirely (no yfinance calls for ETF fundamentals).
 - All three playbooks remain eligible; Playbook A enforces VIX confirmation only for ETFs.
@@ -134,16 +209,29 @@ promptly; 90d waits ~140 calendar days). SPY benchmark (configurable via
 
 ## Standalone Signal Script
 
-`trade_signals.py` (repo root) runs the full Stage 5.5 technical analysis pipeline
-without the engine or any options data. Useful for quick analysis of any ticker:
+`trade_signals.py` (repo root) is a self-contained rebuild of the Stage 5.5
+technical pipeline — no `gamma_workflow` imports, no engine, yfinance only.
+Useful for quick analysis of any ticker.
 
-```
-python trade_signals.py AAPL
+```bash
+python trade_signals.py AAPL                          # latest bar
+python trade_signals.py SPY --bar -1 --bars-since 400 # analyze a specific historical bar
+python trade_signals.py AAPL --iv-csv iv_data.csv     # bring your own IV series
+python trade_signals.py AAPL --params params.yaml     # override thresholds
+python trade_signals.py --test                        # 11 built-in tests, no network
 ```
 
-Output includes: score (+/- 10 scale), recommendation (STRONG_BUY → STRONG_SELL),
-regime classification (ADX × vol), trend component breakdown, divergence events,
-mean-reversion gate status, and risk caveats.
+Output (`§6` report format) includes: score (±10 scale), recommendation
+(STRONG_BUY → STRONG_SELL) after Schmitt-trigger hysteresis, ADX × vol regime
+classification, 9-indicator trend component breakdown, divergence event list,
+MR gate status, **SCORE ARITHMETIC** section (base_trend + mr_contrib + div_score
+= raw → clamped), and risk caveats.
+
+Internals match the in-pipeline `stage5_5_context.py`: 7-state price trend with
+ATR-normalized SMA50 slope, BULL_CROSS/BEAR_CROSS detection, BB squeeze/expansion,
+4-tier CMF, vol_pct percentile, O(n) anchored VWAP with anchor-reset, 5-indicator
+divergence suite (regular state machine + immediate-confirm hidden divs), and the
+2-D regime-gated MR contribution.
 
 ## Conventions
 
