@@ -1057,32 +1057,54 @@ def _score_technical(
         )
         mr_contribution = mr_weight * mr_score
 
-        # --- Divergence score (master spec §5.4) ---
-        # Regular confirmed: ±2.0; hidden confirmed: ±1.0; "strong" quality bonus: +0.5
-        # ≥2 bull confirmed: +1.0 stacking bonus; ≥2 bear: -1.0
-        div_score = 0.0
-        bull_confirmed = 0
-        bear_confirmed = 0
+        # --- Divergence score (master spec §5.4, CAPPED) ---
+        # Count DISTINCT indicators (not per-event) with a confirmed divergence so
+        # repeated pivot pairs on the same indicator can't run the score away:
+        #   regular:  n == 1 -> ±2.0,  n >= 2 -> ±4.0
+        #   quality:  +1.0 / -1.0 once if ANY confirmed regular div of that
+        #             direction had a "strong" quality boost
+        #   hidden:   ±1.0 once if ANY confirmed hidden div of that direction exists
+        reg_bull_inds: set[str] = set()
+        reg_bear_inds: set[str] = set()
+        hid_bull_any = hid_bear_any = False
+        q_reg_bull = q_reg_bear = False
 
         for name, events in div_results.items():
+            indicator = name.rsplit("_", 2)[0]   # "RSI_reg_bull" -> "RSI"
             for ev in events:
                 if ev.get("state") != "confirmed":
                     continue
-                is_bull_type = ev["type"] in ("reg_bull", "hid_bull")
-                is_hidden = ev["type"].startswith("hid_")
-                base = 1.0 if is_hidden else 2.0
-                quality_bonus = 0.5 if ev.get("quality") == "strong" else 0.0
-                if is_bull_type:
-                    div_score += base + quality_bonus
-                    bull_confirmed += 1
-                else:
-                    div_score -= base + quality_bonus
-                    bear_confirmed += 1
+                strong = ev.get("quality") == "strong"
+                t = ev["type"]
+                if t == "reg_bull":
+                    reg_bull_inds.add(indicator)
+                    q_reg_bull = q_reg_bull or strong
+                elif t == "reg_bear":
+                    reg_bear_inds.add(indicator)
+                    q_reg_bear = q_reg_bear or strong
+                elif t == "hid_bull":
+                    hid_bull_any = True
+                elif t == "hid_bear":
+                    hid_bear_any = True
 
-        if bull_confirmed >= 2:
+        n_reg_bull = len(reg_bull_inds)
+        n_reg_bear = len(reg_bear_inds)
+
+        div_score = 0.0
+        div_score += 4.0 if n_reg_bull >= 2 else (2.0 if n_reg_bull == 1 else 0.0)
+        div_score -= 4.0 if n_reg_bear >= 2 else (2.0 if n_reg_bear == 1 else 0.0)
+        if q_reg_bull:
             div_score += 1.0
-        if bear_confirmed >= 2:
+        if q_reg_bear:
             div_score -= 1.0
+        if hid_bull_any:
+            div_score += 1.0
+        if hid_bear_any:
+            div_score -= 1.0
+
+        # Distinct-indicator confirmed counts (incl. hidden presence) for reporting.
+        bull_confirmed = n_reg_bull + (1 if hid_bull_any else 0)
+        bear_confirmed = n_reg_bear + (1 if hid_bear_any else 0)
 
         # --- Final score ---
         raw = base_trend + mr_contribution + div_score
@@ -1308,16 +1330,24 @@ def _build_technical_commentary(
 
         # Divergence
         lines.append(f"**Divergence** ({div_score:+.1f})")
-        div_lines_text = []
+        # Dedup to one line per (state, type, indicator) — the score counts
+        # distinct indicators, so listing every pivot pair would misrepresent it.
+        # Prefer a "strong" quality label if any event for that key was strong.
+        div_best: dict[tuple, str] = {}
+        div_order: list[tuple] = []
         for name, events in div_results.items():
+            indicator_label = name.rsplit("_", 2)[0]
             for ev in events:
-                indicator_label = name.replace("_bull", "").replace("_bear", "")
-                icon = "✓ CONFIRMED" if ev["state"] == "confirmed" else "⏳ PENDING"
-                div_lines_text.append(
-                    f"- {icon} {ev['type']} on {indicator_label} (quality: {ev['quality']})"
-                )
-        if div_lines_text:
-            lines.extend(div_lines_text)
+                key = (ev["state"], ev["type"], indicator_label)
+                if key not in div_best:
+                    div_order.append(key)
+                if ev.get("quality") == "strong" or key not in div_best:
+                    div_best[key] = ev.get("quality", "standard")
+        if div_order:
+            for state, dtype, indicator_label in div_order:
+                icon = "✓ CONFIRMED" if state == "confirmed" else "⏳ PENDING"
+                quality = div_best[(state, dtype, indicator_label)]
+                lines.append(f"- {icon} {dtype} on {indicator_label} (quality: {quality})")
         else:
             lines.append("- No active divergences")
         lines.append("")
