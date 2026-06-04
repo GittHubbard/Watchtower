@@ -65,6 +65,8 @@ FEATURE_COLUMNS = [
     # Stage 5.5 — technical indicators (Feature 2)
     "macd", "macd_signal", "macd_hist", "rsi_14", "cmf_20",
     "bb_upper", "bb_mid", "bb_lower", "bb_width",
+    # Stage 5.5 — technical signal output (Feature 2 summary)
+    "tech_recommendation", "tech_score",
     # Stage 5.5 — fundamentals (Feature 3)
     "forward_pe", "eps_surprise_avg_4q", "eps_beat_streak", "eps_estimate_trend",
     "net_income_margin_ttm", "debt_to_equity", "revenue_growth_yoy",

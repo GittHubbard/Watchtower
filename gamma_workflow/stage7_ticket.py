@@ -126,6 +126,9 @@ def build_ticket(
         # Stage 5.5 commentary — transient (not in the parquet schema); rendered if present.
         "technical_commentary": features.get("technical_commentary"),
         "analyst_commentary": features.get("analyst_commentary"),
+        # Stage 5.5 signal summary
+        "tech_recommendation": features.get("tech_recommendation", ""),
+        "tech_score": features.get("tech_score", float("nan")),
     }
     return ticket, render_markdown(ticket)
 
@@ -177,12 +180,21 @@ def render_markdown(ticket: dict) -> str:
     if commentary_parts:
         commentary_section = "\n## Commentary\n\n" + "\n\n".join(commentary_parts) + "\n"
 
+    tech_rec  = ticket.get("tech_recommendation", "")
+    tech_sc   = ticket.get("tech_score", float("nan"))
+    import math as _math
+    tech_line = (
+        f"\n**Tech Signal**: {tech_rec} ({tech_sc:+.1f})  |  "
+        f"[full analysis in data/chains/ticker={ticket['ticker']}/tickets/]"
+        if tech_rec and not _math.isnan(tech_sc) else ""
+    )
+
     md = f"""# Trade Ticket — {ticket['ticker']} — Playbook {ticket['playbook_id']}
 
 **Date**: {ticket['asof']}
 **Setup**: {ticket['playbook_name']}
 **Signal strength**: {ticket['signal_strength']:.2f} / 1.00
-**Instrument**: {instrument_note}
+**Instrument**: {instrument_note}{tech_line}
 
 > ⚠️ For human review. The system proposes; the PM disposes. No order has been placed.
 

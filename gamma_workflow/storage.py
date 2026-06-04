@@ -116,6 +116,34 @@ def write_positions(positions: list[dict]) -> Path:
 
 # ---- Option-chain snapshots (Stage 4 OI-delta needs yesterday's chain) ------
 CHAINS_DIR = DATA_DIR / "chains"
+UPWARD_WATCHLIST_DIR   = DATA_DIR / "Upward-Watchlist"
+DOWNWARD_WATCHLIST_DIR = DATA_DIR / "Downward-Watchlist"
+
+
+def write_techsignal_ticket(symbol: str, d: date_cls, content: str) -> Path:
+    """Persist a Stage 5.5 technical-signal ticket per ticker.
+
+    Path: data/chains/ticker=XXX/tickets/YYYY-MM-DD_XXX_techsignal.md
+    """
+    ticket_dir = CHAINS_DIR / f"ticker={symbol}" / "tickets"
+    ticket_dir.mkdir(parents=True, exist_ok=True)
+    path = ticket_dir / f"{d.isoformat()}_{symbol}_techsignal.md"
+    path.write_text(content)
+    return path
+
+
+def write_watchlist_ticket(symbol: str, d: date_cls, content: str, direction: str) -> Path:
+    """Persist a tech-signal ticket in the appropriate watchlist directory.
+
+    direction: "upward" or "downward"
+    Path: data/{Upward,Downward}-Watchlist/YYYY-MM-DD/YYYY-MM-DD_XXX_techsignal.md
+    """
+    base = UPWARD_WATCHLIST_DIR if direction == "upward" else DOWNWARD_WATCHLIST_DIR
+    day_dir = base / d.isoformat()
+    day_dir.mkdir(parents=True, exist_ok=True)
+    path = day_dir / f"{d.isoformat()}_{symbol}_techsignal.md"
+    path.write_text(content)
+    return path
 
 
 def _chain_path(symbol: str, d: date_cls) -> Path:

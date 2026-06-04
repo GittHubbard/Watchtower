@@ -117,6 +117,7 @@ def assemble_feature_row(
     ticker_config: dict,
     r: float,
     thresholds: dict,
+    prev_tech_rec: str | None = None,
 ) -> dict:
     """Run stages 1-5 on acquired market data and return one feature row dict.
 
@@ -162,6 +163,7 @@ def assemble_feature_row(
         raw_bundle=market.get("fundamentals_raw"), ticker_config=ticker_config,
         symbol=symbol,
         ivx_30d=flow.get("ivx_30d", float("nan")),
+        prev_tech_rec=prev_tech_rec,
     )
 
     # Stage 1 — calendar
@@ -203,6 +205,18 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
     throttle_sec = float(thresholds.get("acquisition", {}).get("inter_ticker_sleep_sec", 2.0))
     logger.info("EOD run %s — %d tickers, r=%.4f, throttle=%.1fs", asof, len(symbols), r, throttle_sec)
 
+    # Transition sets for watchlist routing
+    _UPWARD_TRANSITIONS = {
+        ("HOLD", "BUY"), ("HOLD", "STRONG_BUY"), ("BUY", "STRONG_BUY"),
+    }
+    _DOWNWARD_TRANSITIONS = {
+        ("BUY", "SELL"), ("STRONG_BUY", "SELL"),
+        ("STRONG_BUY", "STRONG_SELL"), ("SELL", "STRONG_SELL"),
+    }
+
+    from datetime import timedelta as _td
+    _yesterday = asof - _td(days=1)
+
     rows: list[dict] = []
     for i, symbol in enumerate(symbols):
         if i > 0 and throttle_sec > 0:
@@ -226,8 +240,21 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
         else:
             market["fundamentals_raw"] = None
 
+        # Read yesterday's tech_recommendation for hysteresis
+        prev_tech_rec: str | None = None
         try:
-            row = assemble_feature_row(symbol, asof, market, tcfg, r, thresholds)
+            prev_feats = storage.read_features(_yesterday)
+            if prev_feats is not None and not prev_feats.empty and "ticker" in prev_feats.columns:
+                ticker_row = prev_feats[prev_feats["ticker"] == symbol]
+                if not ticker_row.empty and "tech_recommendation" in ticker_row.columns:
+                    val = ticker_row["tech_recommendation"].iloc[0]
+                    if isinstance(val, str) and val:
+                        prev_tech_rec = val
+        except Exception:
+            pass
+
+        try:
+            row = assemble_feature_row(symbol, asof, market, tcfg, r, thresholds, prev_tech_rec)
             rows.append(row)
             # Persist the fundamentals/analyst evolution history (only on change).
             if fundamentals_applicable:
@@ -237,6 +264,28 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
                     storage.append_fundamentals_if_changed(symbol, "financials", fin_payload, asof)
                 except Exception as e:
                     logger.warning("Fundamentals cache update failed for %s: %s", symbol, e)
+
+            # Write Stage 5.5 tech-signal ticket
+            try:
+                commentary = row.get("technical_commentary", "")
+                tech_rec = row.get("tech_recommendation", "HOLD")
+                tech_sc  = row.get("tech_score", float("nan"))
+                ticket_header = (
+                    f"# Technical Signal: {symbol}  {asof.isoformat()}\n\n"
+                    f"**Recommendation**: {tech_rec}  |  **Score**: {tech_sc:+.1f}\n\n"
+                )
+                ticket_body = ticket_header + (commentary or "(no commentary — insufficient history)")
+                storage.write_techsignal_ticket(symbol, asof, ticket_body)
+
+                # Watchlist routing based on recommendation transition
+                transition = (str(prev_tech_rec or "HOLD"), str(tech_rec))
+                if transition in _UPWARD_TRANSITIONS:
+                    storage.write_watchlist_ticket(symbol, asof, ticket_body, "upward")
+                elif transition in _DOWNWARD_TRANSITIONS:
+                    storage.write_watchlist_ticket(symbol, asof, ticket_body, "downward")
+            except Exception as e:
+                logger.warning("Tech-signal ticket write failed for %s: %s", symbol, e)
+
         except Exception as e:
             logger.error("Feature assembly failed for %s: %s", symbol, e)
 

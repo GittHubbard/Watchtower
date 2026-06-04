@@ -346,18 +346,40 @@ def _iv_context(ivx_30d_pct: float, rv_20_val: float, iv_percentile_val: float) 
 # Section D — Trend classifications
 # ============================================================================
 
-def _trend_price(close: pd.Series) -> str:
-    """UP / DOWN / NEUTRAL based on SMA stacking (needs 200 bars)."""
+def _trend_price(close: pd.Series, atr14: pd.Series | None = None) -> str:
+    """7-state price trend per master spec §3.2."""
     try:
-        if len(close) < 200:
-            return "NEUTRAL"
-        sma20 = float(close.iloc[-20:].mean())
-        sma50 = float(close.iloc[-50:].mean())
-        sma200 = float(close.iloc[-200:].mean())
+        n = len(close)
+        if n < 200:
+            if n < 50:
+                return "NEUTRAL"
+            ma50 = float(close.iloc[-50:].mean())
+            cur = float(close.iloc[-1])
+            return "UP" if cur > ma50 else ("DOWN" if cur < ma50 else "NEUTRAL")
         cur = float(close.iloc[-1])
-        if cur > sma20 > sma50 > sma200:
+        ma20  = float(close.iloc[-20:].mean())
+        ma50  = float(close.iloc[-50:].mean())
+        ma200 = float(close.iloc[-200:].mean())
+        # slope_10(sma_50): ATR-normalised slope of SMA50 over 10 bars
+        if n >= 60 and atr14 is not None and len(atr14) >= 1 and np.isfinite(float(atr14.iloc[-1])) and float(atr14.iloc[-1]) > 0:
+            ma50_now  = float(close.iloc[-50:].mean())
+            ma50_prev = float(close.iloc[-60:-10].mean()) if n >= 60 else ma50_now
+            slope_norm = (ma50_now - ma50_prev) / (10 * float(atr14.iloc[-1]))
+        else:
+            slope_norm = 0.0
+        pos_slope = slope_norm > 0.02
+        neg_slope = slope_norm < -0.02
+        full_up   = cur > ma20 > ma50 > ma200
+        full_down = cur < ma20 < ma50 < ma200
+        loose_up  = cur > ma50 > ma200
+        loose_down = cur < ma50 < ma200
+        if full_up:
+            return "STRONG_UP" if pos_slope else ("UP_EXHAUSTING" if not neg_slope else "UP")
+        if full_down:
+            return "STRONG_DOWN" if neg_slope else ("DOWN_EXHAUSTING" if not pos_slope else "DOWN")
+        if loose_up:
             return "UP"
-        if cur < sma20 < sma50 < sma200:
+        if loose_down:
             return "DOWN"
         return "NEUTRAL"
     except Exception:
@@ -384,64 +406,103 @@ def _trend_rsi(rsi: float, close: pd.Series, period: int = 14) -> str:
         return "NEUTRAL"
 
 
-def _trend_macd(macd: float, signal: float, hist: float) -> str:
-    """BULLISH / BEARISH / NEUTRAL."""
+def _trend_macd(macd: float, signal: float, hist: float,
+                macd_prev: float | None = None, signal_prev: float | None = None) -> tuple[str, bool]:
+    """Returns (trend_macd, macd_above_zero). trend_macd per spec §3.4."""
     try:
-        if not (np.isfinite(macd) and np.isfinite(signal) and np.isfinite(hist)):
-            return "NEUTRAL"
-        if macd > signal and hist > 0:
-            return "BULLISH"
-        if macd < signal and hist < 0:
-            return "BEARISH"
-        return "NEUTRAL"
+        if not all(np.isfinite(v) for v in [macd, signal, hist]):
+            return "NEUTRAL", False
+        above_zero = macd > 0
+        # Cross detection using prev values
+        if macd_prev is not None and signal_prev is not None and np.isfinite(macd_prev) and np.isfinite(signal_prev):
+            bull_cross = (macd_prev <= signal_prev) and (macd > signal)
+            bear_cross = (macd_prev >= signal_prev) and (macd < signal)
+            if bull_cross:
+                return "BULL_CROSS", above_zero
+            if bear_cross:
+                return "BEAR_CROSS", above_zero
+        # Steady state
+        if macd > signal:
+            return "BULLISH", above_zero
+        if macd < signal:
+            return "BEARISH", above_zero
+        return "NEUTRAL", above_zero
     except Exception:
-        return "NEUTRAL"
+        return "NEUTRAL", False
 
 
-def _trend_bb(close_cur: float, bb_upper: float, bb_lower: float, bb_mid: float) -> str:
-    """UPPER_BREAK / LOWER_BREAK / ABOVE_MID / BELOW_MID / NEUTRAL."""
+def _trend_bb(close: pd.Series, period: int = 20, k: float = 2.0) -> tuple[str, float, float, float, float]:
+    """Returns (trend, bb_upper, bb_mid, bb_lower, bb_width). Trend per spec §3.5."""
     try:
-        if not all(np.isfinite(v) for v in [close_cur, bb_upper, bb_lower, bb_mid]):
-            return "NEUTRAL"
-        if close_cur > bb_upper:
-            return "UPPER_BREAK"
-        if close_cur < bb_lower:
-            return "LOWER_BREAK"
-        if close_cur > bb_mid:
-            return "ABOVE_MID"
-        if close_cur < bb_mid:
-            return "BELOW_MID"
-        return "NEUTRAL"
+        n = len(close)
+        if n < period:
+            return "NEUTRAL", _NAN, _NAN, _NAN, _NAN
+        window = close.iloc[-period:]
+        mid = float(window.mean())
+        std = float(window.std(ddof=0))
+        upper = mid + k * std
+        lower = mid - k * std
+        width = (upper - lower) / mid if mid != 0 else _NAN
+        cur = float(close.iloc[-1])
+        # SQUEEZE / EXPANSION: bb_width in bottom/top 20% of trailing 120-bar distribution
+        squeeze = False
+        expansion = False
+        if n >= 120 and np.isfinite(width):
+            widths = []
+            for i in range(max(0, n - 120), n):
+                sl = close.iloc[max(0, i - period + 1):i + 1]
+                if len(sl) >= period:
+                    m = float(sl.mean())
+                    s = float(sl.std(ddof=0))
+                    w = (m + k*s - (m - k*s)) / m if m != 0 else _NAN
+                    if np.isfinite(w):
+                        widths.append(w)
+            if len(widths) >= 20:
+                pct = sum(1 for w in widths if w < width) / len(widths)
+                squeeze = pct <= 0.20
+                expansion = pct >= 0.80
+        if cur > upper:
+            return "UPPER_BREAK", upper, mid, lower, width
+        if cur < lower:
+            return "LOWER_BREAK", upper, mid, lower, width
+        if squeeze:
+            return "SQUEEZE", upper, mid, lower, width
+        if expansion:
+            return "EXPANSION", upper, mid, lower, width
+        return "NEUTRAL", upper, mid, lower, width
     except Exception:
-        return "NEUTRAL"
+        return "NEUTRAL", _NAN, _NAN, _NAN, _NAN
 
 
 def _trend_cmf(cmf: float) -> str:
-    """ACCUM (>0.05) / DISTRIB (<-0.05) / NEUTRAL."""
+    """Per spec §3.6."""
     try:
-        if not np.isfinite(cmf):
-            return "NEUTRAL"
-        if cmf > 0.05:
-            return "ACCUM"
-        if cmf < -0.05:
-            return "DISTRIB"
+        if not np.isfinite(cmf): return "NEUTRAL"
+        if cmf > 0.10:  return "STRONG_ACCUM"
+        if cmf > 0.05:  return "ACCUM"
+        if cmf < -0.10: return "STRONG_DIST"
+        if cmf < -0.05: return "DIST"
         return "NEUTRAL"
     except Exception:
         return "NEUTRAL"
 
 
-def _trend_volume(vol_z: float) -> str:
-    """HIGH (z>=2) / LOW (z<=-1) / NORMAL."""
+def _trend_volume(volume: pd.Series, close: pd.Series, lookback: int = 60) -> tuple[str, bool, bool]:
+    """Returns (trend, vol_confirms_up, vol_confirms_down). Per spec §3.7."""
     try:
-        if not np.isfinite(vol_z):
-            return "NORMAL"
-        if vol_z >= 2:
-            return "HIGH"
-        if vol_z <= -1:
-            return "LOW"
-        return "NORMAL"
+        n = len(volume)
+        if n < 2:
+            return "NORMAL", False, False
+        recent_vol = float(volume.iloc[-1])
+        window = volume.iloc[-lookback:] if n >= lookback else volume
+        vol_pct = float((window < recent_vol).sum()) / max(1, len(window))
+        ret_1 = (float(close.iloc[-1]) / float(close.iloc[-2]) - 1) if len(close) >= 2 else 0.0
+        trend = "SURGE" if vol_pct >= 0.85 else ("DRY" if vol_pct <= 0.15 else "NORMAL")
+        vol_confirms_up   = (ret_1 > 0) and (vol_pct >= 0.70)
+        vol_confirms_down = (ret_1 < 0) and (vol_pct >= 0.70)
+        return trend, vol_confirms_up, vol_confirms_down
     except Exception:
-        return "NORMAL"
+        return "NORMAL", False, False
 
 
 def _trend_obv(obv_cur: float, obv_sma20: float, obv_slope: float) -> str:
@@ -527,12 +588,12 @@ _REGIME_MATRIX = {
 
 
 def _adx_regime(adx: float) -> str:
-    """TRENDING (>=25) / WEAK_TREND (>=15) / RANGING."""
+    """TRENDING (>=25) / WEAK_TREND (>=20) / RANGING."""
     if not np.isfinite(adx):
         return "RANGING"
     if adx >= 25:
         return "TRENDING"
-    if adx >= 15:
+    if adx >= 20:
         return "WEAK_TREND"
     return "RANGING"
 
@@ -600,18 +661,46 @@ def _obv_series(close: pd.Series, volume: pd.Series) -> pd.Series:
         return pd.Series(0.0, index=close.index)
 
 
+def _macd_line_series(close: pd.Series) -> pd.Series:
+    """Full MACD line: EMA12 - EMA26."""
+    try:
+        return _ema(close, 12) - _ema(close, 26)
+    except Exception:
+        return pd.Series(_NAN, index=close.index)
+
+
+def _atr14_series(high: pd.Series, low: pd.Series, close: pd.Series) -> pd.Series:
+    """Full 14-bar ATR series (Wilder)."""
+    try:
+        prev_close = close.shift(1)
+        tr = pd.concat([
+            high - low,
+            (high - prev_close).abs(),
+            (low - prev_close).abs(),
+        ], axis=1).max(axis=1)
+        return tr.ewm(alpha=1.0 / 14, adjust=False, min_periods=14).mean()
+    except Exception:
+        return pd.Series(_NAN, index=close.index)
+
+
 def _detect_divergence_active(
     close: pd.Series,
     indicator: pd.Series,
-    div_type: str,   # "reg_bull" | "reg_bear"
+    div_type: str,   # "reg_bull" | "reg_bear" | "hid_bull" | "hid_bear"
     sma20: pd.Series,
     expiry_bars: int = 20,
     effect_bars: int = 15,
     pivot_left: int = 5,
     pivot_right: int = 5,
     quality_fn=None,
+    atr_series: pd.Series | None = None,
+    close_series: pd.Series | None = None,
 ) -> list[dict]:
-    """Returns list of currently-active divergence events."""
+    """Returns list of currently-active divergence events.
+    Supports regular divergences (reg_bull, reg_bear) and hidden divergences
+    (hid_bull, hid_bear). Pass atr_series for ATR-normalized price move threshold.
+    Pass close_series (same as close, for hidden div SMA50 slope check).
+    """
     try:
         close_arr = close.values
         ind_arr = indicator.values
@@ -620,8 +709,11 @@ def _detect_divergence_active(
         if n < pivot_left + pivot_right + 2:
             return []
 
+        is_hidden = div_type in ("hid_bull", "hid_bear")
+        is_bull = div_type in ("reg_bull", "hid_bull")
+
         # Find pivot indices for the relevant type
-        if div_type == "reg_bull":
+        if is_bull:
             _, pivot_idxs = _find_pivots(close, left=pivot_left, right=pivot_right)
         else:
             pivot_idxs, _ = _find_pivots(close, left=pivot_left, right=pivot_right)
@@ -645,27 +737,70 @@ def _detect_divergence_active(
             if not (np.isfinite(c1) and np.isfinite(c2) and np.isfinite(ind1) and np.isfinite(ind2)):
                 continue
 
+            # ATR-normalised price move must be >= 0.25 (spec §4.3)
+            if atr_series is not None:
+                atr_at_p2 = float(atr_series.iloc[p2]) if p2 < len(atr_series) else _NAN
+                if np.isfinite(atr_at_p2) and atr_at_p2 > 0:
+                    price_move_norm = abs(c2 - c1) / atr_at_p2
+                    if price_move_norm < 0.25:
+                        continue
+
             # Divergence condition
             if div_type == "reg_bull":
                 price_div = c2 < c1          # lower low in price
                 ind_div = ind2 > ind1         # higher low in indicator
-            else:
+            elif div_type == "reg_bear":
                 price_div = c2 > c1          # higher high in price
                 ind_div = ind2 < ind1         # lower high in indicator
+            elif div_type == "hid_bull":
+                # Hidden bullish: price higher low + indicator lower low
+                price_div = c2 > c1
+                ind_div = ind2 < ind1
+            else:  # hid_bear
+                # Hidden bearish: price lower high + indicator higher high
+                price_div = c2 < c1
+                ind_div = ind2 > ind1
 
             if not (price_div and ind_div):
                 continue
 
-            # Quality check
+            # Hidden divergence: check SMA50 slope direction
+            if is_hidden and close_series is not None:
+                cs = close_series
+                cs_n = len(cs)
+                if cs_n >= 60:
+                    ma50_now = float(cs.iloc[-50:].mean())
+                    ma50_prev = float(cs.iloc[-60:-10].mean())
+                    slope_up = ma50_now > ma50_prev
+                    slope_down = ma50_now < ma50_prev
+                    if div_type == "hid_bull" and not slope_up:
+                        continue
+                    if div_type == "hid_bear" and not slope_down:
+                        continue
+
+            # Quality check — pass ind value at p1 (per Fix 10)
             if quality_fn is not None:
-                quality = quality_fn(ind2)
+                quality = quality_fn(ind1)
             else:
                 quality = "standard"
 
-            # State machine from p2 forward
+            if is_hidden:
+                # Hidden divergence: immediate confirmed state (no state machine)
+                results.append({
+                    "type": div_type,
+                    "state": "confirmed",
+                    "p1_idx": p1,
+                    "p2_idx": p2,
+                    "confirmed_idx": p2,
+                    "quality": quality,
+                    "ind_p1": ind1,
+                    "ind_p2": ind2,
+                })
+                continue
+
+            # Regular divergence: state machine from p2 forward
             state = "pending"
             confirmed_idx = None
-            bars_since_p2 = n - 1 - p2
 
             for j in range(p2 + 1, n):
                 cj = close_arr[j]
@@ -716,31 +851,81 @@ def _detect_divergence_active(
 def _run_divergence_suite(
     close: pd.Series, high: pd.Series, low: pd.Series, volume: pd.Series, sma20: pd.Series
 ) -> dict[str, list[dict]]:
-    """Run divergence detection for RSI, macd_hist, cmf, obv. Returns {name: [events]}."""
+    """Run divergence detection for RSI, MACD line, MACD hist, CMF, OBV.
+    Both regular and hidden divergences. Returns {name: [events]}.
+    """
     try:
         rsi = _rsi_series(close)
+        macd_line = _macd_line_series(close)
         macd_h = _macd_hist_series(close)
         cmf = _cmf_series(high, low, close, volume)
         obv = _obv_series(close, volume)
+        atr = _atr14_series(high, low, close)
 
-        def rsi_quality(val):
-            if np.isfinite(val) and val < 30:
-                return "strong"
-            return "standard"
+        # Quality functions — receive ind value at p1 (Fix 10)
+        def rsi_bull_quality(val_at_p1):
+            return "strong" if np.isfinite(val_at_p1) and val_at_p1 < 30 else "standard"
+
+        def rsi_bear_quality(val_at_p1):
+            return "strong" if np.isfinite(val_at_p1) and val_at_p1 > 70 else "standard"
+
+        def macd_line_bull_quality(val_at_p1):
+            return "strong" if np.isfinite(val_at_p1) and val_at_p1 < 0 else "standard"
+
+        def macd_line_bear_quality(val_at_p1):
+            return "strong" if np.isfinite(val_at_p1) and val_at_p1 > 0 else "standard"
+
+        def macd_hist_bull_quality(val_at_p1):
+            return "strong" if np.isfinite(val_at_p1) and val_at_p1 < 0 else "standard"
+
+        def macd_hist_bear_quality(val_at_p1):
+            return "strong" if np.isfinite(val_at_p1) and val_at_p1 > 0 else "standard"
+
+        def cmf_bull_quality(val_at_p1):
+            return "strong" if np.isfinite(val_at_p1) and val_at_p1 < -0.05 else "standard"
+
+        def cmf_bear_quality(val_at_p1):
+            return "strong" if np.isfinite(val_at_p1) and val_at_p1 > 0.05 else "standard"
+
+        def obv_quality(_val):
+            return "standard"  # unbounded, no natural extreme zone per spec §4.4
+
+        # (name, indicator, div_type, quality_fn, include_hidden)
+        # MACD line: no hidden divergence per spec
+        # OBV: no quality boost for hidden per spec
+        suite = [
+            # RSI: reg + hidden
+            ("RSI_reg_bull",  rsi,       "reg_bull",  rsi_bull_quality,       True),
+            ("RSI_reg_bear",  rsi,       "reg_bear",  rsi_bear_quality,       True),
+            ("RSI_hid_bull",  rsi,       "hid_bull",  rsi_bull_quality,       False),
+            ("RSI_hid_bear",  rsi,       "hid_bear",  rsi_bear_quality,       False),
+            # MACD line: reg only
+            ("MACDLine_reg_bull", macd_line, "reg_bull", macd_line_bull_quality, False),
+            ("MACDLine_reg_bear", macd_line, "reg_bear", macd_line_bear_quality, False),
+            # MACD hist: reg + hidden
+            ("MACDHist_reg_bull", macd_h,  "reg_bull", macd_hist_bull_quality, True),
+            ("MACDHist_reg_bear", macd_h,  "reg_bear", macd_hist_bear_quality, True),
+            ("MACDHist_hid_bull", macd_h,  "hid_bull", macd_hist_bull_quality, False),
+            ("MACDHist_hid_bear", macd_h,  "hid_bear", macd_hist_bear_quality, False),
+            # CMF: reg + hidden
+            ("CMF_reg_bull",  cmf,       "reg_bull",  cmf_bull_quality,       True),
+            ("CMF_reg_bear",  cmf,       "reg_bear",  cmf_bear_quality,       True),
+            ("CMF_hid_bull",  cmf,       "hid_bull",  cmf_bull_quality,       False),
+            ("CMF_hid_bear",  cmf,       "hid_bear",  cmf_bear_quality,       False),
+            # OBV: reg + hidden (no quality boost for hidden — obv_quality always "standard")
+            ("OBV_reg_bull",  obv,       "reg_bull",  obv_quality,            True),
+            ("OBV_reg_bear",  obv,       "reg_bear",  obv_quality,            True),
+            ("OBV_hid_bull",  obv,       "hid_bull",  obv_quality,            False),
+            ("OBV_hid_bear",  obv,       "hid_bear",  obv_quality,            False),
+        ]
 
         results = {}
-        for name, indicator, div_type, q_fn in [
-            ("RSI_bull", rsi, "reg_bull", rsi_quality),
-            ("RSI_bear", rsi, "reg_bear", None),
-            ("MACD_bull", macd_h, "reg_bull", None),
-            ("MACD_bear", macd_h, "reg_bear", None),
-            ("CMF_bull", cmf, "reg_bull", None),
-            ("CMF_bear", cmf, "reg_bear", None),
-            ("OBV_bull", obv, "reg_bull", None),
-            ("OBV_bear", obv, "reg_bear", None),
-        ]:
+        for name, indicator, div_type, q_fn, _inc in suite:
             results[name] = _detect_divergence_active(
-                close, indicator, div_type, sma20, quality_fn=q_fn
+                close, indicator, div_type, sma20,
+                quality_fn=q_fn,
+                atr_series=atr,
+                close_series=close,
             )
         return results
     except Exception:
@@ -754,10 +939,12 @@ def _run_divergence_suite(
 def _score_technical(
     trend_price: str,
     trend_macd: str,
+    macd_above_zero: bool,
     trend_rsi: str,
     trend_bb: str,
     trend_cmf: str,
-    trend_volume: str,
+    vol_confirms_up: bool,
+    vol_confirms_down: bool,
     trend_obv: str,
     trend_avwap: str,
     rsi_val: float,
@@ -773,29 +960,40 @@ def _score_technical(
 ) -> dict:
     """Returns comprehensive scoring dict with all components for commentary."""
     try:
-        # --- Trend score ---
+        # --- Trend score (master spec §5) ---
         trend_score = 0.0
 
-        if trend_price == "UP":
-            trend_score += 1.5
-        elif trend_price == "DOWN":
-            trend_score -= 1.5
+        # Price: 7 states
+        trend_score += {
+            "STRONG_UP": 3.0, "UP": 1.5, "UP_EXHAUSTING": 0.75,
+            "NEUTRAL": 0.0,
+            "DOWN_EXHAUSTING": -0.75, "DOWN": -1.5, "STRONG_DOWN": -3.0,
+        }.get(trend_price, 0.0)
 
-        if trend_macd == "BULLISH":
-            trend_score += 2.0
-        elif trend_macd == "BEARISH":
-            trend_score -= 2.0
+        # MACD: steady state + cross bonus + above-zero bonus
+        macd_steady = {
+            "BULLISH": 2.0, "BEARISH": -2.0,
+            "BULL_CROSS": 2.0, "BEAR_CROSS": -2.0,
+            "NEUTRAL": 0.0,
+        }.get(trend_macd, 0.0)
+        macd_cross_bonus = 1.5 if trend_macd == "BULL_CROSS" else (-1.5 if trend_macd == "BEAR_CROSS" else 0.0)
+        trend_score += macd_steady + macd_cross_bonus
+        trend_score += 0.5 if macd_above_zero else -0.5
 
-        if trend_cmf == "ACCUM":
-            trend_score += 0.5
-        elif trend_cmf == "DISTRIB":
-            trend_score -= 0.5
+        # CMF: 4 states
+        trend_score += {
+            "STRONG_ACCUM": 1.0, "ACCUM": 0.5,
+            "DIST": -0.5, "STRONG_DIST": -1.0,
+            "NEUTRAL": 0.0,
+        }.get(trend_cmf, 0.0)
 
+        # OBV
         if trend_obv == "BULLISH":
             trend_score += 1.0
         elif trend_obv == "BEARISH":
             trend_score -= 1.0
 
+        # aVWAP
         avwap_contrib = {
             "RECLAIM_HIGH": 1.5, "BREAKDOWN_LOW": -1.5,
             "ABOVE_BOTH": 0.75, "BELOW_BOTH": -0.75,
@@ -803,12 +1001,11 @@ def _score_technical(
         }.get(trend_avwap, 0.0)
         trend_score += avwap_contrib
 
-        # Volume: confirming only
-        if trend_volume == "HIGH":
-            if trend_score > 0:
-                trend_score += 0.25
-            elif trend_score < 0:
-                trend_score -= 0.25
+        # Volume: vol_confirms_up/down flags (±0.5), directionally weighted
+        if vol_confirms_up:
+            trend_score += 0.5
+        if vol_confirms_down:
+            trend_score -= 0.5
 
         # --- Convergence multiplier ---
         conv_mult = 1.0
@@ -825,31 +1022,34 @@ def _score_technical(
 
         base_trend = trend_score * conv_mult
 
-        # --- Mean reversion score ---
+        # --- Mean reversion score (master spec §5.3) ---
+        # RSI: BULLISH zone (20-30) = +1; BEARISH zone (70-80) = -1
+        #      OVERSOLD (≤20) = -0.5 (extreme, fade the reversion signal); OVERBOUGHT (≥80) = +0.5
+        # BB: LOWER_BREAK = +0.5; UPPER_BREAK = -0.5
         mr_score = 0.0
         rsi_label = "neutral"
         bb_label = "neutral"
 
         if np.isfinite(rsi_val):
-            if rsi_val < 30:
-                mr_score += 1.5
+            if rsi_val <= 20:
+                mr_score -= 0.5
+                rsi_label = "extreme-oversold"
+            elif rsi_val < 30:
+                mr_score += 1.0
                 rsi_label = "oversold"
-            elif rsi_val < 40:
-                mr_score += 0.75
-                rsi_label = "near-oversold"
+            elif rsi_val >= 80:
+                mr_score += 0.5
+                rsi_label = "extreme-overbought"
             elif rsi_val > 70:
-                mr_score -= 1.5
+                mr_score -= 1.0
                 rsi_label = "overbought"
-            elif rsi_val > 60:
-                mr_score -= 0.75
-                rsi_label = "near-overbought"
 
         if all(np.isfinite(v) for v in [close_cur, bb_upper, bb_lower]):
             if close_cur > bb_upper:
-                mr_score -= 1.0
+                mr_score -= 0.5
                 bb_label = "upper-break"
             elif close_cur < bb_lower:
-                mr_score += 1.0
+                mr_score += 0.5
                 bb_label = "lower-break"
 
         mr_weight = _REGIME_MATRIX.get(adx_regime, _REGIME_MATRIX["RANGING"]).get(
@@ -857,20 +1057,27 @@ def _score_technical(
         )
         mr_contribution = mr_weight * mr_score
 
-        # --- Divergence score ---
+        # --- Divergence score (master spec §5.4) ---
+        # Regular confirmed: ±2.0; hidden confirmed: ±1.0; "strong" quality bonus: +0.5
+        # ≥2 bull confirmed: +1.0 stacking bonus; ≥2 bear: -1.0
         div_score = 0.0
         bull_confirmed = 0
         bear_confirmed = 0
 
         for name, events in div_results.items():
             for ev in events:
-                if ev["state"] == "confirmed":
-                    if ev["type"] == "reg_bull":
-                        div_score += 2.0
-                        bull_confirmed += 1
-                    else:
-                        div_score -= 2.0
-                        bear_confirmed += 1
+                if ev.get("state") != "confirmed":
+                    continue
+                is_bull_type = ev["type"] in ("reg_bull", "hid_bull")
+                is_hidden = ev["type"].startswith("hid_")
+                base = 1.0 if is_hidden else 2.0
+                quality_bonus = 0.5 if ev.get("quality") == "strong" else 0.0
+                if is_bull_type:
+                    div_score += base + quality_bonus
+                    bull_confirmed += 1
+                else:
+                    div_score -= base + quality_bonus
+                    bear_confirmed += 1
 
         if bull_confirmed >= 2:
             div_score += 1.0
@@ -881,18 +1088,18 @@ def _score_technical(
         raw = base_trend + mr_contribution + div_score
         score = max(-10.0, min(10.0, raw))
 
-        if score >= 7:
+        # Recommendation without hysteresis (hysteresis applied in compute_stage5_5)
+        if score >= 5.5:
             rec = "STRONG_BUY"
-        elif score >= 4:
+        elif score >= 2.5:
             rec = "BUY"
-        elif score <= -7:
+        elif score <= -5.5:
             rec = "STRONG_SELL"
-        elif score <= -4:
+        elif score <= -2.5:
             rec = "SELL"
         else:
             rec = "HOLD"
 
-        # Confidence: scale from 0 to 1 based on abs(score)/10
         conf = min(1.0, abs(score) / 10.0)
 
         return {
@@ -921,6 +1128,40 @@ def _score_technical(
             "div_score": 0.0, "bull_confirmed": 0, "bear_confirmed": 0,
             "rsi_label": "neutral", "bb_label": "neutral", "avwap_contrib": 0.0,
         }
+
+
+# ============================================================================
+# Section H-0 — Hysteresis (Schmitt trigger)
+# ============================================================================
+
+def _apply_hysteresis(score: float, prev_rec: str | None) -> str:
+    """Schmitt-trigger hysteresis per master spec §5.5.
+
+    Enter thresholds:  STRONG_BUY ≥5.5,  BUY ≥2.5,  SELL ≤-2.5,  STRONG_SELL ≤-5.5
+    Exit  thresholds:  STRONG_BUY <4.5,  BUY <1.5,  SELL >-1.5,   STRONG_SELL >-4.5
+    HOLD is the default when no other state applies.
+    """
+    if prev_rec is None:
+        prev_rec = "HOLD"
+
+    if prev_rec == "STRONG_BUY":
+        return "STRONG_BUY" if score >= 4.5 else ("BUY" if score >= 1.5 else ("HOLD" if score > -2.5 else ("SELL" if score > -5.5 else "STRONG_SELL")))
+    if prev_rec == "BUY":
+        return "STRONG_BUY" if score >= 5.5 else ("BUY" if score >= 1.5 else ("HOLD" if score > -2.5 else ("SELL" if score > -5.5 else "STRONG_SELL")))
+    if prev_rec == "SELL":
+        return "STRONG_SELL" if score <= -5.5 else ("SELL" if score <= -1.5 else ("HOLD" if score < 2.5 else ("BUY" if score < 5.5 else "STRONG_BUY")))
+    if prev_rec == "STRONG_SELL":
+        return "STRONG_SELL" if score <= -4.5 else ("SELL" if score <= -1.5 else ("HOLD" if score < 2.5 else ("BUY" if score < 5.5 else "STRONG_BUY")))
+    # HOLD: use standard enter thresholds
+    if score >= 5.5:
+        return "STRONG_BUY"
+    if score >= 2.5:
+        return "BUY"
+    if score <= -5.5:
+        return "STRONG_SELL"
+    if score <= -2.5:
+        return "SELL"
+    return "HOLD"
 
 
 # ============================================================================
@@ -958,16 +1199,7 @@ def _build_technical_commentary(
         hist_val = float((macd_line - signal_line).iloc[-1])
         rsi_val = _rsi(close, 14)
         cmf_val = _cmf(high, low, close, volume, 20)
-        bb_upper, bb_mid, bb_lower, bb_width = _bollinger(close, 20, 2.0)
         close_cur = float(close.iloc[-1])
-
-        # Volume z-score (20-bar)
-        if len(volume) >= 20:
-            vol_mean = float(volume.iloc[-20:].mean())
-            vol_std = float(volume.iloc[-20:].std(ddof=1))
-            vol_z = (float(volume.iloc[-1]) - vol_mean) / vol_std if vol_std > 0 else 0.0
-        else:
-            vol_z = _NAN
 
         # Additional indicators
         adx_val, pdi_val, mdi_val = _adx(high, low, close)
@@ -982,13 +1214,23 @@ def _build_technical_commentary(
         # SMA20 for divergence
         sma20_series = close.rolling(20, min_periods=20).mean()
 
-        # Trend classifications
-        t_price = _trend_price(close)
-        t_macd = _trend_macd(macd_val, signal_val, hist_val)
+        # ATR14 series for trend_price slope and divergence ATR filter
+        atr14_s = _atr14_series(high, low, close)
+
+        # Trend classifications (new signatures — note unpacking for tuple-returning fns)
+        t_price = _trend_price(close, atr14_s)
+
+        macd_line_prev = float(macd_line.iloc[-2]) if len(macd_line) >= 2 else None
+        signal_line_prev = float(signal_line.iloc[-2]) if len(signal_line) >= 2 else None
+        t_macd, macd_above_zero = _trend_macd(
+            macd_val, signal_val, hist_val,
+            macd_prev=macd_line_prev, signal_prev=signal_line_prev,
+        )
+
         t_rsi = _trend_rsi(rsi_val, close, 14)
-        t_bb = _trend_bb(close_cur, bb_upper, bb_lower, bb_mid)
+        t_bb, bb_upper, bb_mid, bb_lower, bb_width = _trend_bb(close)
         t_cmf = _trend_cmf(cmf_val)
-        t_vol = _trend_volume(vol_z)
+        t_vol, vol_confirms_up, vol_confirms_down = _trend_volume(volume, close)
         t_obv = _trend_obv(obv_cur, obv_sma20, obv_slope)
 
         # prev_close for aVWAP crossing
@@ -1007,7 +1249,9 @@ def _build_technical_commentary(
 
         # Score
         scoring = _score_technical(
-            t_price, t_macd, t_rsi, t_bb, t_cmf, t_vol, t_obv, t_avwap,
+            t_price, t_macd, macd_above_zero, t_rsi, t_bb, t_cmf,
+            vol_confirms_up, vol_confirms_down,
+            t_obv, t_avwap,
             rsi_val, close_cur, bb_upper, bb_lower, bb_mid,
             close, macd_hist_s,
             adx_reg, vol_reg, div_results,
@@ -1374,12 +1618,80 @@ def compute_stage5_5(
     ticker_config: dict,
     symbol: str = "",
     ivx_30d: float = _NAN,
+    prev_tech_rec: str | None = None,
 ) -> dict:
     """Full Stage 5.5 feature slice: technical scalars + fundamental scalars +
-    commentary strings. Pure with respect to the network."""
+    commentary strings + hysteresis-gated recommendation.
+
+    `prev_tech_rec` is yesterday's tech_recommendation (str) — pass None on
+    first run; the function reads it from storage if not supplied."""
     out = {}
-    out.update(compute_technicals(history, asof, symbol=symbol, ivx_30d=ivx_30d))
+    tech = compute_technicals(history, asof, symbol=symbol, ivx_30d=ivx_30d)
+    out.update(tech)
     out.update(compute_fundamentals(raw_bundle, ticker_config, asof, symbol=symbol))
+
+    # Extract raw score and apply hysteresis
+    commentary = tech.get("technical_commentary", "")
+    tech_score = _NAN
+    raw_rec = "HOLD"
+    if commentary:
+        # Pull score from the already-computed scoring inside the commentary build.
+        # Re-compute to extract the structured scoring dict cleanly.
+        try:
+            if history is not None and not history.empty:
+                h = history[history.index <= pd.Timestamp(asof)]
+                if not h.empty and len(h) >= 26:
+                    close = h["Close"].astype(float)
+                    high_s = h["High"].astype(float)
+                    low_s  = h["Low"].astype(float)
+                    vol_s  = h["Volume"].astype(float)
+                    macd_l = _ema(close, 12) - _ema(close, 26)
+                    sig_l  = _ema(macd_l, 9)
+                    mv = float(macd_l.iloc[-1])
+                    sv = float(sig_l.iloc[-1])
+                    hv = float((macd_l - sig_l).iloc[-1])
+                    rv = _rsi(close, 14)
+                    cv = _cmf(high_s, low_s, close, vol_s, 20)
+                    close_cur = float(close.iloc[-1])
+                    adx_v, _, _ = _adx(high_s, low_s, close)
+                    obv_c, obv_s, obv_sl = _obv_sma(close, vol_s)
+                    rv20 = _rv_20(close)
+                    avwap_h, avwap_l, dist_h, dist_l, _, _ = _anchored_vwap(close, high_s, low_s, vol_s)
+                    iv_pct = _iv_percentile(symbol, asof, ivx_30d) if symbol else _NAN
+                    _, _, _ = _iv_context(ivx_30d, rv20, iv_pct)
+                    sma20_s = close.rolling(20, min_periods=20).mean()
+                    atr14_s = _atr14_series(high_s, low_s, close)
+                    t_price = _trend_price(close, atr14_s)
+                    ml_prev = float(macd_l.iloc[-2]) if len(macd_l) >= 2 else None
+                    sl_prev = float(sig_l.iloc[-2]) if len(sig_l) >= 2 else None
+                    t_macd, macd_az = _trend_macd(mv, sv, hv, macd_prev=ml_prev, signal_prev=sl_prev)
+                    t_rsi = _trend_rsi(rv, close, 14)
+                    t_bb, bb_upper, bb_mid, bb_lower, _ = _trend_bb(close)
+                    t_cmf = _trend_cmf(cv)
+                    t_vol, vcu, vcd = _trend_volume(vol_s, close)
+                    t_obv = _trend_obv(obv_c, obv_s, obv_sl)
+                    prev_c = float(close.iloc[-2]) if len(close) >= 2 else None
+                    t_avwap = _trend_avwap(close_cur, avwap_h, avwap_l, dist_h, dist_l, prev_c)
+                    adx_reg = _adx_regime(adx_v)
+                    vol_reg = _vol_regime(iv_pct)
+                    div_res = _run_divergence_suite(close, high_s, low_s, vol_s, sma20_s)
+                    mh_s = macd_l - sig_l
+                    sc = _score_technical(
+                        t_price, t_macd, macd_az, t_rsi, t_bb, t_cmf,
+                        vcu, vcd, t_obv, t_avwap,
+                        rv, close_cur, bb_upper, bb_lower, bb_mid,
+                        close, mh_s, adx_reg, vol_reg, div_res,
+                    )
+                    tech_score = sc["score"]
+                    raw_rec = sc["rec"]
+        except Exception:
+            pass
+
+    # Apply hysteresis
+    tech_recommendation = _apply_hysteresis(tech_score, prev_tech_rec)
+
+    out["tech_score"] = tech_score
+    out["tech_recommendation"] = tech_recommendation
     return out
 
 
