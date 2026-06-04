@@ -16,6 +16,7 @@ from __future__ import annotations
 from pathlib import Path
 from datetime import date as date_cls
 import logging
+import math
 import pandas as pd
 
 logger = logging.getLogger(__name__)
@@ -115,6 +116,34 @@ def write_positions(positions: list[dict]) -> Path:
 
 # ---- Option-chain snapshots (Stage 4 OI-delta needs yesterday's chain) ------
 CHAINS_DIR = DATA_DIR / "chains"
+UPWARD_WATCHLIST_DIR   = DATA_DIR / "Upward-Watchlist"
+DOWNWARD_WATCHLIST_DIR = DATA_DIR / "Downward-Watchlist"
+
+
+def write_techsignal_ticket(symbol: str, d: date_cls, content: str) -> Path:
+    """Persist a Stage 5.5 technical-signal ticket per ticker.
+
+    Path: data/chains/ticker=XXX/tickets/YYYY-MM-DD_XXX_techsignal.md
+    """
+    ticket_dir = CHAINS_DIR / f"ticker={symbol}" / "tickets"
+    ticket_dir.mkdir(parents=True, exist_ok=True)
+    path = ticket_dir / f"{d.isoformat()}_{symbol}_techsignal.md"
+    path.write_text(content)
+    return path
+
+
+def write_watchlist_ticket(symbol: str, d: date_cls, content: str, direction: str) -> Path:
+    """Persist a tech-signal ticket in the appropriate watchlist directory.
+
+    direction: "upward" or "downward"
+    Path: data/{Upward,Downward}-Watchlist/YYYY-MM-DD/YYYY-MM-DD_XXX_techsignal.md
+    """
+    base = UPWARD_WATCHLIST_DIR if direction == "upward" else DOWNWARD_WATCHLIST_DIR
+    day_dir = base / d.isoformat()
+    day_dir.mkdir(parents=True, exist_ok=True)
+    path = day_dir / f"{d.isoformat()}_{symbol}_techsignal.md"
+    path.write_text(content)
+    return path
 
 
 def _chain_path(symbol: str, d: date_cls) -> Path:
@@ -150,3 +179,64 @@ def read_chain_snapshot(symbol: str, asof: date_cls) -> pd.DataFrame | None:
         symbol, asof,
     )
     return None
+
+
+# ---- Fundamentals evolution cache (Stage 5.5, Feature 3) --------------------
+# Append-only, dated snapshots of the fundamental/analyst scalar payloads — but a
+# new snapshot is written ONLY when the payload differs from the latest cached one.
+# Two independent buckets ("financials" and "analyst") so a change in analyst
+# coverage doesn't rewrite the (unchanged) financials, and vice versa. Stored as
+# JSON (small flat dicts, like positions.json) and kept forever until the PM
+# deletes them. This versioned history is the substrate the next Stage 5.5 build
+# uses to narrate how analyst views have evolved.
+FUNDAMENTALS_DIR = DATA_DIR / "fundamentals"
+
+
+def _fund_dir(symbol: str, bucket: str) -> Path:
+    return FUNDAMENTALS_DIR / f"ticker={symbol}" / bucket
+
+
+def read_latest_fundamentals(symbol: str, bucket: str) -> dict | None:
+    """Most recent cached payload for (symbol, bucket), or None if none stored."""
+    import json
+    d = _fund_dir(symbol, bucket)
+    if not d.exists():
+        return None
+    files = sorted(d.glob("date=*.json"))
+    if not files:
+        return None
+    try:
+        return json.loads(files[-1].read_text())
+    except Exception as e:
+        logger.warning("Failed to read fundamentals cache %s/%s: %s", symbol, bucket, e)
+        return None
+
+
+def _payloads_equal(a: dict, b: dict) -> bool:
+    """Dict equality with NaN==NaN (so an all-NaN refetch doesn't churn the cache)."""
+    if a is None or b is None:
+        return False
+    if set(a.keys()) != set(b.keys()):
+        return False
+    for k in a:
+        va, vb = a[k], b[k]
+        if isinstance(va, float) and isinstance(vb, float) and math.isnan(va) and math.isnan(vb):
+            continue
+        if va != vb:
+            return False
+    return True
+
+
+def append_fundamentals_if_changed(symbol: str, bucket: str, payload: dict, d: date_cls) -> bool:
+    """Write a dated snapshot for (symbol, bucket) only if `payload` differs from the
+    latest cached one. Returns True if a new snapshot was written, else False."""
+    import json
+    latest = read_latest_fundamentals(symbol, bucket)
+    if _payloads_equal(latest, payload):
+        return False
+    out_dir = _fund_dir(symbol, bucket)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / f"date={d.isoformat()}.json"
+    path.write_text(json.dumps(payload, indent=2, default=str, sort_keys=True))
+    logger.info("Fundamentals cache updated: %s/%s @ %s", symbol, bucket, d)
+    return True

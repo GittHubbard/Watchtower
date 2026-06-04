@@ -56,6 +56,25 @@ def fetch_underlying_history(symbol: str, end_date: date_cls, days: int = 260) -
     return df
 
 
+def _realized_vol(close: pd.Series, window: int = 30) -> float:
+    """Annualized realized (historical) volatility over the trailing `window`
+    sessions: std of daily log returns × sqrt(252). NaN if < window+1 closes.
+
+    This is the HV leg of the IV/HV ratio (Feature 1). The IV leg (ivx_30d) is
+    computed in Stage 4; the ratio itself is formed in Stage 4 once both are known.
+    """
+    c = close.dropna()
+    if len(c) < window + 1:
+        return float("nan")
+    log_ret = np.log(c / c.shift(1)).dropna()
+    if len(log_ret) < window:
+        return float("nan")
+    sigma = float(log_ret.iloc[-window:].std())
+    if not np.isfinite(sigma):
+        return float("nan")
+    return sigma * np.sqrt(252.0)
+
+
 def _true_range(high: pd.Series, low: pd.Series, close: pd.Series) -> pd.Series:
     """Classic true range: max(H-L, |H-prev_close|, |L-prev_close|)."""
     prev_close = close.shift(1)
@@ -67,24 +86,25 @@ def _true_range(high: pd.Series, low: pd.Series, close: pd.Series) -> pd.Series:
     return tr
 
 
+_STAGE5_FEATURE_KEYS = (
+    "volume_z", "atr_pct", "atr_20d_pct", "range_expansion",
+    "close_location", "ma20_dist_pct", "ma50_dist_pct", "ma200_dist_pct",
+    "hv_30d",
+)
+
+
 def _compute_features_from_history(hist: pd.DataFrame, asof: date_cls) -> dict:
     """Given a frame with Date index and OHLCV columns, compute the Stage 5
     features as of `asof`. Returns dict; values are NaN when there's not enough
     history."""
     if hist.empty:
-        return {k: float("nan") for k in (
-            "volume_z", "atr_pct", "atr_20d_pct", "range_expansion",
-            "close_location", "ma20_dist_pct", "ma50_dist_pct", "ma200_dist_pct",
-        )}
+        return {k: float("nan") for k in _STAGE5_FEATURE_KEYS}
 
     # Slice up to and including asof
     asof_ts = pd.Timestamp(asof)
     h = hist[hist.index <= asof_ts]
     if h.empty:
-        return {k: float("nan") for k in (
-            "volume_z", "atr_pct", "atr_20d_pct", "range_expansion",
-            "close_location", "ma20_dist_pct", "ma50_dist_pct", "ma200_dist_pct",
-        )}
+        return {k: float("nan") for k in _STAGE5_FEATURE_KEYS}
 
     today = h.iloc[-1]
     close_today = float(today["Close"])
@@ -113,6 +133,9 @@ def _compute_features_from_history(hist: pd.DataFrame, asof: date_cls) -> dict:
     rng = high_today - low_today
     close_loc = (close_today - low_today) / rng if rng > 0 else float("nan")
 
+    # 30-day annualized realized vol — the HV leg of the IV/HV ratio (Feature 1)
+    hv_30d = _realized_vol(h["Close"], window=30)
+
     # Distance from moving averages
     def _ma_dist(n):
         if len(h) < n:
@@ -126,6 +149,7 @@ def _compute_features_from_history(hist: pd.DataFrame, asof: date_cls) -> dict:
         "atr_20d_pct": atr_20_pct,
         "range_expansion": range_exp,
         "close_location": close_loc,
+        "hv_30d": hv_30d,
         "ma20_dist_pct": _ma_dist(20),
         "ma50_dist_pct": _ma_dist(50),
         "ma200_dist_pct": _ma_dist(200),

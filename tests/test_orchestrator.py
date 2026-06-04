@@ -194,7 +194,8 @@ def test_run_eod_throttles_between_tickers(monkeypatch):
 
     assert summary["tickers_processed"] == 3
     assert len(sleep_calls) == 2, f"Expected 2 sleeps for 3 tickers, got {len(sleep_calls)}"
-    assert all(s == 2.0 for s in sleep_calls), f"Expected 2.0s sleeps, got {sleep_calls}"
+    # Throttle raised to 5.0s in thresholds.yaml (Feature 3 adds per-ticker fetches).
+    assert all(s == 5.0 for s in sleep_calls), f"Expected 5.0s sleeps, got {sleep_calls}"
 
 
 def test_run_eod_no_sleep_for_single_ticker(monkeypatch):

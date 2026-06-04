@@ -35,6 +35,7 @@ from . import stage2_regime as s2
 from . import stage3_level_map as s3
 from . import stage4_flow as s4
 from . import stage5_confirm as s5
+from . import stage5_5_context as s55
 from . import stage6_playbooks as s6
 from . import stage7_ticket as s7
 from . import stage8_monitor as s8
@@ -116,6 +117,7 @@ def assemble_feature_row(
     ticker_config: dict,
     r: float,
     thresholds: dict,
+    prev_tech_rec: str | None = None,
 ) -> dict:
     """Run stages 1-5 on acquired market data and return one feature row dict.
 
@@ -143,14 +145,26 @@ def assemble_feature_row(
         thresholds=thresholds,
     )
 
-    # Stage 4 — flow
+    # Stage 5 — confirmation (runs before Stage 4 so hv_30d feeds the IV/HV ratio)
+    confirm = s5.compute_confirmation(symbol, asof, history=market.get("underlying_history"))
+
+    # Stage 4 — flow (hv_30d from Stage 5 lets the IV/HV ratio + z be formed here,
+    # off the single history read compute_flow already performs)
     flow = s4.compute_flow(
         symbol=symbol, asof=asof, chain=chain, spot=spot, r=r,
         ticker_obj=market.get("ticker_obj"), prev_chain=market.get("prev_chain"),
+        hv_30d=confirm.get("hv_30d", float("nan")),
     )
 
-    # Stage 5 — confirmation
-    confirm = s5.compute_confirmation(symbol, asof, history=market.get("underlying_history"))
+    # Stage 5.5 — technical + fundamental context (Features 2 & 3). Scalars are
+    # logged; the commentary strings ride along in-memory for the ticket.
+    context = s55.compute_stage5_5(
+        history=market.get("underlying_history"), asof=asof,
+        raw_bundle=market.get("fundamentals_raw"), ticker_config=ticker_config,
+        symbol=symbol,
+        ivx_30d=flow.get("ivx_30d", float("nan")),
+        prev_tech_rec=prev_tech_rec,
+    )
 
     # Stage 1 — calendar
     flags = cal.event_flags(symbol, asof)
@@ -165,8 +179,9 @@ def assemble_feature_row(
         "regime_transition": regime.get("regime_transition"),
         "distance_to_flip_pct": regime["distance_to_flip_pct"],
         **levels,        # call_wall, put_wall, secondaries, hvl, migration, persistence, flip_level
-        **flow,          # pcr, z-scores, skew, term structure, oi deltas, new_oi_count
-        **confirm,       # volume_z, atr, ma distances, vix
+        **flow,          # pcr, z-scores, skew, term structure, oi deltas, new_oi_count, iv/hv
+        **confirm,       # volume_z, atr, ma distances, vix, hv_30d
+        **context,       # technicals + fundamentals scalars (+ stub commentary)
         **flags,         # days_to_*, within_event_window, etc.
     }
     return row
@@ -190,6 +205,18 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
     throttle_sec = float(thresholds.get("acquisition", {}).get("inter_ticker_sleep_sec", 2.0))
     logger.info("EOD run %s — %d tickers, r=%.4f, throttle=%.1fs", asof, len(symbols), r, throttle_sec)
 
+    # Transition sets for watchlist routing
+    _UPWARD_TRANSITIONS = {
+        ("HOLD", "BUY"), ("HOLD", "STRONG_BUY"), ("BUY", "STRONG_BUY"),
+    }
+    _DOWNWARD_TRANSITIONS = {
+        ("BUY", "SELL"), ("STRONG_BUY", "SELL"),
+        ("STRONG_BUY", "STRONG_SELL"), ("SELL", "STRONG_SELL"),
+    }
+
+    from datetime import timedelta as _td
+    _yesterday = asof - _td(days=1)
+
     rows: list[dict] = []
     for i, symbol in enumerate(symbols):
         if i > 0 and throttle_sec > 0:
@@ -202,9 +229,63 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
         market = acquire_market_data(symbol, asof, r)
         if market is None:
             continue
+
+        # Stage 5.5 fundamentals fetch (network) — gated by config and skipped for
+        # index ETFs, which have no meaningful fundamentals. Companion to
+        # acquire_market_data so it can be turned off independently.
+        fund_enabled = bool(thresholds.get("fundamentals", {}).get("enabled", True))
+        fundamentals_applicable = fund_enabled and tcfg.get("kind") != "index_etf"
+        if fundamentals_applicable:
+            market["fundamentals_raw"] = s55.acquire_fundamentals(symbol, market.get("ticker_obj"))
+        else:
+            market["fundamentals_raw"] = None
+
+        # Read yesterday's tech_recommendation for hysteresis
+        prev_tech_rec: str | None = None
         try:
-            row = assemble_feature_row(symbol, asof, market, tcfg, r, thresholds)
+            prev_feats = storage.read_features(_yesterday)
+            if prev_feats is not None and not prev_feats.empty and "ticker" in prev_feats.columns:
+                ticker_row = prev_feats[prev_feats["ticker"] == symbol]
+                if not ticker_row.empty and "tech_recommendation" in ticker_row.columns:
+                    val = ticker_row["tech_recommendation"].iloc[0]
+                    if isinstance(val, str) and val:
+                        prev_tech_rec = val
+        except Exception:
+            pass
+
+        try:
+            row = assemble_feature_row(symbol, asof, market, tcfg, r, thresholds, prev_tech_rec)
             rows.append(row)
+            # Persist the fundamentals/analyst evolution history (only on change).
+            if fundamentals_applicable:
+                try:
+                    analyst_payload, fin_payload = s55.split_for_cache(row)
+                    storage.append_fundamentals_if_changed(symbol, "analyst", analyst_payload, asof)
+                    storage.append_fundamentals_if_changed(symbol, "financials", fin_payload, asof)
+                except Exception as e:
+                    logger.warning("Fundamentals cache update failed for %s: %s", symbol, e)
+
+            # Write Stage 5.5 tech-signal ticket
+            try:
+                commentary = row.get("technical_commentary", "")
+                tech_rec = row.get("tech_recommendation", "HOLD")
+                tech_sc  = row.get("tech_score", float("nan"))
+                ticket_header = (
+                    f"# Technical Signal: {symbol}  {asof.isoformat()}\n\n"
+                    f"**Recommendation**: {tech_rec}  |  **Score**: {tech_sc:+.1f}\n\n"
+                )
+                ticket_body = ticket_header + (commentary or "(no commentary — insufficient history)")
+                storage.write_techsignal_ticket(symbol, asof, ticket_body)
+
+                # Watchlist routing based on recommendation transition
+                transition = (str(prev_tech_rec or "HOLD"), str(tech_rec))
+                if transition in _UPWARD_TRANSITIONS:
+                    storage.write_watchlist_ticket(symbol, asof, ticket_body, "upward")
+                elif transition in _DOWNWARD_TRANSITIONS:
+                    storage.write_watchlist_ticket(symbol, asof, ticket_body, "downward")
+            except Exception as e:
+                logger.warning("Tech-signal ticket write failed for %s: %s", symbol, e)
+
         except Exception as e:
             logger.error("Feature assembly failed for %s: %s", symbol, e)
 
@@ -242,9 +323,10 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
     # Stage 8 — monitor open positions
     alerts = _run_monitor(rows, asof, thresholds)
 
-    # Stage 9 — forward-return backfill on prior days
+    # Stage 9 — forward-return + benchmark + alpha backfill on prior days
     try:
-        backfill_forward_returns(asof)
+        benchmark = thresholds.get("backfill", {}).get("benchmark_ticker", "SPY")
+        backfill_forward_returns(asof, benchmark_ticker=benchmark)
     except Exception as e:
         logger.warning("Forward-return backfill failed: %s", e)
 

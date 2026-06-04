@@ -124,6 +124,28 @@ def _catalyst_within(features: dict, days: int) -> bool:
     return any(0 <= x <= days for x in horizons)
 
 
+def _iv_hv_richness_active(ratio: float, z: float, iv_cfg: dict) -> tuple[bool, str | None]:
+    """Decide whether options are 'rich' enough on the IV/HV ratio to act on (Feature 1).
+
+    Adaptive, mirroring the Stage 2 history pattern: once ≥20 ratio observations
+    exist (iv_hv_ratio_z is finite) we gate on z > richness_zscore_high (≈85th pct
+    for ~normal data); before then (bootstrap) we gate on the raw ratio exceeding
+    richness_ratio_bootstrap. Returns (active, note) where note explains the call
+    for the ticket.
+    """
+    z_high = float(iv_cfg.get("richness_zscore_high", 1.0))
+    boot = float(iv_cfg.get("richness_ratio_bootstrap", 1.3))
+    if np.isfinite(z):
+        if z > z_high:
+            return True, (f"IV/HV elevated (ratio {ratio:.2f}, z +{z:.2f} > {z_high:.2f}) — "
+                          f"options rich vs realized vol.")
+        return False, None
+    if np.isfinite(ratio) and ratio > boot:
+        return True, (f"IV/HV elevated (ratio {ratio:.2f} > {boot:.2f}, <20d history) — "
+                      f"options rich vs realized vol.")
+    return False, None
+
+
 # ---- Playbook A — Washout at Put Wall in Negative Gamma --------------------
 
 def evaluate_playbook_A(features: dict, ticker_config: dict, thresholds: dict) -> dict | None:
@@ -164,10 +186,18 @@ def evaluate_playbook_A(features: dict, ticker_config: dict, thresholds: dict) -
     if within_event:
         return None
 
+    # IV/HV (Feature 1): elevated fear being overpriced => higher washout conviction.
+    # Added as a strength component; NaN (insufficient history) drops out of the mean.
+    iv_hv_ratio = _f(features, "iv_hv_ratio_30d")
+    iv_hv_z = _f(features, "iv_hv_ratio_z")
+    iv_cfg = thresholds.get("iv_hv", {})
+    z_high = float(iv_cfg.get("richness_zscore_high", 1.0))
+
     strength = _strength([
         _z_component(pcr_z, flow["put_call_ratio_zscore_panic"]),
         _z_component(skew_z, flow["put_skew_zscore_high"]),
         _z_component(vol_z, confirm["volume_zscore_capitulation"]),
+        _z_component(iv_hv_z, z_high),
     ])
 
     return {
@@ -183,6 +213,7 @@ def evaluate_playbook_A(features: dict, ticker_config: dict, thresholds: dict) -
         "invalidation_level": put_wall,   # thesis wrong if we lose the put wall
         "suggested_size_pct": cfg["initial_size_pct"],
         "instrument": "shares",
+        "notes": [],
         "gates_passed": {
             "regime": regime,
             "proximity_to_put_wall_pct": proximity,
@@ -190,6 +221,8 @@ def evaluate_playbook_A(features: dict, ticker_config: dict, thresholds: dict) -
             "skew_25d_z": skew_z,
             "volume_z": vol_z,
             "vix_5d_change_pct": vix_5d,
+            "iv_hv_ratio_30d": iv_hv_ratio,
+            "iv_hv_ratio_z": iv_hv_z,
         },
     }
 
@@ -239,6 +272,7 @@ def evaluate_playbook_B(
         "invalidation_level": flip,   # thesis wrong if we fall back below the flip
         "suggested_size_pct": cfg["initial_size_pct"],
         "instrument": "shares",
+        "notes": [],
         "gates_passed": {
             "regime_transition": features.get("regime_transition"),
             "gex_ma_inflecting_up": True,
@@ -281,6 +315,19 @@ def evaluate_playbook_C(
         _z_component(term_slope, cfg["steep_contango_min_slope"]),
     ])
 
+    # IV/HV richness strength reducer (Feature 1): we don't want to pay up for
+    # call structures when options are already rich vs realized vol. Reduce — not
+    # block — conviction, and note it on the ticket.
+    iv_hv_ratio = _f(features, "iv_hv_ratio_30d")
+    iv_hv_z = _f(features, "iv_hv_ratio_z")
+    iv_cfg = thresholds.get("iv_hv", {})
+    reducer_active, iv_hv_note = _iv_hv_richness_active(iv_hv_ratio, iv_hv_z, iv_cfg)
+    notes: list[str] = []
+    if reducer_active:
+        penalty = float(iv_cfg.get("strength_penalty", 0.5))
+        strength = float(np.clip(strength * penalty, 0.0, 1.0))
+        notes.append(f"{iv_hv_note} Conviction reduced ×{penalty:g} (paying up for calls).")
+
     call_wall = _f(features, "call_wall")
     flip = _f(features, "flip_level")
     return {
@@ -297,12 +344,16 @@ def evaluate_playbook_C(
         "invalidation_level": flip,
         "suggested_size_pct": cfg["initial_size_pct"],
         "instrument": "defined_risk_calls",
+        "notes": notes,
         "gates_passed": {
             "deep_positive_streak": streak,
             "wall_persistence_days_call": call_persist,
             "term_structure_slope": term_slope,
             "catalyst_within_window": catalyst,
             "call_wall_dod_change": call_wall_dod,
+            "iv_hv_ratio_30d": iv_hv_ratio,
+            "iv_hv_ratio_z": iv_hv_z,
+            "iv_hv_reducer_applied": reducer_active,
         },
     }
 
