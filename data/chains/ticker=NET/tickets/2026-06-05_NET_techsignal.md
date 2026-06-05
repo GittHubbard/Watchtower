@@ -1,0 +1,21 @@
+# Technical Signal: NET  2026-06-05
+
+**Recommendation**: STRONG_BUY  |  **Score**: +9.8
+
+### Technical Signal: STRONG_BUY (+9.8 / confidence 98%)
+
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 33 vs -DI 18)  |  Vol: UNKNOWN (IV30 65.5%, RV20 120.5%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+7.81 = +6.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 223.45 (anchor 20 bars ago), aVWAP-low 227.32 (anchor 17 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 59: neutral  Bollinger: neutral
+
+**Divergence** (+2.0)
+- ✓ CONFIRMED reg_bull on MACDLine (quality: standard)
+
+**Score**: +7.81 + +0.00 + +2.00 = +9.81 → **+9.81**

@@ -1,0 +1,21 @@
+# Technical Signal: KO  2026-06-05
+
+**Recommendation**: HOLD  |  **Score**: -0.6
+
+### Technical Signal: HOLD (-0.6 / confidence 6%)
+
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 17 vs -DI 22)  |  Vol: UNKNOWN (IV30 23.2%, RV20 20.7%)
+**Gate**: MR weight = 0.50
+
+**Trend** (-0.62 = -0.50 × 1.25 convergence)
+- Price: UP  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 80.05 (anchor 12 bars ago), aVWAP-low 79.24 (anchor 31 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 51: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -0.62 + +0.00 + +0.00 = -0.62 → **-0.62**
