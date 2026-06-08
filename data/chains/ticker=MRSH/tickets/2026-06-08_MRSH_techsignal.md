@@ -1,0 +1,21 @@
+# Technical Signal: MRSH  2026-06-08
+
+**Recommendation**: HOLD  |  **Score**: +0.0
+
+### Technical Signal: HOLD (+0.0 / confidence 0%)
+
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 18 vs -DI 23)  |  Vol: UNKNOWN (IV30 30.8%, RV20 26.2%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+0.00 = +0.00 × 1.00 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 161.91 (anchor 13 bars ago), aVWAP-low 167.07 (anchor 40 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 48: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: +0.00 + +0.00 + +0.00 = +0.00 → **+0.00**

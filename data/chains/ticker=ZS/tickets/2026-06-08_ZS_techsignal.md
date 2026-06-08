@@ -1,0 +1,21 @@
+# Technical Signal: ZS  2026-06-08
+
+**Recommendation**: SELL  |  **Score**: -3.6
+
+### Technical Signal: SELL (-3.6 / confidence 36%)
+
+**Regime**: ADX RANGING (ADX 19, +DI 28 vs -DI 35)  |  Vol: UNKNOWN (IV30 60.7%, RV20 157.9%)
+**Gate**: MR weight = 1.00
+
+**Trend** (-6.56 = -5.25 × 1.25 convergence)
+- Price: DOWN  MACD: BEARISH  CMF: DIST
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 142.30 (anchor 42 bars ago), aVWAP-low 145.88 (anchor 26 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 41: neutral  Bollinger: neutral
+
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
+
+**Score**: -6.56 + +0.00 + +3.00 = -3.56 → **-3.56**
