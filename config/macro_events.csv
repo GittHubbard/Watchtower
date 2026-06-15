@@ -1,14 +1,4 @@
 date,event
-2026-06-10,CPI
-2026-06-10,Core Inflation Rate MoM
-2026-06-10,Core Inflation Rate YoY
-2026-06-10,Inflation Rate MoM
-2026-06-10,Inflation Rate YoY
-2026-06-11,Core PPI MoM
-2026-06-11,Core PPI YoY
-2026-06-11,Initial Jobless Claims
-2026-06-11,PPI
-2026-06-12,Michigan Consumer Sentiment Prel
 2026-06-15,Industrial Production MoM
 2026-06-15,Industrial Production YoY
 2026-06-17,Fed Interest Rate Decision
@@ -16,3 +6,6 @@ date,event
 2026-06-17,Retail Sales MoM
 2026-06-17,Retail Sales YoY
 2026-06-18,Initial Jobless Claims
+2026-06-25,Core PCE Price Index YoY
+2026-06-25,Initial Jobless Claims
+2026-06-25,PCE Price Index YoY
