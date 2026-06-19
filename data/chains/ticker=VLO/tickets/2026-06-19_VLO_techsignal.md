@@ -1,0 +1,21 @@
+# Technical Signal: VLO  2026-06-19
+
+**Recommendation**: STRONG_SELL  |  **Score**: -5.9
+
+### Technical Signal: STRONG_SELL (-5.9 / confidence 59%)
+
+**Regime**: ADX RANGING (ADX 13, +DI 17 vs -DI 27)  |  Vol: UNKNOWN (IV30 42.4%, RV20 34.4%)
+**Gate**: MR weight = 1.00
+
+**Trend** (-5.94 = -4.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 250.40 (anchor 11 bars ago), aVWAP-low 249.46 (anchor 16 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 40: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -5.94 + +0.00 + +0.00 = -5.94 → **-5.94**
