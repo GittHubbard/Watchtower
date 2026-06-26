@@ -1,0 +1,21 @@
+# Technical Signal: NI  2026-06-26
+
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+
+**Regime**: ADX RANGING (ADX 13, +DI 26 vs -DI 17)  |  Vol: UNKNOWN (IV30 38.3%, RV20 21.0%)
+**Gate**: MR weight = 1.00
+
+**Trend** (+9.06 = +7.25 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-high 46.98 (anchor 22 bars ago), aVWAP-low 47.03 (anchor 17 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 65: neutral  Bollinger: upper-break
+
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on CMF (quality: strong)
+
+**Score**: +9.06 + -0.50 + +3.00 = +11.56 → **+10.00**
