@@ -26,9 +26,16 @@ import logging
 
 import pandas as pd
 
+from . import storage
 from .config import CONFIG_DIR
 
 logger = logging.getLogger(__name__)
+
+# Earnings dates move ~quarterly, so the persistent on-disk cache (storage) is
+# only refreshed after this many days have elapsed since the last fetch. Kept as
+# a module constant rather than a thresholds entry so event_flags' signature
+# stays untouched; override per-call via _fetch_yf_earnings(refresh_days=...).
+DEFAULT_EARNINGS_REFRESH_DAYS = 7
 
 
 # ---- Deterministic dates ----------------------------------------------------
@@ -90,32 +97,79 @@ def _load_earnings_override() -> pd.DataFrame:
     return df
 
 
-def _fetch_yf_earnings(symbol: str) -> date_cls | None:
-    """Return the next earnings date from yfinance, or None.
-
-    yfinance Ticker.calendar returns a dict. The key we care about is
-    "Earnings Date" → list[date]. If the list has two dates (Yahoo's
-    estimated range) we take the earlier one. Anything unexpected → None.
-    """
-    if symbol in _earnings_cache:
-        return _earnings_cache[symbol]
-    try:
-        import yfinance as yf  # imported lazily so module loads in network-free envs
-        cal = yf.Ticker(symbol).calendar
-    except Exception as e:
-        logger.warning("yfinance calendar fetch failed for %s: %s", symbol, e)
-        _earnings_cache[symbol] = None
-        return None
-
-    result: date_cls | None = None
+def _parse_calendar(cal) -> date_cls | None:
+    """Pull the earliest 'Earnings Date' out of a yfinance Ticker.calendar dict."""
     if isinstance(cal, dict):
         raw = cal.get("Earnings Date")
         if isinstance(raw, (list, tuple)) and raw:
             # Filter to actual dates and pick the earliest.
             dates = [d for d in raw if isinstance(d, date_cls)]
             if dates:
-                result = min(dates)
+                return min(dates)
+    return None
+
+
+def _fetch_yf_earnings(
+    symbol: str,
+    asof: date_cls | None = None,
+    refresh_days: int = DEFAULT_EARNINGS_REFRESH_DAYS,
+) -> date_cls | None:
+    """Return the next earnings date for `symbol`, or None.
+
+    Resolution order:
+      1. Per-process in-memory cache (dedupes repeated lookups in one run).
+      2. When `asof` is supplied, the persistent on-disk cache — reused as long as
+         the last fetch is within `refresh_days` of `asof`. This is what stops the
+         daily Ticker.calendar pull for data that only moves quarterly.
+      3. yfinance Ticker.calendar (network), whose result is then written back to
+         both caches. On a network failure we fall back to a stale on-disk value
+         rather than discarding a perfectly good (if old) earnings date.
+
+    `asof=None` preserves the original network-only behaviour (used by callers
+    that don't have a reference date and by the unit tests).
+    """
+    if symbol in _earnings_cache:
+        return _earnings_cache[symbol]
+
+    # On-disk TTL cache (only consulted when we have a reference date).
+    if asof is not None:
+        cached = storage.read_earnings_cache(symbol)
+        if cached and cached.get("fetched"):
+            try:
+                fetched_d = date_cls.fromisoformat(cached["fetched"])
+                if 0 <= (asof - fetched_d).days < refresh_days:
+                    ed = cached.get("earnings_date")
+                    result = date_cls.fromisoformat(ed) if ed else None
+                    _earnings_cache[symbol] = result
+                    return result
+            except (ValueError, TypeError):
+                pass  # malformed cache → fall through to a fresh fetch
+
+    try:
+        import yfinance as yf  # imported lazily so module loads in network-free envs
+        cal = yf.Ticker(symbol).calendar
+    except Exception as e:
+        logger.warning("yfinance calendar fetch failed for %s: %s", symbol, e)
+        # Prefer a stale cached date over nothing when the network is down.
+        if asof is not None:
+            cached = storage.read_earnings_cache(symbol)
+            if cached and cached.get("earnings_date"):
+                try:
+                    result = date_cls.fromisoformat(cached["earnings_date"])
+                    _earnings_cache[symbol] = result
+                    return result
+                except (ValueError, TypeError):
+                    pass
+        _earnings_cache[symbol] = None
+        return None
+
+    result = _parse_calendar(cal)
     _earnings_cache[symbol] = result
+    if asof is not None:
+        try:
+            storage.write_earnings_cache(symbol, asof, result)
+        except Exception as e:
+            logger.warning("Failed to write earnings cache for %s: %s", symbol, e)
     return result
 
 
@@ -147,7 +201,7 @@ def days_to_next_earnings(symbol: str, asof: date_cls) -> int | None:
         if not future.empty:
             return (future["date"].min() - asof).days
 
-    yf_date = _fetch_yf_earnings(symbol)
+    yf_date = _fetch_yf_earnings(symbol, asof)
     if yf_date is not None and yf_date >= asof:
         return (yf_date - asof).days
     return None

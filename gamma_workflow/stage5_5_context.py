@@ -1622,13 +1622,28 @@ def compute_fundamentals(
     ticker_config: dict,
     asof: date_cls,
     symbol: str = "",
+    cached_scalars: dict | None = None,
 ) -> dict:
     """Extract the fundamental scalar features from a raw yfinance bundle. Returns
-    all-NaN (plus empty commentary) for index ETFs or when `raw` is None."""
+    all-NaN (plus empty commentary) for index ETFs or when `raw` is None.
+
+    `cached_scalars` is the skip-day path: when `raw` is None (the network fetch
+    was gated off by the freshness TTL) but a cached scalar set is supplied, the
+    numeric features are reused verbatim and only the commentary — which is
+    transient and rebuilt from the scalars anyway — is regenerated. This yields
+    the same logged row as a live fetch on the day the values last changed.
+    """
     out = {k: _NAN for k in (ANALYST_KEYS + FINANCIAL_KEYS)}
     out["analyst_commentary"] = ""
 
-    if ticker_config.get("kind") == "index_etf" or raw is None:
+    if ticker_config.get("kind") == "index_etf":
+        return out
+
+    if raw is None:
+        if cached_scalars is not None:
+            for k in (ANALYST_KEYS + FINANCIAL_KEYS):
+                out[k] = _num(cached_scalars.get(k))
+            out["analyst_commentary"] = _build_analyst_commentary(out, symbol, asof)
         return out
 
     info = raw.get("info") or {}
@@ -1660,16 +1675,21 @@ def compute_stage5_5(
     symbol: str = "",
     ivx_30d: float = _NAN,
     prev_tech_rec: str | None = None,
+    cached_fundamentals: dict | None = None,
 ) -> dict:
     """Full Stage 5.5 feature slice: technical scalars + fundamental scalars +
     commentary strings + hysteresis-gated recommendation.
 
     `prev_tech_rec` is yesterday's tech_recommendation (str) — pass None on
-    first run; the function reads it from storage if not supplied."""
+    first run; the function reads it from storage if not supplied.
+    `cached_fundamentals` is the cached scalar set reused when the fundamentals
+    network fetch is skipped (TTL not yet lapsed); see compute_fundamentals."""
     out = {}
     tech = compute_technicals(history, asof, symbol=symbol, ivx_30d=ivx_30d)
     out.update(tech)
-    out.update(compute_fundamentals(raw_bundle, ticker_config, asof, symbol=symbol))
+    out.update(compute_fundamentals(
+        raw_bundle, ticker_config, asof, symbol=symbol, cached_scalars=cached_fundamentals,
+    ))
 
     # Extract raw score and apply hysteresis
     commentary = tech.get("technical_commentary", "")

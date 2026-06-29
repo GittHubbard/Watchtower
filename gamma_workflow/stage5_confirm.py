@@ -156,10 +156,15 @@ def _compute_features_from_history(hist: pd.DataFrame, asof: date_cls) -> dict:
     }
 
 
-def _compute_vix_features(asof: date_cls) -> dict:
-    """VIX close and 5-session % change. Pulled from yfinance via the ^VIX ticker."""
-    vix_hist = fetch_underlying_history("^VIX", asof, days=20)
-    if vix_hist.empty:
+def _compute_vix_features(asof: date_cls, vix_history: pd.DataFrame | None = None) -> dict:
+    """VIX close and 5-session % change.
+
+    `vix_history` is optional pre-fetched ^VIX OHLCV; pass it to avoid re-pulling
+    the (market-wide, identical-for-every-ticker) VIX series once per ticker. When
+    omitted we fall back to fetching it here, preserving standalone use.
+    """
+    vix_hist = vix_history if vix_history is not None else fetch_underlying_history("^VIX", asof, days=20)
+    if vix_hist is None or vix_hist.empty:
         return {"vix_close": float("nan"), "vix_5d_change_pct": float("nan")}
 
     asof_ts = pd.Timestamp(asof)
@@ -179,12 +184,14 @@ def compute_confirmation(
     symbol: str,
     asof: date_cls,
     history: pd.DataFrame | None = None,
+    vix_history: pd.DataFrame | None = None,
 ) -> dict:
     """End-to-end Stage 5. `history` is optional pre-fetched OHLCV; if omitted,
-    fetches from yfinance. VIX is always fetched separately.
+    fetches from yfinance. `vix_history` is optional pre-fetched ^VIX OHLCV; pass
+    it (fetched once per run) so VIX isn't re-pulled for every ticker.
     """
     if history is None:
         history = fetch_underlying_history(symbol, asof)
     feats = _compute_features_from_history(history, asof)
-    feats.update(_compute_vix_features(asof))
+    feats.update(_compute_vix_features(asof, vix_history))
     return feats

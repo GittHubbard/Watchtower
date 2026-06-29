@@ -70,8 +70,13 @@ backfill:
 # Stage 5.5 — fundamentals acquisition (Feature 3)
 fundamentals:
   enabled: true                        # set false to skip all fundamentals fetches
-  # Financial statements and analyst data are cached forever and only refreshed
-  # when the freshly-fetched payload differs from the cached one (see storage).
+  refresh_days: 7                      # only re-pull the 6 yfinance fundamentals
+                                       # endpoints once this many days have elapsed
+                                       # since the last fetch; reuse the cached
+                                       # scalar set in between. Fundamentals move
+                                       # ~quarterly, so daily pulls were wasted I/O.
+  # The evolution history is cached forever and only appended when the payload
+  # differs; a separate snapshot tracks the last fetch date for the TTL gate above.
   # ETF/index tickers (kind == index_etf) return all-NaN with no network call.
 
 # Orchestrator — data acquisition
