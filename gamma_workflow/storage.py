@@ -240,3 +240,73 @@ def append_fundamentals_if_changed(symbol: str, bucket: str, payload: dict, d: d
     path.write_text(json.dumps(payload, indent=2, default=str, sort_keys=True))
     logger.info("Fundamentals cache updated: %s/%s @ %s", symbol, bucket, d)
     return True
+
+
+# ---- Fundamentals freshness snapshot (TTL gate for the network fetch) -------
+# Distinct from the evolution cache above: that one is append-on-change history,
+# so its newest file reflects the last time the values *changed* — useless for a
+# "have we fetched recently?" check (values that hold steady for a month would
+# look stale and trigger a needless refetch). This snapshot records the last
+# *fetch* date plus the full computed scalar set, so run_eod can (a) decide
+# whether the TTL has lapsed and (b) reuse the scalars on skip days without
+# touching the network. One file per ticker, overwritten on each real fetch.
+
+def _fund_snapshot_path(symbol: str) -> Path:
+    return FUNDAMENTALS_DIR / f"ticker={symbol}" / "snapshot.json"
+
+
+def read_fundamentals_snapshot(symbol: str) -> dict | None:
+    """Return {"asof": "YYYY-MM-DD", "scalars": {...}} for the last fetch, or None."""
+    import json
+    p = _fund_snapshot_path(symbol)
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text())
+    except Exception as e:
+        logger.warning("Failed to read fundamentals snapshot for %s: %s", symbol, e)
+        return None
+
+
+def write_fundamentals_snapshot(symbol: str, d: date_cls, scalars: dict) -> Path:
+    """Record the fetch date + computed scalar set for `symbol`. Overwrites."""
+    import json
+    p = _fund_snapshot_path(symbol)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    payload = {"asof": d.isoformat(), "scalars": scalars}
+    p.write_text(json.dumps(payload, indent=2, default=str, sort_keys=True))
+    return p
+
+
+# ---- Earnings-date cache (Stage 1, TTL gate for Ticker.calendar) ------------
+# Earnings dates move at roughly a quarterly cadence, so pulling Ticker.calendar
+# every day for every ticker is wasted network. We persist the last fetched
+# earnings date per ticker here; Stage 1 refreshes only after the TTL lapses.
+# Tracked in data/ so it survives the Action's ephemeral runner like other caches.
+EARNINGS_DIR = DATA_DIR / "earnings"
+
+
+def read_earnings_cache(symbol: str) -> dict | None:
+    """Return {"fetched": "YYYY-MM-DD", "earnings_date": "YYYY-MM-DD"|None}, or None."""
+    import json
+    p = EARNINGS_DIR / f"{symbol}.json"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text())
+    except Exception as e:
+        logger.warning("Failed to read earnings cache for %s: %s", symbol, e)
+        return None
+
+
+def write_earnings_cache(symbol: str, fetched: date_cls, earnings_date: date_cls | None) -> Path:
+    """Record the fetch date and resolved next-earnings date for `symbol`. Overwrites."""
+    import json
+    EARNINGS_DIR.mkdir(parents=True, exist_ok=True)
+    p = EARNINGS_DIR / f"{symbol}.json"
+    payload = {
+        "fetched": fetched.isoformat(),
+        "earnings_date": earnings_date.isoformat() if earnings_date is not None else None,
+    }
+    p.write_text(json.dumps(payload, indent=2))
+    return p

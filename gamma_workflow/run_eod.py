@@ -46,6 +46,35 @@ logger = logging.getLogger(__name__)
 
 # ---- Acquisition (engine + network) ----------------------------------------
 
+def _memoize_option_chain(ticker_obj):
+    """Cache `ticker_obj.option_chain(expiry)` results on the instance.
+
+    In one EOD pass the same expiry chains are downloaded several times: once by
+    build_refined_options_chain (every expiry ≤90d) and again by Stage 4's three
+    calculate_iv_index legs (30d / 7d / 90d), each of which re-fetches its
+    bracketing expiries. Memoizing per expiry collapses those to a single network
+    download per expiry. The cached object is the very same chain, so every
+    downstream computed value is identical — this only removes redundant I/O.
+    """
+    try:
+        original = ticker_obj.option_chain
+    except Exception:
+        return ticker_obj
+    cache: dict = {}
+
+    def cached_option_chain(date=None):
+        if date not in cache:
+            cache[date] = original(date)
+        return cache[date]
+
+    try:
+        ticker_obj.option_chain = cached_option_chain
+    except Exception:
+        # Some objects disallow attribute assignment; fall back to uncached.
+        pass
+    return ticker_obj
+
+
 def acquire_market_data(symbol: str, asof: date_cls, r: float) -> dict | None:
     """Fetch everything the feature assembly needs that requires the engine or
     the network. Returns a dict, or None if the ticker can't be processed.
@@ -67,7 +96,7 @@ def acquire_market_data(symbol: str, asof: date_cls, r: float) -> dict | None:
         return None
 
     try:
-        ticker_obj = yf.Ticker(symbol)
+        ticker_obj = _memoize_option_chain(yf.Ticker(symbol))
         spot = float(ticker_obj.fast_info["lastPrice"])
 
         # max_days=90 (vs the engine's 45d default) is deliberate: the term-structure
@@ -145,8 +174,12 @@ def assemble_feature_row(
         thresholds=thresholds,
     )
 
-    # Stage 5 — confirmation (runs before Stage 4 so hv_30d feeds the IV/HV ratio)
-    confirm = s5.compute_confirmation(symbol, asof, history=market.get("underlying_history"))
+    # Stage 5 — confirmation (runs before Stage 4 so hv_30d feeds the IV/HV ratio).
+    # vix_history is fetched once per run and shared across tickers (VIX is market-wide).
+    confirm = s5.compute_confirmation(
+        symbol, asof, history=market.get("underlying_history"),
+        vix_history=market.get("vix_history"),
+    )
 
     # Stage 4 — flow (hv_30d from Stage 5 lets the IV/HV ratio + z be formed here,
     # off the single history read compute_flow already performs)
@@ -164,6 +197,7 @@ def assemble_feature_row(
         symbol=symbol,
         ivx_30d=flow.get("ivx_30d", float("nan")),
         prev_tech_rec=prev_tech_rec,
+        cached_fundamentals=market.get("cached_fundamentals"),
     )
 
     # Stage 1 — calendar
@@ -205,6 +239,18 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
     throttle_sec = float(thresholds.get("acquisition", {}).get("inter_ticker_sleep_sec", 2.0))
     logger.info("EOD run %s — %d tickers, r=%.4f, throttle=%.1fs", asof, len(symbols), r, throttle_sec)
 
+    # VIX is market-wide and identical for every ticker, so fetch it once here
+    # instead of re-pulling it inside each ticker's Stage 5 confirmation.
+    vix_history = s5.fetch_underlying_history("^VIX", asof, days=20)
+
+    # Fundamentals network fetch is gated by a freshness TTL: pulling 6 yfinance
+    # endpoints per ticker daily is wasteful for data that moves ~quarterly. We
+    # refetch only after `refresh_days` have elapsed since the last fetch and reuse
+    # the cached scalar set in between.
+    fund_cfg = thresholds.get("fundamentals", {})
+    fund_enabled = bool(fund_cfg.get("enabled", True))
+    fund_refresh_days = int(fund_cfg.get("refresh_days", 7))
+
     # Transition sets for watchlist routing
     _UPWARD_TRANSITIONS = {
         ("HOLD", "BUY"), ("HOLD", "STRONG_BUY"), ("BUY", "STRONG_BUY"),
@@ -229,16 +275,35 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
         market = acquire_market_data(symbol, asof, r)
         if market is None:
             continue
+        market["vix_history"] = vix_history
 
         # Stage 5.5 fundamentals fetch (network) — gated by config and skipped for
         # index ETFs, which have no meaningful fundamentals. Companion to
         # acquire_market_data so it can be turned off independently.
-        fund_enabled = bool(thresholds.get("fundamentals", {}).get("enabled", True))
+        #
+        # Freshness gate: only hit the network when the per-ticker snapshot is
+        # missing or older than `fund_refresh_days`. On a skip day we reuse the
+        # cached scalar set so the logged row is unchanged. `fund_fetched` records
+        # whether we actually fetched, so we know to refresh the snapshot below.
         fundamentals_applicable = fund_enabled and tcfg.get("kind") != "index_etf"
+        market["fundamentals_raw"] = None
+        market["cached_fundamentals"] = None
+        fund_fetched = False
         if fundamentals_applicable:
-            market["fundamentals_raw"] = s55.acquire_fundamentals(symbol, market.get("ticker_obj"))
-        else:
-            market["fundamentals_raw"] = None
+            snap = storage.read_fundamentals_snapshot(symbol)
+            snap_fresh = False
+            if snap and snap.get("asof"):
+                try:
+                    age = (asof - date_cls.fromisoformat(snap["asof"])).days
+                    snap_fresh = 0 <= age < fund_refresh_days
+                except (ValueError, TypeError):
+                    snap_fresh = False
+            if snap_fresh:
+                market["cached_fundamentals"] = snap.get("scalars")
+                logger.info("%s: fundamentals snapshot fresh; skipping network fetch.", symbol)
+            else:
+                market["fundamentals_raw"] = s55.acquire_fundamentals(symbol, market.get("ticker_obj"))
+                fund_fetched = True
 
         # Read yesterday's tech_recommendation for hysteresis
         prev_tech_rec: str | None = None
@@ -262,6 +327,13 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
                     analyst_payload, fin_payload = s55.split_for_cache(row)
                     storage.append_fundamentals_if_changed(symbol, "analyst", analyst_payload, asof)
                     storage.append_fundamentals_if_changed(symbol, "financials", fin_payload, asof)
+                    # Refresh the freshness snapshot only when we actually fetched
+                    # this run and got at least one real value — so a failed fetch
+                    # (all-NaN) retries tomorrow rather than caching the blank.
+                    if fund_fetched:
+                        scalars = {**analyst_payload, **fin_payload}
+                        if any(isinstance(v, float) and np.isfinite(v) for v in scalars.values()):
+                            storage.write_fundamentals_snapshot(symbol, asof, scalars)
                 except Exception as e:
                     logger.warning("Fundamentals cache update failed for %s: %s", symbol, e)
 
