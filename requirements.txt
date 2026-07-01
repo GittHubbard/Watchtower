@@ -5,4 +5,4 @@ yfinance
 scipy
 pyarrow
 cloudscraper
-BeautifulSoup
+beautifulsoup4
