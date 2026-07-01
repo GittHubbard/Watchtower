@@ -1,0 +1,21 @@
+# Technical Signal: MGM  2026-07-01
+
+**Recommendation**: HOLD  |  **Score**: -2.0
+
+### Technical Signal: HOLD (-2.0 / confidence 20%)
+
+**Regime**: ADX TRENDING (ADX 36, +DI 33 vs -DI 17)  |  Vol: UNKNOWN (IV30 64.5%, RV20 27.5%)
+**Gate**: MR weight = 0.00
+
+**Trend** (-2.00 = -2.00 × 1.00 convergence)
+- Price: UP  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BETWEEN  Volume: DRY
+- aVWAP-high 48.57 (anchor 21 bars ago), aVWAP-low 46.32 (anchor 28 bars ago)
+
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 57: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -2.00 + +0.00 + +0.00 = -2.00 → **-2.00**

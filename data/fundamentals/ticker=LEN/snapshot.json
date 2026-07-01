@@ -1,0 +1,18 @@
+{
+  "asof": "2026-07-01",
+  "scalars": {
+    "analyst_consensus": 3.44444,
+    "analyst_coverage_count": 13.0,
+    "analyst_downgrades_3m": 2.0,
+    "analyst_pct_buy": 0.1111111111111111,
+    "analyst_steady_3m": 10.0,
+    "analyst_upgrades_3m": 0.0,
+    "debt_to_equity": 28.692,
+    "eps_beat_streak": 1.0,
+    "eps_estimate_trend": -0.010909999999999975,
+    "eps_surprise_avg_4q": 0.0163,
+    "forward_pe": 13.186294,
+    "net_income_margin_ttm": 0.04934317146820738,
+    "revenue_growth_yoy": -0.052
+  }
+}
