@@ -21,15 +21,30 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: pip
+
+      # Cache the whole virtualenv so unchanged runs skip installation entirely.
+      # The key busts automatically when the OS, Python version, or
+      # requirements.txt change. Bump the trailing -v1 to force a clean rebuild
+      # for anything the hash can't see — e.g. a package pulled from a custom
+      # index outside requirements.txt, or a stale/broken cached venv.
+      - name: Cache venv
+        id: venv-cache
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-py3.11-${{ hashFiles('requirements.txt') }}-v1
 
       - name: Install scrape dependencies
+        if: steps.venv-cache.outputs.cache-hit != 'true'
         run: |
+          python -m venv .venv
+          . .venv/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run macro events scraper
         run: |
+          . .venv/bin/activate
           python scripts/macroevents_webscrape.py
 
       - name: Commit updated macro_events.csv
