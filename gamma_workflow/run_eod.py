@@ -113,7 +113,11 @@ def acquire_market_data(symbol: str, asof: date_cls, r: float) -> dict | None:
         lo = min(spot * 0.85, pwp * 0.95, (fl or spot) * 0.95)
         hi = max(spot * 1.15, cwp * 1.05, (fl or spot) * 1.05)
         prices = np.linspace(lo, hi, 200)
-        gex_array = eng.calculate_gex(prices, chain)
+        # Thread the run's FRED rate through — leaving it off silently used the
+        # engine's hardcoded 0.045 default while Stage 4 priced off the live rate.
+        # (calculate_price_bounds above only sizes the grid, so its internal
+        # default-rate GEX pass is immaterial.)
+        gex_array = eng.calculate_gex(prices, chain, r=r)
         flip_level = eng.find_flip_level(prices, gex_array)
 
         underlying_history = s5.fetch_underlying_history(symbol, asof)
