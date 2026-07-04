@@ -4,6 +4,7 @@ import yfinance as yf
 from scipy.stats import norm
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 import logging
 import os
 import matplotlib.pyplot as plt
@@ -19,17 +20,17 @@ logger = logging.getLogger(__name__)
 
 # --- 1. UTILITIES ---
 def get_data_path(filename="gex_history.csv"):
-    if os.path.exists('./'): #('./content/drive/MyDrive'):
-        base_path = Path ('./')#('/content/drive/MyDrive/QuantTrading/Data')
-    else:
-        base_path = Path('./')
+    base_path = Path('./')
     base_path.mkdir(parents=True, exist_ok=True)
     return base_path / filename
 
 def get_market_seconds_remaining(expiry_date_str):
     now = datetime.now(timezone.utc)
-    expiry_dt = datetime.strptime(expiry_date_str, '%Y-%m-%d').replace(tzinfo=timezone.utc)
-    market_close = expiry_dt.replace(hour=21, minute=0, second=0)
+    expiry_dt = datetime.strptime(expiry_date_str, '%Y-%m-%d')
+    # 16:00 America/New_York, not a fixed UTC hour — 21:00 UTC is only correct
+    # during standard time and overstates T by an hour for ~8 months of the year
+    market_close = expiry_dt.replace(hour=16, minute=0, second=0,
+                                     tzinfo=ZoneInfo('America/New_York'))
     seconds_remaining = (market_close - now).total_seconds()
     return max(seconds_remaining, 60) / (365 * 24 * 3600)
 
@@ -41,8 +42,6 @@ def find_flip_level_old(prices, gex_array):
     x0, x1 = prices[i], prices[i + 1]
     y0, y1 = gex_array[i], gex_array[i + 1]
     return x0 - y0 * (x1 - x0) / (y1 - y0)
-
-import numpy as np
 
 def find_flip_level(prices, gex_array, w=5):
     """Finds the interpolated price level where GEX undergoes the most recent stable sign flip, ignoring short-lived sign noise."""
@@ -232,16 +231,6 @@ def _bucket_oi_df(df: 'pd.DataFrame', spot: float,
 
 
 # --- 2. THE MATH ENGINE (Vectorized) ---
-def calculate_gamma_exposure(prices, df_opt):
-    """Calculates Dealer Gamma Exposure for a given set of prices."""
-    total_gex = np.zeros_like(prices)
-    for _, row in df_opt.iterrows():
-        # Standard GEX formula: 0.5 * Spot * Gamma * OpenInterest
-        # Note: Gamma should be adjusted for Call (+) vs Put (-)
-        is_call = 1 if row['is_call'] else -1
-        total_gex += is_call * (0.5 * row['strike'] * row['gamma'] * row['oi'])
-    return total_gex
-
 def black_scholes_metrics_vectorized(S, K, T, r, sigma, is_call):
     """Vectorized calculation of Gamma, Delta, and Vanna."""
     with np.errstate(divide='ignore', invalid='ignore'):
@@ -253,16 +242,18 @@ def black_scholes_metrics_vectorized(S, K, T, r, sigma, is_call):
 
         gamma = pdf_d1 / (S * sigma * np.sqrt(T))
         delta = np.where(is_call, cdf_d1, cdf_d1 - 1)
-        vanna = (pdf_d1 * d2) / sigma
+        # Vanna = dDelta/dSigma = -phi(d1)*d2/sigma; the sign matters — the
+        # unnegated form inverts the OTM-positive convention
+        vanna = -(pdf_d1 * d2) / sigma
 
     return np.nan_to_num(gamma), np.nan_to_num(delta), np.nan_to_num(vanna)
 
 def calculate_gex(prices, df_opt, r=0.045):
     """
-    Canonical vectorized GEX calculator. Output in $Billions.
-    This is the single source of truth — calculate_gamma_exposure (loop version)
-    and the gex_matrix inside calculate_advanced_metrics must produce identical
-    values at every price point.
+    Canonical vectorized GEX calculator — the single source of truth for the
+    GEX profile: phi(d1)/(S*sigma*sqrt(T)) * OI * 100 * S^2 * 0.01 * (+1 call / -1 put),
+    summed over the chain at each grid price. Output is dollar gamma per 1%
+    move (plot callers divide by 1e9 for $B display).
     """
     S_matrix = np.array(prices)[:, np.newaxis]
     K      = df_opt['strike'].values
@@ -295,7 +286,7 @@ def build_refined_options_chain(ticker_obj, max_days=45, min_oi=5):
         c['expiry_str'], p['expiry_str'] = exp, exp
         all_chains.extend([c, p])
 
-    df = pd.concat(all_chains).rename(columns={'impliedVolatility': 'iv', 'openInterest': 'oi'})
+    df = pd.concat(all_chains, ignore_index=True).rename(columns={'impliedVolatility': 'iv', 'openInterest': 'oi'})
     df = df[df['oi'] >= min_oi].dropna(subset=['iv', 'oi'])
     df['T'] = df['expiry_str'].apply(get_market_seconds_remaining)
     return df
@@ -339,8 +330,6 @@ def calculate_iv_index(ticker_obj, spot, target_days=30, option_type='both', n_s
     far_list  = [(d, e) for d, e in expiry_days if d >= target_days]
 
     # Edge cases: target_days outside the available expiry range
-    if not near_list and not far_list:
-        return np.nan
     if not near_list:
         near_days, near_exp = expiry_days[0]
         far_days,  far_exp  = expiry_days[1] if len(expiry_days) > 1 else expiry_days[0]
@@ -386,13 +375,15 @@ def calculate_iv_index(ticker_obj, spot, target_days=30, option_type='both', n_s
     if near_days == far_days:
         return ivx_near
 
-    # Square-root-of-days interpolation (Livevol methodology)
+    # Square-root-of-days interpolation (Livevol methodology). Weights are
+    # clamped to [0,1] so a target DTE outside the available expiry range
+    # pins to the nearest expiry instead of extrapolating beyond both IVs.
     sqrt_near, sqrt_far, sqrt_target = np.sqrt(near_days), np.sqrt(far_days), np.sqrt(target_days)
     denom = sqrt_far - sqrt_near
     if denom == 0:
         return ivx_near
-    w_near = (sqrt_far   - sqrt_target) / denom
-    w_far  = (sqrt_target - sqrt_near)  / denom
+    w_near = float(np.clip((sqrt_far - sqrt_target) / denom, 0.0, 1.0))
+    w_far  = 1.0 - w_near
     return w_near * ivx_near + w_far * ivx_far
 
 
@@ -441,8 +432,6 @@ def calc_constant_maturity_iv(df_opt, spot, target_days=30):
     near_list = [(e, d) for e, d in expiry_dtes if d <= target_days]
     far_list  = [(e, d) for e, d in expiry_dtes if d >= target_days]
 
-    if not near_list and not far_list:
-        return pd.DataFrame(columns=['strike', 'iv_cm']), pd.DataFrame(columns=['strike', 'iv_cm'])
     if not near_list:
         near_exp, near_dte = expiry_dtes[0]
         far_exp,  far_dte  = expiry_dtes[1] if len(expiry_dtes) > 1 else expiry_dtes[0]
@@ -496,7 +485,10 @@ def calc_bs_iv_chain(df_opt, spot, r=0.045):
         return K * np.exp(-r * T) * norm.cdf(-d2) - S * norm.cdf(-d1)
 
     def _solve_iv(S, K, T, r, mkt_price, is_call):
-        intrinsic = max(S - K, 0.0) if is_call else max(K - S, 0.0)
+        # European no-arbitrage floor uses the DISCOUNTED strike: call >= S - K*exp(-rT),
+        # put >= K*exp(-rT) - S. Undiscounted K - S would discard valid deep-ITM puts.
+        disc_K = K * np.exp(-r * max(T, 0.0))
+        intrinsic = max(S - disc_K, 0.0) if is_call else max(disc_K - S, 0.0)
         if mkt_price <= 0 or mkt_price < intrinsic * 0.99:
             return np.nan
         try:
@@ -544,9 +536,10 @@ def plot_master_dashboard(ticker_symbol, prices, gex_array, spot, flip_level, hi
     idx_call, idx_put = np.argmax(gex_array), np.argmin(gex_array)
     ax1.scatter(prices[idx_call], gex_array[idx_call]/1e9, color='darkgreen', s=100, label=f'Call Wall  {prices[idx_call]:.0f}', zorder=5)
     ax1.scatter(prices[idx_put], gex_array[idx_put]/1e9, color='darkred', s=100, label=f'Put Wall {prices[idx_put]:.0f}', zorder=5)
-    flip_level = find_flip_level(prices, gex_array)
 
-    if flip_level:
+    # Plot the flip_level the caller passed (the same value saved to history) —
+    # do not recompute here, or the chart and gex_history.csv can disagree.
+    if flip_level is not None and not np.isnan(flip_level):
         ax1.axvline(flip_level, color='red', linestyle='--', label=f'Flip: {flip_level:.0f}')
         ax1.fill_between(prices, gex_array/1e9, 0, where=(gex_array > 0), color='green', alpha=0.1)
         ax1.fill_between(prices, gex_array/1e9, 0, where=(gex_array < 0), color='red', alpha=0.1)
@@ -1400,9 +1393,12 @@ def analyze_ticker_suite(symbol, graphs='',history_days=5):
     df_ex_next = df_opt[df_opt['expiry_str'] != next_expiry]
 
     # 3. Establish Price Range for GEX profiles
-    atm_iv = df_opt.iloc[(df_opt['strike'] - spot).abs().idxmin()]['iv']
+    # Positional ATM lookup: idxmin() returns a LABEL, and .iloc[] takes a POSITION;
+    # feeding one to the other reads the wrong row whenever labels are non-contiguous.
+    atm_iv = df_opt['iv'].to_numpy()[np.abs(df_opt['strike'].to_numpy() - spot).argmin()]
     move = spot * atm_iv * np.sqrt(1/12) * 2
     [cwp, pwp, fl] = calculate_price_bounds(df_opt, spot)
+    fl = fl if fl is not None else spot  # no zero-crossing found -> fall back to spot
     price_minbnd = np.min([spot - move, pwp*0.9, fl*0.9])
     price_maxbnd = np.max([spot + move, cwp*1.1, fl*1.1])
 
@@ -1415,9 +1411,12 @@ def analyze_ticker_suite(symbol, graphs='',history_days=5):
     gex_only_next = np.round(calculate_gex(prices, df_next),2)
     gex_ex_next = np.round(calculate_gex(prices, df_ex_next),2)
 
-    # 5. Locate Gamma Flip (where GEX crosses zero)
-    flips = np.where(np.diff(np.sign(gex_total)))[0]
-    gamma_flip = prices[flips[0]] if len(flips) > 0 else np.nan
+    # 5. Locate Gamma Flip (where GEX crosses zero) — use the same stable,
+    # interpolated finder the dashboard plots, so the value persisted to
+    # gex_history.csv and the charted flip are one quantity (previously this
+    # saved the first raw crossing snapped to the left grid point).
+    _flip = find_flip_level(prices, gex_total)
+    gamma_flip = _flip if _flip is not None else np.nan
 
     # 6. Extract Walls for History
     if not np.isnan(gamma_flip):
