@@ -1,0 +1,21 @@
+# Technical Signal: MO  2026-07-07
+
+**Recommendation**: STRONG_BUY  |  **Score**: +9.2
+
+### Technical Signal: STRONG_BUY (+9.2 / confidence 92%)
+
+**Regime**: ADX RANGING (ADX 15, +DI 30 vs -DI 21)  |  Vol: HIGH_IV (IV30 31.6%, RV20 25.0%)
+**Gate**: MR weight = 1.00
+
+**Trend** (+8.25 = +8.25 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 70.96 (anchor 32 bars ago), aVWAP-low 71.62 (anchor 11 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 57: neutral  Bollinger: neutral
+
+**Divergence** (+1.0)
+- ✓ CONFIRMED hid_bull on CMF (quality: strong)
+
+**Score**: +8.25 + +0.00 + +1.00 = +9.25 → **+9.25**
