@@ -1,0 +1,21 @@
+# Technical Signal: IBM  2026-07-13
+
+**Recommendation**: BUY  |  **Score**: +5.2
+
+### Technical Signal: BUY (+5.2 / confidence 52%)
+
+**Regime**: ADX TRENDING (ADX 25, +DI 31 vs -DI 19)  |  Vol: NORMAL_IV (IV30 52.3%, RV20 42.5%)
+**Gate**: MR weight = 0.00
+
+**Trend** (+4.25 = +4.25 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 281.71 (anchor 27 bars ago), aVWAP-low 274.43 (anchor 15 bars ago)
+
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 57: neutral  Bollinger: neutral
+
+**Divergence** (+1.0)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
+
+**Score**: +4.25 + +0.00 + +1.00 = +5.25 → **+5.25**

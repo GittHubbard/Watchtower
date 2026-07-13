@@ -1,0 +1,21 @@
+# Technical Signal: LHX  2026-07-13
+
+**Recommendation**: STRONG_SELL  |  **Score**: -6.3
+
+### Technical Signal: STRONG_SELL (-6.3 / confidence 63%)
+
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 18 vs -DI 23)  |  Vol: NORMAL_IV (IV30 34.6%, RV20 33.2%)
+**Gate**: MR weight = 0.50
+
+**Trend** (-5.31 = -4.25 × 1.25 convergence)
+- Price: STRONG_DOWN  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 294.08 (anchor 16 bars ago), aVWAP-low 297.45 (anchor 26 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 41: neutral  Bollinger: neutral
+
+**Divergence** (-1.0)
+- ✓ CONFIRMED hid_bear on OBV (quality: standard)
+
+**Score**: -5.31 + +0.00 + -1.00 = -6.31 → **-6.31**
