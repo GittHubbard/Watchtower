@@ -1,0 +1,24 @@
+# Technical Signal: ITW  2026-07-16
+
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+
+**Regime**: ADX TRENDING (ADX 30, +DI 36 vs -DI 14)  |  Vol: HIGH_IV (IV30 32.6%, RV20 23.8%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+11.56 = +9.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULL_CROSS  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 259.55 (anchor 67 bars ago), aVWAP-low 262.50 (anchor 31 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 70: neutral  Bollinger: upper-break
+
+**Divergence** (+1.0)
+- ✓ CONFIRMED hid_bull on RSI (quality: standard)
+- ⏳ PENDING reg_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
+- ⏳ PENDING reg_bear on CMF (quality: strong)
+
+**Score**: +11.56 + -0.25 + +1.00 = +12.31 → **+10.00**
