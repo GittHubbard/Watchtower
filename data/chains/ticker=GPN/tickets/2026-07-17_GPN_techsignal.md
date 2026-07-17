@@ -1,0 +1,21 @@
+# Technical Signal: GPN  2026-07-17
+
+**Recommendation**: STRONG_BUY  |  **Score**: +8.2
+
+### Technical Signal: STRONG_BUY (+8.2 / confidence 82%)
+
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 36 vs -DI 20)  |  Vol: HIGH_IV (IV30 51.0%, RV20 43.6%)
+**Gate**: MR weight = 0.75
+
+**Trend** (+5.25 = +5.25 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 70.34 (anchor 32 bars ago), aVWAP-low 70.99 (anchor 25 bars ago)
+
+**Mean Reversion** (gate 0.75 → contribution +0.00)
+- RSI 60: neutral  Bollinger: neutral
+
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on CMF (quality: strong)
+
+**Score**: +5.25 + +0.00 + +3.00 = +8.25 → **+8.25**

@@ -1,0 +1,23 @@
+# Technical Signal: TGT  2026-07-17
+
+**Recommendation**: BUY  |  **Score**: +2.8
+
+### Technical Signal: BUY (+2.8 / confidence 28%)
+
+**Regime**: ADX RANGING (ADX 15, +DI 35 vs -DI 20)  |  Vol: HIGH_IV (IV30 36.4%, RV20 38.6%)
+**Gate**: MR weight = 1.00
+
+**Trend** (+7.81 = +6.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 134.41 (anchor 15 bars ago), aVWAP-low 132.97 (anchor 28 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 62: neutral  Bollinger: neutral
+
+**Divergence** (-5.0)
+- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bear on CMF (quality: strong)
+- ✓ CONFIRMED reg_bear on OBV (quality: standard)
+
+**Score**: +7.81 + +0.00 + -5.00 = +2.81 → **+2.81**
