@@ -1,0 +1,24 @@
+# Technical Signal: T  2026-07-20
+
+**Recommendation**: BUY  |  **Score**: +2.8
+
+### Technical Signal: BUY (+2.8 / confidence 28%)
+
+**Regime**: ADX TRENDING (ADX 34, +DI 25 vs -DI 20)  |  Vol: HIGH_IV (IV30 37.5%, RV20 33.3%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+2.81 = +2.25 × 1.25 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-low 21.25 (anchor 10 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 51: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- ⏳ PENDING reg_bull on RSI (quality: strong)
+- ⏳ PENDING reg_bull on MACDLine (quality: strong)
+- ⏳ PENDING reg_bull on MACDHist (quality: strong)
+- ⏳ PENDING reg_bull on CMF (quality: strong)
+
+**Score**: +2.81 + +0.00 + +0.00 = +2.81 → **+2.81**
