@@ -1,0 +1,21 @@
+# Technical Signal: PFE  2026-07-21
+
+**Recommendation**: SELL  |  **Score**: -2.5
+
+### Technical Signal: SELL (-2.5 / confidence 25%)
+
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 25 vs -DI 21)  |  Vol: LOW_IV (IV30 26.3%, RV20 24.5%)
+**Gate**: MR weight = 0.50
+
+**Trend** (-2.50 = -2.50 × 1.00 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: TESTING_RESISTANCE  Volume: DRY
+- aVWAP-high 24.68 (anchor 25 bars ago), aVWAP-low 24.49 (anchor 11 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 52: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -2.50 + +0.00 + +0.00 = -2.50 → **-2.50**
