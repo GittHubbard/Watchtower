@@ -1,0 +1,21 @@
+# Technical Signal: BBY  2026-07-22
+
+**Recommendation**: STRONG_BUY  |  **Score**: +8.2
+
+### Technical Signal: STRONG_BUY (+8.2 / confidence 82%)
+
+**Regime**: ADX TRENDING (ADX 32, +DI 36 vs -DI 17)  |  Vol: LOW_IV (IV30 37.8%, RV20 25.2%)
+**Gate**: MR weight = 0.00
+
+**Trend** (+8.25 = +8.25 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 70.33 (anchor 63 bars ago), aVWAP-low 73.49 (anchor 45 bars ago)
+
+**Mean Reversion** (gate 0.00 → contribution -0.00)
+- RSI 75: overbought  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: +8.25 + -0.00 + +0.00 = +8.25 → **+8.25**

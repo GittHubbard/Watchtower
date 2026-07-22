@@ -1,0 +1,21 @@
+# Technical Signal: AJG  2026-07-22
+
+**Recommendation**: HOLD  |  **Score**: -0.9
+
+### Technical Signal: HOLD (-0.9 / confidence 9%)
+
+**Regime**: ADX TRENDING (ADX 40, +DI 28 vs -DI 21)  |  Vol: NORMAL_IV (IV30 39.6%, RV20 38.7%)
+**Gate**: MR weight = 0.00
+
+**Trend** (-0.94 = -0.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 233.78 (anchor 28 bars ago), aVWAP-low 221.87 (anchor 47 bars ago)
+
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 52: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -0.94 + +0.00 + +0.00 = -0.94 → **-0.94**

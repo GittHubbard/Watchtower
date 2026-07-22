@@ -1,5 +1,5 @@
 {
-  "asof": "2026-07-15",
+  "asof": "2026-07-22",
   "scalars": {
     "analyst_consensus": 1.58824,
     "analyst_coverage_count": 17.0,
@@ -9,9 +9,9 @@
     "analyst_upgrades_3m": 0.0,
     "debt_to_equity": 479.237,
     "eps_beat_streak": 0.0,
-    "eps_estimate_trend": -0.04662999999999995,
+    "eps_estimate_trend": -0.041629999999999834,
     "eps_surprise_avg_4q": 0.0953,
-    "forward_pe": 11.919054,
+    "forward_pe": 12.159264,
     "net_income_margin_ttm": 0.007380187747035573,
     "revenue_growth_yoy": 0.195
   }
