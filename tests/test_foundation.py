@@ -77,6 +77,48 @@ def test_storage_roundtrip(tmp_path, monkeypatch):
     assert set(back["ticker"]) == {"SPY", "QQQ"}
 
 
+def test_techsignal_log_grows_and_is_idempotent(tmp_path, monkeypatch):
+    monkeypatch.setattr(storage, "DATA_DIR", tmp_path)
+    monkeypatch.setattr(storage, "FEATURES_DIR", tmp_path / "features")
+    monkeypatch.setattr(storage, "SIGNALS_DIR", tmp_path / "signals")
+    monkeypatch.setattr(storage, "TICKETS_DIR", tmp_path / "tickets")
+    monkeypatch.setattr(storage, "RATES_DIR", tmp_path / "rates")
+
+    d1, d2 = date(2026, 5, 27), date(2026, 5, 28)
+
+    def rec(d, ticker, rec_, score, wl):
+        return {
+            "date": d.isoformat(), "ticker": ticker, "recommendation": rec_,
+            "score": score, "watchlist": wl,
+            "content": f"# Technical Signal: {ticker}  {d.isoformat()}\n\n**Recommendation**: {rec_}",
+        }
+
+    # Day 1: two tickets.
+    storage.append_techsignal_log([rec(d1, "SPY", "BUY", 4.2, "upward"),
+                                   rec(d1, "QQQ", "SELL", -3.1, "downward")], d1)
+    log = storage.read_techsignal_log()
+    assert len(log) == 2
+    assert set(log["ticker"]) == {"SPY", "QQQ"}
+
+    # Day 2: appends, grows to 3 (does not overwrite day 1).
+    storage.append_techsignal_log([rec(d2, "SPY", "STRONG_BUY", 7.0, None)], d2)
+    log = storage.read_techsignal_log()
+    assert len(log) == 3
+    assert set(log["date"]) == {d1.isoformat(), d2.isoformat()}
+    # Full ticket markdown is preserved verbatim.
+    assert log[log["ticker"] == "QQQ"]["content"].iloc[0].startswith("# Technical Signal: QQQ")
+
+    # Re-running day 1 replaces that whole day's rows (idempotent per date): the
+    # day-1 SPY/QQQ pair is dropped and swapped for the re-run's single row, while
+    # day 2 is untouched -> 2 rows total.
+    storage.append_techsignal_log([rec(d1, "SPY", "HOLD", 0.0, None)], d1)
+    log = storage.read_techsignal_log()
+    assert len(log) == 2
+    day1 = log[log["date"] == d1.isoformat()]
+    assert len(day1) == 1 and day1["recommendation"].iloc[0] == "HOLD"
+    assert (log[log["date"] == d2.isoformat()]["recommendation"] == "STRONG_BUY").all()
+
+
 def test_log_features_normalizes_columns(tmp_path, monkeypatch):
     monkeypatch.setattr(storage, "FEATURES_DIR", tmp_path / "features")
     monkeypatch.setattr(storage, "DATA_DIR", tmp_path)

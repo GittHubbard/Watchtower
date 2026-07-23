@@ -146,6 +146,66 @@ def write_watchlist_ticket(symbol: str, d: date_cls, content: str, direction: st
     return path
 
 
+# ---- Tech-signal ticket log (append-only, long-term assessment) -------------
+# A single parquet that accumulates every day's tech-signal tickets — the same
+# content written to the per-ticker <date>_<ticker>_techsignal.md files — so the
+# full history lives in one queryable table that just keeps growing. Each row is
+# one ticket: its date/ticker/recommendation/score/watchlist plus the complete
+# markdown body. Writes are idempotent per date (re-running a day replaces that
+# day's rows rather than duplicating them) and atomic via a temp file.
+#
+# The path is derived from DATA_DIR at call time (not cached in a constant) so a
+# test that monkeypatches DATA_DIR redirects it too, like the other stores.
+TECHSIGNAL_LOG_NAME = "techsignal_log.parquet"
+
+TECHSIGNAL_LOG_COLUMNS = [
+    "date", "ticker", "recommendation", "score", "watchlist", "content",
+]
+
+
+def techsignal_log_path() -> Path:
+    """Location of the growing tech-signal ticket log (``data/techsignal_log.parquet``)."""
+    return DATA_DIR / TECHSIGNAL_LOG_NAME
+
+
+def append_techsignal_log(records: list[dict], d: date_cls) -> Path | None:
+    """Append the day's tech-signal ticket rows to the growing parquet log.
+
+    ``records`` is a list of dicts with the keys in :data:`TECHSIGNAL_LOG_COLUMNS`
+    (``date`` as an ISO string). Any existing rows for date ``d`` are replaced
+    first, so a same-day re-run overwrites rather than duplicates. Returns the log
+    path, or None if ``records`` is empty. The write is atomic (temp file + os
+    replace) so a crash mid-write can't corrupt the accumulated history.
+    """
+    if not records:
+        return None
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    new = pd.DataFrame(records, columns=TECHSIGNAL_LOG_COLUMNS)
+
+    path = techsignal_log_path()
+    if path.exists():
+        existing = pd.read_parquet(path)
+        if "date" in existing.columns:
+            existing = existing[existing["date"] != d.isoformat()]
+        combined = pd.concat([existing, new], ignore_index=True)
+    else:
+        combined = new
+
+    tmp = path.with_suffix(".parquet.tmp")
+    combined.to_parquet(tmp, index=False)
+    tmp.replace(path)  # atomic on the same filesystem
+    logger.info("Tech-signal log now %d rows (+%d for %s)", len(combined), len(new), d)
+    return path
+
+
+def read_techsignal_log() -> pd.DataFrame:
+    """Return the full accumulated tech-signal ticket log (empty frame if none)."""
+    path = techsignal_log_path()
+    if path.exists():
+        return pd.read_parquet(path)
+    return pd.DataFrame(columns=TECHSIGNAL_LOG_COLUMNS)
+
+
 def _chain_path(symbol: str, d: date_cls) -> Path:
     return CHAINS_DIR / f"ticker={symbol}" / f"date={d.isoformat()}.parquet"
 
