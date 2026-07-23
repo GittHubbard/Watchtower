@@ -28,14 +28,16 @@ Public API
     trade with its % return and alpha vs the S&P 500. Strategy:
 
     * Start flat on the first date in the data.
-    * Each day, open a position in any ticker rated ``STRONG_BUY`` that we do
-      not already hold (re-entry allowed after a prior exit).
+    * Each day, open a position in any ticker rated ``STRONG_BUY`` — optionally
+      also requiring ``score_raw >= min_score_raw`` — that we do not already
+      hold (re-entry allowed after a prior exit).
     * Close a held position the first day the ticker is rated ``SELL`` or
       ``STRONG_SELL``.
     * Any position still open on the last date is closed at that date's price.
 
-    For every closed trade the stock's % return (adjusted close, buy date to
-    sell date) is compared against the S&P 500 (``^GSPC``) over the *same* date
+    Each closed trade records ``buy_score_raw`` (the opening signal's uncapped
+    score). For every closed trade the stock's % return (adjusted close, buy date
+    to sell date) is compared against the S&P 500 (``^GSPC``) over the *same* date
     window; ``alpha_pct`` is the difference. Prices come from Yahoo Finance via
     yfinance and are downloaded once (all traded tickers in one batch, the
     benchmark once) and cached in memory. The fetch is injectable via
@@ -170,6 +172,7 @@ TRADE_COLUMNS = [
     "sell_date",
     "holding_days",
     "closed_reason",
+    "buy_score_raw",
     "buy_price",
     "sell_price",
     "stock_return_pct",
@@ -178,24 +181,36 @@ TRADE_COLUMNS = [
 ]
 
 
-def simulate_trades(frame: pd.DataFrame) -> pd.DataFrame:
+def simulate_trades(
+    frame: pd.DataFrame,
+    *,
+    min_score_raw: float | None = None,
+) -> pd.DataFrame:
     """Replay the STRONG_BUY / SELL strategy over the trade log (no prices).
 
     Walks the signal dates in chronological order and returns one row per closed
-    trade with columns ``ticker``, ``buy_date``, ``sell_date`` and
-    ``closed_reason`` (``"sell_signal"`` or ``"end_of_data"``). Positions are
-    equal-weight and binary (held or not); a ticker can be re-entered after it
-    has been exited. Prices are intentionally *not* touched here so the trade
-    timeline can be tested without any network access.
+    trade with columns ``ticker``, ``buy_date``, ``sell_date``,
+    ``buy_score_raw`` (the uncapped score of the opening signal) and
+    ``closed_reason`` (``"sell_signal"`` or ``"end_of_data"``).
+
+    A position opens only when the day's rating is ``STRONG_BUY`` *and*, if
+    ``min_score_raw`` is given, its ``score_raw`` is at least that threshold —
+    letting you require higher-conviction signals than STRONG_BUY alone. With
+    ``min_score_raw=None`` (the default) every STRONG_BUY qualifies, matching the
+    original behaviour. Positions are equal-weight and binary (held or not); a
+    ticker can be re-entered after it has been exited. Prices are intentionally
+    *not* touched here so the trade timeline can be tested without any network
+    access.
     """
+    cols = ["ticker", "buy_date", "sell_date", "buy_score_raw", "closed_reason"]
     if frame.empty:
-        return pd.DataFrame(columns=["ticker", "buy_date", "sell_date", "closed_reason"])
+        return pd.DataFrame(columns=cols)
 
     dates = sorted(frame["date"].unique())
     last_date = dates[-1]
     by_date = {d: g for d, g in frame.groupby("date")}
 
-    holdings: dict[str, pd.Timestamp] = {}  # ticker -> buy_date
+    holdings: dict[str, tuple[pd.Timestamp, float]] = {}  # ticker -> (buy_date, buy_score_raw)
     trades: list[dict] = []
 
     for d in dates:
@@ -203,32 +218,40 @@ def simulate_trades(frame: pd.DataFrame) -> pd.DataFrame:
         closed_today: set[str] = set()
 
         # Close first: any held name that crossed into SELL / STRONG_SELL today.
-        for ticker in day.loc[day["recommendation"].isin(CLOSE_RATINGS), "ticker"]:
-            if ticker in holdings:
+        for row in day.itertuples(index=False):
+            if row.recommendation in CLOSE_RATINGS and row.ticker in holdings:
+                buy_date, buy_score_raw = holdings.pop(row.ticker)
                 trades.append({
-                    "ticker": ticker,
-                    "buy_date": holdings.pop(ticker),
+                    "ticker": row.ticker,
+                    "buy_date": buy_date,
                     "sell_date": d,
+                    "buy_score_raw": buy_score_raw,
                     "closed_reason": "sell_signal",
                 })
-                closed_today.add(ticker)
+                closed_today.add(row.ticker)
 
-        # Then open: STRONG_BUY names we do not already hold (and did not just
-        # exit today, to avoid same-day churn).
-        for ticker in day.loc[day["recommendation"].isin(OPEN_RATINGS), "ticker"]:
-            if ticker not in holdings and ticker not in closed_today:
-                holdings[ticker] = d
+        # Then open: STRONG_BUY names clearing the score_raw floor that we do not
+        # already hold (and did not just exit today, to avoid same-day churn).
+        for row in day.itertuples(index=False):
+            if (
+                row.recommendation in OPEN_RATINGS
+                and row.ticker not in holdings
+                and row.ticker not in closed_today
+                and (min_score_raw is None or row.score_raw >= min_score_raw)
+            ):
+                holdings[row.ticker] = (d, row.score_raw)
 
     # Force-close whatever is still open at the last date in the data.
-    for ticker, buy_date in holdings.items():
+    for ticker, (buy_date, buy_score_raw) in holdings.items():
         trades.append({
             "ticker": ticker,
             "buy_date": buy_date,
             "sell_date": last_date,
+            "buy_score_raw": buy_score_raw,
             "closed_reason": "end_of_data",
         })
 
-    result = pd.DataFrame(trades, columns=["ticker", "buy_date", "sell_date", "closed_reason"])
+    result = pd.DataFrame(trades, columns=cols)
     return result.sort_values(["buy_date", "ticker"]).reset_index(drop=True)
 
 
@@ -308,22 +331,26 @@ def _price_asof(series: pd.Series, when: pd.Timestamp) -> float:
 def analyze_performance(
     frame: pd.DataFrame | None = None,
     *,
+    min_score_raw: float | None = None,
     price_loader=load_prices_yfinance,
 ) -> pd.DataFrame:
     """Backtest the STRONG_BUY strategy and return per-trade returns and alpha.
 
-    ``frame`` defaults to :func:`build_trade_log`. ``price_loader`` is any callable
+    ``frame`` defaults to :func:`build_trade_log`. ``min_score_raw`` is forwarded
+    to :func:`simulate_trades`: when set, a position opens only if the STRONG_BUY
+    signal's ``score_raw`` is at least this value. ``price_loader`` is any callable
     ``(tickers, start, end) -> (dict[str, Series], Series)`` returning stock and
     benchmark adjusted-close prices; it defaults to :func:`load_prices_yfinance`
     and is downloaded exactly once. The returned DataFrame has one row per closed
     trade with the columns listed in :data:`TRADE_COLUMNS`, including
-    ``stock_return_pct``, ``benchmark_return_pct`` and ``alpha_pct``
-    (= stock return − benchmark return over the same buy→sell window).
+    ``buy_score_raw`` (the opening signal's uncapped score), ``stock_return_pct``,
+    ``benchmark_return_pct`` and ``alpha_pct`` (= stock return − benchmark return
+    over the same buy→sell window).
     """
     if frame is None:
         frame = build_trade_log()
 
-    trades = simulate_trades(frame)
+    trades = simulate_trades(frame, min_score_raw=min_score_raw)
     if trades.empty:
         return pd.DataFrame(columns=TRADE_COLUMNS)
 
@@ -347,6 +374,7 @@ def analyze_performance(
             "sell_date": row.sell_date,
             "holding_days": (row.sell_date - row.buy_date).days,
             "closed_reason": row.closed_reason,
+            "buy_score_raw": row.buy_score_raw,
             "buy_price": round(buy_price, 4) if pd.notna(buy_price) else float("nan"),
             "sell_price": round(sell_price, 4) if pd.notna(sell_price) else float("nan"),
             "stock_return_pct": round(stock_ret, 4) if pd.notna(stock_ret) else float("nan"),
@@ -396,6 +424,15 @@ def _parse_args() -> argparse.Namespace:
             "Finance via yfinance) and print per-trade returns and alpha."
         ),
     )
+    parser.add_argument(
+        "--min-score-raw",
+        type=float,
+        default=None,
+        help=(
+            "Only open a position when a STRONG_BUY signal's score_raw is at "
+            "least this value (default: no floor, every STRONG_BUY qualifies)."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -417,8 +454,10 @@ def main() -> int:
     if frame.empty or not args.performance:
         return 0
 
+    if args.min_score_raw is not None:
+        print(f"\nBacktest filter: STRONG_BUY and score_raw >= {args.min_score_raw:g}")
     try:
-        trades = analyze_performance(frame)
+        trades = analyze_performance(frame, min_score_raw=args.min_score_raw)
     except Exception as exc:  # noqa: BLE001 - surface network/price issues clearly
         print(f"\nBacktest failed: {exc}", file=sys.stderr)
         return 1
