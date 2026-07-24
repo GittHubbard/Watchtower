@@ -4,8 +4,23 @@ from datetime import date
 from unittest.mock import patch, MagicMock
 
 import pandas as pd
+import pytest
 
-from gamma_workflow import stage1_calendar
+from gamma_workflow import stage1_calendar, storage
+
+
+@pytest.fixture(autouse=True)
+def _isolate_earnings_cache(tmp_path, monkeypatch):
+    """Redirect the earnings cache to a tmp dir so these tests never write into
+    the real data/earnings/. days_to_next_earnings/event_flags persist the fetched
+    date via storage.write_earnings_cache (which reads storage.EARNINGS_DIR at call
+    time); without this, running the suite overwrites real cached dates with the
+    mocked test values. Also clears the in-process memo around each test.
+    """
+    monkeypatch.setattr(storage, "EARNINGS_DIR", tmp_path / "earnings")
+    stage1_calendar.clear_earnings_cache()
+    yield
+    stage1_calendar.clear_earnings_cache()
 
 
 def _mk_ticker_with_calendar(cal_dict):
