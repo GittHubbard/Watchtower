@@ -362,24 +362,36 @@ def simulate_trades(
     *,
     min_score_raw: float | None = None,
     open_filter=None,
+    open_ratings=OPEN_RATINGS,
+    close_ratings=CLOSE_RATINGS,
+    close_filter=None,
+    max_hold_days: int | None = None,
 ) -> pd.DataFrame:
-    """Replay the STRONG_BUY / SELL strategy over the trade log (no prices).
+    """Replay a signal-driven long strategy over the trade log (no prices).
 
     Walks the signal dates in chronological order and returns one row per closed
-    trade with columns ``ticker``, ``buy_date``, ``sell_date``,
-    ``buy_score_raw`` (the uncapped score of the opening signal) and
-    ``closed_reason`` (``"sell_signal"`` or ``"end_of_data"``).
+    trade with columns ``ticker``, ``buy_date``, ``sell_date``, ``buy_score_raw``
+    and ``closed_reason``.
 
-    A position opens only when the day's rating is ``STRONG_BUY`` *and*, if
-    ``min_score_raw`` is given, its ``score_raw`` is at least that threshold, *and*
-    (if provided) ``open_filter(row)`` returns True. ``open_filter`` is any
-    callable taking the signal row (a namedtuple with every feature column, e.g.
-    ``row.macd``, ``row.cmf``, ``row.rsi``) and returning a bool — letting you
-    gate entries on the technical features, not just the rating. With all filters
-    unset every STRONG_BUY qualifies, matching the original behaviour. Positions
-    are equal-weight and binary (held or not); a ticker can be re-entered after it
-    has been exited. Prices are intentionally *not* touched here so the trade
-    timeline can be tested without any network access.
+    Entry — a flat name opens on day ``d`` when **all** hold:
+      * its recommendation is in ``open_ratings`` (pass ``None`` to allow *any*
+        rating — e.g. a contrarian strategy that buys SELL-rated washouts),
+      * ``score_raw >= min_score_raw`` if a floor is given,
+      * ``open_filter(row)`` is True if a filter is given.
+
+    Exit — a held name closes on the first day **any** of these hold:
+      * its recommendation is in ``close_ratings`` (``None`` disables rating exits)
+        → ``closed_reason="sell_signal"``,
+      * ``close_filter(row)`` is True → ``closed_reason="signal_exit"``,
+      * it has been held ``max_hold_days`` calendar days or more (a time stop)
+        → ``closed_reason="max_hold"``.
+    Anything still open on the last date is closed there (``"end_of_data"``).
+
+    ``open_filter`` / ``close_filter`` are callables taking the signal row (a
+    namedtuple with every feature column, e.g. ``row.macd``, ``row.rsi``). The
+    defaults (``open_ratings={STRONG_BUY}``, ``close_ratings={SELL, STRONG_SELL}``,
+    no filters, no time stop) reproduce the original STRONG_BUY strategy exactly.
+    Positions are equal-weight and binary; a ticker can be re-entered after exit.
     """
     cols = ["ticker", "buy_date", "sell_date", "buy_score_raw", "closed_reason"]
     if frame.empty:
@@ -392,44 +404,50 @@ def simulate_trades(
     holdings: dict[str, tuple[pd.Timestamp, float]] = {}  # ticker -> (buy_date, buy_score_raw)
     trades: list[dict] = []
 
+    def _close(ticker: str, sell_date, reason: str) -> None:
+        buy_date, buy_score_raw = holdings.pop(ticker)
+        trades.append({
+            "ticker": ticker, "buy_date": buy_date, "sell_date": sell_date,
+            "buy_score_raw": buy_score_raw, "closed_reason": reason,
+        })
+
     for d in dates:
         day = by_date[d]
         closed_today: set[str] = set()
 
-        # Close first: any held name that crossed into SELL / STRONG_SELL today.
+        # Time stop first: close anything held at/over the max hold, regardless of
+        # whether the name prints a signal today.
+        if max_hold_days is not None:
+            for ticker in list(holdings):
+                if (d - holdings[ticker][0]).days >= max_hold_days:
+                    _close(ticker, d, "max_hold")
+                    closed_today.add(ticker)
+
+        # Signal-driven exits.
         for row in day.itertuples(index=False):
-            if row.recommendation in CLOSE_RATINGS and row.ticker in holdings:
-                buy_date, buy_score_raw = holdings.pop(row.ticker)
-                trades.append({
-                    "ticker": row.ticker,
-                    "buy_date": buy_date,
-                    "sell_date": d,
-                    "buy_score_raw": buy_score_raw,
-                    "closed_reason": "sell_signal",
-                })
+            if row.ticker not in holdings or row.ticker in closed_today:
+                continue
+            if close_ratings is not None and row.recommendation in close_ratings:
+                _close(row.ticker, d, "sell_signal")
+                closed_today.add(row.ticker)
+            elif close_filter is not None and close_filter(row):
+                _close(row.ticker, d, "signal_exit")
                 closed_today.add(row.ticker)
 
-        # Then open: STRONG_BUY names clearing the score_raw floor that we do not
-        # already hold (and did not just exit today, to avoid same-day churn).
+        # Entries — names we do not already hold and did not just exit today.
         for row in day.itertuples(index=False):
             if (
-                row.recommendation in OPEN_RATINGS
-                and row.ticker not in holdings
+                row.ticker not in holdings
                 and row.ticker not in closed_today
+                and (open_ratings is None or row.recommendation in open_ratings)
                 and (min_score_raw is None or row.score_raw >= min_score_raw)
                 and (open_filter is None or open_filter(row))
             ):
                 holdings[row.ticker] = (d, row.score_raw)
 
     # Force-close whatever is still open at the last date in the data.
-    for ticker, (buy_date, buy_score_raw) in holdings.items():
-        trades.append({
-            "ticker": ticker,
-            "buy_date": buy_date,
-            "sell_date": last_date,
-            "buy_score_raw": buy_score_raw,
-            "closed_reason": "end_of_data",
-        })
+    for ticker in list(holdings):
+        _close(ticker, last_date, "end_of_data")
 
     result = pd.DataFrame(trades, columns=cols)
     return result.sort_values(["buy_date", "ticker"]).reset_index(drop=True)
@@ -513,14 +531,20 @@ def analyze_performance(
     *,
     min_score_raw: float | None = None,
     open_filter=None,
+    open_ratings=OPEN_RATINGS,
+    close_ratings=CLOSE_RATINGS,
+    close_filter=None,
+    max_hold_days: int | None = None,
     price_loader=load_prices_yfinance,
 ) -> pd.DataFrame:
-    """Backtest the STRONG_BUY strategy and return per-trade returns and alpha.
+    """Backtest a signal-driven long strategy and return per-trade returns/alpha.
 
-    ``frame`` defaults to :func:`build_trade_log`. ``min_score_raw`` and
-    ``open_filter`` are forwarded to :func:`simulate_trades` to gate entries on
-    the raw score and/or the technical features (e.g. only open when
-    ``row.macd == "BULLISH"``). ``price_loader`` is any callable
+    ``frame`` defaults to :func:`build_trade_log`. ``min_score_raw``,
+    ``open_filter``, ``open_ratings``, ``close_ratings``, ``close_filter`` and
+    ``max_hold_days`` are forwarded to :func:`simulate_trades` — so beyond the
+    default STRONG_BUY strategy you can, for example, buy any oversold washout
+    (``open_ratings=None`` + an ``open_filter``) and exit on a feature or a time
+    stop. ``price_loader`` is any callable
     ``(tickers, start, end) -> (dict[str, Series], Series)`` returning stock and
     benchmark adjusted-close prices; it defaults to :func:`load_prices_yfinance`
     and is downloaded exactly once. The returned DataFrame has one row per closed
@@ -532,7 +556,11 @@ def analyze_performance(
     if frame is None:
         frame = build_trade_log()
 
-    trades = simulate_trades(frame, min_score_raw=min_score_raw, open_filter=open_filter)
+    trades = simulate_trades(
+        frame, min_score_raw=min_score_raw, open_filter=open_filter,
+        open_ratings=open_ratings, close_ratings=close_ratings,
+        close_filter=close_filter, max_hold_days=max_hold_days,
+    )
     if trades.empty:
         return pd.DataFrame(columns=TRADE_COLUMNS)
 
@@ -569,9 +597,11 @@ def analyze_performance(
 
 def _print_performance(trades: pd.DataFrame) -> None:
     """Print a compact summary of the backtest trade table."""
-    print(f"\nBacktest: {len(trades)} trades "
-          f"({(trades['closed_reason'] == 'sell_signal').sum()} on sell signal, "
-          f"{(trades['closed_reason'] == 'end_of_data').sum()} closed at last date)")
+    if trades.empty:
+        print("\nBacktest: 0 trades (no entries matched).")
+        return
+    reasons = ", ".join(f"{n} {r}" for r, n in trades["closed_reason"].value_counts().items())
+    print(f"\nBacktest: {len(trades)} trades ({reasons})")
     priced = trades.dropna(subset=["alpha_pct"])
     if priced.empty:
         print("No priced trades (price data unavailable).")

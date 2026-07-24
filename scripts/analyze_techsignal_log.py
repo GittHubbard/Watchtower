@@ -33,8 +33,11 @@ if str(REPO_ROOT) not in sys.path:
 
 from gamma_workflow import storage  # noqa: E402
 from scripts.build_trade_log import (  # noqa: E402
+    OPEN_RATINGS,
+    CLOSE_RATINGS,
     analyze_performance,
     analyze_signal_predictiveness,
+    build_open_filter,
     build_trade_log_from_log,
     _print_performance,
     _print_predictiveness,
@@ -71,10 +74,33 @@ def make_feature_store_loader(panel: pd.DataFrame, benchmark: str = BENCHMARK_TI
     return loader
 
 
+# The contrarian preset: buy any oversold washout (RSI < 40, irrespective of the
+# ticket's recommendation), exit when it mean-reverts (RSI > 55) or after 15 days.
+# This is the "fade weakness" mirror of the STRONG_BUY strategy, encoding the edge
+# the regression surfaced (oversold / low-momentum names had positive forward alpha).
+CONTRARIAN = {
+    "open_ratings": None,                       # any rating can open
+    "open_filter": build_open_filter(["rsi<40"]),
+    "close_ratings": None,                      # no rating-based exit
+    "close_filter": build_open_filter(["rsi>55"]),
+    "max_hold_days": 15,
+}
+
+
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--backtest", action="store_true", help="Run the STRONG_BUY backtest.")
+    parser.add_argument("--backtest", action="store_true", help="Run the backtest.")
     parser.add_argument("--regress", action="store_true", help="Run the signal-predictiveness regression.")
+    parser.add_argument("--contrarian", action="store_true",
+                        help="Backtest the contrarian preset (buy RSI<40 washouts, exit RSI>55 or 15d) instead of STRONG_BUY.")
+    parser.add_argument("--open-any", action="store_true",
+                        help="Allow entries on ANY recommendation (not just STRONG_BUY).")
+    parser.add_argument("--open-filter", action="append", default=[], metavar="COL[op]VAL",
+                        help="Entry gate on a feature; repeatable, ANDed (e.g. --open-filter rsi<40 --open-filter iv30<30).")
+    parser.add_argument("--close-filter", action="append", default=[], metavar="COL[op]VAL",
+                        help="Exit gate on a feature; repeatable, ANDed (e.g. --close-filter rsi>55).")
+    parser.add_argument("--max-hold", type=int, default=None, help="Time-stop: close a position after N calendar days.")
+    parser.add_argument("--no-rating-exit", action="store_true", help="Disable the default SELL/STRONG_SELL exit.")
     parser.add_argument("--horizon", type=int, default=10, help="Forward-alpha horizon in trading days (default 10).")
     parser.add_argument("--min-support", type=int, default=100, help="Min observations per univariate cell (default 100).")
     parser.add_argument("--min-score-raw", type=float, default=None, help="Optional score_raw floor for backtest entries.")
@@ -95,7 +121,21 @@ def main() -> int:
           + ", ".join(f"{k}={v}" for k, v in frame['recommendation'].value_counts().items()))
 
     if args.backtest:
-        trades = analyze_performance(frame, min_score_raw=args.min_score_raw, price_loader=loader)
+        if args.contrarian:
+            print("\nStrategy: CONTRARIAN — open any rating with RSI<40, exit RSI>55 or 15-day time stop.")
+            strat = CONTRARIAN
+        else:
+            strat = {
+                "open_ratings": None if args.open_any else OPEN_RATINGS,
+                "open_filter": build_open_filter(args.open_filter),
+                "close_ratings": None if args.no_rating_exit else CLOSE_RATINGS,
+                "close_filter": build_open_filter(args.close_filter),
+                "max_hold_days": args.max_hold,
+            }
+            gate = ("any rating" if strat["open_ratings"] is None else "STRONG_BUY") \
+                + (f" + {' & '.join(args.open_filter)}" if args.open_filter else "")
+            print(f"\nStrategy: open {gate}")
+        trades = analyze_performance(frame, min_score_raw=args.min_score_raw, price_loader=loader, **strat)
         _print_performance(trades)
 
     if args.regress:

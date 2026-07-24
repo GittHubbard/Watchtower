@@ -3,7 +3,50 @@ from __future__ import annotations
 
 import pandas as pd
 
-from scripts.build_trade_log import build_trade_log_from_log
+from scripts.build_trade_log import build_trade_log_from_log, simulate_trades
+
+
+def _feat_frame(rows):
+    """Minimal frame with the columns simulate_trades touches."""
+    df = pd.DataFrame(rows)
+    df["date"] = pd.to_datetime(df["date"])
+    return df
+
+
+def test_simulate_trades_contrarian_entry_exit_and_time_stop():
+    # AAA: opens on a SELL-rated RSI<40 washout (open_ratings=None), exits on RSI>55.
+    # BBB: opens on RSI<40, never recovers -> time stop at max_hold_days.
+    rows = [
+        {"ticker": "AAA", "date": "2026-01-01", "recommendation": "SELL", "score_raw": -3.0, "rsi": 35},
+        {"ticker": "BBB", "date": "2026-01-01", "recommendation": "HOLD", "score_raw": 0.0, "rsi": 38},
+        {"ticker": "AAA", "date": "2026-01-05", "recommendation": "BUY", "score_raw": 3.0, "rsi": 60},
+        {"ticker": "BBB", "date": "2026-01-08", "recommendation": "HOLD", "score_raw": 0.0, "rsi": 40},
+    ]
+    frame = _feat_frame(rows)
+    trades = simulate_trades(
+        frame,
+        open_ratings=None,
+        open_filter=lambda r: r.rsi < 40,
+        close_ratings=None,
+        close_filter=lambda r: r.rsi > 55,
+        max_hold_days=5,
+    )
+    by = {r.ticker: r for r in trades.itertuples()}
+    assert by["AAA"].closed_reason == "signal_exit"      # RSI recovered
+    assert str(by["AAA"].sell_date.date()) == "2026-01-05"
+    assert by["BBB"].closed_reason == "max_hold"          # 5 days after 01-01 -> 01-06/08
+    assert (by["BBB"].sell_date - by["BBB"].buy_date).days >= 5
+
+
+def test_simulate_trades_defaults_unchanged():
+    # Default strategy still opens on STRONG_BUY, closes on SELL.
+    rows = [
+        {"ticker": "AAA", "date": "2026-01-01", "recommendation": "STRONG_BUY", "score_raw": 8.0, "rsi": 50},
+        {"ticker": "AAA", "date": "2026-01-03", "recommendation": "STRONG_SELL", "score_raw": -8.0, "rsi": 50},
+    ]
+    trades = simulate_trades(_feat_frame(rows))
+    assert len(trades) == 1
+    assert trades.iloc[0]["closed_reason"] == "sell_signal"
 
 _TICKET = """# Technical Signal: TST  2026-06-04
 
