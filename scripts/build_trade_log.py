@@ -150,6 +150,47 @@ COLUMNS = [
 ] + FEATURE_COLUMNS
 
 
+def parse_signal_text(text: str, *, ticker: str, date: str, watchlist: str, source: str = "") -> dict:
+    """Extract the trade-log fields from a techsignal ticket's markdown ``text``.
+
+    ``ticker``/``date``/``watchlist`` are recorded as given (``date`` an ISO
+    string). ``source`` is a label used only in error messages. Raises
+    ``ValueError`` if any required field cannot be parsed, so malformed tickets
+    surface loudly rather than silently yielding NaN. This is the shared core of
+    :func:`parse_signal_file` (which reads a ``.md`` file) and
+    :func:`build_trade_log_from_log` (which reads the parquet log's ``content``).
+    """
+    source = source or f"{date}_{ticker}"
+
+    header = _HEADER_RE.search(text)
+    if not header:
+        raise ValueError(f"Missing Recommendation/Score header in {source}")
+    recommendation = header.group(1)
+    score_capped = float(header.group(2))
+
+    confidence = _CONFIDENCE_RE.search(text)
+    if not confidence:
+        raise ValueError(f"Missing confidence line in {source}")
+    confidence_pct = int(confidence.group(1))
+
+    final = _FINAL_SCORE_RE.search(text)
+    if not final:
+        raise ValueError(f"Missing final score breakdown in {source}")
+    score_raw = float(final.group(1))
+
+    record = {
+        "ticker": ticker,
+        "date": date,
+        "watchlist": watchlist,
+        "recommendation": recommendation,
+        "score_capped": score_capped,
+        "score_raw": score_raw,
+        "confidence_pct": confidence_pct,
+    }
+    record.update(_parse_features(text, source))
+    return record
+
+
 def parse_signal_file(path: Path, watchlist: str) -> dict:
     """Extract the trade-log fields from a single ``*_techsignal.md`` file.
 
@@ -161,36 +202,8 @@ def parse_signal_file(path: Path, watchlist: str) -> dict:
     if not name_match:
         raise ValueError(f"Unexpected signal filename: {path.name}")
     date_str, ticker = name_match.group(1), name_match.group(2)
-
     text = path.read_text(encoding="utf-8")
-
-    header = _HEADER_RE.search(text)
-    if not header:
-        raise ValueError(f"Missing Recommendation/Score header in {path}")
-    recommendation = header.group(1)
-    score_capped = float(header.group(2))
-
-    confidence = _CONFIDENCE_RE.search(text)
-    if not confidence:
-        raise ValueError(f"Missing confidence line in {path}")
-    confidence_pct = int(confidence.group(1))
-
-    final = _FINAL_SCORE_RE.search(text)
-    if not final:
-        raise ValueError(f"Missing final score breakdown in {path}")
-    score_raw = float(final.group(1))
-
-    record = {
-        "ticker": ticker,
-        "date": date_str,
-        "watchlist": watchlist,
-        "recommendation": recommendation,
-        "score_capped": score_capped,
-        "score_raw": score_raw,
-        "confidence_pct": confidence_pct,
-    }
-    record.update(_parse_features(text, path))
-    return record
+    return parse_signal_text(text, ticker=ticker, date=date_str, watchlist=watchlist, source=str(path))
 
 
 def _nan_or_float(token: str) -> float:
@@ -198,7 +211,7 @@ def _nan_or_float(token: str) -> float:
     return float("nan") if token == "N/A" else float(token)
 
 
-def _parse_features(text: str, path: Path) -> dict:
+def _parse_features(text: str, source: str) -> dict:
     """Extract the Regime / Vol / Trend / Mean Reversion / Divergence fields.
 
     Every field is required and present in all well-formed signal files, so a
@@ -219,7 +232,7 @@ def _parse_features(text: str, path: Path) -> dict:
         ("Divergence header", div_h),
     ):
         if not match:
-            raise ValueError(f"Missing {name} section in {path}")
+            raise ValueError(f"Missing {name} section in {source}")
 
     # Divergence detail: count active divergences by type and confirmation state.
     div_counts = {"reg_bull": 0, "reg_bear": 0, "hid_bull": 0, "hid_bear": 0}
@@ -287,6 +300,37 @@ def build_trade_log(
     frame = pd.DataFrame(rows, columns=COLUMNS)
     frame["date"] = pd.to_datetime(frame["date"], format="%Y-%m-%d")
     frame = frame.sort_values(["date", "watchlist", "ticker"]).reset_index(drop=True)
+    return frame
+
+
+_LOG_WATCHLIST_MAP = {"upward": "up", "downward": "down"}
+
+
+def build_trade_log_from_log(log: pd.DataFrame) -> pd.DataFrame:
+    """Build the same feature frame as :func:`build_trade_log`, but from the
+    accumulated tech-signal parquet log (``storage.read_techsignal_log()``).
+
+    The log covers *every* ticker each day — including HOLD-rated names that never
+    reached a watchlist — so this is the richer, fuller universe. Each row's
+    ``content`` markdown is parsed with :func:`parse_signal_text` into the full
+    feature set. The ``watchlist`` column is normalised to ``up`` / ``down`` /
+    ``none`` to match :func:`build_trade_log`. Rows whose content can't be parsed
+    are dropped and counted in a ``build_trade_log_from_log.skipped`` attribute.
+    """
+    rows: list[dict] = []
+    skipped = 0
+    for r in log.itertuples(index=False):
+        wl = _LOG_WATCHLIST_MAP.get(r.watchlist, "none") if isinstance(r.watchlist, str) else "none"
+        try:
+            rows.append(parse_signal_text(
+                r.content, ticker=r.ticker, date=str(r.date), watchlist=wl,
+            ))
+        except ValueError:
+            skipped += 1
+    frame = pd.DataFrame(rows, columns=COLUMNS)
+    frame["date"] = pd.to_datetime(frame["date"], format="%Y-%m-%d")
+    frame = frame.sort_values(["date", "watchlist", "ticker"]).reset_index(drop=True)
+    build_trade_log_from_log.skipped = skipped  # type: ignore[attr-defined]
     return frame
 
 
