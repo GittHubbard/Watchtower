@@ -15,3 +15,5 @@ dist/
 # Local-only scratch
 scratch/
 *.local.yaml
+# Transient atomic-write temp files (e.g. techsignal_log.parquet.tmp)
+*.parquet.tmp

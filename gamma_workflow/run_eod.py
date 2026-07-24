@@ -268,6 +268,7 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
     _yesterday = asof - _td(days=1)
 
     rows: list[dict] = []
+    techsignal_records: list[dict] = []  # accumulates tickets for the growing parquet log
     for i, symbol in enumerate(symbols):
         if i > 0 and throttle_sec > 0:
             time.sleep(throttle_sec)   # be polite to yfinance / Yahoo
@@ -355,10 +356,23 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
 
                 # Watchlist routing based on recommendation transition
                 transition = (str(prev_tech_rec or "HOLD"), str(tech_rec))
+                watchlist_dir: str | None = None
                 if transition in _UPWARD_TRANSITIONS:
-                    storage.write_watchlist_ticket(symbol, asof, ticket_body, "upward")
+                    watchlist_dir = "upward"
                 elif transition in _DOWNWARD_TRANSITIONS:
-                    storage.write_watchlist_ticket(symbol, asof, ticket_body, "downward")
+                    watchlist_dir = "downward"
+                if watchlist_dir is not None:
+                    storage.write_watchlist_ticket(symbol, asof, ticket_body, watchlist_dir)
+
+                # Accumulate this ticket into the growing long-term parquet log.
+                techsignal_records.append({
+                    "date": asof.isoformat(),
+                    "ticker": symbol,
+                    "recommendation": str(tech_rec),
+                    "score": float(tech_sc) if tech_sc == tech_sc else float("nan"),
+                    "watchlist": watchlist_dir,
+                    "content": ticket_body,
+                })
             except Exception as e:
                 logger.warning("Tech-signal ticket write failed for %s: %s", symbol, e)
 
@@ -370,6 +384,14 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
     # below use the in-memory rows directly).
     if rows:
         log_features(rows, asof)
+
+    # Append every tech-signal ticket written this run to the growing parquet log
+    # (data/techsignal_log.parquet) for long-term assessment. Idempotent per date.
+    if techsignal_records:
+        try:
+            storage.append_techsignal_log(techsignal_records, asof)
+        except Exception as e:
+            logger.warning("Tech-signal log append failed: %s", e)
 
     # Stage 6 + 7 — signals and tickets
     signals_out: list[dict] = []
@@ -411,6 +433,7 @@ def run_eod(asof: date_cls | None = None, symbols: list[str] | None = None) -> d
         "tickers_processed": len(rows),
         "signals_fired": len(signals_out),
         "alerts": len(alerts),
+        "techsignals_logged": len(techsignal_records),
     }
     logger.info("EOD summary: %s", summary)
     return summary

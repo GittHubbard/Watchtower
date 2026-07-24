@@ -155,6 +155,14 @@ def test_full_run_eod_with_mocked_acquisition(monkeypatch):
     assert feats is not None
     assert (feats["ticker"] == "SPY").any()
 
+    # The day's tech-signal ticket is captured in the growing parquet log.
+    assert summary["techsignals_logged"] == 1
+    log = storage.read_techsignal_log()
+    assert len(log) == 1
+    assert log["ticker"].iloc[0] == "SPY"
+    assert log["date"].iloc[0] == asof.isoformat()
+    assert log["content"].iloc[0].startswith("# Technical Signal: SPY")
+
 
 def test_run_eod_throttles_between_tickers(monkeypatch):
     """Verify the inter-ticker sleep is called N-1 times for N tickers (not before
