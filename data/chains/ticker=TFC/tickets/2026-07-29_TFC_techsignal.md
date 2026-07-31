@@ -1,0 +1,25 @@
+# Technical Signal: TFC  2026-07-29
+
+**Recommendation**: HOLD  |  **Score**: +1.3
+
+### Technical Signal: HOLD (+1.3 / confidence 13%)
+
+**Regime**: ADX RANGING (ADX 14, +DI 29 vs -DI 20)  |  Vol: HIGH_IV (IV30 35.0%, RV20 25.4%)
+**Gate**: MR weight = 1.00
+
+**Trend** (+5.31 = +4.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 50.60 (anchor 30 bars ago), aVWAP-low 51.13 (anchor 26 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 56: neutral  Bollinger: neutral
+
+**Divergence** (-4.0)
+- ✓ CONFIRMED reg_bear on RSI (quality: standard)
+- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
+- ✓ CONFIRMED reg_bear on CMF (quality: strong)
+- ✓ CONFIRMED hid_bull on CMF (quality: standard)
+
+**Score**: +5.31 + +0.00 + -4.00 = +1.31 → **+1.31**

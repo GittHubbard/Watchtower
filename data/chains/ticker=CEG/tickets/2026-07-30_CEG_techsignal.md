@@ -1,0 +1,22 @@
+# Technical Signal: CEG  2026-07-30
+
+**Recommendation**: STRONG_BUY  |  **Score**: +9.0
+
+### Technical Signal: STRONG_BUY (+9.0 / confidence 90%)
+
+**Regime**: ADX RANGING (ADX 14, +DI 28 vs -DI 26)  |  Vol: HIGH_IV (IV30 53.7%, RV20 34.4%)
+**Gate**: MR weight = 1.00
+
+**Trend** (+4.00 = +4.00 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 258.30 (anchor 28 bars ago), aVWAP-low 256.47 (anchor 19 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 52: neutral  Bollinger: neutral
+
+**Divergence** (+5.0)
+- ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+
+**Score**: +4.00 + +0.00 + +5.00 = +9.00 → **+9.00**

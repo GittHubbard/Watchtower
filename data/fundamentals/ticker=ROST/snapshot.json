@@ -1,7 +1,7 @@
 {
-  "asof": "2026-07-22",
+  "asof": "2026-07-29",
   "scalars": {
-    "analyst_consensus": 1.68421,
+    "analyst_consensus": 1.73684,
     "analyst_coverage_count": 17.0,
     "analyst_downgrades_3m": 1.0,
     "analyst_pct_buy": 0.7368421052631579,
@@ -9,9 +9,9 @@
     "analyst_upgrades_3m": 0.0,
     "debt_to_equity": 74.911,
     "eps_beat_streak": 4.0,
-    "eps_estimate_trend": 0.0,
+    "eps_estimate_trend": 0.006680000000000019,
     "eps_surprise_avg_4q": 0.08647499924999999,
-    "forward_pe": 27.873274,
+    "forward_pe": 29.443764,
     "net_income_margin_ttm": 0.0973987536372715,
     "revenue_growth_yoy": 0.206
   }
