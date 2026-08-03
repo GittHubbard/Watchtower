@@ -1,0 +1,23 @@
+# Technical Signal: PODD  2026-08-03
+
+**Recommendation**: HOLD  |  **Score**: +0.1
+
+### Technical Signal: HOLD (+0.1 / confidence 1%)
+
+**Regime**: ADX RANGING (ADX 15, +DI 28 vs -DI 19)  |  Vol: HIGH_IV (IV30 61.2%, RV20 31.1%)
+**Gate**: MR weight = 1.00
+
+**Trend** (+4.06 = +3.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 157.05 (anchor 36 bars ago), aVWAP-low 159.30 (anchor 29 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 59: neutral  Bollinger: neutral
+
+**Divergence** (-4.0)
+- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
+- ✓ CONFIRMED reg_bear on CMF (quality: strong)
+
+**Score**: +4.06 + +0.00 + -4.00 = +0.06 → **+0.06**
