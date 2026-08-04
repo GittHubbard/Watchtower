@@ -1,0 +1,21 @@
+# Technical Signal: AMGN  2026-08-04
+
+**Recommendation**: STRONG_BUY  |  **Score**: +8.2
+
+### Technical Signal: STRONG_BUY (+8.2 / confidence 82%)
+
+**Regime**: ADX TRENDING (ADX 26, +DI 26 vs -DI 13)  |  Vol: HIGH_IV (IV30 39.0%, RV20 27.1%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+7.25 = +7.25 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-low 375.91 (anchor 15 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 65: neutral  Bollinger: neutral
+
+**Divergence** (+1.0)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
+
+**Score**: +7.25 + +0.00 + +1.00 = +8.25 → **+8.25**

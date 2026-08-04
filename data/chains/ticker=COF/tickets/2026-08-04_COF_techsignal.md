@@ -1,0 +1,25 @@
+# Technical Signal: COF  2026-08-04
+
+**Recommendation**: BUY  |  **Score**: +2.3
+
+### Technical Signal: HOLD (+2.3 / confidence 23%)
+
+**Regime**: ADX RANGING (ADX 17, +DI 35 vs -DI 17)  |  Vol: LOW_IV (IV30 32.9%, RV20 36.1%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+6.56 = +5.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 207.82 (anchor 13 bars ago), aVWAP-low 202.66 (anchor 36 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 68: neutral  Bollinger: upper-break
+
+**Divergence** (-4.0)
+- ✓ CONFIRMED reg_bear on RSI (quality: standard)
+- ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
+- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bear on CMF (quality: standard)
+
+**Score**: +6.56 + -0.25 + -4.00 = +2.31 → **+2.31**
