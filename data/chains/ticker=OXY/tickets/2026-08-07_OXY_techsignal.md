@@ -1,16 +1,16 @@
 # Technical Signal: OXY  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: +0.0
+**Recommendation**: HOLD  |  **Score**: -1.6
 
-### Technical Signal: HOLD (+0.0 / confidence 0%)
+### Technical Signal: HOLD (-1.6 / confidence 16%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 30 vs -DI 23)  |  Vol: NORMAL_IV (IV30 39.9%, RV20 36.2%)
+**Regime**: ADX RANGING (ADX 17, +DI 29 vs -DI 24)  |  Vol: HIGH_IV (IV30 45.7%, RV20 36.1%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+1.00 = +1.00 × 1.00 convergence)
+**Trend** (-0.62 = -0.50 × 1.25 convergence)
 - Price: UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: RECLAIM_HIGH  Volume: SURGE
-- aVWAP-high 55.88 (anchor 10 bars ago), aVWAP-low 54.24 (anchor 25 bars ago)
+- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: DRY
+- aVWAP-high 55.88 (anchor 11 bars ago), aVWAP-low 54.28 (anchor 26 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
 - RSI 54: neutral  Bollinger: neutral
@@ -19,4 +19,4 @@
 - ✓ CONFIRMED hid_bear on RSI (quality: standard)
 - ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
 
-**Score**: +1.00 + +0.00 + -1.00 = +0.00 → **+0.00**
+**Score**: -0.62 + +0.00 + -1.00 = -1.62 → **-1.62**

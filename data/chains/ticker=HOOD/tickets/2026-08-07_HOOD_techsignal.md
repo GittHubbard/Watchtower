@@ -1,23 +1,21 @@
 # Technical Signal: HOOD  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -10.0
+**Recommendation**: SELL  |  **Score**: -5.2
 
-### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
+### Technical Signal: SELL (-5.2 / confidence 52%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 18 vs -DI 28)  |  Vol: LOW_IV (IV30 62.7%, RV20 60.9%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 21 vs -DI 26)  |  Vol: LOW_IV (IV30 60.5%, RV20 62.2%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-6.75 = -6.75 × 1.00 convergence)
-- Price: DOWN  MACD: BEARISH  CMF: STRONG_DIST
+**Trend** (-5.25 = -5.25 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
-- aVWAP-high 102.91 (anchor 24 bars ago), aVWAP-low 96.99 (anchor 50 bars ago)
+- aVWAP-high 102.66 (anchor 25 bars ago), aVWAP-low 96.95 (anchor 51 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 42: neutral  Bollinger: neutral
+- RSI 46: neutral  Bollinger: neutral
 
-**Divergence** (-5.0)
-- ✓ CONFIRMED reg_bear on RSI (quality: strong)
-- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
-- ✓ CONFIRMED reg_bear on CMF (quality: strong)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: -6.75 + +0.00 + -5.00 = -11.75 → **-10.00**
+**Score**: -5.25 + +0.00 + +0.00 = -5.25 → **-5.25**

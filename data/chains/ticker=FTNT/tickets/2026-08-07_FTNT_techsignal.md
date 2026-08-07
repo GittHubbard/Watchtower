@@ -1,16 +1,16 @@
 # Technical Signal: FTNT  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +8.2
+**Recommendation**: HOLD  |  **Score**: +1.3
 
-### Technical Signal: STRONG_BUY (+8.2 / confidence 82%)
+### Technical Signal: HOLD (+1.3 / confidence 13%)
 
-**Regime**: ADX TRENDING (ADX 34, +DI 29 vs -DI 18)  |  Vol: NORMAL_IV (IV30 56.4%, RV20 37.5%)
+**Regime**: ADX TRENDING (ADX 34, +DI 30 vs -DI 17)  |  Vol: NORMAL_IV (IV30 55.4%, RV20 34.8%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+7.19 = +5.75 × 1.25 convergence)
-- Price: STRONG_UP  MACD: BULLISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 158.38 (anchor 16 bars ago)
+**Trend** (+0.31 = +0.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BEAR_CROSS  CMF: DIST
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 158.48 (anchor 17 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 54: neutral  Bollinger: neutral
@@ -23,4 +23,4 @@
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 
-**Score**: +7.19 + +0.00 + +1.00 = +8.19 → **+8.19**
+**Score**: +0.31 + +0.00 + +1.00 = +1.31 → **+1.31**

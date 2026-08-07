@@ -1,21 +1,21 @@
 # Technical Signal: CVX  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: +0.2
+**Recommendation**: HOLD  |  **Score**: -1.0
 
-### Technical Signal: HOLD (+0.2 / confidence 2%)
+### Technical Signal: HOLD (-1.0 / confidence 10%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 25 vs -DI 23)  |  Vol: NORMAL_IV (IV30 30.1%, RV20 25.3%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX RANGING (ADX 20, +DI 24 vs -DI 23)  |  Vol: NORMAL_IV (IV30 30.0%, RV20 25.9%)
+**Gate**: MR weight = 1.00
 
-**Trend** (+0.25 = +0.25 × 1.00 convergence)
-- Price: UP_EXHAUSTING  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 191.75 (anchor 10 bars ago), aVWAP-low 184.09 (anchor 25 bars ago)
+**Trend** (+1.00 = +1.00 × 1.00 convergence)
+- Price: UP  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: DRY
+- aVWAP-high 191.48 (anchor 11 bars ago), aVWAP-low 184.16 (anchor 26 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 50: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
-- No active divergences
+**Divergence** (-2.0)
+- ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: +0.25 + +0.00 + +0.00 = +0.25 → **+0.25**
+**Score**: +1.00 + +0.00 + -2.00 = -1.00 → **-1.00**

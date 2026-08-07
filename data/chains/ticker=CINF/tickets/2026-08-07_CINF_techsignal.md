@@ -1,21 +1,21 @@
 # Technical Signal: CINF  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.1
+**Recommendation**: HOLD  |  **Score**: +1.3
 
-### Technical Signal: BUY (+4.1 / confidence 41%)
+### Technical Signal: HOLD (+1.3 / confidence 13%)
 
-**Regime**: ADX RANGING (ADX 20, +DI 21 vs -DI 29)  |  Vol: HIGH_IV (IV30 34.1%, RV20 29.3%)
+**Regime**: ADX RANGING (ADX 20, +DI 20 vs -DI 29)  |  Vol: NORMAL_IV (IV30 30.7%, RV20 28.5%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
+**Trend** (+0.31 = +0.25 × 1.25 convergence)
 - Price: UP  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: TESTING_SUPPORT  Volume: DRY
-- aVWAP-high 179.63 (anchor 22 bars ago), aVWAP-low 179.26 (anchor 15 bars ago)
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 179.59 (anchor 23 bars ago), aVWAP-low 179.21 (anchor 16 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 51: neutral  Bollinger: neutral
+- RSI 47: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ✓ CONFIRMED hid_bull on RSI (quality: standard)
 
-**Score**: +3.12 + +0.00 + +1.00 = +4.12 → **+4.12**
+**Score**: +0.31 + +0.00 + +1.00 = +1.31 → **+1.31**

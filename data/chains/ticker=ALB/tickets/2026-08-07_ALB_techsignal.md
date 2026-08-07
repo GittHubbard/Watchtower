@@ -1,22 +1,22 @@
 # Technical Signal: ALB  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -0.2
+**Recommendation**: HOLD  |  **Score**: -0.8
 
-### Technical Signal: HOLD (-0.2 / confidence 2%)
+### Technical Signal: HOLD (-0.8 / confidence 8%)
 
-**Regime**: ADX TRENDING (ADX 33, +DI 23 vs -DI 20)  |  Vol: LOW_IV (IV30 55.6%, RV20 37.0%)
+**Regime**: ADX TRENDING (ADX 32, +DI 25 vs -DI 18)  |  Vol: LOW_IV (IV30 52.8%, RV20 39.7%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-0.25 = -0.25 × 1.00 convergence)
+**Trend** (-0.75 = -0.75 × 1.00 convergence)
 - Price: DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: SURGE
-- aVWAP-high 149.99 (anchor 62 bars ago)
+- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 149.60 (anchor 63 bars ago)
 
-**Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.00 → contribution -0.00)
+- RSI 57: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 
-**Score**: -0.25 + +0.00 + +0.00 = -0.25 → **-0.25**
+**Score**: -0.75 + -0.00 + +0.00 = -0.75 → **-0.75**

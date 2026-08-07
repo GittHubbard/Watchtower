@@ -1,21 +1,21 @@
 # Technical Signal: COIN  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -10.0
+**Recommendation**: STRONG_SELL  |  **Score**: -9.9
 
-### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
+### Technical Signal: STRONG_SELL (-9.9 / confidence 99%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 19 vs -DI 27)  |  Vol: LOW_IV (IV30 67.1%, RV20 70.4%)
+**Regime**: ADX RANGING (ADX 12, +DI 21 vs -DI 25)  |  Vol: LOW_IV (IV30 64.7%, RV20 73.4%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-9.06 = -7.25 × 1.25 convergence)
-- Price: STRONG_DOWN  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
-- aVWAP-high 157.65 (anchor 12 bars ago), aVWAP-low 158.74 (anchor 26 bars ago)
+**Trend** (-6.88 = -5.50 × 1.25 convergence)
+- Price: STRONG_DOWN  MACD: BEARISH  CMF: ACCUM
+- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 157.20 (anchor 13 bars ago), aVWAP-low 158.45 (anchor 27 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 41: neutral  Bollinger: neutral
+- RSI 47: neutral  Bollinger: neutral
 
 **Divergence** (-3.0)
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 
-**Score**: -9.06 + +0.00 + -3.00 = -12.06 → **-10.00**
+**Score**: -6.88 + +0.00 + -3.00 = -9.88 → **-9.88**

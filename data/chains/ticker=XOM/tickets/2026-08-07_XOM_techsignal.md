@@ -1,22 +1,21 @@
 # Technical Signal: XOM  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: +1.1
+**Recommendation**: HOLD  |  **Score**: +0.0
 
-### Technical Signal: HOLD (+1.1 / confidence 11%)
+### Technical Signal: HOLD (+0.0 / confidence 0%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 24 vs -DI 22)  |  Vol: NORMAL_IV (IV30 33.0%, RV20 23.1%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX RANGING (ADX 20, +DI 23 vs -DI 21)  |  Vol: NORMAL_IV (IV30 31.4%, RV20 23.9%)
+**Gate**: MR weight = 1.00
 
-**Trend** (-1.88 = -1.50 × 1.25 convergence)
-- Price: UP_EXHAUSTING  MACD: BEAR_CROSS  CMF: STRONG_ACCUM
+**Trend** (+0.00 = +0.00 × 1.00 convergence)
+- Price: UP_EXHAUSTING  MACD: BEARISH  CMF: STRONG_ACCUM
 - OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 146.23 (anchor 53 bars ago), aVWAP-low 147.28 (anchor 26 bars ago)
+- aVWAP-high 146.33 (anchor 54 bars ago), aVWAP-low 147.46 (anchor 27 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 59: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 55: neutral  Bollinger: neutral
 
-**Divergence** (+3.0)
-- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+**Divergence** (+0.0)
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 
-**Score**: -1.88 + +0.00 + +3.00 = +1.12 → **+1.12**
+**Score**: +0.00 + +0.00 + +0.00 = +0.00 → **+0.00**

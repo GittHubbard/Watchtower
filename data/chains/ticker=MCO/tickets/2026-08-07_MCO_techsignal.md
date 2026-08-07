@@ -1,22 +1,22 @@
 # Technical Signal: MCO  2026-08-07
 
-**Recommendation**: SELL  |  **Score**: -3.5
+**Recommendation**: HOLD  |  **Score**: -1.4
 
-### Technical Signal: SELL (-3.5 / confidence 35%)
+### Technical Signal: HOLD (-1.4 / confidence 14%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 23 vs -DI 25)  |  Vol: LOW_IV (IV30 30.6%, RV20 27.3%)
+**Regime**: ADX RANGING (ADX 11, +DI 22 vs -DI 23)  |  Vol: LOW_IV (IV30 28.8%, RV20 27.6%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-1.50 = -1.50 × 1.00 convergence)
+**Trend** (+0.62 = +0.50 × 1.25 convergence)
 - Price: UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: BREAKDOWN_LOW  Volume: DRY
-- aVWAP-high 486.81 (anchor 14 bars ago), aVWAP-low 473.80 (anchor 37 bars ago)
+- OBV: NEUTRAL  aVWAP: TESTING_SUPPORT  Volume: DRY
+- aVWAP-high 486.39 (anchor 15 bars ago), aVWAP-low 480.75 (anchor 10 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 48: neutral  Bollinger: neutral
 
 **Divergence** (-2.0)
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
 
-**Score**: -1.50 + +0.00 + -2.00 = -3.50 → **-3.50**
+**Score**: +0.62 + +0.00 + -2.00 = -1.38 → **-1.38**

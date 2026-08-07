@@ -1,21 +1,21 @@
 # Technical Signal: EXC  2026-08-07
 
-**Recommendation**: SELL  |  **Score**: -5.3
+**Recommendation**: SELL  |  **Score**: -3.8
 
-### Technical Signal: SELL (-5.3 / confidence 53%)
+### Technical Signal: SELL (-3.8 / confidence 38%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 19 vs -DI 24)  |  Vol: HIGH_IV (IV30 30.4%, RV20 20.6%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 15, +DI 17 vs -DI 23)  |  Vol: LOW_IV (IV30 26.8%, RV20 20.4%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-5.31 = -4.25 × 1.25 convergence)
+**Trend** (-3.75 = -3.00 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
-- aVWAP-high 46.52 (anchor 22 bars ago), aVWAP-low 46.11 (anchor 55 bars ago)
+- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 46.48 (anchor 23 bars ago), aVWAP-low 46.10 (anchor 56 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 42: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 44: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -5.31 + +0.00 + +0.00 = -5.31 → **-5.31**
+**Score**: -3.75 + +0.00 + +0.00 = -3.75 → **-3.75**

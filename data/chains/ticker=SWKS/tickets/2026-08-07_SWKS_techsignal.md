@@ -1,21 +1,21 @@
 # Technical Signal: SWKS  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.6
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
 
-### Technical Signal: STRONG_BUY (+6.6 / confidence 66%)
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 29 vs -DI 21)  |  Vol: LOW_IV (IV30 58.1%, RV20 53.6%)
+**Regime**: ADX RANGING (ADX 16, +DI 32 vs -DI 19)  |  Vol: LOW_IV (IV30 53.6%, RV20 56.4%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+6.56 = +5.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+**Trend** (+8.44 = +6.75 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 63.75 (anchor 32 bars ago), aVWAP-low 61.91 (anchor 15 bars ago)
+- aVWAP-high 63.85 (anchor 33 bars ago), aVWAP-low 62.17 (anchor 16 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 57: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 63: neutral  Bollinger: upper-break
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: +6.56 + +0.00 + +0.00 = +6.56 → **+6.56**
+**Score**: +8.44 + -0.25 + +3.00 = +11.19 → **+10.00**

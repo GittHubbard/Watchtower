@@ -1,23 +1,23 @@
 # Technical Signal: GE  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+**Recommendation**: STRONG_BUY  |  **Score**: +8.8
 
-### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+### Technical Signal: STRONG_BUY (+8.8 / confidence 88%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 30 vs -DI 19)  |  Vol: LOW_IV (IV30 34.3%, RV20 30.9%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 28 vs -DI 20)  |  Vol: LOW_IV (IV30 34.4%, RV20 31.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+9.06 = +7.25 × 1.25 convergence)
+**Trend** (+7.81 = +6.25 × 1.25 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 358.39 (anchor 24 bars ago), aVWAP-low 360.44 (anchor 11 bars ago)
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 358.98 (anchor 25 bars ago), aVWAP-low 361.57 (anchor 12 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 61: neutral  Bollinger: neutral
+- RSI 57: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ✓ CONFIRMED hid_bull on RSI (quality: standard)
 - ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 
-**Score**: +9.06 + +0.00 + +1.00 = +10.06 → **+10.00**
+**Score**: +7.81 + +0.00 + +1.00 = +8.81 → **+8.81**

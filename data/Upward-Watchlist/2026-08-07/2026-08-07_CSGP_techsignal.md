@@ -1,25 +1,24 @@
 # Technical Signal: CSGP  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.0
+**Recommendation**: STRONG_BUY  |  **Score**: +8.1
 
-### Technical Signal: BUY (+4.0 / confidence 40%)
+### Technical Signal: STRONG_BUY (+8.1 / confidence 81%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 23 vs -DI 25)  |  Vol: NORMAL_IV (IV30 67.1%, RV20 50.0%)
+**Regime**: ADX RANGING (ADX 13, +DI 28 vs -DI 23)  |  Vol: NORMAL_IV (IV30 62.4%, RV20 49.4%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+0.00 = +0.00 × 1.00 convergence)
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
 - Price: DOWN  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 30.00 (anchor 43 bars ago), aVWAP-low 28.97 (anchor 17 bars ago)
+- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 30.01 (anchor 44 bars ago), aVWAP-low 29.04 (anchor 18 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 50: neutral  Bollinger: neutral
+- RSI 53: neutral  Bollinger: neutral
 
-**Divergence** (+4.0)
+**Divergence** (+5.0)
 - ✓ CONFIRMED reg_bull on RSI (quality: standard)
-- ✓ CONFIRMED hid_bear on RSI (quality: standard)
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
-- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: standard)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: +0.00 + +0.00 + +4.00 = +4.00 → **+4.00**
+**Score**: +3.12 + +0.00 + +5.00 = +8.12 → **+8.12**

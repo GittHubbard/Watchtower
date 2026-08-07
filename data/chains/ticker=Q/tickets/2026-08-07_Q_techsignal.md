@@ -1,22 +1,22 @@
 # Technical Signal: Q  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: +0.2
+**Recommendation**: HOLD  |  **Score**: +1.2
 
-### Technical Signal: HOLD (+0.2 / confidence 2%)
+### Technical Signal: HOLD (+1.2 / confidence 12%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 20 vs -DI 25)  |  Vol: NORMAL_IV (IV30 68.1%, RV20 45.6%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 20 vs -DI 24)  |  Vol: LOW_IV (IV30 62.9%, RV20 47.5%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-2.75 = -2.75 × 1.00 convergence)
+**Trend** (-1.75 = -1.75 × 1.00 convergence)
 - Price: DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
-- aVWAP-high 144.24 (anchor 32 bars ago), aVWAP-low 146.61 (anchor 39 bars ago)
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 144.08 (anchor 33 bars ago), aVWAP-low 146.44 (anchor 40 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: -2.75 + +0.00 + +3.00 = +0.25 → **+0.25**
-Note: Only 195 bars — price-trend SMA200 unavailable (warmup)
+**Score**: -1.75 + +0.00 + +3.00 = +1.25 → **+1.25**
+Note: Only 196 bars — price-trend SMA200 unavailable (warmup)

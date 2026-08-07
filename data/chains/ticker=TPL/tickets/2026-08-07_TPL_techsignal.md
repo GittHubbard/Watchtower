@@ -1,21 +1,21 @@
 # Technical Signal: TPL  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -7.7
+**Recommendation**: STRONG_SELL  |  **Score**: -6.8
 
-### Technical Signal: STRONG_SELL (-7.7 / confidence 77%)
+### Technical Signal: STRONG_SELL (-6.8 / confidence 68%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 17 vs -DI 37)  |  Vol: NORMAL_IV (IV30 51.2%, RV20 45.1%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 18, +DI 16 vs -DI 37)  |  Vol: LOW_IV (IV30 49.6%, RV20 46.2%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-7.19 = -5.75 × 1.25 convergence)
+**Trend** (-6.56 = -5.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
-- aVWAP-high 392.74 (anchor 10 bars ago), aVWAP-low 396.34 (anchor 33 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 388.15 (anchor 11 bars ago), aVWAP-low 394.77 (anchor 34 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.50)
-- RSI 33: neutral  Bollinger: lower-break
+**Mean Reversion** (gate 0.50 → contribution +0.75)
+- RSI 30: oversold  Bollinger: lower-break
 
 **Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on CMF (quality: strong)
 
-**Score**: -7.19 + +0.50 + -1.00 = -7.69 → **-7.69**
+**Score**: -6.56 + +0.75 + -1.00 = -6.81 → **-6.81**

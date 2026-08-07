@@ -1,21 +1,21 @@
 # Technical Signal: CBOE  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +3.2
+**Recommendation**: STRONG_SELL  |  **Score**: -6.4
 
-### Technical Signal: BUY (+3.2 / confidence 32%)
+### Technical Signal: STRONG_SELL (-6.4 / confidence 64%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 18 vs -DI 18)  |  Vol: NORMAL_IV (IV30 43.6%, RV20 38.6%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 16, +DI 17 vs -DI 17)  |  Vol: LOW_IV (IV30 42.2%, RV20 38.9%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+3.25 = +3.25 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 281.00 (anchor 54 bars ago), aVWAP-low 275.24 (anchor 26 bars ago)
+**Trend** (-4.38 = -3.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: DRY
+- aVWAP-high 281.06 (anchor 55 bars ago), aVWAP-low 275.52 (anchor 27 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 51: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
-- No active divergences
+**Divergence** (-2.0)
+- ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: +3.25 + +0.00 + +0.00 = +3.25 → **+3.25**
+**Score**: -4.38 + +0.00 + -2.00 = -6.38 → **-6.38**

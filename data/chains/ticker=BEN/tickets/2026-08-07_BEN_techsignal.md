@@ -1,21 +1,21 @@
 # Technical Signal: BEN  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.2
+**Recommendation**: BUY  |  **Score**: +5.0
 
-### Technical Signal: STRONG_BUY (+6.2 / confidence 62%)
+### Technical Signal: BUY (+5.0 / confidence 50%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 28 vs -DI 19)  |  Vol: HIGH_IV (IV30 50.9%, RV20 30.7%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 18, +DI 27 vs -DI 21)  |  Vol: LOW_IV (IV30 42.2%, RV20 30.7%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+6.25 = +5.00 × 1.25 convergence)
+**Trend** (+5.00 = +4.00 × 1.25 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 33.54 (anchor 22 bars ago), aVWAP-low 33.81 (anchor 10 bars ago)
+- OBV: NEUTRAL  aVWAP: BREAKDOWN_LOW  Volume: DRY
+- aVWAP-high 33.55 (anchor 23 bars ago), aVWAP-low 33.81 (anchor 11 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 54: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 52: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +6.25 + +0.00 + +0.00 = +6.25 → **+6.25**
+**Score**: +5.00 + +0.00 + +0.00 = +5.00 → **+5.00**

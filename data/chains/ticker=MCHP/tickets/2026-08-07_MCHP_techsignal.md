@@ -1,21 +1,21 @@
 # Technical Signal: MCHP  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -1.8
+**Recommendation**: BUY  |  **Score**: +4.9
 
-### Technical Signal: HOLD (-1.8 / confidence 18%)
+### Technical Signal: BUY (+4.9 / confidence 49%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 19 vs -DI 32)  |  Vol: NORMAL_IV (IV30 67.6%, RV20 58.0%)
-**Gate**: MR weight = 0.00
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 25 vs -DI 26)  |  Vol: LOW_IV (IV30 54.1%, RV20 76.1%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-1.75 = -1.75 × 1.00 convergence)
+**Trend** (+1.88 = +1.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 84.23 (anchor 32 bars ago), aVWAP-low 86.21 (anchor 39 bars ago)
+- OBV: BEARISH  aVWAP: RECLAIM_HIGH  Volume: SURGE
+- aVWAP-high 84.18 (anchor 33 bars ago), aVWAP-low 86.08 (anchor 40 bars ago)
 
-**Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 40: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 54: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: -1.75 + +0.00 + +0.00 = -1.75 → **-1.75**
+**Score**: +1.88 + +0.00 + +3.00 = +4.88 → **+4.88**

@@ -1,16 +1,16 @@
 # Technical Signal: VLTO  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: +1.2
+**Recommendation**: BUY  |  **Score**: +2.6
 
-### Technical Signal: HOLD (+1.2 / confidence 12%)
+### Technical Signal: BUY (+2.6 / confidence 26%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 34 vs -DI 18)  |  Vol: LOW_IV (IV30 40.3%, RV20 31.2%)
+**Regime**: ADX TRENDING (ADX 28, +DI 35 vs -DI 17)  |  Vol: LOW_IV (IV30 43.7%, RV20 31.2%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+5.25 = +5.25 × 1.00 convergence)
+**Trend** (+6.56 = +5.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 88.08 (anchor 76 bars ago), aVWAP-low 95.27 (anchor 11 bars ago)
+- aVWAP-high 88.16 (anchor 77 bars ago), aVWAP-low 95.42 (anchor 12 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 64: neutral  Bollinger: neutral
@@ -21,4 +21,4 @@
 - ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 
-**Score**: +5.25 + +0.00 + -4.00 = +1.25 → **+1.25**
+**Score**: +6.56 + +0.00 + -4.00 = +2.56 → **+2.56**

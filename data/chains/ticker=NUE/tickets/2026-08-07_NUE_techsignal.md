@@ -1,16 +1,16 @@
 # Technical Signal: NUE  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +9.7
+**Recommendation**: STRONG_BUY  |  **Score**: +7.8
 
-### Technical Signal: STRONG_BUY (+9.7 / confidence 97%)
+### Technical Signal: STRONG_BUY (+7.8 / confidence 78%)
 
-**Regime**: ADX TRENDING (ADX 29, +DI 36 vs -DI 14)  |  Vol: NORMAL_IV (IV30 38.7%, RV20 36.6%)
+**Regime**: ADX TRENDING (ADX 29, +DI 34 vs -DI 16)  |  Vol: LOW_IV (IV30 37.0%, RV20 36.4%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+9.69 = +7.75 × 1.25 convergence)
+**Trend** (+7.75 = +7.75 × 1.00 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 244.13 (anchor 36 bars ago), aVWAP-low 244.25 (anchor 25 bars ago)
+- aVWAP-high 244.71 (anchor 37 bars ago), aVWAP-low 245.21 (anchor 26 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 69: neutral  Bollinger: neutral
@@ -18,4 +18,4 @@
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +9.69 + +0.00 + +0.00 = +9.69 → **+9.69**
+**Score**: +7.75 + +0.00 + +0.00 = +7.75 → **+7.75**

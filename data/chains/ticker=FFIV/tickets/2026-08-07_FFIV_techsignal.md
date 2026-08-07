@@ -1,21 +1,21 @@
 # Technical Signal: FFIV  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +8.6
+**Recommendation**: STRONG_SELL  |  **Score**: -7.5
 
-### Technical Signal: STRONG_BUY (+8.6 / confidence 86%)
+### Technical Signal: STRONG_SELL (-7.5 / confidence 75%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 20 vs -DI 23)  |  Vol: LOW_IV (IV30 42.7%, RV20 36.9%)
+**Regime**: ADX RANGING (ADX 18, +DI 21 vs -DI 21)  |  Vol: LOW_IV (IV30 40.8%, RV20 38.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+11.56 = +9.25 × 1.25 convergence)
-- Price: STRONG_UP  MACD: BULL_CROSS  CMF: ACCUM
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 403.05 (anchor 16 bars ago), aVWAP-low 407.10 (anchor 29 bars ago)
+**Trend** (-4.50 = -4.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 403.21 (anchor 17 bars ago), aVWAP-low 407.09 (anchor 30 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 55: neutral  Bollinger: neutral
+- RSI 48: neutral  Bollinger: neutral
 
 **Divergence** (-3.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
 
-**Score**: +11.56 + +0.00 + -3.00 = +8.56 → **+8.56**
+**Score**: -4.50 + +0.00 + -3.00 = -7.50 → **-7.50**

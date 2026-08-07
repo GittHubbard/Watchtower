@@ -1,16 +1,16 @@
 # Technical Signal: PAYX  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +8.2
+**Recommendation**: STRONG_BUY  |  **Score**: +7.2
 
-### Technical Signal: STRONG_BUY (+8.2 / confidence 82%)
+### Technical Signal: STRONG_BUY (+7.2 / confidence 72%)
 
-**Regime**: ADX TRENDING (ADX 32, +DI 34 vs -DI 17)  |  Vol: HIGH_IV (IV30 45.7%, RV20 34.5%)
+**Regime**: ADX TRENDING (ADX 32, +DI 35 vs -DI 16)  |  Vol: HIGH_IV (IV30 43.4%, RV20 34.6%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+8.25 = +8.25 × 1.00 convergence)
+**Trend** (+7.25 = +7.25 × 1.00 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 106.60 (anchor 36 bars ago), aVWAP-low 107.88 (anchor 32 bars ago)
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 106.79 (anchor 37 bars ago), aVWAP-low 108.08 (anchor 33 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 67: neutral  Bollinger: neutral
@@ -18,4 +18,4 @@
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 
-**Score**: +8.25 + +0.00 + +0.00 = +8.25 → **+8.25**
+**Score**: +7.25 + +0.00 + +0.00 = +7.25 → **+7.25**

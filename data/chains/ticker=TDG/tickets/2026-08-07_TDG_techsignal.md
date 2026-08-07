@@ -1,21 +1,21 @@
 # Technical Signal: TDG  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -1.2
+**Recommendation**: SELL  |  **Score**: -5.0
 
-### Technical Signal: HOLD (-1.2 / confidence 12%)
+### Technical Signal: SELL (-5.0 / confidence 50%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 31 vs -DI 15)  |  Vol: NORMAL_IV (IV30 34.5%, RV20 31.4%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 28 vs -DI 19)  |  Vol: LOW_IV (IV30 32.4%, RV20 32.9%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-1.25 = -1.00 × 1.25 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 1274.72 (anchor 29 bars ago), aVWAP-low 1258.05 (anchor 12 bars ago)
+**Trend** (-5.00 = -4.00 × 1.25 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 1273.34 (anchor 30 bars ago), aVWAP-low 1256.69 (anchor 13 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 50: neutral  Bollinger: neutral
+- RSI 44: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -1.25 + +0.00 + +0.00 = -1.25 → **-1.25**
+**Score**: -5.00 + +0.00 + +0.00 = -5.00 → **-5.00**

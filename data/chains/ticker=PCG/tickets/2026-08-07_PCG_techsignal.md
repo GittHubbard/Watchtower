@@ -1,21 +1,21 @@
 # Technical Signal: PCG  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -5.6
+**Recommendation**: HOLD  |  **Score**: -1.0
 
-### Technical Signal: STRONG_SELL (-5.6 / confidence 56%)
+### Technical Signal: HOLD (-1.0 / confidence 10%)
 
-**Regime**: ADX TRENDING (ADX 29, +DI 18 vs -DI 16)  |  Vol: HIGH_IV (IV30 57.5%, RV20 23.3%)
+**Regime**: ADX TRENDING (ADX 27, +DI 18 vs -DI 14)  |  Vol: HIGH_IV (IV30 65.5%, RV20 25.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-2.81 = -2.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 17.20 (anchor 42 bars ago), aVWAP-low 17.35 (anchor 32 bars ago)
+**Trend** (+2.00 = +2.00 × 1.00 convergence)
+- Price: UP  MACD: BEARISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 17.20 (anchor 43 bars ago), aVWAP-low 17.34 (anchor 33 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.25)
-- RSI 44: neutral  Bollinger: lower-break
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 52: neutral  Bollinger: neutral
 
 **Divergence** (-3.0)
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 
-**Score**: -2.81 + +0.25 + -3.00 = -5.56 → **-5.56**
+**Score**: +2.00 + +0.00 + -3.00 = -1.00 → **-1.00**

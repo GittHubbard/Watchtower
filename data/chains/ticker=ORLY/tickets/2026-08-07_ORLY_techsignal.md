@@ -1,16 +1,16 @@
 # Technical Signal: ORLY  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+**Recommendation**: STRONG_BUY  |  **Score**: +9.7
 
-### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+### Technical Signal: STRONG_BUY (+9.7 / confidence 97%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 30 vs -DI 24)  |  Vol: LOW_IV (IV30 33.3%, RV20 35.9%)
+**Regime**: ADX RANGING (ADX 12, +DI 29 vs -DI 25)  |  Vol: LOW_IV (IV30 34.8%, RV20 35.8%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+5.31 = +4.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+**Trend** (+4.69 = +3.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 87.76 (anchor 24 bars ago), aVWAP-low 87.93 (anchor 20 bars ago)
+- aVWAP-high 87.86 (anchor 25 bars ago), aVWAP-low 88.06 (anchor 21 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 61: neutral  Bollinger: neutral
@@ -21,4 +21,4 @@
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Score**: +5.31 + +0.00 + +5.00 = +10.31 → **+10.00**
+**Score**: +4.69 + +0.00 + +5.00 = +9.69 → **+9.69**

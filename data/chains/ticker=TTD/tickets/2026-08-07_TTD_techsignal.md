@@ -1,23 +1,23 @@
 # Technical Signal: TTD  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: STRONG_SELL  |  **Score**: -8.0
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: STRONG_SELL (-8.0 / confidence 80%)
 
-**Regime**: ADX RANGING (ADX 9, +DI 24 vs -DI 27)  |  Vol: HIGH_IV (IV30 86.6%, RV20 55.1%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 11, +DI 18 vs -DI 45)  |  Vol: LOW_IV (IV30 60.3%, RV20 102.0%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-5.50 = -5.50 × 1.00 convergence)
-- Price: STRONG_DOWN  MACD: BULLISH  CMF: STRONG_DIST
+**Trend** (-13.75 = -11.00 × 1.25 convergence)
+- Price: STRONG_DOWN  MACD: BEAR_CROSS  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: SURGE
-- aVWAP-high 18.43 (anchor 18 bars ago), aVWAP-low 18.49 (anchor 29 bars ago)
+- aVWAP-high 17.14 (anchor 19 bars ago), aVWAP-low 17.51 (anchor 30 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 43: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.75)
+- RSI 28: oversold  Bollinger: lower-break
 
 **Divergence** (+5.0)
 - ✓ CONFIRMED reg_bull on RSI (quality: standard)
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: -5.50 + +0.00 + +5.00 = -0.50 → **-0.50**
+**Score**: -13.75 + +0.75 + +5.00 = -8.00 → **-8.00**

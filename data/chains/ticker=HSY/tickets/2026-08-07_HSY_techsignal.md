@@ -1,21 +1,21 @@
 # Technical Signal: HSY  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +5.2
+**Recommendation**: STRONG_BUY  |  **Score**: +5.9
 
-### Technical Signal: BUY (+5.2 / confidence 52%)
+### Technical Signal: STRONG_BUY (+5.9 / confidence 59%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 33 vs -DI 24)  |  Vol: LOW_IV (IV30 33.3%, RV20 26.9%)
+**Regime**: ADX RANGING (ADX 15, +DI 33 vs -DI 23)  |  Vol: LOW_IV (IV30 31.1%, RV20 26.8%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+5.25 = +5.25 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+**Trend** (+5.94 = +4.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 178.74 (anchor 49 bars ago), aVWAP-low 177.73 (anchor 12 bars ago)
+- aVWAP-high 178.78 (anchor 50 bars ago), aVWAP-low 177.93 (anchor 13 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 58: neutral  Bollinger: neutral
+- RSI 57: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bear on CMF (quality: standard)
 
-**Score**: +5.25 + +0.00 + +0.00 = +5.25 → **+5.25**
+**Score**: +5.94 + +0.00 + +0.00 = +5.94 → **+5.94**

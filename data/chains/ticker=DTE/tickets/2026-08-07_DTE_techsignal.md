@@ -1,21 +1,21 @@
 # Technical Signal: DTE  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -5.6
+**Recommendation**: SELL  |  **Score**: -4.2
 
-### Technical Signal: STRONG_SELL (-5.6 / confidence 56%)
+### Technical Signal: SELL (-4.2 / confidence 42%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 16 vs -DI 25)  |  Vol: HIGH_IV (IV30 30.5%, RV20 17.4%)
+**Regime**: ADX RANGING (ADX 15, +DI 15 vs -DI 23)  |  Vol: HIGH_IV (IV30 30.9%, RV20 17.0%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-6.56 = -5.25 × 1.25 convergence)
+**Trend** (-5.25 = -5.25 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 146.55 (anchor 22 bars ago), aVWAP-low 146.65 (anchor 46 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 146.39 (anchor 23 bars ago), aVWAP-low 146.57 (anchor 47 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 35: neutral  Bollinger: neutral
+- RSI 34: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
 
-**Score**: -6.56 + +0.00 + +1.00 = -5.56 → **-5.56**
+**Score**: -5.25 + +0.00 + +1.00 = -4.25 → **-4.25**

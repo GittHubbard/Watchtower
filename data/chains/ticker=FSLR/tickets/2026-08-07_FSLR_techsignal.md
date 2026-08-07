@@ -1,21 +1,21 @@
 # Technical Signal: FSLR  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.2
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
 
-### Technical Signal: STRONG_BUY (+7.2 / confidence 72%)
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
 
-**Regime**: ADX TRENDING (ADX 32, +DI 30 vs -DI 16)  |  Vol: HIGH_IV (IV30 79.2%, RV20 53.3%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 33, +DI 35 vs -DI 14)  |  Vol: LOW_IV (IV30 59.8%, RV20 53.7%)
+**Gate**: MR weight = 0.00
 
-**Trend** (+7.50 = +6.00 × 1.25 convergence)
-- Price: UP  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: SURGE
-- aVWAP-high 241.40 (anchor 44 bars ago), aVWAP-low 240.09 (anchor 75 bars ago)
+**Trend** (+7.19 = +5.75 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: DIST
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-high 242.11 (anchor 45 bars ago), aVWAP-low 240.51 (anchor 76 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution -0.25)
-- RSI 61: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.00 → contribution -0.00)
+- RSI 64: neutral  Bollinger: upper-break
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: +7.50 + -0.25 + +0.00 = +7.25 → **+7.25**
+**Score**: +7.19 + -0.00 + +3.00 = +10.19 → **+10.00**

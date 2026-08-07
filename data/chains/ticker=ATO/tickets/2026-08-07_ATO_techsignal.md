@@ -1,21 +1,21 @@
 # Technical Signal: ATO  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.9
+**Recommendation**: STRONG_SELL  |  **Score**: -8.4
 
-### Technical Signal: STRONG_SELL (-6.9 / confidence 69%)
+### Technical Signal: STRONG_SELL (-8.4 / confidence 84%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 19 vs -DI 22)  |  Vol: NORMAL_IV (IV30 29.2%, RV20 17.6%)
+**Regime**: ADX RANGING (ADX 18, +DI 18 vs -DI 24)  |  Vol: NORMAL_IV (IV30 29.0%, RV20 17.6%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-6.88 = -5.50 × 1.25 convergence)
+**Trend** (-8.44 = -6.75 × 1.25 convergence)
 - Price: DOWN  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: DRY
-- aVWAP-high 174.29 (anchor 66 bars ago), aVWAP-low 172.91 (anchor 45 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 174.26 (anchor 67 bars ago), aVWAP-low 172.88 (anchor 46 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 41: neutral  Bollinger: neutral
+- RSI 37: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -6.88 + +0.00 + +0.00 = -6.88 → **-6.88**
+**Score**: -8.44 + +0.00 + +0.00 = -8.44 → **-8.44**

@@ -1,25 +1,23 @@
 # Technical Signal: GOOGL  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +5.3
+**Recommendation**: STRONG_BUY  |  **Score**: +6.6
 
-### Technical Signal: BUY (+5.3 / confidence 53%)
+### Technical Signal: STRONG_BUY (+6.6 / confidence 66%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 33 vs -DI 23)  |  Vol: LOW_IV (IV30 32.9%, RV20 51.3%)
+**Regime**: ADX RANGING (ADX 16, +DI 32 vs -DI 24)  |  Vol: LOW_IV (IV30 30.6%, RV20 51.4%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+5.31 = +4.25 × 1.25 convergence)
-- Price: UP  MACD: BULLISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 346.27 (anchor 15 bars ago), aVWAP-low 348.91 (anchor 29 bars ago)
+**Trend** (+1.56 = +1.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 346.59 (anchor 16 bars ago), aVWAP-low 349.96 (anchor 10 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 52: neutral  Bollinger: neutral
+- RSI 51: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
+**Divergence** (+5.0)
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
-- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bull on CMF (quality: standard)
-- ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: +5.31 + +0.00 + +0.00 = +5.31 → **+5.31**
+**Score**: +1.56 + +0.00 + +5.00 = +6.56 → **+6.56**

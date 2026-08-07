@@ -1,22 +1,22 @@
 # Technical Signal: NWSA  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.3
+**Recommendation**: BUY  |  **Score**: +4.1
 
-### Technical Signal: BUY (+4.3 / confidence 43%)
+### Technical Signal: BUY (+4.1 / confidence 41%)
 
-**Regime**: ADX WEAK_TREND (ADX 25, +DI 42 vs -DI 15)  |  Vol: HIGH_IV (IV30 80.2%, RV20 31.9%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX TRENDING (ADX 25, +DI 38 vs -DI 19)  |  Vol: HIGH_IV (IV30 85.3%, RV20 35.3%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+9.69 = +7.75 × 1.25 convergence)
+**Trend** (+9.06 = +7.25 × 1.25 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
-- aVWAP-high 26.48 (anchor 39 bars ago), aVWAP-low 26.89 (anchor 31 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 26.54 (anchor 40 bars ago), aVWAP-low 28.41 (anchor 10 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution -0.38)
-- RSI 65: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 56: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: +9.69 + -0.38 + -5.00 = +4.31 → **+4.31**
+**Score**: +9.06 + +0.00 + -5.00 = +4.06 → **+4.06**

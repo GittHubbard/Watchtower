@@ -1,21 +1,21 @@
 # Technical Signal: AVAV  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.8
+**Recommendation**: STRONG_BUY  |  **Score**: +6.3
 
-### Technical Signal: BUY (+4.8 / confidence 48%)
+### Technical Signal: STRONG_BUY (+6.3 / confidence 63%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 31 vs -DI 17)  |  Vol: NORMAL_IV (IV30 74.4%, RV20 67.1%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 16, +DI 35 vs -DI 15)  |  Vol: LOW_IV (IV30 72.8%, RV20 71.6%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+5.31 = +4.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+**Trend** (+6.56 = +5.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 158.61 (anchor 24 bars ago), aVWAP-low 154.43 (anchor 13 bars ago)
+- aVWAP-high 159.64 (anchor 25 bars ago), aVWAP-low 157.03 (anchor 14 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution -0.50)
-- RSI 59: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 65: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.31 + -0.50 + +0.00 = +4.81 → **+4.81**
+**Score**: +6.56 + -0.25 + +0.00 = +6.31 → **+6.31**

@@ -1,21 +1,21 @@
 # Technical Signal: EG  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -0.3
+**Recommendation**: HOLD  |  **Score**: +0.8
 
-### Technical Signal: HOLD (-0.3 / confidence 3%)
+### Technical Signal: HOLD (+0.8 / confidence 8%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 29 vs -DI 27)  |  Vol: NORMAL_IV (IV30 27.9%, RV20 29.7%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 26 vs -DI 28)  |  Vol: LOW_IV (IV30 25.6%, RV20 30.0%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-0.31 = -0.25 × 1.25 convergence)
+**Trend** (+0.75 = +0.75 × 1.00 convergence)
 - Price: UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 353.23 (anchor 54 bars ago), aVWAP-low 356.25 (anchor 44 bars ago)
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 353.46 (anchor 55 bars ago), aVWAP-low 356.48 (anchor 45 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+- RSI 52: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -0.31 + +0.00 + +0.00 = -0.31 → **-0.31**
+**Score**: +0.75 + +0.00 + +0.00 = +0.75 → **+0.75**

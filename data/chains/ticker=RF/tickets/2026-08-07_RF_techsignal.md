@@ -4,16 +4,16 @@
 
 ### Technical Signal: HOLD (-2.0 / confidence 20%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 28 vs -DI 19)  |  Vol: LOW_IV (IV30 30.5%, RV20 21.7%)
+**Regime**: ADX TRENDING (ADX 27, +DI 26 vs -DI 20)  |  Vol: LOW_IV (IV30 31.1%, RV20 21.2%)
 **Gate**: MR weight = 0.00
 
 **Trend** (+0.00 = +0.00 × 1.00 convergence)
 - Price: STRONG_UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 31.25 (anchor 14 bars ago), aVWAP-low 31.21 (anchor 10 bars ago)
+- OBV: BEARISH  aVWAP: TESTING_RESISTANCE  Volume: DRY
+- aVWAP-high 31.26 (anchor 15 bars ago), aVWAP-low 31.22 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 56: neutral  Bollinger: neutral
+- RSI 57: neutral  Bollinger: neutral
 
 **Divergence** (-2.0)
 - ✓ CONFIRMED hid_bull on RSI (quality: standard)

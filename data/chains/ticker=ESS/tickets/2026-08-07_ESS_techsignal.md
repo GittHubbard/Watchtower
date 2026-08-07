@@ -1,22 +1,22 @@
 # Technical Signal: ESS  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -1.8
+**Recommendation**: HOLD  |  **Score**: +0.6
 
-### Technical Signal: HOLD (-1.8 / confidence 18%)
+### Technical Signal: HOLD (+0.6 / confidence 6%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 15 vs -DI 24)  |  Vol: LOW_IV (IV30 27.9%, RV20 23.8%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 14 vs -DI 25)  |  Vol: LOW_IV (IV30 27.1%, RV20 23.9%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-1.75 = -1.75 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
-- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: DRY
-- aVWAP-high 292.18 (anchor 22 bars ago), aVWAP-low 290.71 (anchor 32 bars ago)
+**Trend** (+0.62 = +0.50 × 1.25 convergence)
+- Price: UP  MACD: BEARISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: TESTING_SUPPORT  Volume: DRY
+- aVWAP-high 292.08 (anchor 23 bars ago), aVWAP-low 290.66 (anchor 33 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 - ⏳ PENDING reg_bull on OBV (quality: standard)
 
-**Score**: -1.75 + +0.00 + +0.00 = -1.75 → **-1.75**
+**Score**: +0.62 + +0.00 + +0.00 = +0.62 → **+0.62**

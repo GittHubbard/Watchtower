@@ -1,21 +1,21 @@
 # Technical Signal: PANW  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.2
+**Recommendation**: STRONG_BUY  |  **Score**: +8.4
 
-### Technical Signal: STRONG_BUY (+7.2 / confidence 72%)
+### Technical Signal: STRONG_BUY (+8.4 / confidence 84%)
 
-**Regime**: ADX TRENDING (ADX 30, +DI 34 vs -DI 20)  |  Vol: HIGH_IV (IV30 65.5%, RV20 45.8%)
+**Regime**: ADX TRENDING (ADX 30, +DI 37 vs -DI 19)  |  Vol: HIGH_IV (IV30 62.3%, RV20 43.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+7.19 = +5.75 × 1.25 convergence)
+**Trend** (+8.44 = +6.75 × 1.25 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: ACCUM
-- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 339.02 (anchor 14 bars ago)
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 340.24 (anchor 15 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 63: neutral  Bollinger: neutral
+- RSI 64: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +7.19 + +0.00 + +0.00 = +7.19 → **+7.19**
+**Score**: +8.44 + +0.00 + +0.00 = +8.44 → **+8.44**

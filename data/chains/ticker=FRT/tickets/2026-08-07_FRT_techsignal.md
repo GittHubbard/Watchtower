@@ -1,22 +1,22 @@
 # Technical Signal: FRT  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -9.9
+**Recommendation**: STRONG_SELL  |  **Score**: -7.4
 
-### Technical Signal: STRONG_SELL (-9.9 / confidence 99%)
+### Technical Signal: STRONG_SELL (-7.4 / confidence 74%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 16 vs -DI 33)  |  Vol: UNKNOWN (IV30 N/A, RV20 17.6%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 14 vs -DI 35)  |  Vol: UNKNOWN (IV30 N/A, RV20 17.8%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-7.19 = -5.75 × 1.25 convergence)
+**Trend** (-4.69 = -3.75 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 123.21 (anchor 37 bars ago), aVWAP-low 124.20 (anchor 20 bars ago)
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 122.83 (anchor 38 bars ago), aVWAP-low 123.38 (anchor 21 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.25)
-- RSI 32: neutral  Bollinger: lower-break
+- RSI 35: neutral  Bollinger: lower-break
 
 **Divergence** (-3.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
 
-**Score**: -7.19 + +0.25 + -3.00 = -9.94 → **-9.94**
+**Score**: -4.69 + +0.25 + -3.00 = -7.44 → **-7.44**
 Note: IV30 not available — using RV-only vol regime

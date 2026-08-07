@@ -1,23 +1,23 @@
 # Technical Signal: MAR  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -0.1
+**Recommendation**: HOLD  |  **Score**: -2.3
 
-### Technical Signal: HOLD (-0.1 / confidence 1%)
+### Technical Signal: HOLD (-2.3 / confidence 23%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 27 vs -DI 33)  |  Vol: NORMAL_IV (IV30 34.4%, RV20 38.1%)
+**Regime**: ADX RANGING (ADX 16, +DI 25 vs -DI 34)  |  Vol: NORMAL_IV (IV30 33.4%, RV20 38.2%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-3.12 = -2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
-- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
-- aVWAP-high 373.55 (anchor 36 bars ago), aVWAP-low 364.45 (anchor 17 bars ago)
+**Trend** (-5.31 = -4.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 373.09 (anchor 37 bars ago), aVWAP-low 364.01 (anchor 18 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 44: neutral  Bollinger: neutral
+- RSI 41: neutral  Bollinger: neutral
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: standard)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Score**: -3.12 + +0.00 + +3.00 = -0.12 → **-0.12**
+**Score**: -5.31 + +0.00 + +3.00 = -2.31 → **-2.31**

@@ -1,21 +1,21 @@
 # Technical Signal: GPC  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +5.3
+**Recommendation**: BUY  |  **Score**: +5.1
 
-### Technical Signal: BUY (+5.3 / confidence 53%)
+### Technical Signal: BUY (+5.1 / confidence 51%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 36 vs -DI 22)  |  Vol: HIGH_IV (IV30 57.0%, RV20 34.9%)
+**Regime**: ADX TRENDING (ADX 27, +DI 39 vs -DI 21)  |  Vol: HIGH_IV (IV30 63.0%, RV20 35.4%)
 **Gate**: MR weight = 0.50
 
 **Trend** (+5.31 = +4.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 125.21 (anchor 24 bars ago), aVWAP-low 124.37 (anchor 12 bars ago)
+- aVWAP-high 125.38 (anchor 25 bars ago), aVWAP-low 124.83 (anchor 13 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 65: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 68: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.31 + +0.00 + +0.00 = +5.31 → **+5.31**
+**Score**: +5.31 + -0.25 + +0.00 = +5.06 → **+5.06**

@@ -1,19 +1,19 @@
 # Technical Signal: DG  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -1.8
+**Recommendation**: STRONG_SELL  |  **Score**: -8.1
 
-### Technical Signal: HOLD (-1.8 / confidence 18%)
+### Technical Signal: STRONG_SELL (-8.1 / confidence 81%)
 
-**Regime**: ADX TRENDING (ADX 25, +DI 30 vs -DI 18)  |  Vol: HIGH_IV (IV30 51.9%, RV20 38.9%)
+**Regime**: ADX TRENDING (ADX 25, +DI 28 vs -DI 17)  |  Vol: HIGH_IV (IV30 52.8%, RV20 38.2%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+2.25 = +2.25 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+**Trend** (-4.06 = -3.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: NEUTRAL
 - OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 124.42 (anchor 14 bars ago), aVWAP-low 112.66 (anchor 58 bars ago)
+- aVWAP-high 124.57 (anchor 15 bars ago), aVWAP-low 112.81 (anchor 59 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 60: neutral  Bollinger: neutral
+- RSI 58: neutral  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: standard)
@@ -28,4 +28,4 @@
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 - ⏳ PENDING reg_bear on OBV (quality: standard)
 
-**Score**: +2.25 + +0.00 + -4.00 = -1.75 → **-1.75**
+**Score**: -4.06 + +0.00 + -4.00 = -8.06 → **-8.06**

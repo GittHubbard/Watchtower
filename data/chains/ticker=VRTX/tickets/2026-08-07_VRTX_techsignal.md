@@ -1,21 +1,21 @@
 # Technical Signal: VRTX  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: +1.9
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
 
-### Technical Signal: HOLD (+1.9 / confidence 19%)
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 20 vs -DI 15)  |  Vol: NORMAL_IV (IV30 39.3%, RV20 20.3%)
+**Regime**: ADX RANGING (ADX 15, +DI 21 vs -DI 14)  |  Vol: NORMAL_IV (IV30 37.3%, RV20 20.6%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+1.88 = +1.50 × 1.25 convergence)
-- Price: STRONG_UP  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: DRY
-- aVWAP-high 486.46 (anchor 22 bars ago), aVWAP-low 480.37 (anchor 10 bars ago)
+**Trend** (+11.25 = +9.00 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULL_CROSS  CMF: DIST
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: DRY
+- aVWAP-high 486.62 (anchor 23 bars ago), aVWAP-low 481.07 (anchor 11 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 60: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +1.88 + +0.00 + +0.00 = +1.88 → **+1.88**
+**Score**: +11.25 + -0.50 + +0.00 = +10.75 → **+10.00**

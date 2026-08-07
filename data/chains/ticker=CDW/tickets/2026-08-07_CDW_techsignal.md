@@ -1,23 +1,23 @@
 # Technical Signal: CDW  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.5
+**Recommendation**: SELL  |  **Score**: -2.8
 
-### Technical Signal: STRONG_BUY (+7.5 / confidence 75%)
+### Technical Signal: SELL (-2.8 / confidence 28%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 22 vs -DI 37)  |  Vol: NORMAL_IV (IV30 51.1%, RV20 55.3%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 21 vs -DI 37)  |  Vol: NORMAL_IV (IV30 51.8%, RV20 56.4%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+6.50 = +6.50 × 1.00 convergence)
-- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 138.09 (anchor 18 bars ago), aVWAP-low 139.94 (anchor 11 bars ago)
+**Trend** (-3.75 = -3.00 × 1.25 convergence)
+- Price: UP  MACD: BEAR_CROSS  CMF: STRONG_ACCUM
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 138.11 (anchor 19 bars ago), aVWAP-low 139.78 (anchor 12 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+- RSI 47: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ✓ CONFIRMED hid_bull on RSI (quality: standard)
 - ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 
-**Score**: +6.50 + +0.00 + +1.00 = +7.50 → **+7.50**
+**Score**: -3.75 + +0.00 + +1.00 = -2.75 → **-2.75**

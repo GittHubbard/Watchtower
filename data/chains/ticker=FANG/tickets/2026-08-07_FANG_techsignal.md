@@ -1,22 +1,22 @@
 # Technical Signal: FANG  2026-08-07
 
-**Recommendation**: SELL  |  **Score**: -3.5
+**Recommendation**: SELL  |  **Score**: -5.1
 
-### Technical Signal: SELL (-3.5 / confidence 35%)
+### Technical Signal: SELL (-5.1 / confidence 51%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 21 vs -DI 28)  |  Vol: NORMAL_IV (IV30 41.9%, RV20 39.3%)
+**Regime**: ADX RANGING (ADX 18, +DI 19 vs -DI 29)  |  Vol: NORMAL_IV (IV30 39.9%, RV20 39.4%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-2.50 = -2.00 × 1.25 convergence)
+**Trend** (-4.06 = -3.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: DRY
-- aVWAP-high 190.51 (anchor 44 bars ago), aVWAP-low 191.52 (anchor 24 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 195.27 (anchor 10 bars ago), aVWAP-low 191.41 (anchor 25 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 47: neutral  Bollinger: neutral
+- RSI 45: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on RSI (quality: standard)
 - ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
 
-**Score**: -2.50 + +0.00 + -1.00 = -3.50 → **-3.50**
+**Score**: -4.06 + +0.00 + -1.00 = -5.06 → **-5.06**

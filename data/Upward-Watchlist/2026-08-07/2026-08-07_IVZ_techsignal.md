@@ -1,21 +1,21 @@
 # Technical Signal: IVZ  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +9.1
+**Recommendation**: STRONG_BUY  |  **Score**: +7.2
 
-### Technical Signal: STRONG_BUY (+9.1 / confidence 91%)
+### Technical Signal: STRONG_BUY (+7.2 / confidence 72%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 35 vs -DI 16)  |  Vol: LOW_IV (IV30 40.2%, RV20 41.0%)
+**Regime**: ADX WEAK_TREND (ADX 25, +DI 34 vs -DI 17)  |  Vol: LOW_IV (IV30 40.4%, RV20 41.0%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+9.06 = +7.25 × 1.25 convergence)
-- Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 30.21 (anchor 15 bars ago), aVWAP-low 29.26 (anchor 27 bars ago)
+**Trend** (+7.19 = +5.75 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: DIST
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 30.29 (anchor 16 bars ago), aVWAP-low 29.34 (anchor 28 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 64: neutral  Bollinger: neutral
+- RSI 63: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +9.06 + +0.00 + +0.00 = +9.06 → **+9.06**
+**Score**: +7.19 + +0.00 + +0.00 = +7.19 → **+7.19**

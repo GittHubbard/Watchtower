@@ -1,22 +1,22 @@
 # Technical Signal: SNDK  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -1.2
+**Recommendation**: STRONG_SELL  |  **Score**: -7.8
 
-### Technical Signal: HOLD (-1.2 / confidence 12%)
+### Technical Signal: STRONG_SELL (-7.8 / confidence 78%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 24 vs -DI 34)  |  Vol: LOW_IV (IV30 102.0%, RV20 160.3%)
+**Regime**: ADX RANGING (ADX 19, +DI 23 vs -DI 33)  |  Vol: LOW_IV (IV30 90.5%, RV20 159.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-0.25 = -0.25 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULL_CROSS  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
-- aVWAP-high 1577.49 (anchor 32 bars ago), aVWAP-low 1621.73 (anchor 54 bars ago)
+**Trend** (-6.75 = -6.75 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 1568.41 (anchor 33 bars ago), aVWAP-low 1614.73 (anchor 55 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 43: neutral  Bollinger: neutral
+- RSI 42: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
 
-**Score**: -0.25 + +0.00 + -1.00 = -1.25 → **-1.25**
+**Score**: -6.75 + +0.00 + -1.00 = -7.75 → **-7.75**

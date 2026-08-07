@@ -1,21 +1,21 @@
 # Technical Signal: UHS  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.2
+**Recommendation**: BUY  |  **Score**: +5.2
 
-### Technical Signal: BUY (+4.2 / confidence 42%)
+### Technical Signal: BUY (+5.2 / confidence 52%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 32 vs -DI 21)  |  Vol: LOW_IV (IV30 37.6%, RV20 39.1%)
+**Regime**: ADX RANGING (ADX 17, +DI 31 vs -DI 20)  |  Vol: LOW_IV (IV30 36.2%, RV20 39.6%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+4.25 = +4.25 × 1.00 convergence)
+**Trend** (+5.25 = +5.25 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 158.34 (anchor 22 bars ago), aVWAP-low 158.74 (anchor 17 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 158.64 (anchor 23 bars ago), aVWAP-low 159.08 (anchor 18 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 64: neutral  Bollinger: neutral
+- RSI 67: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.25 + +0.00 + +0.00 = +4.25 → **+4.25**
+**Score**: +5.25 + +0.00 + +0.00 = +5.25 → **+5.25**

@@ -1,21 +1,21 @@
 # Technical Signal: COP  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -2.2
+**Recommendation**: HOLD  |  **Score**: +0.8
 
-### Technical Signal: HOLD (-2.2 / confidence 22%)
+### Technical Signal: HOLD (+0.8 / confidence 8%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 22 vs -DI 22)  |  Vol: LOW_IV (IV30 34.4%, RV20 28.8%)
+**Regime**: ADX RANGING (ADX 14, +DI 21 vs -DI 21)  |  Vol: LOW_IV (IV30 31.8%, RV20 28.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-2.19 = -1.75 × 1.25 convergence)
-- Price: UP_EXHAUSTING  MACD: BEAR_CROSS  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 117.86 (anchor 10 bars ago), aVWAP-low 114.51 (anchor 23 bars ago)
+**Trend** (+0.75 = +0.75 × 1.00 convergence)
+- Price: UP_EXHAUSTING  MACD: BEARISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: BETWEEN  Volume: DRY
+- aVWAP-high 117.81 (anchor 11 bars ago), aVWAP-low 114.63 (anchor 24 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+- RSI 55: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -2.19 + +0.00 + +0.00 = -2.19 → **-2.19**
+**Score**: +0.75 + +0.00 + +0.00 = +0.75 → **+0.75**

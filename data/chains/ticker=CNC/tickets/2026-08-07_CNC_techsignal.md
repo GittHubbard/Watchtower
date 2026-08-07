@@ -1,25 +1,21 @@
 # Technical Signal: CNC  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.5
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
 
-### Technical Signal: STRONG_SELL (-6.5 / confidence 65%)
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 21 vs -DI 24)  |  Vol: NORMAL_IV (IV30 50.9%, RV20 42.0%)
-**Gate**: MR weight = 0.00
+**Regime**: ADX WEAK_TREND (ADX 25, +DI 20 vs -DI 23)  |  Vol: LOW_IV (IV30 47.7%, RV20 43.1%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-1.50 = -1.50 × 1.00 convergence)
-- Price: UP  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
-- aVWAP-high 64.06 (anchor 17 bars ago), aVWAP-low 64.44 (anchor 33 bars ago)
+**Trend** (+10.94 = +8.75 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULL_CROSS  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 64.10 (anchor 18 bars ago), aVWAP-low 64.46 (anchor 34 bars ago)
 
-**Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 50: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 54: neutral  Bollinger: neutral
 
-**Divergence** (-5.0)
-- ✓ CONFIRMED reg_bear on RSI (quality: strong)
-- ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
-- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
-- ✓ CONFIRMED reg_bear on CMF (quality: strong)
-- ✓ CONFIRMED reg_bear on OBV (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: -1.50 + +0.00 + -5.00 = -6.50 → **-6.50**
+**Score**: +10.94 + +0.00 + +0.00 = +10.94 → **+10.00**

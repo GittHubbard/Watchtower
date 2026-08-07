@@ -1,21 +1,21 @@
 # Technical Signal: ZS  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +5.3
+**Recommendation**: STRONG_BUY  |  **Score**: +6.2
 
-### Technical Signal: BUY (+5.3 / confidence 53%)
+### Technical Signal: STRONG_BUY (+6.2 / confidence 62%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 31 vs -DI 19)  |  Vol: HIGH_IV (IV30 74.5%, RV20 50.6%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 35 vs -DI 17)  |  Vol: HIGH_IV (IV30 72.9%, RV20 46.5%)
 **Gate**: MR weight = 0.75
 
-**Trend** (+5.31 = +4.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 150.81 (anchor 16 bars ago), aVWAP-low 140.83 (anchor 33 bars ago)
+**Trend** (+6.56 = +5.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 151.74 (anchor 17 bars ago), aVWAP-low 141.39 (anchor 34 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 64: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution -0.38)
+- RSI 68: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.31 + +0.00 + +0.00 = +5.31 → **+5.31**
+**Score**: +6.56 + -0.38 + +0.00 = +6.19 → **+6.19**

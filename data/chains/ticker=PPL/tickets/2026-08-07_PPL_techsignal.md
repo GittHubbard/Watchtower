@@ -1,21 +1,21 @@
 # Technical Signal: PPL  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -7.0
+**Recommendation**: STRONG_SELL  |  **Score**: -6.2
 
-### Technical Signal: STRONG_SELL (-7.0 / confidence 70%)
+### Technical Signal: STRONG_SELL (-6.2 / confidence 62%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 16 vs -DI 23)  |  Vol: HIGH_IV (IV30 33.5%, RV20 15.9%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 12, +DI 17 vs -DI 20)  |  Vol: LOW_IV (IV30 26.8%, RV20 18.2%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-7.50 = -6.00 × 1.25 convergence)
-- Price: DOWN_EXHAUSTING  MACD: BEARISH  CMF: STRONG_DIST
+**Trend** (-6.25 = -5.00 × 1.25 convergence)
+- Price: DOWN_EXHAUSTING  MACD: BEARISH  CMF: DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 36.06 (anchor 28 bars ago), aVWAP-low 35.89 (anchor 45 bars ago)
+- aVWAP-high 36.02 (anchor 29 bars ago), aVWAP-low 35.87 (anchor 46 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.50)
-- RSI 36: neutral  Bollinger: lower-break
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 48: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -7.50 + +0.50 + +0.00 = -7.00 → **-7.00**
+**Score**: -6.25 + +0.00 + +0.00 = -6.25 → **-6.25**

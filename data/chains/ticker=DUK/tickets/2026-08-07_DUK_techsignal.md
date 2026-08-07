@@ -1,19 +1,19 @@
 # Technical Signal: DUK  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -10.0
+**Recommendation**: STRONG_SELL  |  **Score**: -7.5
 
-### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
+### Technical Signal: STRONG_SELL (-7.5 / confidence 75%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 21 vs -DI 24)  |  Vol: LOW_IV (IV30 23.6%, RV20 16.5%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX RANGING (ADX 15, +DI 20 vs -DI 22)  |  Vol: NORMAL_IV (IV30 25.4%, RV20 16.7%)
+**Gate**: MR weight = 1.00
 
-**Trend** (-5.31 = -4.25 × 1.25 convergence)
+**Trend** (-2.50 = -2.00 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 126.34 (anchor 22 bars ago), aVWAP-low 125.70 (anchor 45 bars ago)
+- OBV: NEUTRAL  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 126.20 (anchor 23 bars ago), aVWAP-low 125.65 (anchor 46 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 42: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 46: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: standard)
@@ -21,4 +21,4 @@
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 
-**Score**: -5.31 + +0.00 + -5.00 = -10.31 → **-10.00**
+**Score**: -2.50 + +0.00 + -5.00 = -7.50 → **-7.50**

@@ -1,21 +1,21 @@
 # Technical Signal: BR  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.1
+**Recommendation**: BUY  |  **Score**: +5.3
 
-### Technical Signal: BUY (+4.1 / confidence 41%)
+### Technical Signal: BUY (+5.3 / confidence 53%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 41 vs -DI 21)  |  Vol: NORMAL_IV (IV30 43.0%, RV20 43.1%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 42 vs -DI 20)  |  Vol: HIGH_IV (IV30 47.0%, RV20 43.1%)
+**Gate**: MR weight = 0.75
 
-**Trend** (+4.06 = +3.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+**Trend** (+5.31 = +4.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 147.25 (anchor 46 bars ago), aVWAP-low 159.69 (anchor 10 bars ago)
+- aVWAP-high 147.90 (anchor 47 bars ago), aVWAP-low 160.58 (anchor 11 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 64: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution +0.00)
+- RSI 65: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.06 + +0.00 + +0.00 = +4.06 → **+4.06**
+**Score**: +5.31 + +0.00 + +0.00 = +5.31 → **+5.31**

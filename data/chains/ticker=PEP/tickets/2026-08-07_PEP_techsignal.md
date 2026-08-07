@@ -1,21 +1,21 @@
 # Technical Signal: PEP  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -0.6
+**Recommendation**: HOLD  |  **Score**: +0.5
 
-### Technical Signal: HOLD (-0.6 / confidence 6%)
+### Technical Signal: HOLD (+0.5 / confidence 5%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 29 vs -DI 26)  |  Vol: HIGH_IV (IV30 31.7%, RV20 22.1%)
+**Regime**: ADX RANGING (ADX 13, +DI 28 vs -DI 25)  |  Vol: NORMAL_IV (IV30 27.8%, RV20 22.1%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-0.62 = -0.50 × 1.25 convergence)
+**Trend** (+0.50 = +0.50 × 1.00 convergence)
 - Price: DOWN  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
-- aVWAP-high 138.80 (anchor 22 bars ago), aVWAP-low 139.54 (anchor 10 bars ago)
+- OBV: BEARISH  aVWAP: RECLAIM_HIGH  Volume: DRY
+- aVWAP-high 138.79 (anchor 23 bars ago), aVWAP-low 139.48 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 47: neutral  Bollinger: neutral
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -0.62 + +0.00 + +0.00 = -0.62 → **-0.62**
+**Score**: +0.50 + +0.00 + +0.00 = +0.50 → **+0.50**

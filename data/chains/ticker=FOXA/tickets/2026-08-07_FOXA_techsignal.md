@@ -1,21 +1,21 @@
 # Technical Signal: FOXA  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +5.5
+**Recommendation**: STRONG_BUY  |  **Score**: +5.8
 
-### Technical Signal: STRONG_BUY (+5.5 / confidence 55%)
+### Technical Signal: STRONG_BUY (+5.8 / confidence 58%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 34 vs -DI 17)  |  Vol: LOW_IV (IV30 49.1%, RV20 29.6%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 38 vs -DI 16)  |  Vol: LOW_IV (IV30 51.2%, RV20 31.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+5.75 = +5.75 × 1.00 convergence)
+**Trend** (+6.56 = +5.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 54.33 (anchor 38 bars ago), aVWAP-low 54.61 (anchor 31 bars ago)
+- aVWAP-high 54.52 (anchor 39 bars ago), aVWAP-low 54.90 (anchor 32 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution -0.25)
-- RSI 66: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.50 → contribution -0.75)
+- RSI 71: overbought  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.75 + -0.25 + +0.00 = +5.50 → **+5.50**
+**Score**: +6.56 + -0.75 + +0.00 = +5.81 → **+5.81**

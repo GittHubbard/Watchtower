@@ -1,19 +1,19 @@
 # Technical Signal: AKAM  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +3.0
+**Recommendation**: BUY  |  **Score**: +3.2
 
-### Technical Signal: BUY (+3.0 / confidence 30%)
+### Technical Signal: BUY (+3.2 / confidence 32%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 23 vs -DI 28)  |  Vol: NORMAL_IV (IV30 80.7%, RV20 47.1%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 17, +DI 19 vs -DI 30)  |  Vol: LOW_IV (IV30 54.9%, RV20 52.1%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-2.00 = -2.00 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
-- aVWAP-high 119.70 (anchor 19 bars ago), aVWAP-low 118.93 (anchor 28 bars ago)
+**Trend** (-1.75 = -1.75 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 119.23 (anchor 20 bars ago), aVWAP-low 118.68 (anchor 29 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 48: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 40: neutral  Bollinger: neutral
 
 **Divergence** (+5.0)
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
@@ -21,4 +21,4 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Score**: -2.00 + +0.00 + +5.00 = +3.00 → **+3.00**
+**Score**: -1.75 + +0.00 + +5.00 = +3.25 → **+3.25**

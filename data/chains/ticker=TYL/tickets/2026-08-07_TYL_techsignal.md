@@ -1,21 +1,21 @@
 # Technical Signal: TYL  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.7
+**Recommendation**: SELL  |  **Score**: -5.1
 
-### Technical Signal: STRONG_SELL (-6.7 / confidence 67%)
+### Technical Signal: SELL (-5.1 / confidence 51%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 29 vs -DI 25)  |  Vol: NORMAL_IV (IV30 53.1%, RV20 54.1%)
+**Regime**: ADX RANGING (ADX 14, +DI 32 vs -DI 24)  |  Vol: NORMAL_IV (IV30 53.0%, RV20 54.5%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-4.69 = -3.75 × 1.25 convergence)
+**Trend** (-3.12 = -2.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 314.03 (anchor 22 bars ago), aVWAP-low 316.69 (anchor 10 bars ago)
+- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: DRY
+- aVWAP-high 313.87 (anchor 23 bars ago), aVWAP-low 316.25 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+- RSI 52: neutral  Bollinger: neutral
 
 **Divergence** (-2.0)
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Score**: -4.69 + +0.00 + -2.00 = -6.69 → **-6.69**
+**Score**: -3.12 + +0.00 + -2.00 = -5.12 → **-5.12**

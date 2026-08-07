@@ -1,21 +1,21 @@
 # Technical Signal: MPC  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: +1.0
+**Recommendation**: HOLD  |  **Score**: +0.0
 
-### Technical Signal: HOLD (+1.0 / confidence 10%)
+### Technical Signal: HOLD (+0.0 / confidence 0%)
 
-**Regime**: ADX TRENDING (ADX 32, +DI 18 vs -DI 19)  |  Vol: NORMAL_IV (IV30 41.7%, RV20 34.1%)
+**Regime**: ADX TRENDING (ADX 31, +DI 17 vs -DI 20)  |  Vol: LOW_IV (IV30 39.6%, RV20 34.2%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+1.00 = +1.00 × 1.00 convergence)
+**Trend** (+0.00 = +0.00 × 1.00 convergence)
 - Price: UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: DRY
-- aVWAP-high 310.75 (anchor 11 bars ago), aVWAP-low 284.80 (anchor 33 bars ago)
+- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: DRY
+- aVWAP-high 309.82 (anchor 12 bars ago), aVWAP-low 285.10 (anchor 34 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 52: neutral  Bollinger: neutral
+- RSI 51: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +1.00 + +0.00 + +0.00 = +1.00 → **+1.00**
+**Score**: +0.00 + +0.00 + +0.00 = +0.00 → **+0.00**

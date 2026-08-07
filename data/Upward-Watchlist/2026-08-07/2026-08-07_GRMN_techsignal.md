@@ -1,19 +1,19 @@
 # Technical Signal: GRMN  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.4
+**Recommendation**: BUY  |  **Score**: +2.8
 
-### Technical Signal: BUY (+4.4 / confidence 44%)
+### Technical Signal: BUY (+2.8 / confidence 28%)
 
-**Regime**: ADX TRENDING (ADX 37, +DI 42 vs -DI 7)  |  Vol: LOW_IV (IV30 31.4%, RV20 60.8%)
+**Regime**: ADX TRENDING (ADX 40, +DI 41 vs -DI 6)  |  Vol: LOW_IV (IV30 28.5%, RV20 60.8%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+8.44 = +6.75 × 1.25 convergence)
+**Trend** (+6.75 = +6.75 × 1.00 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 259.22 (anchor 30 bars ago), aVWAP-low 279.26 (anchor 11 bars ago)
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 260.63 (anchor 31 bars ago), aVWAP-low 280.99 (anchor 12 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution -0.00)
-- RSI 75: overbought  Bollinger: neutral
+- RSI 78: overbought  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: standard)
@@ -21,4 +21,4 @@
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
 
-**Score**: +8.44 + -0.00 + -4.00 = +4.44 → **+4.44**
+**Score**: +6.75 + -0.00 + -4.00 = +2.75 → **+2.75**

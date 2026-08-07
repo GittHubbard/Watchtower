@@ -1,21 +1,21 @@
 # Technical Signal: UBER  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -1.5
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
 
-### Technical Signal: HOLD (-1.5 / confidence 15%)
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 23 vs -DI 29)  |  Vol: LOW_IV (IV30 36.7%, RV20 38.9%)
+**Regime**: ADX RANGING (ADX 13, +DI 31 vs -DI 26)  |  Vol: LOW_IV (IV30 35.2%, RV20 45.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-4.50 = -4.50 × 1.00 convergence)
-- Price: STRONG_DOWN  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: TESTING_SUPPORT  Volume: SURGE
-- aVWAP-high 71.38 (anchor 27 bars ago), aVWAP-low 71.69 (anchor 38 bars ago)
+**Trend** (+8.12 = +6.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULL_CROSS  CMF: ACCUM
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: SURGE
+- aVWAP-high 71.51 (anchor 28 bars ago), aVWAP-low 71.77 (anchor 39 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 48: neutral  Bollinger: neutral
+- RSI 58: neutral  Bollinger: neutral
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: -4.50 + +0.00 + +3.00 = -1.50 → **-1.50**
+**Score**: +8.12 + +0.00 + +3.00 = +11.12 → **+10.00**

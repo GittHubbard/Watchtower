@@ -1,19 +1,19 @@
 # Technical Signal: TFC  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -1.5
+**Recommendation**: SELL  |  **Score**: -2.8
 
-### Technical Signal: HOLD (-1.5 / confidence 15%)
+### Technical Signal: SELL (-2.8 / confidence 28%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 28 vs -DI 18)  |  Vol: NORMAL_IV (IV30 32.5%, RV20 18.2%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 13, +DI 26 vs -DI 21)  |  Vol: LOW_IV (IV30 29.4%, RV20 18.3%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+2.50 = +2.00 × 1.25 convergence)
+**Trend** (+1.25 = +1.00 × 1.25 convergence)
 - Price: STRONG_UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: TESTING_RESISTANCE  Volume: DRY
-- aVWAP-high 52.13 (anchor 14 bars ago), aVWAP-low 52.22 (anchor 10 bars ago)
+- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: DRY
+- aVWAP-high 52.14 (anchor 15 bars ago), aVWAP-low 52.24 (anchor 11 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 57: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 55: neutral  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: standard)
@@ -21,4 +21,4 @@
 - ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 
-**Score**: +2.50 + +0.00 + -4.00 = -1.50 → **-1.50**
+**Score**: +1.25 + +0.00 + -4.00 = -2.75 → **-2.75**

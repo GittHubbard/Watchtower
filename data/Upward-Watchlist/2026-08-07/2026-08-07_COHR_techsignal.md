@@ -1,23 +1,23 @@
 # Technical Signal: COHR  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +3.9
+**Recommendation**: STRONG_BUY  |  **Score**: +9.7
 
-### Technical Signal: BUY (+3.9 / confidence 39%)
+### Technical Signal: STRONG_BUY (+9.7 / confidence 97%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 27 vs -DI 24)  |  Vol: NORMAL_IV (IV30 105.0%, RV20 111.6%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 31 vs -DI 21)  |  Vol: NORMAL_IV (IV30 102.2%, RV20 120.0%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+1.88 = +1.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 322.12 (anchor 32 bars ago), aVWAP-low 347.48 (anchor 68 bars ago)
+**Trend** (+5.94 = +4.75 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: DIST
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-high 324.97 (anchor 33 bars ago), aVWAP-low 348.13 (anchor 69 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 56: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 64: neutral  Bollinger: upper-break
 
-**Divergence** (+2.0)
+**Divergence** (+4.0)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
-- ⏳ PENDING reg_bull on OBV (quality: standard)
+- ✓ CONFIRMED reg_bull on OBV (quality: standard)
 - ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Score**: +1.88 + +0.00 + +2.00 = +3.88 → **+3.88**
+**Score**: +5.94 + -0.25 + +4.00 = +9.69 → **+9.69**

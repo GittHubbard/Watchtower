@@ -1,21 +1,21 @@
 # Technical Signal: SJM  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.2
+**Recommendation**: BUY  |  **Score**: +3.8
 
-### Technical Signal: BUY (+4.2 / confidence 42%)
+### Technical Signal: BUY (+3.8 / confidence 38%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 29 vs -DI 22)  |  Vol: HIGH_IV (IV30 35.3%, RV20 32.9%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 27 vs -DI 21)  |  Vol: HIGH_IV (IV30 34.7%, RV20 33.0%)
 **Gate**: MR weight = 0.75
 
-**Trend** (+4.25 = +4.25 × 1.00 convergence)
-- Price: STRONG_UP  MACD: BEARISH  CMF: STRONG_ACCUM
+**Trend** (+3.75 = +3.75 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BEARISH  CMF: ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 115.03 (anchor 37 bars ago), aVWAP-low 117.24 (anchor 17 bars ago)
+- aVWAP-high 115.09 (anchor 38 bars ago), aVWAP-low 117.31 (anchor 18 bars ago)
 
 **Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 55: neutral  Bollinger: neutral
+- RSI 57: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 
-**Score**: +4.25 + +0.00 + +0.00 = +4.25 → **+4.25**
+**Score**: +3.75 + +0.00 + +0.00 = +3.75 → **+3.75**

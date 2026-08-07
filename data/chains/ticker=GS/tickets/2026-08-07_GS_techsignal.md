@@ -1,19 +1,19 @@
 # Technical Signal: GS  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -9.0
+**Recommendation**: STRONG_SELL  |  **Score**: -7.0
 
-### Technical Signal: STRONG_SELL (-9.0 / confidence 90%)
+### Technical Signal: STRONG_SELL (-7.0 / confidence 70%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 23 vs -DI 26)  |  Vol: NORMAL_IV (IV30 35.9%, RV20 50.3%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 14, +DI 22 vs -DI 26)  |  Vol: LOW_IV (IV30 34.3%, RV20 50.4%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-4.00 = -4.00 × 1.00 convergence)
+**Trend** (-2.00 = -2.00 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: BREAKDOWN_LOW  Volume: DRY
-- aVWAP-high 1058.94 (anchor 16 bars ago), aVWAP-low 1056.12 (anchor 26 bars ago)
+- OBV: NEUTRAL  aVWAP: TESTING_SUPPORT  Volume: DRY
+- aVWAP-high 1058.20 (anchor 17 bars ago), aVWAP-low 1055.71 (anchor 27 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 47: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
@@ -22,4 +22,4 @@
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: -4.00 + +0.00 + -5.00 = -9.00 → **-9.00**
+**Score**: -2.00 + +0.00 + -5.00 = -7.00 → **-7.00**

@@ -1,16 +1,16 @@
 # Technical Signal: HSIC  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+**Recommendation**: STRONG_BUY  |  **Score**: +8.8
 
-### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+### Technical Signal: STRONG_BUY (+8.8 / confidence 88%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 30 vs -DI 14)  |  Vol: NORMAL_IV (IV30 49.9%, RV20 19.2%)
+**Regime**: ADX TRENDING (ADX 27, +DI 29 vs -DI 14)  |  Vol: NORMAL_IV (IV30 52.3%, RV20 19.2%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+9.06 = +7.25 × 1.25 convergence)
+**Trend** (+7.81 = +6.25 × 1.25 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 86.85 (anchor 15 bars ago), aVWAP-low 81.04 (anchor 59 bars ago)
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 86.88 (anchor 16 bars ago), aVWAP-low 81.09 (anchor 60 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 61: neutral  Bollinger: neutral
@@ -21,4 +21,4 @@
 - ⏳ PENDING reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
 
-**Score**: +9.06 + +0.00 + +1.00 = +10.06 → **+10.00**
+**Score**: +7.81 + +0.00 + +1.00 = +8.81 → **+8.81**

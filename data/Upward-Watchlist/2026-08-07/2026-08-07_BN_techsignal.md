@@ -4,16 +4,16 @@
 
 ### Technical Signal: STRONG_BUY (+9.1 / confidence 91%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 29 vs -DI 19)  |  Vol: HIGH_IV (IV30 42.1%, RV20 23.3%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 16, +DI 27 vs -DI 18)  |  Vol: LOW_IV (IV30 37.3%, RV20 22.7%)
+**Gate**: MR weight = 0.50
 
 **Trend** (+4.06 = +3.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 42.90 (anchor 16 bars ago), aVWAP-low 42.79 (anchor 10 bars ago)
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 42.95 (anchor 17 bars ago), aVWAP-low 42.87 (anchor 11 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 55: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 56: neutral  Bollinger: neutral
 
 **Divergence** (+5.0)
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)

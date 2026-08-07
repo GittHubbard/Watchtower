@@ -1,19 +1,19 @@
 # Technical Signal: AXP  2026-08-07
 
-**Recommendation**: SELL  |  **Score**: -2.5
+**Recommendation**: SELL  |  **Score**: -4.0
 
-### Technical Signal: SELL (-2.5 / confidence 25%)
+### Technical Signal: SELL (-4.0 / confidence 40%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 26 vs -DI 27)  |  Vol: LOW_IV (IV30 25.9%, RV20 27.5%)
+**Regime**: ADX RANGING (ADX 17, +DI 25 vs -DI 29)  |  Vol: LOW_IV (IV30 24.7%, RV20 27.2%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence)
+**Trend** (-2.00 = -2.00 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
-- OBV: BULLISH  aVWAP: TESTING_RESISTANCE  Volume: DRY
-- aVWAP-high 340.91 (anchor 15 bars ago), aVWAP-low 337.98 (anchor 44 bars ago)
+- OBV: BEARISH  aVWAP: BETWEEN  Volume: DRY
+- aVWAP-high 340.99 (anchor 16 bars ago), aVWAP-low 336.37 (anchor 10 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 51: neutral  Bollinger: neutral
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (-2.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: strong)
@@ -22,4 +22,4 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Score**: -0.50 + +0.00 + -2.00 = -2.50 → **-2.50**
+**Score**: -2.00 + +0.00 + -2.00 = -4.00 → **-4.00**

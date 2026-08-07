@@ -4,16 +4,16 @@
 
 ### Technical Signal: HOLD (+0.2 / confidence 2%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 34 vs -DI 19)  |  Vol: NORMAL_IV (IV30 44.2%, RV20 35.8%)
+**Regime**: ADX RANGING (ADX 18, +DI 32 vs -DI 20)  |  Vol: NORMAL_IV (IV30 44.0%, RV20 35.3%)
 **Gate**: MR weight = 1.00
 
 **Trend** (+4.25 = +4.25 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 93.89 (anchor 18 bars ago), aVWAP-low 92.50 (anchor 25 bars ago)
+- aVWAP-high 94.02 (anchor 19 bars ago), aVWAP-low 92.66 (anchor 26 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 60: neutral  Bollinger: neutral
+- RSI 58: neutral  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: standard)

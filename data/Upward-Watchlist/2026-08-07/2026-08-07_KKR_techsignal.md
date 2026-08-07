@@ -1,22 +1,22 @@
 # Technical Signal: KKR  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +5.3
+**Recommendation**: BUY  |  **Score**: +2.5
 
-### Technical Signal: BUY (+5.3 / confidence 53%)
+### Technical Signal: BUY (+2.5 / confidence 25%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 29 vs -DI 20)  |  Vol: NORMAL_IV (IV30 45.1%, RV20 37.7%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 15, +DI 27 vs -DI 19)  |  Vol: LOW_IV (IV30 43.7%, RV20 37.8%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+5.31 = +4.25 × 1.25 convergence)
+**Trend** (+2.50 = +2.50 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 101.44 (anchor 14 bars ago), aVWAP-low 98.64 (anchor 27 bars ago)
+- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: SURGE
+- aVWAP-high 101.68 (anchor 15 bars ago), aVWAP-low 98.95 (anchor 28 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 56: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 55: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bear on CMF (quality: standard)
 - ⏳ PENDING reg_bear on OBV (quality: standard)
 
-**Score**: +5.31 + +0.00 + +0.00 = +5.31 → **+5.31**
+**Score**: +2.50 + +0.00 + +0.00 = +2.50 → **+2.50**

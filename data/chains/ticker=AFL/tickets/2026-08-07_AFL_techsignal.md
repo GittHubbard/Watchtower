@@ -1,21 +1,21 @@
 # Technical Signal: AFL  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.2
+**Recommendation**: BUY  |  **Score**: +2.8
 
-### Technical Signal: BUY (+4.2 / confidence 42%)
+### Technical Signal: BUY (+2.8 / confidence 28%)
 
-**Regime**: ADX TRENDING (ADX 25, +DI 27 vs -DI 19)  |  Vol: HIGH_IV (IV30 39.5%, RV20 15.9%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 24 vs -DI 25)  |  Vol: HIGH_IV (IV30 39.3%, RV20 17.2%)
+**Gate**: MR weight = 0.75
 
-**Trend** (+4.25 = +4.25 × 1.00 convergence)
-- Price: STRONG_UP  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 120.59 (anchor 42 bars ago), aVWAP-low 119.92 (anchor 46 bars ago)
+**Trend** (+2.75 = +2.75 × 1.00 convergence)
+- Price: UP  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 120.72 (anchor 43 bars ago), aVWAP-low 120.04 (anchor 47 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 60: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution +0.00)
+- RSI 52: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.25 + +0.00 + +0.00 = +4.25 → **+4.25**
+**Score**: +2.75 + +0.00 + +0.00 = +2.75 → **+2.75**

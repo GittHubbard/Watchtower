@@ -1,19 +1,19 @@
 # Technical Signal: ABBV  2026-08-07
 
-**Recommendation**: STRONG_SELL  |  **Score**: -7.5
+**Recommendation**: STRONG_SELL  |  **Score**: -6.2
 
-### Technical Signal: STRONG_SELL (-7.5 / confidence 75%)
+### Technical Signal: STRONG_SELL (-6.2 / confidence 62%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 21 vs -DI 24)  |  Vol: LOW_IV (IV30 29.5%, RV20 26.0%)
+**Regime**: ADX TRENDING (ADX 26, +DI 20 vs -DI 22)  |  Vol: LOW_IV (IV30 27.0%, RV20 26.1%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-2.50 = -2.00 × 1.25 convergence)
+**Trend** (-1.25 = -1.00 × 1.25 convergence)
 - Price: UP  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: DRY
-- aVWAP-high 233.46 (anchor 67 bars ago), aVWAP-low 252.81 (anchor 17 bars ago)
+- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 233.58 (anchor 68 bars ago), aVWAP-low 252.46 (anchor 18 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 48: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: strong)
@@ -22,4 +22,4 @@
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: -2.50 + +0.00 + -5.00 = -7.50 → **-7.50**
+**Score**: -1.25 + +0.00 + -5.00 = -6.25 → **-6.25**

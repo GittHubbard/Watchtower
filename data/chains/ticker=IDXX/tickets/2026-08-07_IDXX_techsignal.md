@@ -1,22 +1,22 @@
 # Technical Signal: IDXX  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -0.9
+**Recommendation**: HOLD  |  **Score**: -2.2
 
-### Technical Signal: HOLD (-0.9 / confidence 9%)
+### Technical Signal: HOLD (-2.2 / confidence 22%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 32 vs -DI 18)  |  Vol: NORMAL_IV (IV30 40.0%, RV20 32.2%)
+**Regime**: ADX RANGING (ADX 15, +DI 34 vs -DI 17)  |  Vol: NORMAL_IV (IV30 38.5%, RV20 32.2%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+4.06 = +3.25 × 1.25 convergence)
+**Trend** (+2.81 = +2.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 570.76 (anchor 15 bars ago), aVWAP-low 573.41 (anchor 10 bars ago)
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 571.79 (anchor 16 bars ago), aVWAP-low 574.57 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 62: neutral  Bollinger: neutral
+- RSI 60: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Score**: +4.06 + +0.00 + -5.00 = -0.94 → **-0.94**
+**Score**: +2.81 + +0.00 + -5.00 = -2.19 → **-2.19**

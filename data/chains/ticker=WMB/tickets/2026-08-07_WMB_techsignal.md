@@ -1,21 +1,21 @@
 # Technical Signal: WMB  2026-08-07
 
-**Recommendation**: SELL  |  **Score**: -3.8
+**Recommendation**: STRONG_SELL  |  **Score**: -5.8
 
-### Technical Signal: SELL (-3.8 / confidence 38%)
+### Technical Signal: STRONG_SELL (-5.8 / confidence 57%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 14 vs -DI 27)  |  Vol: HIGH_IV (IV30 37.2%, RV20 25.1%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 27, +DI 13 vs -DI 28)  |  Vol: NORMAL_IV (IV30 34.8%, RV20 25.8%)
+**Gate**: MR weight = 0.00
 
-**Trend** (-2.75 = -2.75 × 1.00 convergence)
+**Trend** (-4.75 = -4.75 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: DRY
-- aVWAP-high 73.64 (anchor 28 bars ago), aVWAP-low 73.29 (anchor 45 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 71.30 (anchor 10 bars ago), aVWAP-low 73.25 (anchor 46 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 46: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 41: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Score**: -2.75 + +0.00 + -1.00 = -3.75 → **-3.75**
+**Score**: -4.75 + +0.00 + -1.00 = -5.75 → **-5.75**

@@ -1,19 +1,19 @@
 # Technical Signal: CRWD  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: +1.6
+**Recommendation**: HOLD  |  **Score**: +2.2
 
-### Technical Signal: HOLD (+1.6 / confidence 16%)
+### Technical Signal: HOLD (+2.2 / confidence 22%)
 
-**Regime**: ADX TRENDING (ADX 29, +DI 37 vs -DI 19)  |  Vol: HIGH_IV (IV30 66.3%, RV20 60.8%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 30, +DI 41 vs -DI 18)  |  Vol: NORMAL_IV (IV30 62.1%, RV20 57.3%)
+**Gate**: MR weight = 0.00
 
-**Trend** (+6.56 = +5.25 × 1.25 convergence)
-- Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
+**Trend** (+7.19 = +5.75 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: ACCUM
 - OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 195.58 (anchor 16 bars ago)
+- aVWAP-high 196.27 (anchor 17 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 63: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 67: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: strong)
@@ -21,4 +21,4 @@
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: +6.56 + +0.00 + -5.00 = +1.56 → **+1.56**
+**Score**: +7.19 + +0.00 + -5.00 = +2.19 → **+2.19**

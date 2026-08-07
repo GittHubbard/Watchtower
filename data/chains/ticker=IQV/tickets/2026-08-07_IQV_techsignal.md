@@ -1,22 +1,22 @@
 # Technical Signal: IQV  2026-08-07
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.2
+**Recommendation**: STRONG_BUY  |  **Score**: +7.2
 
-### Technical Signal: STRONG_BUY (+6.2 / confidence 62%)
+### Technical Signal: STRONG_BUY (+7.2 / confidence 72%)
 
-**Regime**: ADX TRENDING (ADX 34, +DI 38 vs -DI 18)  |  Vol: LOW_IV (IV30 43.1%, RV20 56.8%)
+**Regime**: ADX TRENDING (ADX 35, +DI 37 vs -DI 16)  |  Vol: LOW_IV (IV30 40.4%, RV20 57.1%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+6.25 = +6.25 × 1.00 convergence)
+**Trend** (+7.25 = +7.25 × 1.00 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 203.52 (anchor 40 bars ago), aVWAP-low 230.47 (anchor 11 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 204.02 (anchor 41 bars ago), aVWAP-low 230.68 (anchor 12 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 62: neutral  Bollinger: neutral
+- RSI 66: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bear on MACDHist (quality: strong)
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 
-**Score**: +6.25 + +0.00 + +0.00 = +6.25 → **+6.25**
+**Score**: +7.25 + +0.00 + +0.00 = +7.25 → **+7.25**

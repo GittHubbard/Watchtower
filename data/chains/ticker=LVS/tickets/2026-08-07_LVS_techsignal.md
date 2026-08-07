@@ -1,19 +1,19 @@
 # Technical Signal: LVS  2026-08-07
 
-**Recommendation**: HOLD  |  **Score**: -2.2
+**Recommendation**: SELL  |  **Score**: -3.5
 
-### Technical Signal: HOLD (-2.2 / confidence 22%)
+### Technical Signal: SELL (-3.5 / confidence 35%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 20 vs -DI 25)  |  Vol: LOW_IV (IV30 36.9%, RV20 28.2%)
+**Regime**: ADX RANGING (ADX 18, +DI 18 vs -DI 24)  |  Vol: LOW_IV (IV30 36.3%, RV20 28.2%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-1.25 = -1.00 × 1.25 convergence)
+**Trend** (-2.50 = -2.00 × 1.25 convergence)
 - Price: STRONG_DOWN  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: TESTING_SUPPORT  Volume: NORMAL
-- aVWAP-high 47.39 (anchor 46 bars ago), aVWAP-low 46.46 (anchor 16 bars ago)
+- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 47.36 (anchor 47 bars ago), aVWAP-low 46.44 (anchor 17 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 46: neutral  Bollinger: neutral
+- RSI 44: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on RSI (quality: standard)
@@ -22,4 +22,4 @@
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 - ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Score**: -1.25 + +0.00 + -1.00 = -2.25 → **-2.25**
+**Score**: -2.50 + +0.00 + -1.00 = -3.50 → **-3.50**

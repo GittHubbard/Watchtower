@@ -1,21 +1,21 @@
 # Technical Signal: APO  2026-08-07
 
-**Recommendation**: BUY  |  **Score**: +4.1
+**Recommendation**: BUY  |  **Score**: +4.7
 
-### Technical Signal: BUY (+4.1 / confidence 41%)
+### Technical Signal: BUY (+4.7 / confidence 47%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 29 vs -DI 16)  |  Vol: NORMAL_IV (IV30 43.3%, RV20 33.8%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 18, +DI 27 vs -DI 16)  |  Vol: LOW_IV (IV30 41.9%, RV20 33.9%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+4.06 = +3.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+**Trend** (+4.69 = +3.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
 - OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 122.75 (anchor 33 bars ago), aVWAP-low 121.63 (anchor 26 bars ago)
+- aVWAP-high 122.87 (anchor 34 bars ago), aVWAP-low 121.82 (anchor 27 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 56: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 55: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.06 + +0.00 + +0.00 = +4.06 → **+4.06**
+**Score**: +4.69 + +0.00 + +0.00 = +4.69 → **+4.69**
