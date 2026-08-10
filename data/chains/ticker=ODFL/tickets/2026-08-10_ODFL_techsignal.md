@@ -1,0 +1,21 @@
+# Technical Signal: ODFL  2026-08-10
+
+**Recommendation**: SELL  |  **Score**: -4.8
+
+### Technical Signal: SELL (-4.8 / confidence 48%)
+
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 17 vs -DI 23)  |  Vol: NORMAL_IV (IV30 47.4%, RV20 35.7%)
+**Gate**: MR weight = 0.50
+
+**Trend** (-4.75 = -4.75 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 221.62 (anchor 16 bars ago), aVWAP-low 223.15 (anchor 23 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 42: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -4.75 + +0.00 + +0.00 = -4.75 → **-4.75**

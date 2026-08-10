@@ -1,0 +1,21 @@
+# Technical Signal: COO  2026-08-10
+
+**Recommendation**: STRONG_BUY  |  **Score**: +7.3
+
+### Technical Signal: STRONG_BUY (+7.3 / confidence 73%)
+
+**Regime**: ADX TRENDING (ADX 26, +DI 30 vs -DI 15)  |  Vol: HIGH_IV (IV30 51.5%, RV20 30.3%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+6.56 = +5.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 72.08 (anchor 26 bars ago), aVWAP-low 72.22 (anchor 19 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 66: neutral  Bollinger: upper-break
+
+**Divergence** (+1.0)
+- ✓ CONFIRMED hid_bull on OBV (quality: standard)
+
+**Score**: +6.56 + -0.25 + +1.00 = +7.31 → **+7.31**
