@@ -1,0 +1,22 @@
+# Technical Signal: GD  2026-08-11
+
+**Recommendation**: STRONG_BUY  |  **Score**: +9.1
+
+### Technical Signal: STRONG_BUY (+9.1 / confidence 91%)
+
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 26 vs -DI 15)  |  Vol: UNKNOWN (IV30 N/A, RV20 18.9%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+9.06 = +7.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 380.19 (anchor 25 bars ago), aVWAP-low 362.56 (anchor 55 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 63: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- ⏳ PENDING reg_bear on MACDHist (quality: strong)
+
+**Score**: +9.06 + +0.00 + +0.00 = +9.06 → **+9.06**
+Note: IV30 not available — using RV-only vol regime
