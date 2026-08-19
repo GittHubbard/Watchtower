@@ -18,35 +18,49 @@ jobs:
           fetch-depth: 1
 
       - uses: actions/setup-python@v5
+        id: setup-python
         with:
           python-version: "3.11"
 
       # Cache the whole virtualenv so unchanged runs skip installation entirely.
-      # The key busts automatically when the OS, Python version, or dependency
-      # files (requirements.txt / pyproject.toml, since we `pip install -e .`)
-      # change. Bump the trailing -v1 to force a clean rebuild for anything the
-      # hash can't see — e.g. a package pulled from a custom index outside these
+      # The key busts automatically when the OS, the exact Python version, or
+      # dependency files (requirements.txt / pyproject.toml, since we
+      # `pip install -e .`) change. The full patch version matters: a venv
+      # hard-codes the absolute path of the interpreter it was built from, and
+      # runner image updates move that path (3.11.15 -> 3.11.16), so a venv
+      # keyed on "3.11" alone survives into a run where its interpreter is gone.
+      # Bump the trailing -v2 to force a clean rebuild for anything the hash
+      # can't see — e.g. a package pulled from a custom index outside these
       # files, or a stale/broken cached venv.
       - name: Cache venv
         id: venv-cache
         uses: actions/cache@v4
         with:
           path: .venv
-          key: venv-${{ runner.os }}-py3.11-${{ hashFiles('requirements.txt', 'pyproject.toml') }}-v1
+          key: venv-${{ runner.os }}-py${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('requirements.txt', 'pyproject.toml') }}-v2
 
+      # Runs unconditionally and rebuilds only when the venv can't actually
+      # import what the pipeline needs, so a cache hit that turns out to be
+      # unusable self-heals instead of failing the run.
       - name: Install
-        if: steps.venv-cache.outputs.cache-hit != 'true'
         run: |
-          python -m venv .venv
-          . .venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -e .
+          if ! .venv/bin/python -c "import numpy, pandas, scipy, yfinance" >/dev/null 2>&1; then
+            echo "No usable venv found — building one."
+            rm -rf .venv
+            python -m venv .venv
+            .venv/bin/python -m pip install --upgrade pip
+            .venv/bin/pip install -r requirements.txt
+            .venv/bin/pip install -e .
+          else
+            echo "Reusing cached venv."
+          fi
 
+      # Call the venv interpreter by path rather than sourcing `activate`:
+      # activate only edits PATH, so a broken .venv/bin/python silently falls
+      # through to the system interpreter and fails with a confusing
+      # ModuleNotFoundError instead of an obvious missing-venv error.
       - name: Run EOD pipeline
-        run: |
-          . .venv/bin/activate
-          python -m gamma_workflow.run_eod
+        run: .venv/bin/python -m gamma_workflow.run_eod
 
       - name: Commit outputs
         run: |
