@@ -18,35 +18,61 @@ jobs:
           fetch-depth: 1
 
       - uses: actions/setup-python@v5
+        id: setup-python
         with:
           python-version: "3.11"
 
       # Cache the whole virtualenv so unchanged runs skip installation entirely.
-      # The key busts automatically when the OS, Python version, or dependency
-      # files (requirements.txt / pyproject.toml, since we `pip install -e .`)
-      # change. Bump the trailing -v1 to force a clean rebuild for anything the
-      # hash can't see — e.g. a package pulled from a custom index outside these
-      # files, or a stale/broken cached venv.
+      #
+      # The key pins the EXACT interpreter (3.11.16), not just the series
+      # ("3.11"). A venv is bound to the specific interpreter it was built
+      # from — .venv/bin/python is a symlink into /opt/hostedtoolcache — so
+      # when the runner image bumps the patch version the old venv points at
+      # an interpreter that no longer exists and must not be reused.
+      #
+      # The key also busts when the OS or the dependency files
+      # (requirements.txt / pyproject.toml, since we `pip install -e .`)
+      # change. Bump the trailing -v1 to force a clean rebuild for anything
+      # the hash can't see — e.g. a package pulled from a custom index
+      # outside these files.
       - name: Cache venv
         id: venv-cache
         uses: actions/cache@v4
         with:
           path: .venv
-          key: venv-${{ runner.os }}-py3.11-${{ hashFiles('requirements.txt', 'pyproject.toml') }}-v1
+          key: venv-${{ runner.os }}-py${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('requirements.txt', 'pyproject.toml') }}-v1
 
+      # Deliberately NOT gated on `cache-hit != 'true'`: a cache can restore
+      # and still be unusable, and skipping the install then surfaces much
+      # later as a confusing ModuleNotFoundError. Instead probe for what we
+      # actually need and do only the work that is missing. On a healthy warm
+      # cache this is two cheap checks (~1s).
+      #
+      # The import list mirrors requirements.txt plus the pyproject
+      # dependencies that requirements.txt does not repeat (pyyaml, requests).
+      # Keep it in sync when dependencies change.
       - name: Install
-        if: steps.venv-cache.outputs.cache-hit != 'true'
         run: |
-          python -m venv .venv
-          . .venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -e .
+          set -euo pipefail
+          if [ ! -x .venv/bin/python ]; then
+            echo "No usable venv interpreter (cold cache, or the runner's Python moved) — rebuilding."
+            rm -rf .venv
+            python -m venv .venv
+          fi
+          if .venv/bin/python -c 'import numpy, pandas, scipy, pyarrow, matplotlib, yfinance, cloudscraper, bs4, yaml, requests' 2>/dev/null; then
+            echo "Cached venv is usable — skipping install."
+          else
+            echo "Dependency import check failed — installing."
+            .venv/bin/python -m pip install --upgrade pip
+            .venv/bin/python -m pip install -r requirements.txt
+            .venv/bin/python -m pip install -e .
+          fi
 
+      # Invoke the venv interpreter directly. `. .venv/bin/activate` succeeds
+      # even when the venv is broken and lets `python` fall through to the
+      # system interpreter, which is how a bad cache became a missing module.
       - name: Run EOD pipeline
-        run: |
-          . .venv/bin/activate
-          python -m gamma_workflow.run_eod
+        run: .venv/bin/python -m gamma_workflow.run_eod
 
       - name: Commit outputs
         run: |
