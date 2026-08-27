@@ -1,0 +1,21 @@
+# Technical Signal: CBOE  2026-08-27
+
+**Recommendation**: BUY  |  **Score**: +3.3
+
+### Technical Signal: BUY (+3.3 / confidence 33%)
+
+**Regime**: ADX RANGING (ADX 12, +DI 23 vs -DI 17)  |  Vol: LOW_IV (IV30 40.7%, RV20 40.8%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+5.31 = +4.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 294.24 (anchor 18 bars ago), aVWAP-low 294.66 (anchor 11 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 63: neutral  Bollinger: neutral
+
+**Divergence** (-2.0)
+- ✓ CONFIRMED reg_bear on OBV (quality: standard)
+
+**Score**: +5.31 + +0.00 + -2.00 = +3.31 → **+3.31**
