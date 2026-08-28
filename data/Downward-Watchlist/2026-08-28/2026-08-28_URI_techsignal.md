@@ -1,0 +1,21 @@
+# Technical Signal: URI  2026-08-28
+
+**Recommendation**: STRONG_SELL  |  **Score**: -6.3
+
+### Technical Signal: STRONG_SELL (-6.3 / confidence 63%)
+
+**Regime**: ADX RANGING (ADX 17, +DI 17 vs -DI 31)  |  Vol: LOW_IV (IV30 3.5%, RV20 31.4%)
+**Gate**: MR weight = 0.50
+
+**Trend** (-6.56 = -5.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 1115.26 (anchor 14 bars ago), aVWAP-low 1106.35 (anchor 27 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.25)
+- RSI 37: neutral  Bollinger: lower-break
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -6.56 + +0.25 + +0.00 = -6.31 → **-6.31**
