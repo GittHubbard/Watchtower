@@ -1,21 +1,21 @@
 # Technical Signal: CCL  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -10.0
+**Recommendation**: STRONG_SELL  |  **Score**: -9.8
 
-### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
+### Technical Signal: STRONG_SELL (-9.8 / confidence 98%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 16 vs -DI 35)  |  Vol: LOW_IV (IV30 46.6%, RV20 35.4%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 15 vs -DI 39)  |  Vol: HIGH_IV (IV30 52.1%, RV20 33.0%)
+**Gate**: MR weight = 0.75
 
 **Trend** (-10.94 = -8.75 × 1.25 convergence)
 - Price: STRONG_DOWN  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
-- aVWAP-high 26.75 (anchor 18 bars ago), aVWAP-low 26.98 (anchor 27 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 26.51 (anchor 19 bars ago), aVWAP-low 26.81 (anchor 28 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 30: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution +1.12)
+- RSI 28: oversold  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -10.94 + +0.00 + +0.00 = -10.94 → **-10.00**
+**Score**: -10.94 + +1.12 + +0.00 = -9.81 → **-9.81**

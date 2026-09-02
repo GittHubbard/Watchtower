@@ -1,22 +1,22 @@
 # Technical Signal: EOG  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: +2.0
+**Recommendation**: BUY  |  **Score**: +4.8
 
-### Technical Signal: HOLD (+2.0 / confidence 20%)
+### Technical Signal: BUY (+4.8 / confidence 48%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 27 vs -DI 25)  |  Vol: HIGH_IV (IV30 40.8%, RV20 37.8%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 15, +DI 29 vs -DI 24)  |  Vol: LOW_IV (IV30 34.7%, RV20 38.4%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+2.00 = +2.00 × 1.00 convergence)
-- Price: STRONG_UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: RECLAIM_HIGH  Volume: NORMAL
-- aVWAP-high 143.77 (anchor 21 bars ago), aVWAP-low 145.00 (anchor 16 bars ago)
+**Trend** (+4.75 = +4.75 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 143.99 (anchor 21 bars ago), aVWAP-low 145.27 (anchor 16 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 51: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 57: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: +2.00 + +0.00 + +0.00 = +2.00 → **+2.00**
+**Score**: +4.75 + +0.00 + +0.00 = +4.75 → **+4.75**

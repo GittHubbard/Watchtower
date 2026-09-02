@@ -1,23 +1,21 @@
 # Technical Signal: EBAY  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: HOLD  |  **Score**: +1.9
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: HOLD (+1.9 / confidence 19%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 21 vs -DI 27)  |  Vol: NORMAL_IV (IV30 42.1%, RV20 34.4%)
+**Regime**: ADX RANGING (ADX 20, +DI 16 vs -DI 25)  |  Vol: NORMAL_IV (IV30 44.9%, RV20 38.1%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: SURGE
-- aVWAP-high 106.72 (anchor 24 bars ago), aVWAP-low 103.49 (anchor 10 bars ago)
+**Trend** (+1.88 = +1.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 106.74 (anchor 25 bars ago), aVWAP-low 103.46 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 44: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
-- ⏳ PENDING reg_bull on CMF (quality: standard)
-- ⏳ PENDING reg_bull on OBV (quality: standard)
+- No active divergences
 
-**Score**: -0.50 + +0.00 + +0.00 = -0.50 → **-0.50**
+**Score**: +1.88 + +0.00 + +0.00 = +1.88 → **+1.88**

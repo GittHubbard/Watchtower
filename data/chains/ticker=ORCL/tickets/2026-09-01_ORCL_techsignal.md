@@ -1,21 +1,21 @@
 # Technical Signal: ORCL  2026-09-01
 
-**Recommendation**: BUY  |  **Score**: +3.1
+**Recommendation**: HOLD  |  **Score**: +0.0
 
-### Technical Signal: BUY (+3.1 / confidence 31%)
+### Technical Signal: HOLD (+0.0 / confidence 0%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 24 vs -DI 21)  |  Vol: HIGH_IV (IV30 66.4%, RV20 41.3%)
+**Regime**: ADX RANGING (ADX 15, +DI 22 vs -DI 27)  |  Vol: NORMAL_IV (IV30 65.8%, RV20 44.8%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: DRY
-- aVWAP-high 148.03 (anchor 12 bars ago), aVWAP-low 143.11 (anchor 23 bars ago)
+**Trend** (+0.00 = +0.00 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 147.56 (anchor 13 bars ago), aVWAP-low 143.10 (anchor 24 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 54: neutral  Bollinger: neutral
+- RSI 46: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**
+**Score**: +0.00 + +0.00 + +0.00 = +0.00 → **+0.00**

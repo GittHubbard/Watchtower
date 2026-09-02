@@ -4,16 +4,16 @@
 
 ### Technical Signal: SELL (-5.2 / confidence 52%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 18 vs -DI 25)  |  Vol: NORMAL_IV (IV30 35.7%, RV20 16.1%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 18, +DI 18 vs -DI 26)  |  Vol: LOW_IV (IV30 34.2%, RV20 16.1%)
+**Gate**: MR weight = 0.50
 
 **Trend** (-4.25 = -4.25 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 71.64 (anchor 39 bars ago), aVWAP-low 72.28 (anchor 63 bars ago)
+- aVWAP-high 71.61 (anchor 39 bars ago), aVWAP-low 72.26 (anchor 63 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 37: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 36: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ⏳ PENDING reg_bull on RSI (quality: strong)

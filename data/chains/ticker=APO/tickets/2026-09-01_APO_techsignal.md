@@ -1,21 +1,21 @@
 # Technical Signal: APO  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: +1.3
+**Recommendation**: SELL  |  **Score**: -3.1
 
-### Technical Signal: HOLD (+1.3 / confidence 13%)
+### Technical Signal: SELL (-3.1 / confidence 31%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 28 vs -DI 17)  |  Vol: LOW_IV (IV30 41.2%, RV20 39.6%)
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 26 vs -DI 23)  |  Vol: LOW_IV (IV30 37.8%, RV20 42.4%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+0.31 = +0.25 × 1.25 convergence)
+**Trend** (-3.12 = -2.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 134.15 (anchor 11 bars ago), aVWAP-low 125.42 (anchor 43 bars ago)
+- OBV: BEARISH  aVWAP: BETWEEN  Volume: DRY
+- aVWAP-high 133.95 (anchor 11 bars ago), aVWAP-low 125.39 (anchor 43 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 59: neutral  Bollinger: neutral
+- RSI 51: neutral  Bollinger: neutral
 
-**Divergence** (+1.0)
-- ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: +0.31 + +0.00 + +1.00 = +1.31 → **+1.31**
+**Score**: -3.12 + +0.00 + +0.00 = -3.12 → **-3.12**

@@ -1,21 +1,21 @@
 # Technical Signal: SHW  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -4.2
+**Recommendation**: STRONG_SELL  |  **Score**: -9.3
 
-### Technical Signal: SELL (-4.2 / confidence 42%)
+### Technical Signal: STRONG_SELL (-9.3 / confidence 93%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 22 vs -DI 27)  |  Vol: LOW_IV (IV30 28.1%, RV20 24.0%)
+**Regime**: ADX RANGING (ADX 16, +DI 20 vs -DI 33)  |  Vol: LOW_IV (IV30 28.8%, RV20 25.5%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-4.25 = -4.25 × 1.00 convergence)
+**Trend** (-6.56 = -5.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 352.33 (anchor 16 bars ago), aVWAP-low 347.29 (anchor 27 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 351.62 (anchor 16 bars ago), aVWAP-low 346.92 (anchor 27 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 44: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.25)
+- RSI 39: neutral  Bollinger: lower-break
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bear on CMF (quality: strong)
+**Divergence** (-3.0)
+- ✓ CONFIRMED reg_bear on CMF (quality: strong)
 
-**Score**: -4.25 + +0.00 + +0.00 = -4.25 → **-4.25**
+**Score**: -6.56 + +0.25 + -3.00 = -9.31 → **-9.31**

@@ -1,16 +1,16 @@
 # Technical Signal: PLD  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: +1.0
+**Recommendation**: SELL  |  **Score**: -5.0
 
-### Technical Signal: HOLD (+1.0 / confidence 10%)
+### Technical Signal: SELL (-5.0 / confidence 50%)
 
-**Regime**: ADX RANGING (ADX 10, +DI 17 vs -DI 23)  |  Vol: LOW_IV (IV30 27.0%, RV20 17.4%)
+**Regime**: ADX RANGING (ADX 11, +DI 17 vs -DI 23)  |  Vol: LOW_IV (IV30 26.9%, RV20 17.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+1.00 = +1.00 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+**Trend** (-5.00 = -4.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: ACCUM
 - OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
-- aVWAP-high 142.81 (anchor 31 bars ago), aVWAP-low 140.88 (anchor 15 bars ago)
+- aVWAP-high 142.76 (anchor 31 bars ago), aVWAP-low 140.78 (anchor 15 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 43: neutral  Bollinger: neutral
@@ -18,4 +18,4 @@
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +1.00 + +0.00 + +0.00 = +1.00 → **+1.00**
+**Score**: -5.00 + +0.00 + +0.00 = -5.00 → **-5.00**

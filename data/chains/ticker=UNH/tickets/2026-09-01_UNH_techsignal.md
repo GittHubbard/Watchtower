@@ -1,21 +1,21 @@
 # Technical Signal: UNH  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.8
+**Recommendation**: HOLD  |  **Score**: +0.3
 
-### Technical Signal: STRONG_SELL (-6.8 / confidence 68%)
+### Technical Signal: HOLD (+0.3 / confidence 3%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 16 vs -DI 25)  |  Vol: NORMAL_IV (IV30 31.5%, RV20 20.5%)
+**Regime**: ADX TRENDING (ADX 25, +DI 19 vs -DI 24)  |  Vol: NORMAL_IV (IV30 29.7%, RV20 22.1%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-6.75 = -6.75 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 412.22 (anchor 32 bars ago), aVWAP-low 410.82 (anchor 62 bars ago)
+**Trend** (+0.31 = +0.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULL_CROSS  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 412.11 (anchor 32 bars ago), aVWAP-low 410.78 (anchor 62 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 40: neutral  Bollinger: neutral
+- RSI 46: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -6.75 + +0.00 + +0.00 = -6.75 → **-6.75**
+**Score**: +0.31 + +0.00 + +0.00 = +0.31 → **+0.31**

@@ -1,21 +1,21 @@
 # Technical Signal: NEM  2026-09-01
 
-**Recommendation**: BUY  |  **Score**: +3.2
+**Recommendation**: HOLD  |  **Score**: -2.2
 
-### Technical Signal: BUY (+3.2 / confidence 32%)
+### Technical Signal: HOLD (-2.2 / confidence 22%)
 
-**Regime**: ADX TRENDING (ADX 38, +DI 36 vs -DI 20)  |  Vol: LOW_IV (IV30 45.8%, RV20 52.4%)
+**Regime**: ADX TRENDING (ADX 37, +DI 34 vs -DI 23)  |  Vol: LOW_IV (IV30 46.2%, RV20 55.5%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+3.25 = +3.25 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: SURGE
-- aVWAP-high 105.60 (anchor 51 bars ago), aVWAP-low 112.25 (anchor 30 bars ago)
+**Trend** (-2.19 = -1.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 105.46 (anchor 51 bars ago), aVWAP-low 112.02 (anchor 30 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 61: neutral  Bollinger: neutral
+- RSI 57: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.25 + +0.00 + +0.00 = +3.25 → **+3.25**
+**Score**: -2.19 + +0.00 + +0.00 = -2.19 → **-2.19**

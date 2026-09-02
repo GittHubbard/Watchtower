@@ -1,21 +1,21 @@
 # Technical Signal: VLO  2026-09-01
 
-**Recommendation**: BUY  |  **Score**: +4.8
+**Recommendation**: STRONG_BUY  |  **Score**: +8.2
 
-### Technical Signal: BUY (+4.8 / confidence 48%)
+### Technical Signal: STRONG_BUY (+8.2 / confidence 82%)
 
-**Regime**: ADX TRENDING (ADX 31, +DI 28 vs -DI 13)  |  Vol: NORMAL_IV (IV30 45.3%, RV20 31.7%)
+**Regime**: ADX TRENDING (ADX 32, +DI 28 vs -DI 12)  |  Vol: NORMAL_IV (IV30 46.1%, RV20 32.8%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+4.75 = +4.75 × 1.00 convergence)
-- Price: STRONG_UP  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
-- aVWAP-high 322.78 (anchor 28 bars ago), aVWAP-low 336.39 (anchor 16 bars ago)
+**Trend** (+8.25 = +8.25 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 323.51 (anchor 28 bars ago), aVWAP-low 337.41 (anchor 16 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution -0.00)
-- RSI 71: overbought  Bollinger: neutral
+- RSI 72: overbought  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 
-**Score**: +4.75 + -0.00 + +0.00 = +4.75 → **+4.75**
+**Score**: +8.25 + -0.00 + +0.00 = +8.25 → **+8.25**

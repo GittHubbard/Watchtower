@@ -1,21 +1,21 @@
 # Technical Signal: SOFI  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.9
+**Recommendation**: STRONG_SELL  |  **Score**: -7.9
 
-### Technical Signal: STRONG_SELL (-6.9 / confidence 69%)
+### Technical Signal: STRONG_SELL (-7.9 / confidence 79%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 19 vs -DI 20)  |  Vol: LOW_IV (IV30 49.3%, RV20 47.6%)
+**Regime**: ADX RANGING (ADX 15, +DI 18 vs -DI 23)  |  Vol: LOW_IV (IV30 49.5%, RV20 48.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-6.88 = -5.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: TESTING_RESISTANCE  Volume: DRY
-- aVWAP-high 17.59 (anchor 36 bars ago), aVWAP-low 17.65 (anchor 23 bars ago)
+**Trend** (-8.12 = -6.50 × 1.25 convergence)
+- Price: DOWN  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 17.59 (anchor 37 bars ago), aVWAP-low 17.63 (anchor 24 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 48: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.25)
+- RSI 43: neutral  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -6.88 + +0.00 + +0.00 = -6.88 → **-6.88**
+**Score**: -8.12 + +0.25 + +0.00 = -7.88 → **-7.88**

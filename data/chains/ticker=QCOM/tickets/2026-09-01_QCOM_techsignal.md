@@ -1,21 +1,21 @@
 # Technical Signal: QCOM  2026-09-01
 
-**Recommendation**: BUY  |  **Score**: +4.1
+**Recommendation**: BUY  |  **Score**: +4.4
 
-### Technical Signal: BUY (+4.1 / confidence 41%)
+### Technical Signal: BUY (+4.4 / confidence 44%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 27 vs -DI 19)  |  Vol: LOW_IV (IV30 45.2%, RV20 40.0%)
+**Regime**: ADX RANGING (ADX 12, +DI 24 vs -DI 21)  |  Vol: LOW_IV (IV30 44.7%, RV20 40.9%)
 **Gate**: MR weight = 0.50
 
 **Trend** (+4.38 = +3.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 191.21 (anchor 64 bars ago), aVWAP-low 161.69 (anchor 20 bars ago)
+- aVWAP-high 191.19 (anchor 64 bars ago), aVWAP-low 161.77 (anchor 20 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution -0.25)
-- RSI 56: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 51: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.38 + -0.25 + +0.00 = +4.12 → **+4.12**
+**Score**: +4.38 + +0.00 + +0.00 = +4.38 → **+4.38**

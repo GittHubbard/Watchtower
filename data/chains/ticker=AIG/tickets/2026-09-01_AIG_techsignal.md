@@ -1,21 +1,21 @@
 # Technical Signal: AIG  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: SELL  |  **Score**: -5.2
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: SELL (-5.2 / confidence 52%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 19 vs -DI 23)  |  Vol: NORMAL_IV (IV30 32.3%, RV20 14.8%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 14, +DI 16 vs -DI 24)  |  Vol: LOW_IV (IV30 29.0%, RV20 14.6%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
-- aVWAP-high 77.02 (anchor 17 bars ago), aVWAP-low 76.95 (anchor 61 bars ago)
+**Trend** (-5.25 = -5.25 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 76.98 (anchor 17 bars ago), aVWAP-low 76.94 (anchor 61 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 43: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -0.50 + +0.00 + +0.00 = -0.50 → **-0.50**
+**Score**: -5.25 + +0.00 + +0.00 = -5.25 → **-5.25**

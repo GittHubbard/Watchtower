@@ -1,21 +1,21 @@
 # Technical Signal: RMD  2026-09-01
 
-**Recommendation**: STRONG_BUY  |  **Score**: +5.9
+**Recommendation**: BUY  |  **Score**: +5.2
 
-### Technical Signal: STRONG_BUY (+5.9 / confidence 59%)
+### Technical Signal: BUY (+5.2 / confidence 52%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 31 vs -DI 14)  |  Vol: NORMAL_IV (IV30 40.6%, RV20 34.4%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 29 vs -DI 19)  |  Vol: LOW_IV (IV30 33.2%, RV20 37.6%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+5.94 = +4.75 × 1.25 convergence)
+**Trend** (+5.25 = +5.25 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 215.26 (anchor 40 bars ago), aVWAP-low 220.78 (anchor 27 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 215.04 (anchor 40 bars ago), aVWAP-low 220.50 (anchor 27 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 69: neutral  Bollinger: neutral
+- RSI 58: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.94 + +0.00 + +0.00 = +5.94 → **+5.94**
+**Score**: +5.25 + +0.00 + +0.00 = +5.25 → **+5.25**

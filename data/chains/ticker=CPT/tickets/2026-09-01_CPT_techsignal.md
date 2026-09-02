@@ -1,18 +1,18 @@
 # Technical Signal: CPT  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -7.6
+**Recommendation**: STRONG_SELL  |  **Score**: -6.3
 
-### Technical Signal: STRONG_SELL (-7.6 / confidence 76%)
+### Technical Signal: STRONG_SELL (-6.3 / confidence 63%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 15 vs -DI 29)  |  Vol: LOW_IV (IV30 32.8%, RV20 18.3%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX RANGING (ADX 18, +DI 16 vs -DI 28)  |  Vol: NORMAL_IV (IV30 35.1%, RV20 18.1%)
+**Gate**: MR weight = 1.00
 
-**Trend** (-6.56 = -5.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 109.78 (anchor 23 bars ago), aVWAP-low 111.72 (anchor 49 bars ago)
+**Trend** (-5.31 = -4.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 109.77 (anchor 23 bars ago), aVWAP-low 111.72 (anchor 49 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
+**Mean Reversion** (gate 1.00 → contribution +0.00)
 - RSI 38: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
@@ -20,4 +20,4 @@
 - ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 
-**Score**: -6.56 + +0.00 + -1.00 = -7.56 → **-7.56**
+**Score**: -5.31 + +0.00 + -1.00 = -6.31 → **-6.31**

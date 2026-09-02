@@ -1,21 +1,21 @@
 # Technical Signal: OTIS  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.2
+**Recommendation**: STRONG_SELL  |  **Score**: -8.1
 
-### Technical Signal: STRONG_SELL (-6.2 / confidence 62%)
+### Technical Signal: STRONG_SELL (-8.1 / confidence 81%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 20 vs -DI 19)  |  Vol: LOW_IV (IV30 26.8%, RV20 20.2%)
+**Regime**: ADX RANGING (ADX 11, +DI 19 vs -DI 19)  |  Vol: LOW_IV (IV30 29.2%, RV20 20.1%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-6.25 = -6.25 × 1.00 convergence)
-- Price: DOWN  MACD: BEARISH  CMF: NEUTRAL
+**Trend** (-8.12 = -6.50 × 1.25 convergence)
+- Price: DOWN_EXHAUSTING  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
-- aVWAP-high 71.98 (anchor 31 bars ago), aVWAP-low 72.02 (anchor 27 bars ago)
+- aVWAP-high 71.95 (anchor 31 bars ago), aVWAP-low 71.97 (anchor 27 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 46: neutral  Bollinger: neutral
+- RSI 43: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -6.25 + +0.00 + +0.00 = -6.25 → **-6.25**
+**Score**: -8.12 + +0.00 + +0.00 = -8.12 → **-8.12**

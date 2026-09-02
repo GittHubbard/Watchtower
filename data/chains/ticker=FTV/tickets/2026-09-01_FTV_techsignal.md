@@ -1,22 +1,22 @@
 # Technical Signal: FTV  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.2
+**Recommendation**: STRONG_SELL  |  **Score**: -7.7
 
-### Technical Signal: STRONG_SELL (-6.2 / confidence 62%)
+### Technical Signal: STRONG_SELL (-7.7 / confidence 77%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 17 vs -DI 30)  |  Vol: UNKNOWN (IV30 N/A, RV20 17.9%)
+**Regime**: ADX RANGING (ADX 18, +DI 16 vs -DI 39)  |  Vol: UNKNOWN (IV30 N/A, RV20 22.1%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-5.25 = -5.25 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 60.41 (anchor 24 bars ago), aVWAP-low 60.30 (anchor 21 bars ago)
+**Trend** (-7.19 = -5.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 60.23 (anchor 24 bars ago), aVWAP-low 60.07 (anchor 21 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 41: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.50)
+- RSI 34: neutral  Bollinger: lower-break
 
 **Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Score**: -5.25 + +0.00 + -1.00 = -6.25 → **-6.25**
+**Score**: -7.19 + +0.50 + -1.00 = -7.69 → **-7.69**
 Note: IV30 not available — using RV-only vol regime

@@ -1,21 +1,21 @@
 # Technical Signal: GLW  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: +0.0
+**Recommendation**: STRONG_SELL  |  **Score**: -8.1
 
-### Technical Signal: HOLD (+0.0 / confidence 0%)
+### Technical Signal: STRONG_SELL (-8.1 / confidence 81%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 26 vs -DI 30)  |  Vol: LOW_IV (IV30 56.3%, RV20 67.6%)
+**Regime**: ADX RANGING (ADX 12, +DI 25 vs -DI 31)  |  Vol: LOW_IV (IV30 56.4%, RV20 68.1%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+0.00 = +0.00 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 154.15 (anchor 10 bars ago), aVWAP-low 146.71 (anchor 24 bars ago)
+**Trend** (-8.12 = -6.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 153.50 (anchor 10 bars ago), aVWAP-low 146.60 (anchor 24 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 44: neutral  Bollinger: neutral
+- RSI 43: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +0.00 + +0.00 + +0.00 = +0.00 → **+0.00**
+**Score**: -8.12 + +0.00 + +0.00 = -8.12 → **-8.12**

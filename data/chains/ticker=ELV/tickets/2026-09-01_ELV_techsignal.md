@@ -1,22 +1,21 @@
 # Technical Signal: ELV  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -7.2
+**Recommendation**: BUY  |  **Score**: +4.0
 
-### Technical Signal: STRONG_SELL (-7.2 / confidence 72%)
+### Technical Signal: BUY (+4.0 / confidence 40%)
 
-**Regime**: ADX RANGING (ADX 9, +DI 21 vs -DI 21)  |  Vol: LOW_IV (IV30 33.6%, RV20 22.9%)
+**Regime**: ADX RANGING (ADX 10, +DI 26 vs -DI 20)  |  Vol: LOW_IV (IV30 34.1%, RV20 24.9%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-6.25 = -5.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: DIST
-- OBV: BEARISH  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 389.37 (anchor 34 bars ago), aVWAP-low 387.85 (anchor 31 bars ago)
+**Trend** (+4.00 = +4.00 × 1.00 convergence)
+- Price: UP_EXHAUSTING  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 389.52 (anchor 34 bars ago), aVWAP-low 388.06 (anchor 31 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 48: neutral  Bollinger: neutral
+- RSI 55: neutral  Bollinger: neutral
 
-**Divergence** (-1.0)
-- ✓ CONFIRMED hid_bear on CMF (quality: standard)
-- ✓ CONFIRMED hid_bear on OBV (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: -6.25 + +0.00 + -1.00 = -7.25 → **-7.25**
+**Score**: +4.00 + +0.00 + +0.00 = +4.00 → **+4.00**

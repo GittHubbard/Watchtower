@@ -1,21 +1,21 @@
 # Technical Signal: MAS  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -4.2
+**Recommendation**: SELL  |  **Score**: -5.4
 
-### Technical Signal: SELL (-4.2 / confidence 42%)
+### Technical Signal: SELL (-5.4 / confidence 54%)
 
-**Regime**: ADX RANGING (ADX 9, +DI 21 vs -DI 23)  |  Vol: NORMAL_IV (IV30 40.7%, RV20 28.7%)
+**Regime**: ADX RANGING (ADX 11, +DI 18 vs -DI 30)  |  Vol: NORMAL_IV (IV30 42.5%, RV20 29.6%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-4.25 = -4.25 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
+**Trend** (-5.94 = -4.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 74.61 (anchor 24 bars ago), aVWAP-low 74.24 (anchor 21 bars ago)
+- aVWAP-high 74.50 (anchor 24 bars ago), aVWAP-low 74.08 (anchor 21 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 43: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.50)
+- RSI 37: neutral  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -4.25 + +0.00 + +0.00 = -4.25 → **-4.25**
+**Score**: -5.94 + +0.50 + +0.00 = -5.44 → **-5.44**

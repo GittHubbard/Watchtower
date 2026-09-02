@@ -1,10 +1,10 @@
 # Technical Signal: SYY  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: -2.3
+**Recommendation**: SELL  |  **Score**: -2.6
 
-### Technical Signal: HOLD (-2.3 / confidence 23%)
+### Technical Signal: SELL (-2.6 / confidence 26%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 20 vs -DI 27)  |  Vol: LOW_IV (IV30 24.5%, RV20 15.8%)
+**Regime**: ADX RANGING (ADX 13, +DI 22 vs -DI 26)  |  Vol: LOW_IV (IV30 26.2%, RV20 17.2%)
 **Gate**: MR weight = 0.50
 
 **Trend** (-6.56 = -5.25 × 1.25 convergence)
@@ -12,11 +12,11 @@
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
 - aVWAP-high 83.79 (anchor 24 bars ago), aVWAP-low 83.59 (anchor 29 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.25)
-- RSI 39: neutral  Bollinger: lower-break
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 46: neutral  Bollinger: neutral
 
 **Divergence** (+4.0)
 - ✓ CONFIRMED reg_bull on CMF (quality: standard)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Score**: -6.56 + +0.25 + +4.00 = -2.31 → **-2.31**
+**Score**: -6.56 + +0.00 + +4.00 = -2.56 → **-2.56**

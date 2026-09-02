@@ -1,23 +1,23 @@
 # Technical Signal: DELL  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -7.5
+**Recommendation**: STRONG_SELL  |  **Score**: -10.0
 
-### Technical Signal: STRONG_SELL (-7.5 / confidence 75%)
+### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
 
-**Regime**: ADX RANGING (ADX 9, +DI 24 vs -DI 23)  |  Vol: LOW_IV (IV30 70.9%, RV20 66.1%)
+**Regime**: ADX RANGING (ADX 9, +DI 21 vs -DI 29)  |  Vol: LOW_IV (IV30 73.4%, RV20 63.4%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-2.50 = -2.50 × 1.00 convergence)
-- Price: UP  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 464.30 (anchor 12 bars ago), aVWAP-low 450.97 (anchor 23 bars ago)
+**Trend** (-5.50 = -5.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: SURGE
+- aVWAP-high 459.27 (anchor 13 bars ago), aVWAP-low 449.52 (anchor 24 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+- RSI 45: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: -2.50 + +0.00 + -5.00 = -7.50 → **-7.50**
+**Score**: -5.50 + +0.00 + -5.00 = -10.50 → **-10.00**

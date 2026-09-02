@@ -1,21 +1,21 @@
 # Technical Signal: AXP  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.6
+**Recommendation**: STRONG_SELL  |  **Score**: -6.3
 
-### Technical Signal: STRONG_SELL (-6.6 / confidence 66%)
+### Technical Signal: STRONG_SELL (-6.3 / confidence 63%)
 
-**Regime**: ADX RANGING (ADX 10, +DI 22 vs -DI 30)  |  Vol: LOW_IV (IV30 25.1%, RV20 16.2%)
+**Regime**: ADX RANGING (ADX 11, +DI 21 vs -DI 34)  |  Vol: LOW_IV (IV30 24.7%, RV20 17.4%)
 **Gate**: MR weight = 0.50
 
 **Trend** (-6.56 = -5.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 338.69 (anchor 18 bars ago), aVWAP-low 336.98 (anchor 26 bars ago)
+- aVWAP-high 338.15 (anchor 18 bars ago), aVWAP-low 336.67 (anchor 26 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 40: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.25)
+- RSI 36: neutral  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -6.56 + +0.00 + +0.00 = -6.56 → **-6.56**
+**Score**: -6.56 + +0.25 + +0.00 = -6.31 → **-6.31**

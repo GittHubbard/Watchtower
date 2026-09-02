@@ -1,22 +1,22 @@
 # Technical Signal: NVS  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -9.7
+**Recommendation**: BUY  |  **Score**: +4.0
 
-### Technical Signal: STRONG_SELL (-9.7 / confidence 97%)
+### Technical Signal: BUY (+4.0 / confidence 40%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 24 vs -DI 28)  |  Vol: HIGH_IV (IV30 39.3%, RV20 23.8%)
+**Regime**: ADX RANGING (ADX 14, +DI 41 vs -DI 22)  |  Vol: HIGH_IV (IV30 32.3%, RV20 32.0%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-4.69 = -3.75 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 155.56 (anchor 24 bars ago), aVWAP-low 155.67 (anchor 11 bars ago)
+**Trend** (+9.00 = +9.00 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BULL_CROSS  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: SURGE
+- aVWAP-high 156.29 (anchor 24 bars ago), aVWAP-low 157.13 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 44: neutral  Bollinger: neutral
+- RSI 58: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: -4.69 + +0.00 + -5.00 = -9.69 → **-9.69**
+**Score**: +9.00 + +0.00 + -5.00 = +4.00 → **+4.00**

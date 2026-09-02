@@ -1,19 +1,19 @@
 # Technical Signal: EXPE  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -5.3
+**Recommendation**: STRONG_SELL  |  **Score**: -10.0
 
-### Technical Signal: SELL (-5.3 / confidence 53%)
+### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
 
-**Regime**: ADX TRENDING (ADX 35, +DI 23 vs -DI 17)  |  Vol: LOW_IV (IV30 44.2%, RV20 44.8%)
+**Regime**: ADX TRENDING (ADX 34, +DI 23 vs -DI 25)  |  Vol: LOW_IV (IV30 44.5%, RV20 44.0%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-0.31 = -0.25 × 1.25 convergence)
-- Price: UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 298.14 (anchor 39 bars ago), aVWAP-low 311.34 (anchor 27 bars ago)
+**Trend** (-5.00 = -4.00 × 1.25 convergence)
+- Price: UP  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: SURGE
+- aVWAP-high 298.07 (anchor 39 bars ago), aVWAP-low 310.84 (anchor 27 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+- RSI 47: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: strong)
@@ -22,4 +22,4 @@
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: -0.31 + +0.00 + -5.00 = -5.31 → **-5.31**
+**Score**: -5.00 + +0.00 + -5.00 = -10.00 → **-10.00**

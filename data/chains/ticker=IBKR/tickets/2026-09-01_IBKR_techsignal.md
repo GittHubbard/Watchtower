@@ -1,21 +1,21 @@
 # Technical Signal: IBKR  2026-09-01
 
-**Recommendation**: STRONG_BUY  |  **Score**: +8.3
+**Recommendation**: HOLD  |  **Score**: +2.4
 
-### Technical Signal: STRONG_BUY (+8.3 / confidence 83%)
+### Technical Signal: HOLD (+2.4 / confidence 24%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 25 vs -DI 16)  |  Vol: NORMAL_IV (IV30 53.5%, RV20 36.8%)
+**Regime**: ADX RANGING (ADX 13, +DI 22 vs -DI 24)  |  Vol: HIGH_IV (IV30 55.4%, RV20 45.9%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+5.31 = +4.25 × 1.25 convergence)
-- Price: UP  MACD: BULLISH  CMF: ACCUM
-- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 91.39 (anchor 33 bars ago), aVWAP-low 92.51 (anchor 16 bars ago)
+**Trend** (-0.62 = -0.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 91.33 (anchor 33 bars ago), aVWAP-low 92.34 (anchor 16 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 60: neutral  Bollinger: neutral
+- RSI 46: neutral  Bollinger: neutral
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: +5.31 + +0.00 + +3.00 = +8.31 → **+8.31**
+**Score**: -0.62 + +0.00 + +3.00 = +2.38 → **+2.38**

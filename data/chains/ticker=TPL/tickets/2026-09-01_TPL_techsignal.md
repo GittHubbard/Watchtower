@@ -1,22 +1,21 @@
 # Technical Signal: TPL  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: HOLD  |  **Score**: -0.6
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: HOLD (-0.6 / confidence 6%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 23 vs -DI 19)  |  Vol: LOW_IV (IV30 49.0%, RV20 51.5%)
+**Regime**: ADX RANGING (ADX 14, +DI 23 vs -DI 20)  |  Vol: LOW_IV (IV30 48.0%, RV20 50.6%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+0.50 = +0.50 × 1.00 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: NORMAL
-- aVWAP-high 374.12 (anchor 27 bars ago), aVWAP-low 368.69 (anchor 12 bars ago)
+**Trend** (-0.62 = -0.50 × 1.25 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: DIST
+- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 374.16 (anchor 27 bars ago), aVWAP-low 368.85 (anchor 12 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+- RSI 47: neutral  Bollinger: neutral
 
-**Divergence** (-1.0)
-- ✓ CONFIRMED hid_bear on RSI (quality: standard)
-- ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: +0.50 + +0.00 + -1.00 = -0.50 → **-0.50**
+**Score**: -0.62 + +0.00 + +0.00 = -0.62 → **-0.62**

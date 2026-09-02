@@ -1,19 +1,19 @@
 # Technical Signal: MCK  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -3.4
+**Recommendation**: HOLD  |  **Score**: -1.2
 
-### Technical Signal: SELL (-3.4 / confidence 34%)
+### Technical Signal: HOLD (-1.2 / confidence 12%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 33 vs -DI 23)  |  Vol: LOW_IV (IV30 28.8%, RV20 33.2%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 35 vs -DI 19)  |  Vol: LOW_IV (IV30 27.1%, RV20 33.8%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+0.62 = +0.50 × 1.25 convergence)
+**Trend** (+2.81 = +2.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 875.92 (anchor 17 bars ago), aVWAP-low 831.03 (anchor 49 bars ago)
+- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 876.26 (anchor 17 bars ago), aVWAP-low 831.20 (anchor 49 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 56: neutral  Bollinger: neutral
+- RSI 61: neutral  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: strong)
@@ -25,4 +25,4 @@
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
-**Score**: +0.62 + +0.00 + -4.00 = -3.38 → **-3.38**
+**Score**: +2.81 + +0.00 + -4.00 = -1.19 → **-1.19**

@@ -1,22 +1,22 @@
 # Technical Signal: MGM  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -5.8
+**Recommendation**: SELL  |  **Score**: -5.1
 
-### Technical Signal: STRONG_SELL (-5.8 / confidence 58%)
+### Technical Signal: SELL (-5.1 / confidence 51%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 14 vs -DI 33)  |  Vol: LOW_IV (IV30 45.1%, RV20 21.5%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX RANGING (ADX 20, +DI 13 vs -DI 36)  |  Vol: NORMAL_IV (IV30 49.4%, RV20 23.8%)
+**Gate**: MR weight = 1.00
 
 **Trend** (-6.56 = -5.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 45.55 (anchor 44 bars ago), aVWAP-low 45.88 (anchor 70 bars ago)
+- aVWAP-high 45.51 (anchor 44 bars ago), aVWAP-low 45.86 (anchor 70 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.75)
-- RSI 28: oversold  Bollinger: lower-break
+**Mean Reversion** (gate 1.00 → contribution +1.50)
+- RSI 26: oversold  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 
-**Score**: -6.56 + +0.75 + +0.00 = -5.81 → **-5.81**
+**Score**: -6.56 + +1.50 + +0.00 = -5.06 → **-5.06**

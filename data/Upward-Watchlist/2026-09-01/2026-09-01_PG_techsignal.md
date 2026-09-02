@@ -1,19 +1,19 @@
 # Technical Signal: PG  2026-09-01
 
-**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+**Recommendation**: STRONG_BUY  |  **Score**: +7.1
 
-### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+### Technical Signal: STRONG_BUY (+7.1 / confidence 71%)
 
-**Regime**: ADX RANGING (ADX 5, +DI 23 vs -DI 21)  |  Vol: LOW_IV (IV30 23.8%, RV20 14.7%)
+**Regime**: ADX RANGING (ADX 6, +DI 28 vs -DI 20)  |  Vol: LOW_IV (IV30 23.1%, RV20 15.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+8.12 = +6.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULL_CROSS  CMF: ACCUM
-- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: NORMAL
-- aVWAP-high 144.94 (anchor 24 bars ago), aVWAP-low 144.23 (anchor 10 bars ago)
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
+- aVWAP-high 145.02 (anchor 24 bars ago), aVWAP-low 144.43 (anchor 10 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 50: neutral  Bollinger: neutral
+- RSI 53: neutral  Bollinger: neutral
 
 **Divergence** (+4.0)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
@@ -23,4 +23,4 @@
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 - ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Score**: +8.12 + +0.00 + +4.00 = +12.12 → **+10.00**
+**Score**: +3.12 + +0.00 + +4.00 = +7.12 → **+7.12**

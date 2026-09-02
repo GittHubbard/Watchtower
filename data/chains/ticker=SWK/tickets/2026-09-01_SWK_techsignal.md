@@ -1,21 +1,21 @@
 # Technical Signal: SWK  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: +0.0
+**Recommendation**: HOLD  |  **Score**: -1.6
 
-### Technical Signal: HOLD (+0.0 / confidence 0%)
+### Technical Signal: HOLD (-1.6 / confidence 16%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 17 vs -DI 21)  |  Vol: LOW_IV (IV30 37.1%, RV20 27.4%)
+**Regime**: ADX RANGING (ADX 16, +DI 17 vs -DI 25)  |  Vol: LOW_IV (IV30 36.2%, RV20 29.2%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+0.00 = +0.00 × 1.00 convergence)
+**Trend** (-1.88 = -1.50 × 1.25 convergence)
 - Price: UP  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 99.93 (anchor 14 bars ago), aVWAP-low 96.24 (anchor 37 bars ago)
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 99.63 (anchor 14 bars ago), aVWAP-low 96.18 (anchor 37 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 47: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.25)
+- RSI 43: neutral  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +0.00 + +0.00 + +0.00 = +0.00 → **+0.00**
+**Score**: -1.88 + +0.25 + +0.00 = -1.62 → **-1.62**

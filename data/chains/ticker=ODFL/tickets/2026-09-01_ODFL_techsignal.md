@@ -1,21 +1,21 @@
 # Technical Signal: ODFL  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -4.2
+**Recommendation**: STRONG_SELL  |  **Score**: -7.2
 
-### Technical Signal: SELL (-4.2 / confidence 42%)
+### Technical Signal: STRONG_SELL (-7.2 / confidence 72%)
 
-**Regime**: ADX TRENDING (ADX 29, +DI 13 vs -DI 28)  |  Vol: LOW_IV (IV30 43.0%, RV20 27.0%)
+**Regime**: ADX TRENDING (ADX 31, +DI 9 vs -DI 34)  |  Vol: LOW_IV (IV30 44.5%, RV20 35.1%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-4.25 = -4.25 × 1.00 convergence)
+**Trend** (-7.19 = -5.75 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 215.35 (anchor 31 bars ago), aVWAP-low 217.50 (anchor 38 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 214.57 (anchor 31 bars ago), aVWAP-low 216.81 (anchor 38 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 37: neutral  Bollinger: neutral
+- RSI 26: oversold  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -4.25 + +0.00 + +0.00 = -4.25 → **-4.25**
+**Score**: -7.19 + +0.00 + +0.00 = -7.19 → **-7.19**

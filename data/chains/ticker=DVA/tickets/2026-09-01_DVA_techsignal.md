@@ -1,22 +1,22 @@
 # Technical Signal: DVA  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: -1.2
+**Recommendation**: HOLD  |  **Score**: -0.2
 
-### Technical Signal: HOLD (-1.2 / confidence 12%)
+### Technical Signal: HOLD (-0.2 / confidence 2%)
 
-**Regime**: ADX TRENDING (ADX 38, +DI 16 vs -DI 30)  |  Vol: LOW_IV (IV30 33.0%, RV20 70.8%)
+**Regime**: ADX TRENDING (ADX 39, +DI 14 vs -DI 27)  |  Vol: LOW_IV (IV30 32.9%, RV20 70.4%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-1.25 = -1.25 × 1.00 convergence)
+**Trend** (-0.25 = -0.25 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 191.66 (anchor 20 bars ago), aVWAP-low 208.23 (anchor 62 bars ago)
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 191.45 (anchor 20 bars ago), aVWAP-low 208.08 (anchor 62 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 32: neutral  Bollinger: neutral
+- RSI 31: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ⏳ PENDING reg_bull on OBV (quality: standard)
 
-**Score**: -1.25 + +0.00 + +0.00 = -1.25 → **-1.25**
+**Score**: -0.25 + +0.00 + +0.00 = -0.25 → **-0.25**

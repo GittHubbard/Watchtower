@@ -1,22 +1,22 @@
 # Technical Signal: GDDY  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: +2.1
+**Recommendation**: STRONG_BUY  |  **Score**: +9.2
 
-### Technical Signal: HOLD (+2.1 / confidence 21%)
+### Technical Signal: STRONG_BUY (+9.2 / confidence 92%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 30 vs -DI 24)  |  Vol: LOW_IV (IV30 53.2%, RV20 49.3%)
+**Regime**: ADX RANGING (ADX 14, +DI 34 vs -DI 23)  |  Vol: LOW_IV (IV30 53.5%, RV20 49.9%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-1.88 = -1.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 96.84 (anchor 11 bars ago), aVWAP-low 91.86 (anchor 21 bars ago)
+**Trend** (+5.25 = +5.25 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 97.09 (anchor 11 bars ago), aVWAP-low 91.96 (anchor 21 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 55: neutral  Bollinger: neutral
+- RSI 58: neutral  Bollinger: neutral
 
 **Divergence** (+4.0)
 - ✓ CONFIRMED reg_bull on MACDLine (quality: standard)
 - ✓ CONFIRMED reg_bull on CMF (quality: standard)
 
-**Score**: -1.88 + +0.00 + +4.00 = +2.12 → **+2.12**
+**Score**: +5.25 + +0.00 + +4.00 = +9.25 → **+9.25**

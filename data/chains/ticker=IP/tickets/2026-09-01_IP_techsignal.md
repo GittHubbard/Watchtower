@@ -1,21 +1,21 @@
 # Technical Signal: IP  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -5.1
+**Recommendation**: STRONG_SELL  |  **Score**: -6.9
 
-### Technical Signal: SELL (-5.1 / confidence 51%)
+### Technical Signal: STRONG_SELL (-6.9 / confidence 69%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 20 vs -DI 27)  |  Vol: LOW_IV (IV30 43.4%, RV20 32.3%)
+**Regime**: ADX RANGING (ADX 19, +DI 19 vs -DI 34)  |  Vol: LOW_IV (IV30 47.1%, RV20 36.5%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-5.31 = -4.25 × 1.25 convergence)
+**Trend** (-7.19 = -5.75 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 41.18 (anchor 24 bars ago), aVWAP-low 40.67 (anchor 29 bars ago)
+- aVWAP-high 40.97 (anchor 24 bars ago), aVWAP-low 40.52 (anchor 29 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.25)
-- RSI 39: neutral  Bollinger: lower-break
+- RSI 35: neutral  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -5.31 + +0.25 + +0.00 = -5.06 → **-5.06**
+**Score**: -7.19 + +0.25 + +0.00 = -6.94 → **-6.94**

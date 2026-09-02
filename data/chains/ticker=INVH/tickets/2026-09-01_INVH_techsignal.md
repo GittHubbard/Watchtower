@@ -1,13 +1,13 @@
 # Technical Signal: INVH  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -5.7
+**Recommendation**: SELL  |  **Score**: -5.1
 
-### Technical Signal: STRONG_SELL (-5.7 / confidence 57%)
+### Technical Signal: SELL (-5.1 / confidence 51%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 18 vs -DI 28)  |  Vol: HIGH_IV (IV30 52.1%, RV20 16.3%)
+**Regime**: ADX RANGING (ADX 17, +DI 20 vs -DI 27)  |  Vol: HIGH_IV (IV30 51.0%, RV20 16.3%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-7.19 = -5.75 × 1.25 convergence)
+**Trend** (-6.56 = -5.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
 - aVWAP-high 29.91 (anchor 17 bars ago), aVWAP-low 29.80 (anchor 13 bars ago)
@@ -20,4 +20,4 @@
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
-**Score**: -7.19 + +0.50 + +1.00 = -5.69 → **-5.69**
+**Score**: -6.56 + +0.50 + +1.00 = -5.06 → **-5.06**

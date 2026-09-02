@@ -1,16 +1,16 @@
 # Technical Signal: ROL  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -3.8
+**Recommendation**: HOLD  |  **Score**: -1.2
 
-### Technical Signal: SELL (-3.8 / confidence 38%)
+### Technical Signal: HOLD (-1.2 / confidence 12%)
 
-**Regime**: ADX TRENDING (ADX 37, +DI 18 vs -DI 30)  |  Vol: NORMAL_IV (IV30 39.8%, RV20 20.3%)
+**Regime**: ADX TRENDING (ADX 37, +DI 18 vs -DI 31)  |  Vol: NORMAL_IV (IV30 38.3%, RV20 19.7%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-3.75 = -3.00 × 1.25 convergence)
+**Trend** (-1.25 = -1.00 × 1.25 convergence)
 - Price: STRONG_DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
-- aVWAP-high 38.29 (anchor 31 bars ago), aVWAP-low 36.48 (anchor 11 bars ago)
+- OBV: BULLISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 38.28 (anchor 31 bars ago), aVWAP-low 36.47 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 36: neutral  Bollinger: neutral
@@ -21,4 +21,4 @@
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 
-**Score**: -3.75 + +0.00 + +0.00 = -3.75 → **-3.75**
+**Score**: -1.25 + +0.00 + +0.00 = -1.25 → **-1.25**

@@ -1,16 +1,16 @@
 # Technical Signal: BAC  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -2.5
+**Recommendation**: HOLD  |  **Score**: +0.0
 
-### Technical Signal: SELL (-2.5 / confidence 25%)
+### Technical Signal: HOLD (+0.0 / confidence 0%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 21 vs -DI 19)  |  Vol: LOW_IV (IV30 21.8%, RV20 17.0%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 22 vs -DI 19)  |  Vol: NORMAL_IV (IV30 22.4%, RV20 16.1%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-2.50 = -2.50 × 1.00 convergence)
+**Trend** (+0.00 = +0.00 × 1.00 convergence)
 - Price: UP  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: SURGE
-- aVWAP-high 62.48 (anchor 10 bars ago), aVWAP-low 57.98 (anchor 73 bars ago)
+- OBV: BULLISH  aVWAP: BETWEEN  Volume: DRY
+- aVWAP-high 62.50 (anchor 10 bars ago), aVWAP-low 57.97 (anchor 73 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 49: neutral  Bollinger: neutral
@@ -20,4 +20,4 @@
 - ⏳ PENDING reg_bear on MACDLine (quality: strong)
 - ⏳ PENDING reg_bear on MACDHist (quality: strong)
 
-**Score**: -2.50 + +0.00 + +0.00 = -2.50 → **-2.50**
+**Score**: +0.00 + +0.00 + +0.00 = +0.00 → **+0.00**

@@ -1,21 +1,21 @@
 # Technical Signal: GEV  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -9.2
+**Recommendation**: STRONG_SELL  |  **Score**: -7.3
 
-### Technical Signal: STRONG_SELL (-9.2 / confidence 92%)
+### Technical Signal: STRONG_SELL (-7.3 / confidence 73%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 19 vs -DI 33)  |  Vol: LOW_IV (IV30 46.2%, RV20 38.3%)
+**Regime**: ADX RANGING (ADX 17, +DI 19 vs -DI 33)  |  Vol: LOW_IV (IV30 46.2%, RV20 40.6%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-7.19 = -5.75 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+**Trend** (-5.31 = -4.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 962.25 (anchor 10 bars ago), aVWAP-low 980.54 (anchor 23 bars ago)
+- aVWAP-high 958.48 (anchor 10 bars ago), aVWAP-low 978.58 (anchor 23 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 35: neutral  Bollinger: neutral
+- RSI 36: neutral  Bollinger: neutral
 
 **Divergence** (-2.0)
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Score**: -7.19 + +0.00 + -2.00 = -9.19 → **-9.19**
+**Score**: -5.31 + +0.00 + -2.00 = -7.31 → **-7.31**

@@ -1,21 +1,21 @@
 # Technical Signal: MCHP  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -5.3
+**Recommendation**: STRONG_SELL  |  **Score**: -6.6
 
-### Technical Signal: SELL (-5.3 / confidence 53%)
+### Technical Signal: STRONG_SELL (-6.6 / confidence 66%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 18 vs -DI 28)  |  Vol: LOW_IV (IV30 50.6%, RV20 64.6%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 17 vs -DI 31)  |  Vol: LOW_IV (IV30 47.2%, RV20 59.5%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-5.31 = -4.25 × 1.25 convergence)
+**Trend** (-6.56 = -5.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: DRY
-- aVWAP-high 77.71 (anchor 16 bars ago), aVWAP-low 77.53 (anchor 20 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 77.31 (anchor 17 bars ago), aVWAP-low 77.23 (anchor 21 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 42: neutral  Bollinger: neutral
+- RSI 39: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -5.31 + +0.00 + +0.00 = -5.31 → **-5.31**
+**Score**: -6.56 + +0.00 + +0.00 = -6.56 → **-6.56**

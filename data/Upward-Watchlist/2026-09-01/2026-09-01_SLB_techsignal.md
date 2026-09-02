@@ -1,21 +1,21 @@
 # Technical Signal: SLB  2026-09-01
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.4
+**Recommendation**: STRONG_BUY  |  **Score**: +6.9
 
-### Technical Signal: STRONG_BUY (+7.4 / confidence 74%)
+### Technical Signal: STRONG_BUY (+6.9 / confidence 69%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 42 vs -DI 13)  |  Vol: HIGH_IV (IV30 39.2%, RV20 36.5%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 28, +DI 37 vs -DI 16)  |  Vol: NORMAL_IV (IV30 38.5%, RV20 47.9%)
+**Gate**: MR weight = 0.00
 
-**Trend** (+8.12 = +6.50 × 1.25 convergence)
+**Trend** (+6.88 = +5.50 × 1.25 convergence)
 - Price: UP_EXHAUSTING  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
-- aVWAP-high 51.24 (anchor 67 bars ago), aVWAP-low 52.23 (anchor 29 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 51.27 (anchor 67 bars ago), aVWAP-low 52.32 (anchor 29 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution -0.75)
-- RSI 77: overbought  Bollinger: upper-break
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 63: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +8.12 + -0.75 + +0.00 = +7.38 → **+7.38**
+**Score**: +6.88 + +0.00 + +0.00 = +6.88 → **+6.88**

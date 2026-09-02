@@ -1,22 +1,22 @@
 # Technical Signal: NSC  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: -1.9
+**Recommendation**: STRONG_SELL  |  **Score**: -10.0
 
-### Technical Signal: HOLD (-1.9 / confidence 19%)
+### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 23 vs -DI 19)  |  Vol: LOW_IV (IV30 24.2%, RV20 17.4%)
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 21 vs -DI 29)  |  Vol: LOW_IV (IV30 24.3%, RV20 20.2%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-1.88 = -1.50 × 1.25 convergence)
-- Price: STRONG_UP  MACD: BEAR_CROSS  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 341.93 (anchor 27 bars ago), aVWAP-low 334.13 (anchor 48 bars ago)
+**Trend** (-5.00 = -4.00 × 1.25 convergence)
+- Price: UP  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 341.53 (anchor 27 bars ago), aVWAP-low 333.93 (anchor 48 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 52: neutral  Bollinger: neutral
+- RSI 43: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bear on MACDLine (quality: strong)
-- ⏳ PENDING reg_bear on CMF (quality: standard)
+**Divergence** (-5.0)
+- ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
+- ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Score**: -1.88 + +0.00 + +0.00 = -1.88 → **-1.88**
+**Score**: -5.00 + +0.00 + -5.00 = -10.00 → **-10.00**

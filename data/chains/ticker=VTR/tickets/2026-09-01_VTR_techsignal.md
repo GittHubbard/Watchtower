@@ -1,21 +1,21 @@
 # Technical Signal: VTR  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: -2.0
+**Recommendation**: HOLD  |  **Score**: +0.5
 
-### Technical Signal: HOLD (-2.0 / confidence 20%)
+### Technical Signal: HOLD (+0.5 / confidence 5%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 20 vs -DI 26)  |  Vol: NORMAL_IV (IV30 33.4%, RV20 26.3%)
+**Regime**: ADX RANGING (ADX 16, +DI 24 vs -DI 24)  |  Vol: NORMAL_IV (IV30 34.0%, RV20 26.9%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-5.00 = -4.00 × 1.25 convergence)
+**Trend** (-2.50 = -2.00 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEAR_CROSS  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
-- aVWAP-high 92.51 (anchor 24 bars ago), aVWAP-low 91.76 (anchor 13 bars ago)
+- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 92.50 (anchor 24 bars ago), aVWAP-low 91.77 (anchor 13 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 46: neutral  Bollinger: neutral
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: -5.00 + +0.00 + +3.00 = -2.00 → **-2.00**
+**Score**: -2.50 + +0.00 + +3.00 = +0.50 → **+0.50**

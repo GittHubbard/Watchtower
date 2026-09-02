@@ -1,21 +1,21 @@
 # Technical Signal: BKNG  2026-09-01
 
-**Recommendation**: HOLD  |  **Score**: -1.9
+**Recommendation**: SELL  |  **Score**: -3.8
 
-### Technical Signal: HOLD (-1.9 / confidence 19%)
+### Technical Signal: SELL (-3.8 / confidence 38%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 23 vs -DI 25)  |  Vol: NORMAL_IV (IV30 47.4%, RV20 37.5%)
+**Regime**: ADX TRENDING (ADX 27, +DI 23 vs -DI 27)  |  Vol: NORMAL_IV (IV30 45.2%, RV20 36.4%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-1.88 = -1.50 × 1.25 convergence)
-- Price: UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 195.82 (anchor 39 bars ago), aVWAP-low 196.61 (anchor 37 bars ago)
+**Trend** (-3.75 = -3.00 × 1.25 convergence)
+- Price: UP  MACD: BEARISH  CMF: DIST
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
+- aVWAP-high 195.70 (anchor 39 bars ago), aVWAP-low 196.48 (anchor 37 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 46: neutral  Bollinger: neutral
+- RSI 43: neutral  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -1.88 + +0.00 + +0.00 = -1.88 → **-1.88**
+**Score**: -3.75 + +0.00 + +0.00 = -3.75 → **-3.75**

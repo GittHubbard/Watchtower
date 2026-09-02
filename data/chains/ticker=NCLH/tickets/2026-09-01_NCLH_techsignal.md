@@ -1,21 +1,21 @@
 # Technical Signal: NCLH  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -9.2
+**Recommendation**: STRONG_SELL  |  **Score**: -10.0
 
-### Technical Signal: STRONG_SELL (-9.2 / confidence 92%)
+### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 18 vs -DI 37)  |  Vol: NORMAL_IV (IV30 53.1%, RV20 38.2%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 16 vs -DI 41)  |  Vol: LOW_IV (IV30 51.3%, RV20 38.9%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-8.25 = -8.25 × 1.00 convergence)
+**Trend** (-10.94 = -8.75 × 1.25 convergence)
 - Price: STRONG_DOWN  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 18.57 (anchor 24 bars ago), aVWAP-low 18.65 (anchor 27 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 18.41 (anchor 25 bars ago), aVWAP-low 18.50 (anchor 28 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 32: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.50)
+- RSI 28: oversold  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: -8.25 + +0.00 + -1.00 = -9.25 → **-9.25**
+**Score**: -10.94 + +0.50 + -1.00 = -11.44 → **-10.00**

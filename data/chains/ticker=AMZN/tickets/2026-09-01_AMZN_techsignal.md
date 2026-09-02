@@ -1,21 +1,21 @@
 # Technical Signal: AMZN  2026-09-01
 
-**Recommendation**: SELL  |  **Score**: -3.5
+**Recommendation**: SELL  |  **Score**: -4.8
 
-### Technical Signal: SELL (-3.5 / confidence 35%)
+### Technical Signal: SELL (-4.8 / confidence 48%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 28 vs -DI 20)  |  Vol: LOW_IV (IV30 30.1%, RV20 26.8%)
+**Regime**: ADX RANGING (ADX 18, +DI 25 vs -DI 23)  |  Vol: LOW_IV (IV30 29.5%, RV20 26.4%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-3.50 = -3.50 × 1.00 convergence)
+**Trend** (-2.75 = -2.75 × 1.00 convergence)
 - Price: UP  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: NORMAL
-- aVWAP-high 268.65 (anchor 20 bars ago), aVWAP-low 263.91 (anchor 23 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 268.10 (anchor 21 bars ago), aVWAP-low 263.63 (anchor 24 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 50: neutral  Bollinger: neutral
+- RSI 46: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bear on OBV (quality: standard)
+**Divergence** (-2.0)
+- ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: -3.50 + +0.00 + +0.00 = -3.50 → **-3.50**
+**Score**: -2.75 + +0.00 + -2.00 = -4.75 → **-4.75**

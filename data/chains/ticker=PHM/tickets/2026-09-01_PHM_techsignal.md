@@ -1,21 +1,21 @@
 # Technical Signal: PHM  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -5.9
+**Recommendation**: STRONG_SELL  |  **Score**: -6.1
 
-### Technical Signal: STRONG_SELL (-5.9 / confidence 59%)
+### Technical Signal: STRONG_SELL (-6.1 / confidence 61%)
 
-**Regime**: ADX RANGING (ADX 10, +DI 19 vs -DI 24)  |  Vol: NORMAL_IV (IV30 45.9%, RV20 30.7%)
+**Regime**: ADX RANGING (ADX 11, +DI 18 vs -DI 29)  |  Vol: NORMAL_IV (IV30 44.1%, RV20 30.8%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-5.94 = -4.75 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
+**Trend** (-6.56 = -5.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 129.85 (anchor 23 bars ago), aVWAP-low 129.04 (anchor 29 bars ago)
+- aVWAP-high 129.64 (anchor 23 bars ago), aVWAP-low 128.90 (anchor 29 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 46: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.50)
+- RSI 41: neutral  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -5.94 + +0.00 + +0.00 = -5.94 → **-5.94**
+**Score**: -6.56 + +0.50 + +0.00 = -6.06 → **-6.06**

@@ -1,16 +1,16 @@
 # Technical Signal: GIS  2026-09-01
 
-**Recommendation**: BUY  |  **Score**: +4.8
+**Recommendation**: BUY  |  **Score**: +5.2
 
-### Technical Signal: BUY (+4.8 / confidence 48%)
+### Technical Signal: BUY (+5.2 / confidence 52%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 32 vs -DI 15)  |  Vol: LOW_IV (IV30 36.5%, RV20 29.2%)
+**Regime**: ADX TRENDING (ADX 26, +DI 30 vs -DI 16)  |  Vol: NORMAL_IV (IV30 37.6%, RV20 28.2%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+4.75 = +4.75 × 1.00 convergence)
+**Trend** (+5.25 = +5.25 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 37.97 (anchor 31 bars ago), aVWAP-low 38.13 (anchor 26 bars ago)
+- aVWAP-high 37.98 (anchor 31 bars ago), aVWAP-low 38.14 (anchor 26 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 65: neutral  Bollinger: neutral
@@ -18,4 +18,4 @@
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.75 + +0.00 + +0.00 = +4.75 → **+4.75**
+**Score**: +5.25 + +0.00 + +0.00 = +5.25 → **+5.25**

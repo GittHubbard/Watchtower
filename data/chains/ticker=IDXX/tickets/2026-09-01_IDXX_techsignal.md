@@ -1,21 +1,21 @@
 # Technical Signal: IDXX  2026-09-01
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.2
+**Recommendation**: STRONG_SELL  |  **Score**: -8.8
 
-### Technical Signal: STRONG_SELL (-6.2 / confidence 62%)
+### Technical Signal: STRONG_SELL (-8.8 / confidence 88%)
 
-**Regime**: ADX RANGING (ADX 10, +DI 22 vs -DI 23)  |  Vol: LOW_IV (IV30 35.4%, RV20 28.6%)
+**Regime**: ADX RANGING (ADX 10, +DI 21 vs -DI 23)  |  Vol: LOW_IV (IV30 33.7%, RV20 29.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-4.25 = -4.25 × 1.00 convergence)
+**Trend** (-6.75 = -6.75 × 1.00 convergence)
 - Price: DOWN  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 570.78 (anchor 19 bars ago), aVWAP-low 567.72 (anchor 27 bars ago)
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: DRY
+- aVWAP-high 570.41 (anchor 19 bars ago), aVWAP-low 567.47 (anchor 27 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+- RSI 44: neutral  Bollinger: neutral
 
 **Divergence** (-2.0)
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Score**: -4.25 + +0.00 + -2.00 = -6.25 → **-6.25**
+**Score**: -6.75 + +0.00 + -2.00 = -8.75 → **-8.75**
