@@ -1,0 +1,21 @@
+# Technical Signal: KDP  2026-09-02
+
+**Recommendation**: STRONG_BUY  |  **Score**: +7.5
+
+### Technical Signal: STRONG_BUY (+7.5 / confidence 75%)
+
+**Regime**: ADX WEAK_TREND (ADX 25, +DI 29 vs -DI 17)  |  Vol: NORMAL_IV (IV30 36.8%, RV20 30.7%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+2.50 = +2.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 56: neutral  Bollinger: neutral
+
+**Divergence** (+5.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bull on CMF (quality: strong)
+
+**Score**: +2.50 + +0.00 + +5.00 = +7.50 → **+7.50**
