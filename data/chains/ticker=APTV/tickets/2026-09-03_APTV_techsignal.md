@@ -1,0 +1,20 @@
+# Technical Signal: APTV  2026-09-03
+
+**Recommendation**: HOLD  |  **Score**: -0.4
+
+### Technical Signal: HOLD (-0.4 / confidence 4%)
+
+**Regime**: ADX TRENDING (ADX 36, +DI 12 vs -DI 27)  |  Vol: LOW_IV (IV30 45.8%, RV20 37.1%)
+**Gate**: MR weight = 0.00
+
+**Trend** (+0.62 = +0.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 32: neutral  Bollinger: neutral
+
+**Divergence** (-1.0)
+- ✓ CONFIRMED hid_bear on CMF (quality: standard)
+
+**Score**: +0.62 + +0.00 + -1.00 = -0.38 → **-0.38**
