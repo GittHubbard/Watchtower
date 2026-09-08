@@ -1,0 +1,21 @@
+# Technical Signal: CRM  2026-09-07
+
+**Recommendation**: BUY  |  **Score**: +4.2
+
+### Technical Signal: BUY (+4.2 / confidence 42%)
+
+**Regime**: ADX TRENDING (ADX 38, +DI 44 vs -DI 12)  |  Vol: LOW_IV (IV30 42.0%, RV20 78.5%)
+**Gate**: MR weight = 0.00
+
+**Trend** (+4.25 = +4.25 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 188.72 (anchor 67 bars ago), aVWAP-low 214.41 (anchor 30 bars ago)
+
+**Mean Reversion** (gate 0.00 → contribution -0.00)
+- RSI 77: overbought  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: +4.25 + -0.00 + +0.00 = +4.25 → **+4.25**

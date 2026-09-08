@@ -1,0 +1,22 @@
+# Technical Signal: CVX  2026-09-07
+
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+
+**Regime**: ADX TRENDING (ADX 30, +DI 36 vs -DI 21)  |  Vol: NORMAL_IV (IV30 28.5%, RV20 21.8%)
+**Gate**: MR weight = 0.00
+
+**Trend** (+9.06 = +7.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 197.44 (anchor 31 bars ago), aVWAP-low 201.45 (anchor 20 bars ago)
+
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 65: neutral  Bollinger: neutral
+
+**Divergence** (+1.0)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
+- ⏳ PENDING reg_bear on CMF (quality: strong)
+
+**Score**: +9.06 + +0.00 + +1.00 = +10.06 → **+10.00**
