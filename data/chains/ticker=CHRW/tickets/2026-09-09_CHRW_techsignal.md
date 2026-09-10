@@ -1,0 +1,22 @@
+# Technical Signal: CHRW  2026-09-09
+
+**Recommendation**: SELL  |  **Score**: -3.5
+
+### Technical Signal: SELL (-3.5 / confidence 35%)
+
+**Regime**: ADX TRENDING (ADX 32, +DI 20 vs -DI 25)  |  Vol: LOW_IV (IV30 38.4%, RV20 28.2%)
+**Gate**: MR weight = 0.00
+
+**Trend** (+0.50 = +0.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 47: neutral  Bollinger: neutral
+
+**Divergence** (-4.0)
+- ⏳ PENDING reg_bull on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bear on CMF (quality: standard)
+- ✓ CONFIRMED reg_bear on OBV (quality: standard)
+
+**Score**: +0.50 + +0.00 + -4.00 = -3.50 → **-3.50**
