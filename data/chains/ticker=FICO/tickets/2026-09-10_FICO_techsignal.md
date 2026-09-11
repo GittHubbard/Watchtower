@@ -1,0 +1,20 @@
+# Technical Signal: FICO  2026-09-10
+
+**Recommendation**: SELL  |  **Score**: -2.9
+
+### Technical Signal: SELL (-2.9 / confidence 29%)
+
+**Regime**: ADX RANGING (ADX 16, +DI 22 vs -DI 35)  |  Vol: NORMAL_IV (IV30 53.2%, RV20 81.3%)
+**Gate**: MR weight = 1.00
+
+**Trend** (-1.88 = -1.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 37: neutral  Bollinger: neutral
+
+**Divergence** (-1.0)
+- ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
+
+**Score**: -1.88 + +0.00 + -1.00 = -2.88 → **-2.88**
