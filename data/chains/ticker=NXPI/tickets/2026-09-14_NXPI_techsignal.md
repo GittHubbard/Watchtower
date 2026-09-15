@@ -1,0 +1,22 @@
+# Technical Signal: NXPI  2026-09-14
+
+**Recommendation**: HOLD  |  **Score**: +1.0
+
+### Technical Signal: HOLD (+1.0 / confidence 10%)
+
+**Regime**: ADX TRENDING (ADX 25, +DI 23 vs -DI 23)  |  Vol: LOW_IV (IV30 46.6%, RV20 26.4%)
+**Gate**: MR weight = 0.00
+
+**Trend** (+2.00 = +2.00 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 54: neutral  Bollinger: neutral
+
+**Divergence** (-1.0)
+- ✓ CONFIRMED hid_bear on RSI (quality: standard)
+- ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
+- ✓ CONFIRMED hid_bear on CMF (quality: standard)
+
+**Score**: +2.00 + +0.00 + -1.00 = +1.00 → **+1.00**
