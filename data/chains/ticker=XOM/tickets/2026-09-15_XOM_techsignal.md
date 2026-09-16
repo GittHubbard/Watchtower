@@ -1,0 +1,26 @@
+# Technical Signal: XOM  2026-09-15
+
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 30 vs -DI 16)  |  Vol: NORMAL_IV (IV30 31.8%, RV20 24.2%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+9.69 = +7.75 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULL_CROSS  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 162.78 (anchor 17 bars ago), aVWAP-low 163.10 (anchor 11 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 66: neutral  Bollinger: neutral
+
+**Divergence** (+1.0)
+- ✓ CONFIRMED hid_bull on RSI (quality: standard)
+- ⏳ PENDING reg_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: standard)
+- ✓ CONFIRMED hid_bull on CMF (quality: standard)
+- ⏳ PENDING reg_bear on OBV (quality: standard)
+- ✓ CONFIRMED hid_bull on OBV (quality: standard)
+
+**Score**: +9.69 + +0.00 + +1.00 = +10.69 → **+10.00**
