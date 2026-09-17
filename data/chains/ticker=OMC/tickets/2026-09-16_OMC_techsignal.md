@@ -1,0 +1,20 @@
+# Technical Signal: OMC  2026-09-16
+
+**Recommendation**: STRONG_SELL  |  **Score**: -5.0
+
+### Technical Signal: SELL (-5.0 / confidence 50%)
+
+**Regime**: ADX TRENDING (ADX 29, +DI 15 vs -DI 27)  |  Vol: HIGH_IV (IV30 48.1%, RV20 32.7%)
+**Gate**: MR weight = 0.50
+
+**Trend** (-3.00 = -3.00 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 42: neutral  Bollinger: neutral
+
+**Divergence** (-2.0)
+- ✓ CONFIRMED reg_bear on OBV (quality: standard)
+
+**Score**: -3.00 + +0.00 + -2.00 = -5.00 → **-5.00**
