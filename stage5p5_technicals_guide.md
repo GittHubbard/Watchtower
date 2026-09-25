@@ -258,6 +258,26 @@ score         = clamp(sum, −10, +10);  confidence = |score| / 10
 - The old ADX × IV mean-reversion gate is gone; ADX/IV regime and price vs the
   200-day are shown as context only.
 
+### 7.1 How the redesign tested
+
+`research/backtest_setup_score.py` runs the production scorer every 5 trading
+days over ~10 years of daily prices for ~512 watchlist names (2017–2026,
+~154k samples on full-universe dates), rebuilding the old score alongside.
+"Excess" = return minus the average watchlist stock over the same window.
+
+| | Old score 2017–21 | Old 2022–26 | New score 2017–21 | New 2022–26 |
+|---|---|---|---|---|
+| Rank-IC vs 60-day excess | −0.021 | −0.002 | **+0.026** | **+0.015** |
+| Buy/Strong Buy: mean 60-day excess | −0.26% | +0.05% | **+1.02%** | **+0.37%** |
+| Buy/Strong Buy: median 60-day excess | −0.50% | −0.99% | **+0.32%** | −0.28% |
+
+The new score is better than the old one in both halves, but the edge over ten
+years is **small** — much smaller than in the Jun–Sep 2026 live log (where new-style
+Buys beat the average stock by ~3% a month). Treat the rating as one input, not a
+stand-alone trading signal. Caveats: current index members only (survivorship
+bias); divergence and aVWAP use the same code as production; IV regime is not
+available historically.
+
 ## 8. Recommendation buckets and hysteresis
 
 The score maps to a recommendation with a **Schmitt trigger** (hysteresis) so it

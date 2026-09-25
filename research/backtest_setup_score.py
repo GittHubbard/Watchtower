@@ -37,12 +37,15 @@ def _load(path: Path) -> pd.DataFrame:
 
 
 def _ticker_samples(args) -> list[dict]:
-    path, step = args
+    path, sample_dates = args
     ticker = path.name.split("_")[0]
     df = _load(path)
     close = df["Close"]
     rows = []
-    for end in range(WINDOW, len(df), step):
+    # Sample on a shared calendar so every date compares the full cross-section
+    # (tickers with shorter histories would otherwise land on their own dates).
+    ends = np.flatnonzero(df.index.isin(sample_dates)) + 1
+    for end in ends[ends >= WINDOW]:
         h = df.iloc[end - WINDOW:end]
         asof = h.index[-1]
         try:
@@ -88,10 +91,12 @@ def rate(score: pd.Series) -> pd.Series:
 
 def build(cache: Path, out: Path, step: int, procs: int) -> pd.DataFrame:
     paths = sorted(cache.glob("*_10y.parquet"))
-    with Pool(procs) as pool:
-        rows = [r for chunk in pool.imap_unordered(_ticker_samples, [(p, step) for p in paths]) for r in chunk]
-    s = pd.DataFrame(rows)
     bench = _load(cache / f"{BENCH}_10y.parquet")["Close"]
+    sample_dates = bench.index[WINDOW - 1::step]
+    with Pool(procs) as pool:
+        rows = [r for chunk in pool.imap_unordered(_ticker_samples, [(p, sample_dates) for p in paths])
+                for r in chunk]
+    s = pd.DataFrame(rows)
     for n in HORIZONS:
         bf = bench.shift(-n) / bench - 1
         s[f"alpha_{n}d"] = s[f"fwd_{n}d"] - s["date"].map(bf)
@@ -103,12 +108,14 @@ def build(cache: Path, out: Path, step: int, procs: int) -> pd.DataFrame:
 def report(s: pd.DataFrame, horizon: int = 20) -> None:
     y = f"alpha_{horizon}d"
     s = s.dropna(subset=[y]).copy()
+    # Only dates where most of the universe was sampled give a meaningful cross-section.
+    s = s[s.groupby("date")["ticker"].transform("size") >= 0.5 * s["ticker"].nunique()]
     s["year"] = s["date"].dt.year
     # Excess vs the average stock on the same date removes market-wide moves.
     s["excess"] = s[y] - s.groupby("date")[y].transform("mean")
 
     def ic(col):
-        return s.groupby("date").apply(lambda g: g[col].rank().corr(g[y].rank())).mean()
+        return s.groupby("date").apply(lambda g: g[col].rank().corr(g["excess"].rank())).mean()
 
     print(f"\n{horizon}-day horizon, {len(s):,} samples, "
           f"{s['date'].min().date()}..{s['date'].max().date()}")
