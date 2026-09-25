@@ -1,0 +1,29 @@
+name: Research data fetch
+
+# Temporary: downloads multi-year OHLCV for the backtest and commits it to the
+# research branch. Triggered only by pushes that touch the fetch script.
+on:
+  push:
+    branches: [claude/buy-ratings-workflow-perf-34pocb]
+    paths: [research/fetch_ohlcv.py, .github/workflows/research_data.yml]
+  workflow_dispatch: {}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas pyarrow pyyaml yfinance
+      - run: python research/fetch_ohlcv.py
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f research/ohlcv.parquet
+          git commit -m "research: OHLCV snapshot for backtest (temporary)"
+          git push
