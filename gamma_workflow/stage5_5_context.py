@@ -580,13 +580,6 @@ def _trend_avwap(
 # Section E — Regime
 # ============================================================================
 
-_REGIME_MATRIX = {
-    "TRENDING":   {"LOW_IV": 0.00, "NORMAL_IV": 0.00, "HIGH_IV": 0.50, "UNKNOWN": 0.00},
-    "WEAK_TREND": {"LOW_IV": 0.50, "NORMAL_IV": 0.50, "HIGH_IV": 0.75, "UNKNOWN": 0.50},
-    "RANGING":    {"LOW_IV": 0.50, "NORMAL_IV": 1.00, "HIGH_IV": 1.00, "UNKNOWN": 1.00},
-}
-
-
 def _adx_regime(adx: float) -> str:
     """TRENDING (>=25) / WEAK_TREND (>=20) / RANGING."""
     if not np.isfinite(adx):
@@ -944,224 +937,300 @@ def _run_divergence_suite(
 
 
 # ============================================================================
-# Section G — Scoring
+# Section G — Scoring (setup-oriented)
 # ============================================================================
+#
+# The score answers "is this stock SET UP for a leg up?" — not "has it already
+# gone up?". Evidence from the tech-signal log (Jun–Sep 2026) showed the old
+# momentum-dominated score was inversely predictive of 20-day forward alpha:
+# the best forward returns came from pulled-back / oversold names (what the old
+# score labelled STRONG_SELL) and the worst from extended names. So:
+#
+#   pullback      (−5..+5)  the core: how far price sits below/above its 20-day
+#                           average (in ATRs) and how low/high RSI is. Buying a
+#                           pullback scores positive; buying extension negative.
+#   overextension (−5..0)   explicit penalties for stretched names (upper-band
+#                           break, RSI ≥ 75, far above the 50-day, > 3 ATR above
+#                           the 20-day). Never positive.
+#   confirmation  (−1..+2)  signs the pullback is being bought: accumulation
+#                           (CMF / OBV) while pulled back, a MACD bull cross from
+#                           below zero, and divergences (capped at ±1).
+#   momentum      (−1..+1)  the old trend group (price / MACD / CMF / OBV /
+#                           aVWAP / volume) squeezed to ±1. It used to reach ±13.75.
+#
+# Long-term structure (price vs 200-day, ADX regime, IV regime) is reported for
+# context but deliberately not scored: in the logged data it added nothing once
+# pullback depth was known.
 
-def _score_technical(
+_PULLBACK_ATR_WEIGHT = 0.75     # points per ATR below the 20-day average
+_PULLBACK_ATR_CAP = 3.0
+_PULLBACK_RSI_CAP = 2.0         # (50 − RSI) / 10, capped
+_OVEREXT_RSI = 75.0
+_OVEREXT_MA50_PCT = (0.15, 0.25)  # −1 each beyond these distances above the 50-day
+_OVEREXT_ATR = 3.0              # −1 beyond this many ATRs above the 20-day
+_ACCUM_CMF = 0.05
+_MOMENTUM_SCALE = 11.0          # old trend-group max (pre-convergence) → maps to ±1
+_DIVERGENCE_CAP = 4.0           # old divergence score ±4 → maps to ±1
+
+
+def _momentum_points(
     trend_price: str,
     trend_macd: str,
     macd_above_zero: bool,
-    trend_rsi: str,
-    trend_bb: str,
     trend_cmf: str,
     vol_confirms_up: bool,
     vol_confirms_down: bool,
     trend_obv: str,
     trend_avwap: str,
-    rsi_val: float,
-    close_cur: float,
-    bb_upper: float,
-    bb_lower: float,
-    bb_mid: float,
-    close_series: pd.Series,
     macd_hist_series: pd.Series,
-    adx_regime: str,
-    vol_regime: str,
-    div_results: dict,
+) -> tuple[float, float, float]:
+    """Legacy trend-group tally. Returns (trend_score, conv_mult, avwap_contrib).
+
+    Kept for the ticket's momentum readout; the setup score only uses it scaled
+    down to ±1 (see _score_technical)."""
+    trend_score = {
+        "STRONG_UP": 3.0, "UP": 1.5, "UP_EXHAUSTING": 0.75,
+        "NEUTRAL": 0.0,
+        "DOWN_EXHAUSTING": -0.75, "DOWN": -1.5, "STRONG_DOWN": -3.0,
+    }.get(trend_price, 0.0)
+    trend_score += {
+        "BULLISH": 2.0, "BEARISH": -2.0,
+        "BULL_CROSS": 3.5, "BEAR_CROSS": -3.5,   # steady ±2 + cross bonus ±1.5
+    }.get(trend_macd, 0.0)
+    trend_score += 0.5 if macd_above_zero else -0.5
+    trend_score += {
+        "STRONG_ACCUM": 1.0, "ACCUM": 0.5, "DIST": -0.5, "STRONG_DIST": -1.0,
+    }.get(trend_cmf, 0.0)
+    trend_score += {"BULLISH": 1.0, "BEARISH": -1.0}.get(trend_obv, 0.0)
+    avwap_contrib = {
+        "RECLAIM_HIGH": 1.5, "BREAKDOWN_LOW": -1.5,
+        "ABOVE_BOTH": 0.75, "BELOW_BOTH": -0.75,
+        "TESTING_SUPPORT": 0.5, "TESTING_RESISTANCE": -0.5,
+    }.get(trend_avwap, 0.0)
+    trend_score += avwap_contrib
+    if vol_confirms_up:
+        trend_score += 0.5
+    if vol_confirms_down:
+        trend_score -= 0.5
+
+    # Convergence: MACD histogram direction over 5 bars agrees with the tally.
+    conv_mult = 1.0
+    if len(macd_hist_series) >= 6:
+        h_now = float(macd_hist_series.iloc[-1])
+        h_prev = float(macd_hist_series.iloc[-6])
+        macd_dir = int(np.sign(h_now - h_prev)) if np.isfinite(h_now - h_prev) else 0
+        if macd_dir != 0 and macd_dir == int(np.sign(trend_score)):
+            conv_mult = 1.25
+    return trend_score, conv_mult, avwap_contrib
+
+
+def _divergence_points(div_results: dict) -> dict:
+    """Legacy divergence tally (distinct confirmed indicators). Returns the raw
+    score plus the counts the commentary reports."""
+    reg_bull_inds: set[str] = set()
+    reg_bear_inds: set[str] = set()
+    hid_bull_any = hid_bear_any = False
+    q_reg_bull = q_reg_bear = False
+    for name, events in div_results.items():
+        indicator = name.rsplit("_", 2)[0]   # "RSI_reg_bull" -> "RSI"
+        for ev in events:
+            if ev.get("state") != "confirmed":
+                continue
+            strong = ev.get("quality") == "strong"
+            t = ev["type"]
+            if t == "reg_bull":
+                reg_bull_inds.add(indicator)
+                q_reg_bull = q_reg_bull or strong
+            elif t == "reg_bear":
+                reg_bear_inds.add(indicator)
+                q_reg_bear = q_reg_bear or strong
+            elif t == "hid_bull":
+                hid_bull_any = True
+            elif t == "hid_bear":
+                hid_bear_any = True
+    n_bull, n_bear = len(reg_bull_inds), len(reg_bear_inds)
+    score = (4.0 if n_bull >= 2 else 2.0 if n_bull == 1 else 0.0)
+    score -= (4.0 if n_bear >= 2 else 2.0 if n_bear == 1 else 0.0)
+    score += (1.0 if q_reg_bull else 0.0) - (1.0 if q_reg_bear else 0.0)
+    score += (1.0 if hid_bull_any else 0.0) - (1.0 if hid_bear_any else 0.0)
+    return {
+        "raw": score,
+        "bull_confirmed": n_bull + (1 if hid_bull_any else 0),
+        "bear_confirmed": n_bear + (1 if hid_bear_any else 0),
+    }
+
+
+def _score_technical(
+    close_cur: float,
+    sma20: float,
+    sma50: float,
+    atr20: float,
+    rsi_val: float,
+    bb_upper: float,
+    cmf_val: float,
+    trend_obv: str,
+    trend_macd: str,
+    macd_val: float,
+    momentum_trend_score: float,
+    momentum_conv_mult: float,
+    div_raw: float,
 ) -> dict:
-    """Returns comprehensive scoring dict with all components for commentary."""
-    try:
-        # --- Trend score (master spec §5) ---
-        trend_score = 0.0
+    """Setup score in [−10, +10] with every component broken out for the ticket.
 
-        # Price: 7 states
-        trend_score += {
-            "STRONG_UP": 3.0, "UP": 1.5, "UP_EXHAUSTING": 0.75,
-            "NEUTRAL": 0.0,
-            "DOWN_EXHAUSTING": -0.75, "DOWN": -1.5, "STRONG_DOWN": -3.0,
-        }.get(trend_price, 0.0)
+    Missing inputs (NaN) contribute zero to their component."""
+    def _ok(*vals) -> bool:
+        return all(v is not None and np.isfinite(v) for v in vals)
 
-        # MACD: steady state + cross bonus + above-zero bonus
-        macd_steady = {
-            "BULLISH": 2.0, "BEARISH": -2.0,
-            "BULL_CROSS": 2.0, "BEAR_CROSS": -2.0,
-            "NEUTRAL": 0.0,
-        }.get(trend_macd, 0.0)
-        macd_cross_bonus = 1.5 if trend_macd == "BULL_CROSS" else (-1.5 if trend_macd == "BEAR_CROSS" else 0.0)
-        trend_score += macd_steady + macd_cross_bonus
-        trend_score += 0.5 if macd_above_zero else -0.5
+    ext_atr = (close_cur - sma20) / atr20 if _ok(close_cur, sma20, atr20) and atr20 > 0 else _NAN
+    ma50_dist = (close_cur - sma50) / sma50 if _ok(close_cur, sma50) and sma50 > 0 else _NAN
 
-        # CMF: 4 states
-        trend_score += {
-            "STRONG_ACCUM": 1.0, "ACCUM": 0.5,
-            "DIST": -0.5, "STRONG_DIST": -1.0,
-            "NEUTRAL": 0.0,
-        }.get(trend_cmf, 0.0)
+    # --- Pullback (core) ---
+    pull_ma = (float(np.clip(-ext_atr * _PULLBACK_ATR_WEIGHT, -_PULLBACK_ATR_CAP, _PULLBACK_ATR_CAP))
+               if np.isfinite(ext_atr) else 0.0)
+    pull_rsi = (float(np.clip((50.0 - rsi_val) / 10.0, -_PULLBACK_RSI_CAP, _PULLBACK_RSI_CAP))
+                if _ok(rsi_val) else 0.0)
 
-        # OBV
+    # --- Overextension penalties (never positive) ---
+    penalties: list[tuple[str, float]] = []
+    if _ok(close_cur, bb_upper) and close_cur > bb_upper:
+        penalties.append(("above upper Bollinger band", -1.0))
+    if _ok(rsi_val) and rsi_val >= _OVEREXT_RSI:
+        penalties.append((f"RSI ≥ {_OVEREXT_RSI:.0f}", -1.0))
+    if np.isfinite(ma50_dist):
+        for lim in _OVEREXT_MA50_PCT:
+            if ma50_dist > lim:
+                penalties.append((f"> {lim:.0%} above 50-day average", -1.0))
+    if np.isfinite(ext_atr) and ext_atr > _OVEREXT_ATR:
+        penalties.append((f"> {_OVEREXT_ATR:.0f} ATR above 20-day average", -1.0))
+    overext = sum(p for _, p in penalties)
+
+    # --- Confirmation: is the pullback being bought / turning? ---
+    confirmations: list[tuple[str, float]] = []
+    if np.isfinite(ext_atr) and ext_atr < 0:
+        if _ok(cmf_val) and cmf_val > _ACCUM_CMF:
+            confirmations.append(("accumulation on pullback (CMF)", 0.5))
         if trend_obv == "BULLISH":
-            trend_score += 1.0
-        elif trend_obv == "BEARISH":
-            trend_score -= 1.0
+            confirmations.append(("accumulation on pullback (OBV)", 0.5))
+    if trend_macd == "BULL_CROSS" and _ok(macd_val) and macd_val < 0:
+        confirmations.append(("MACD bull cross below zero", 0.5))
+    div_pts = float(np.clip(div_raw, -_DIVERGENCE_CAP, _DIVERGENCE_CAP)) / _DIVERGENCE_CAP
+    confirm = sum(p for _, p in confirmations) + div_pts
 
-        # aVWAP
-        avwap_contrib = {
-            "RECLAIM_HIGH": 1.5, "BREAKDOWN_LOW": -1.5,
-            "ABOVE_BOTH": 0.75, "BELOW_BOTH": -0.75,
-            "TESTING_SUPPORT": 0.5, "TESTING_RESISTANCE": -0.5,
-        }.get(trend_avwap, 0.0)
-        trend_score += avwap_contrib
+    # --- Momentum (legacy trend group), capped at ±1 ---
+    base_trend = momentum_trend_score * momentum_conv_mult
+    momentum = float(np.clip(base_trend / _MOMENTUM_SCALE, -1.0, 1.0))
 
-        # Volume: vol_confirms_up/down flags (±0.5), directionally weighted
-        if vol_confirms_up:
-            trend_score += 0.5
-        if vol_confirms_down:
-            trend_score -= 0.5
+    pullback = pull_ma + pull_rsi
+    raw = pullback + overext + confirm + momentum
+    score = float(max(-10.0, min(10.0, raw)))
 
-        # --- Convergence multiplier ---
-        conv_mult = 1.0
-        try:
-            if len(close_series) >= 6 and len(macd_hist_series) >= 6:
-                hist_recent = float(macd_hist_series.iloc[-1])
-                hist_prev = float(macd_hist_series.iloc[-6])
-                macd_dir = 1 if hist_recent > hist_prev else (-1 if hist_recent < hist_prev else 0)
-                ts_dir = 1 if trend_score > 0 else (-1 if trend_score < 0 else 0)
-                if macd_dir != 0 and ts_dir != 0 and macd_dir == ts_dir:
-                    conv_mult = 1.25
-        except Exception:
-            pass
+    if score >= 5.5:
+        rec = "STRONG_BUY"
+    elif score >= 2.5:
+        rec = "BUY"
+    elif score <= -5.5:
+        rec = "STRONG_SELL"
+    elif score <= -2.5:
+        rec = "SELL"
+    else:
+        rec = "HOLD"
 
-        base_trend = trend_score * conv_mult
+    return {
+        "score": score,
+        "raw": raw,
+        "rec": rec,
+        "conf": min(1.0, abs(score) / 10.0),
+        "ext_atr": ext_atr,
+        "ma50_dist": ma50_dist,
+        "pull_ma": pull_ma,
+        "pull_rsi": pull_rsi,
+        "pullback": pullback,
+        "overext": overext,
+        "penalties": penalties,
+        "confirm": confirm,
+        "confirmations": confirmations,
+        "div_pts": div_pts,
+        "base_trend": base_trend,
+        "momentum": momentum,
+    }
 
-        # --- Mean reversion score (master spec §5.3) ---
-        # RSI: BULLISH zone (20-30) = +1; BEARISH zone (70-80) = -1
-        #      OVERSOLD (≤20) = -0.5 (extreme, fade the reversion signal); OVERBOUGHT (≥80) = +0.5
-        # BB: LOWER_BREAK = +0.5; UPPER_BREAK = -0.5
-        mr_score = 0.0
-        rsi_label = "neutral"
-        bb_label = "neutral"
 
-        if np.isfinite(rsi_val):
-            if rsi_val <= 20:
-                mr_score -= 0.5
-                rsi_label = "extreme-oversold"
-            elif rsi_val < 30:
-                mr_score += 1.0
-                rsi_label = "oversold"
-            elif rsi_val >= 80:
-                mr_score += 0.5
-                rsi_label = "extreme-overbought"
-            elif rsi_val > 70:
-                mr_score -= 1.0
-                rsi_label = "overbought"
+def _evaluate_technical(
+    h: pd.DataFrame,
+    asof: date_cls,
+    symbol: str = "",
+    ivx_30d_pct: float = _NAN,
+) -> dict | None:
+    """Compute every indicator, classification and the setup score for the last
+    bar of `h` (OHLCV up to asof). Shared by the ticket commentary and by
+    compute_stage5_5 so both always agree. None if history is too short."""
+    if h is None or h.empty or not {"Close", "High", "Low", "Volume"}.issubset(h.columns):
+        return None
+    if len(h) < 26:
+        return None
+    close = h["Close"].astype(float)
+    high = h["High"].astype(float)
+    low = h["Low"].astype(float)
+    volume = h["Volume"].astype(float)
 
-        if all(np.isfinite(v) for v in [close_cur, bb_upper, bb_lower]):
-            if close_cur > bb_upper:
-                mr_score -= 0.5
-                bb_label = "upper-break"
-            elif close_cur < bb_lower:
-                mr_score += 0.5
-                bb_label = "lower-break"
+    macd_line = _ema(close, 12) - _ema(close, 26)
+    signal_line = _ema(macd_line, 9)
+    macd_hist_s = macd_line - signal_line
+    macd_val = float(macd_line.iloc[-1])
+    rsi_val = _rsi(close, 14)
+    cmf_val = _cmf(high, low, close, volume, 20)
+    close_cur = float(close.iloc[-1])
 
-        mr_weight = _REGIME_MATRIX.get(adx_regime, _REGIME_MATRIX["RANGING"]).get(
-            vol_regime, 0.0
-        )
-        mr_contribution = mr_weight * mr_score
+    adx_val, pdi_val, mdi_val = _adx(high, low, close)
+    obv_cur, obv_sma20, obv_slope = _obv_sma(close, volume)
+    rv20 = _rv_20(close)
+    avwap_h, avwap_l, dist_h, dist_l, age_h, age_l = _anchored_vwap(close, high, low, volume)
+    iv_pct = _iv_percentile(symbol, asof, ivx_30d_pct) if symbol else _NAN
+    iv30, _, _ = _iv_context(ivx_30d_pct, rv20, iv_pct)
 
-        # --- Divergence score (master spec §5.4, CAPPED) ---
-        # Count DISTINCT indicators (not per-event) with a confirmed divergence so
-        # repeated pivot pairs on the same indicator can't run the score away:
-        #   regular:  n == 1 -> ±2.0,  n >= 2 -> ±4.0
-        #   quality:  +1.0 / -1.0 once if ANY confirmed regular div of that
-        #             direction had a "strong" quality boost
-        #   hidden:   ±1.0 once if ANY confirmed hidden div of that direction exists
-        reg_bull_inds: set[str] = set()
-        reg_bear_inds: set[str] = set()
-        hid_bull_any = hid_bear_any = False
-        q_reg_bull = q_reg_bear = False
+    sma20_s = close.rolling(20, min_periods=20).mean()
+    atr14_s = _atr14_series(high, low, close)
+    prev_close = close.shift(1)
+    tr = pd.concat([high - low, (high - prev_close).abs(), (low - prev_close).abs()], axis=1).max(axis=1)
+    atr20 = float(tr.iloc[-20:].mean()) if len(tr) >= 20 else _NAN
+    sma20 = float(sma20_s.iloc[-1])
+    sma50 = float(close.iloc[-50:].mean()) if len(close) >= 50 else _NAN
+    sma200 = float(close.iloc[-200:].mean()) if len(close) >= 200 else _NAN
 
-        for name, events in div_results.items():
-            indicator = name.rsplit("_", 2)[0]   # "RSI_reg_bull" -> "RSI"
-            for ev in events:
-                if ev.get("state") != "confirmed":
-                    continue
-                strong = ev.get("quality") == "strong"
-                t = ev["type"]
-                if t == "reg_bull":
-                    reg_bull_inds.add(indicator)
-                    q_reg_bull = q_reg_bull or strong
-                elif t == "reg_bear":
-                    reg_bear_inds.add(indicator)
-                    q_reg_bear = q_reg_bear or strong
-                elif t == "hid_bull":
-                    hid_bull_any = True
-                elif t == "hid_bear":
-                    hid_bear_any = True
+    t_price = _trend_price(close, atr14_s)
+    ml_prev = float(macd_line.iloc[-2]) if len(macd_line) >= 2 else None
+    sl_prev = float(signal_line.iloc[-2]) if len(signal_line) >= 2 else None
+    t_macd, macd_above_zero = _trend_macd(
+        macd_val, float(signal_line.iloc[-1]), float(macd_hist_s.iloc[-1]),
+        macd_prev=ml_prev, signal_prev=sl_prev,
+    )
+    t_bb, bb_upper, bb_mid, bb_lower, _ = _trend_bb(close)
+    t_cmf = _trend_cmf(cmf_val)
+    t_vol, vol_up, vol_down = _trend_volume(volume, close)
+    t_obv = _trend_obv(obv_cur, obv_sma20, obv_slope)
+    pc = float(close.iloc[-2]) if len(close) >= 2 else None
+    t_avwap = _trend_avwap(close_cur, avwap_h, avwap_l, dist_h, dist_l, pc)
 
-        n_reg_bull = len(reg_bull_inds)
-        n_reg_bear = len(reg_bear_inds)
-
-        div_score = 0.0
-        div_score += 4.0 if n_reg_bull >= 2 else (2.0 if n_reg_bull == 1 else 0.0)
-        div_score -= 4.0 if n_reg_bear >= 2 else (2.0 if n_reg_bear == 1 else 0.0)
-        if q_reg_bull:
-            div_score += 1.0
-        if q_reg_bear:
-            div_score -= 1.0
-        if hid_bull_any:
-            div_score += 1.0
-        if hid_bear_any:
-            div_score -= 1.0
-
-        # Distinct-indicator confirmed counts (incl. hidden presence) for reporting.
-        bull_confirmed = n_reg_bull + (1 if hid_bull_any else 0)
-        bear_confirmed = n_reg_bear + (1 if hid_bear_any else 0)
-
-        # --- Final score ---
-        raw = base_trend + mr_contribution + div_score
-        score = max(-10.0, min(10.0, raw))
-
-        # Recommendation without hysteresis (hysteresis applied in compute_stage5_5)
-        if score >= 5.5:
-            rec = "STRONG_BUY"
-        elif score >= 2.5:
-            rec = "BUY"
-        elif score <= -5.5:
-            rec = "STRONG_SELL"
-        elif score <= -2.5:
-            rec = "SELL"
-        else:
-            rec = "HOLD"
-
-        conf = min(1.0, abs(score) / 10.0)
-
-        return {
-            "score": score,
-            "raw": raw,
-            "rec": rec,
-            "conf": conf,
-            "trend_score": trend_score,
-            "conv_mult": conv_mult,
-            "base_trend": base_trend,
-            "mr_score": mr_score,
-            "mr_weight": mr_weight,
-            "mr_contribution": mr_contribution,
-            "div_score": div_score,
-            "bull_confirmed": bull_confirmed,
-            "bear_confirmed": bear_confirmed,
-            "rsi_label": rsi_label,
-            "bb_label": bb_label,
-            "avwap_contrib": avwap_contrib,
-        }
-    except Exception:
-        return {
-            "score": 0.0, "raw": 0.0, "rec": "HOLD", "conf": 0.0,
-            "trend_score": 0.0, "conv_mult": 1.0, "base_trend": 0.0,
-            "mr_score": 0.0, "mr_weight": 0.0, "mr_contribution": 0.0,
-            "div_score": 0.0, "bull_confirmed": 0, "bear_confirmed": 0,
-            "rsi_label": "neutral", "bb_label": "neutral", "avwap_contrib": 0.0,
-        }
-
+    div_results = _run_divergence_suite(close, high, low, volume, sma20_s)
+    div = _divergence_points(div_results)
+    trend_score, conv_mult, _ = _momentum_points(
+        t_price, t_macd, macd_above_zero, t_cmf, vol_up, vol_down, t_obv, t_avwap, macd_hist_s,
+    )
+    scoring = _score_technical(
+        close_cur, sma20, sma50, atr20, rsi_val, bb_upper, cmf_val,
+        t_obv, t_macd, macd_val, trend_score, conv_mult, div["raw"],
+    )
+    return {
+        "scoring": scoring, "div": div, "div_results": div_results,
+        "close": close, "close_cur": close_cur, "rsi": rsi_val, "cmf": cmf_val,
+        "sma200": sma200, "bb_upper": bb_upper, "bb_lower": bb_lower, "adx": adx_val, "pdi": pdi_val, "mdi": mdi_val,
+        "adx_regime": _adx_regime(adx_val), "vol_regime": _vol_regime(iv_pct),
+        "iv30": iv30, "rv20": rv20,
+        "t_price": t_price, "t_macd": t_macd, "t_cmf": t_cmf, "t_obv": t_obv,
+        "t_avwap": t_avwap, "t_vol": t_vol, "t_bb": t_bb,
+        "trend_score": trend_score, "conv_mult": conv_mult,
+        "avwap_h": avwap_h, "avwap_l": avwap_l, "age_h": age_h, "age_l": age_l,
+    }
 
 # ============================================================================
 # Section H-0 — Hysteresis (Schmitt trigger)
@@ -1211,175 +1280,99 @@ def _build_technical_commentary(
     try:
         if history_df is None or history_df.empty:
             return ""
-        h = history_df[history_df.index <= pd.Timestamp(asof)] if hasattr(history_df.index, 'freq') or isinstance(history_df.index, pd.DatetimeIndex) else history_df
-
-        required_cols = {"Close", "High", "Low", "Volume"}
-        if not required_cols.issubset(h.columns):
+        h = history_df[history_df.index <= pd.Timestamp(asof)]
+        ev = _evaluate_technical(h, asof, symbol, ivx_30d_pct)
+        if ev is None:
             return ""
-        if len(h) < 26:
-            return ""
+        sc = ev["scoring"]
 
-        close = h["Close"].astype(float)
-        high = h["High"].astype(float)
-        low = h["Low"].astype(float)
-        volume = h["Volume"].astype(float)
+        def _f(v, fmt):
+            return format(v, fmt) if v is not None and np.isfinite(v) else "N/A"
 
-        # Core scalars
-        macd_line = _ema(close, 12) - _ema(close, 26)
-        signal_line = _ema(macd_line, 9)
-        macd_val = float(macd_line.iloc[-1])
-        signal_val = float(signal_line.iloc[-1])
-        hist_val = float((macd_line - signal_line).iloc[-1])
-        rsi_val = _rsi(close, 14)
-        cmf_val = _cmf(high, low, close, volume, 20)
-        close_cur = float(close.iloc[-1])
+        lines = [f"### Technical Signal: {sc['rec']} ({sc['score']:+.1f} / confidence {sc['conf']:.0%})", ""]
 
-        # Additional indicators
-        adx_val, pdi_val, mdi_val = _adx(high, low, close)
-        obv_cur, obv_sma20, obv_slope = _obv_sma(close, volume)
-        rv20 = _rv_20(close)
-        avwap_h, avwap_l, dist_h, dist_l, age_h, age_l = _anchored_vwap(close, high, low, volume)
-
-        # IV context
-        iv_pct = _iv_percentile(symbol, asof, ivx_30d_pct) if symbol else _NAN
-        iv30, iv_premium, iv_premium_ratio = _iv_context(ivx_30d_pct, rv20, iv_pct)
-
-        # SMA20 for divergence
-        sma20_series = close.rolling(20, min_periods=20).mean()
-
-        # ATR14 series for trend_price slope and divergence ATR filter
-        atr14_s = _atr14_series(high, low, close)
-
-        # Trend classifications (new signatures — note unpacking for tuple-returning fns)
-        t_price = _trend_price(close, atr14_s)
-
-        macd_line_prev = float(macd_line.iloc[-2]) if len(macd_line) >= 2 else None
-        signal_line_prev = float(signal_line.iloc[-2]) if len(signal_line) >= 2 else None
-        t_macd, macd_above_zero = _trend_macd(
-            macd_val, signal_val, hist_val,
-            macd_prev=macd_line_prev, signal_prev=signal_line_prev,
-        )
-
-        t_rsi = _trend_rsi(rsi_val, close, 14)
-        t_bb, bb_upper, bb_mid, bb_lower, bb_width = _trend_bb(close)
-        t_cmf = _trend_cmf(cmf_val)
-        t_vol, vol_confirms_up, vol_confirms_down = _trend_volume(volume, close)
-        t_obv = _trend_obv(obv_cur, obv_sma20, obv_slope)
-
-        # prev_close for aVWAP crossing
-        prev_close = float(close.iloc[-2]) if len(close) >= 2 else None
-        t_avwap = _trend_avwap(close_cur, avwap_h, avwap_l, dist_h, dist_l, prev_close)
-
-        # Regime
-        adx_reg = _adx_regime(adx_val)
-        vol_reg = _vol_regime(iv_pct)
-
-        # Divergence suite
-        div_results = _run_divergence_suite(close, high, low, volume, sma20_series)
-
-        # MACD hist series for convergence
-        macd_hist_s = macd_line - signal_line
-
-        # Score
-        scoring = _score_technical(
-            t_price, t_macd, macd_above_zero, t_rsi, t_bb, t_cmf,
-            vol_confirms_up, vol_confirms_down,
-            t_obv, t_avwap,
-            rsi_val, close_cur, bb_upper, bb_lower, bb_mid,
-            close, macd_hist_s,
-            adx_reg, vol_reg, div_results,
-        )
-
-        score = scoring["score"]
-        rec = scoring["rec"]
-        conf = scoring["conf"]
-        base_trend = scoring["base_trend"]
-        trend_score = scoring["trend_score"]
-        conv_mult = scoring["conv_mult"]
-        mr_weight = scoring["mr_weight"]
-        mr_contribution = scoring["mr_contribution"]
-        div_score = scoring["div_score"]
-        raw = scoring["raw"]
-        rsi_label = scoring["rsi_label"]
-        bb_label = scoring["bb_label"]
-
-        # --- Format commentary ---
-        lines = []
-
-        # Header
-        lines.append(f"### Technical Signal: {rec} ({score:+.1f} / confidence {conf:.0%})")
+        # Regime / context (not scored)
+        adx_str = (f"ADX {ev['adx']:.0f}, +DI {ev['pdi']:.0f} vs -DI {ev['mdi']:.0f}"
+                   if np.isfinite(ev["adx"]) else "ADX unavailable")
+        lines.append(f"**Regime**: ADX {ev['adx_regime']} ({adx_str})  |  "
+                     f"Vol: {ev['vol_regime']} (IV30 {_f(ev['iv30'], '.1%')}, RV20 {_f(ev['rv20'], '.1%')})")
+        if np.isfinite(ev["sma200"]):
+            lt = "above" if ev["close_cur"] > ev["sma200"] else "below"
+            lines.append(f"**Long-term context** (not scored): price {lt} 200-day average "
+                         f"({ev['close_cur'] / ev['sma200'] - 1:+.1%})")
         lines.append("")
 
-        # Regime
-        adx_str = f"ADX {adx_val:.0f}, +DI {pdi_val:.0f} vs -DI {mdi_val:.0f}" if np.isfinite(adx_val) else "ADX unavailable"
-        iv_str = f"{iv30:.1%}" if np.isfinite(iv30) else "N/A"
-        rv_str = f"{rv20:.1%}" if np.isfinite(rv20) else "N/A"
-        lines.append(f"**Regime**: ADX {adx_reg} ({adx_str})  |  Vol: {vol_reg} (IV30 {iv_str}, RV20 {rv_str})")
-        lines.append(f"**Gate**: MR weight = {mr_weight:.2f}")
+        # Pullback
+        lines.append(f"**Pullback setup** ({sc['pullback']:+.2f})")
+        lines.append(f"- Price vs 20-day average: {_f(sc['ext_atr'], '+.1f')} ATR → {sc['pull_ma']:+.2f}")
+        lines.append(f"- RSI {_f(ev['rsi'], '.0f')} → {sc['pull_rsi']:+.2f}")
         lines.append("")
 
-        # Trend
-        lines.append(f"**Trend** ({base_trend:+.2f} = {trend_score:+.2f} × {conv_mult:.2f} convergence)")
-        lines.append(f"- Price: {t_price}  MACD: {t_macd}  CMF: {t_cmf}")
-        lines.append(f"- OBV: {t_obv}  aVWAP: {t_avwap}  Volume: {t_vol}")
-
-        # aVWAP anchor info
-        avwap_parts = []
-        if np.isfinite(avwap_h) and np.isfinite(age_h):
-            avwap_parts.append(f"aVWAP-high {avwap_h:.2f} (anchor {age_h:.0f} bars ago)")
-        if np.isfinite(avwap_l) and np.isfinite(age_l):
-            avwap_parts.append(f"aVWAP-low {avwap_l:.2f} (anchor {age_l:.0f} bars ago)")
-        if avwap_parts:
-            lines.append(f"- {', '.join(avwap_parts)}")
+        # Overextension
+        lines.append(f"**Overextension penalties** ({sc['overext']:+.2f})")
+        if sc["penalties"]:
+            for label, pts in sc["penalties"]:
+                lines.append(f"- {label} ({pts:+.1f})")
+        else:
+            lines.append("- None")
         lines.append("")
 
-        # Mean reversion
-        lines.append(f"**Mean Reversion** (gate {mr_weight:.2f} → contribution {mr_contribution:+.2f})")
-        rsi_str = f"{rsi_val:.0f}" if np.isfinite(rsi_val) else "N/A"
-        lines.append(f"- RSI {rsi_str}: {rsi_label}  Bollinger: {bb_label}")
-        lines.append("")
-
-        # Divergence
-        lines.append(f"**Divergence** ({div_score:+.1f})")
+        # Confirmation
+        lines.append(f"**Confirmation** ({sc['confirm']:+.2f})")
+        for label, pts in sc["confirmations"]:
+            lines.append(f"- {label} ({pts:+.1f})")
+        if not sc["confirmations"]:
+            lines.append("- No accumulation / turn signals")
         # Dedup to one line per (state, type, indicator) — the score counts
         # distinct indicators, so listing every pivot pair would misrepresent it.
-        # Prefer a "strong" quality label if any event for that key was strong.
         div_best: dict[tuple, str] = {}
         div_order: list[tuple] = []
-        for name, events in div_results.items():
+        for name, events in ev["div_results"].items():
             indicator_label = name.rsplit("_", 2)[0]
-            for ev in events:
-                key = (ev["state"], ev["type"], indicator_label)
+            for e in events:
+                key = (e["state"], e["type"], indicator_label)
                 if key not in div_best:
                     div_order.append(key)
-                if ev.get("quality") == "strong" or key not in div_best:
-                    div_best[key] = ev.get("quality", "standard")
+                if e.get("quality") == "strong" or key not in div_best:
+                    div_best[key] = e.get("quality", "standard")
+        lines.append(f"**Divergence** ({ev['div']['raw']:+.1f}) → {sc['div_pts']:+.2f} toward Confirmation")
         if div_order:
             for state, dtype, indicator_label in div_order:
                 icon = "✓ CONFIRMED" if state == "confirmed" else "⏳ PENDING"
-                quality = div_best[(state, dtype, indicator_label)]
-                lines.append(f"- {icon} {dtype} on {indicator_label} (quality: {quality})")
+                lines.append(f"- {icon} {dtype} on {indicator_label} (quality: {div_best[(state, dtype, indicator_label)]})")
         else:
             lines.append("- No active divergences")
         lines.append("")
 
-        # Score breakdown
+        # Momentum (legacy trend group, capped)
+        lines.append(f"**Trend** ({sc['base_trend']:+.2f} = {ev['trend_score']:+.2f} × {ev['conv_mult']:.2f} convergence)"
+                     f" → momentum {sc['momentum']:+.2f} (capped ±1)")
+        lines.append(f"- Price: {ev['t_price']}  MACD: {ev['t_macd']}  CMF: {ev['t_cmf']}")
+        lines.append(f"- OBV: {ev['t_obv']}  aVWAP: {ev['t_avwap']}  Volume: {ev['t_vol']}")
+        avwap_parts = []
+        if np.isfinite(ev["avwap_h"]) and np.isfinite(ev["age_h"]):
+            avwap_parts.append(f"aVWAP-high {ev['avwap_h']:.2f} (anchor {ev['age_h']:.0f} bars ago)")
+        if np.isfinite(ev["avwap_l"]) and np.isfinite(ev["age_l"]):
+            avwap_parts.append(f"aVWAP-low {ev['avwap_l']:.2f} (anchor {ev['age_l']:.0f} bars ago)")
+        if avwap_parts:
+            lines.append(f"- {', '.join(avwap_parts)}")
+        lines.append("")
+
         lines.append(
-            f"**Score**: {base_trend:+.2f} + {mr_contribution:+.2f} + {div_score:+.2f} "
-            f"= {raw:+.2f} → **{score:+.2f}**"
+            f"**Score**: {sc['pullback']:+.2f} pullback + {sc['overext']:+.2f} overextension + "
+            f"{sc['confirm']:+.2f} confirmation + {sc['momentum']:+.2f} momentum "
+            f"= {sc['raw']:+.2f} → **{sc['score']:+.2f}**"
         )
 
-        # Caveats
         caveats = []
-        if len(close) < 200:
-            caveats.append(f"Note: Only {len(close)} bars — price-trend SMA200 unavailable (warmup)")
-        if not np.isfinite(adx_val):
+        n = len(ev["close"])
+        if n < 200:
+            caveats.append(f"Note: Only {n} bars — price-trend SMA200 unavailable (warmup)")
+        if not np.isfinite(ev["adx"]):
             caveats.append("Note: ADX unavailable — insufficient history for Wilder smoothing")
-        if not np.isfinite(iv30):
+        if not np.isfinite(ev["iv30"]):
             caveats.append("Note: IV30 not available — using RV-only vol regime")
-        for cav in caveats:
-            lines.append(cav)
-
+        lines.extend(caveats)
         return "\n".join(lines)
 
     except Exception as exc:
@@ -1691,62 +1684,15 @@ def compute_stage5_5(
         raw_bundle, ticker_config, asof, symbol=symbol, cached_scalars=cached_fundamentals,
     ))
 
-    # Extract raw score and apply hysteresis
-    commentary = tech.get("technical_commentary", "")
+    # Setup score (same evaluation the commentary used), then hysteresis.
     tech_score = _NAN
-    raw_rec = "HOLD"
-    if commentary:
-        # Pull score from the already-computed scoring inside the commentary build.
-        # Re-compute to extract the structured scoring dict cleanly.
+    if tech.get("technical_commentary") and history is not None and not history.empty:
         try:
-            if history is not None and not history.empty:
-                h = history[history.index <= pd.Timestamp(asof)]
-                if not h.empty and len(h) >= 26:
-                    close = h["Close"].astype(float)
-                    high_s = h["High"].astype(float)
-                    low_s  = h["Low"].astype(float)
-                    vol_s  = h["Volume"].astype(float)
-                    macd_l = _ema(close, 12) - _ema(close, 26)
-                    sig_l  = _ema(macd_l, 9)
-                    mv = float(macd_l.iloc[-1])
-                    sv = float(sig_l.iloc[-1])
-                    hv = float((macd_l - sig_l).iloc[-1])
-                    rv = _rsi(close, 14)
-                    cv = _cmf(high_s, low_s, close, vol_s, 20)
-                    close_cur = float(close.iloc[-1])
-                    adx_v, _, _ = _adx(high_s, low_s, close)
-                    obv_c, obv_s, obv_sl = _obv_sma(close, vol_s)
-                    rv20 = _rv_20(close)
-                    avwap_h, avwap_l, dist_h, dist_l, _, _ = _anchored_vwap(close, high_s, low_s, vol_s)
-                    iv_pct = _iv_percentile(symbol, asof, ivx_30d) if symbol else _NAN
-                    _, _, _ = _iv_context(ivx_30d, rv20, iv_pct)
-                    sma20_s = close.rolling(20, min_periods=20).mean()
-                    atr14_s = _atr14_series(high_s, low_s, close)
-                    t_price = _trend_price(close, atr14_s)
-                    ml_prev = float(macd_l.iloc[-2]) if len(macd_l) >= 2 else None
-                    sl_prev = float(sig_l.iloc[-2]) if len(sig_l) >= 2 else None
-                    t_macd, macd_az = _trend_macd(mv, sv, hv, macd_prev=ml_prev, signal_prev=sl_prev)
-                    t_rsi = _trend_rsi(rv, close, 14)
-                    t_bb, bb_upper, bb_mid, bb_lower, _ = _trend_bb(close)
-                    t_cmf = _trend_cmf(cv)
-                    t_vol, vcu, vcd = _trend_volume(vol_s, close)
-                    t_obv = _trend_obv(obv_c, obv_s, obv_sl)
-                    prev_c = float(close.iloc[-2]) if len(close) >= 2 else None
-                    t_avwap = _trend_avwap(close_cur, avwap_h, avwap_l, dist_h, dist_l, prev_c)
-                    adx_reg = _adx_regime(adx_v)
-                    vol_reg = _vol_regime(iv_pct)
-                    div_res = _run_divergence_suite(close, high_s, low_s, vol_s, sma20_s)
-                    mh_s = macd_l - sig_l
-                    sc = _score_technical(
-                        t_price, t_macd, macd_az, t_rsi, t_bb, t_cmf,
-                        vcu, vcd, t_obv, t_avwap,
-                        rv, close_cur, bb_upper, bb_lower, bb_mid,
-                        close, mh_s, adx_reg, vol_reg, div_res,
-                    )
-                    tech_score = sc["score"]
-                    raw_rec = sc["rec"]
-        except Exception:
-            pass
+            ev = _evaluate_technical(history[history.index <= pd.Timestamp(asof)], asof, symbol, ivx_30d)
+            if ev is not None:
+                tech_score = ev["scoring"]["score"]
+        except Exception as exc:
+            logger.debug("setup score failed for %s: %s", symbol, exc)
 
     # Apply hysteresis
     tech_recommendation = _apply_hysteresis(tech_score, prev_tech_rec)

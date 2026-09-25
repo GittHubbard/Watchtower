@@ -132,17 +132,24 @@ move ≥ 0.25 to suppress noise.
 - **Quality tier** (`strong` vs `standard`) is set from the p1 indicator value (e.g. RSI
   bull-div is `strong` if p1 RSI < 30). `strong` adds a +0.5 score bonus.
 
-### Scoring (master spec §5)
+### Scoring — setup score (replaces the momentum score)
+
+The score asks "is this stock **set up** for a leg up?", not "has it already gone
+up?". The earlier momentum-dominated score (trend group worth up to ±13.75) proved
+inversely predictive of forward alpha — see `research/backtest_setup_score.py`.
 
 ```
-trend_score   = price + macd (+ cross bonus, ±0.5 above-zero) + cmf + obv + avwap + vol_confirms
-base_trend    = trend_score × conv_mult     (1.25× when MACD-hist direction agrees with trend)
-mr_score      = RSI (BULLISH ±1, OVERBOUGHT/OVERSOLD ±0.5 contra) + BB (±0.5)
-mr_contrib    = mr_weight[adx_regime][vol_regime] × mr_score   (2-D regime gate)
-div_score     = Σ confirmed events (reg ±2, hidden ±1, strong +0.5, ≥2 same-side ±1 stacking)
-raw           = base_trend + mr_contrib + div_score
-score         = clamp(raw, −10, +10)
+pullback      = clip(−0.75 × (close − SMA20)/ATR20, ±3) + clip((50 − RSI14)/10, ±2)
+overextension = −1 each: close > upper BB · RSI ≥ 75 · >15% above SMA50 ·
+                >25% above SMA50 · >3 ATR above SMA20                   (0 … −5)
+confirmation  = +0.5 CMF > 0.05 and +0.5 OBV bullish (only while below SMA20)
+                + 0.5 MACD bull cross below zero + divergence/4 (capped ±1)
+momentum      = clip(legacy trend_score × conv_mult / 11, ±1)   (price, MACD, CMF, OBV, aVWAP, volume)
+score         = clamp(pullback + overextension + confirmation + momentum, −10, +10)
 ```
+
+Long-term structure (price vs SMA200), ADX regime and IV regime are shown on the
+ticket as context but are not scored.
 
 **Recommendation** (Schmitt-trigger hysteresis, `tech_recommendation` column):
 
@@ -175,9 +182,10 @@ header (`**Tech Signal**: BUY (+3.4)  |  [full analysis in data/chains/...]`).
 
 **In-ticket commentary** (rendered when a playbook fires):
 
-- *Technical commentary*: ADX × vol regime, MR weight, 9-indicator trend breakdown,
-  aVWAP anchor ages, RSI/BB MR labels, divergence event list, score arithmetic
-  line, caveats (warmup, ADX/IV missing).
+- *Technical commentary*: ADX × vol regime, long-term context, pullback setup,
+  overextension penalties, confirmation (accumulation / turn / divergence events),
+  capped trend/momentum breakdown with aVWAP anchor ages, score arithmetic line,
+  caveats (warmup, ADX/IV missing).
 - *Analyst commentary*: coverage count, % Buy/Overweight, 90-day rating-change
   counts, and a trend narrative built from the evolution cache.
 
