@@ -1,0 +1,21 @@
+# Technical Signal: AVAV  2026-10-01
+
+**Recommendation**: STRONG_SELL  |  **Score**: -7.5
+
+### Technical Signal: STRONG_SELL (-7.5 / confidence 75%)
+
+**Regime**: ADX RANGING (ADX 14, +DI 20 vs -DI 24)  |  Vol: LOW_IV (IV30 57.7%, RV20 46.0%)
+**Gate**: MR weight = 0.50
+
+**Trend** (-7.50 = -6.00 × 1.25 convergence)
+- Price: DOWN_EXHAUSTING  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 153.06 (anchor 32 bars ago), aVWAP-low 152.95 (anchor 13 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 39: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -7.50 + +0.00 + +0.00 = -7.50 → **-7.50**
