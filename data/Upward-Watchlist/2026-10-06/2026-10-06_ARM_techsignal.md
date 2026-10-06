@@ -1,0 +1,21 @@
+# Technical Signal: ARM  2026-10-06
+
+**Recommendation**: STRONG_BUY  |  **Score**: +7.2
+
+### Technical Signal: STRONG_BUY (+7.2 / confidence 72%)
+
+**Regime**: ADX RANGING (ADX 19, +DI 33 vs -DI 23)  |  Vol: NORMAL_IV (IV30 72.1%, RV20 94.7%)
+**Gate**: MR weight = 1.00
+
+**Trend** (+7.25 = +7.25 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 276.92 (anchor 40 bars ago), aVWAP-low 285.48 (anchor 23 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 57: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: +7.25 + +0.00 + +0.00 = +7.25 → **+7.25**
