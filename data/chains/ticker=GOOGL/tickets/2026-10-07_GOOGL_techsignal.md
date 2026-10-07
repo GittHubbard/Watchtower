@@ -1,0 +1,21 @@
+# Technical Signal: GOOGL  2026-10-07
+
+**Recommendation**: BUY  |  **Score**: +2.6
+
+### Technical Signal: BUY (+2.6 / confidence 26%)
+
+**Regime**: ADX RANGING (ADX 14, +DI 27 vs -DI 19)  |  Vol: NORMAL_IV (IV30 37.2%, RV20 25.9%)
+**Gate**: MR weight = 1.00
+
+**Trend** (+5.62 = +4.50 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: TESTING_RESISTANCE  Volume: DRY
+- aVWAP-high 344.56 (anchor 10 bars ago), aVWAP-low 344.32 (anchor 19 bars ago)
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 53: neutral  Bollinger: neutral
+
+**Divergence** (-3.0)
+- ✓ CONFIRMED reg_bear on CMF (quality: strong)
+
+**Score**: +5.62 + +0.00 + -3.00 = +2.62 → **+2.62**
