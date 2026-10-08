@@ -1,0 +1,22 @@
+# Technical Signal: ROST  2026-10-08
+
+**Recommendation**: HOLD  |  **Score**: -0.6
+
+### Technical Signal: HOLD (-0.6 / confidence 6%)
+
+**Regime**: ADX RANGING (ADX 17, +DI 14 vs -DI 24)  |  Vol: UNKNOWN (IV30 N/A, RV20 20.6%)
+**Gate**: MR weight = 1.00
+
+**Trend** (-5.62 = -4.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 38: neutral  Bollinger: neutral
+
+**Divergence** (+5.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bull on CMF (quality: strong)
+
+**Score**: -5.62 + +0.00 + +5.00 = -0.62 → **-0.62**
+Note: IV30 not available — using RV-only vol regime
