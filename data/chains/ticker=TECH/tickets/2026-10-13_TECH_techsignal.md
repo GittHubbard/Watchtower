@@ -1,0 +1,24 @@
+# Technical Signal: TECH  2026-10-13
+
+**Recommendation**: BUY  |  **Score**: +2.5
+
+### Technical Signal: BUY (+2.5 / confidence 25%)
+
+**Regime**: ADX TRENDING (ADX 36, +DI 22 vs -DI 9)  |  Vol: UNKNOWN (IV30 N/A, RV20 2.0%)
+**Gate**: MR weight = 0.00
+
+**Trend** (+2.50 = +2.00 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 72.50 (anchor 14 bars ago), aVWAP-low 72.46 (anchor 20 bars ago)
+
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 59: neutral  Bollinger: neutral
+
+**Divergence** (+0.0)
+- ⏳ PENDING reg_bear on RSI (quality: standard)
+- ⏳ PENDING reg_bear on MACDLine (quality: strong)
+- ⏳ PENDING reg_bear on CMF (quality: standard)
+
+**Score**: +2.50 + +0.00 + +0.00 = +2.50 → **+2.50**
+Note: IV30 not available — using RV-only vol regime
