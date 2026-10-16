@@ -1,16 +1,15 @@
 # Technical Signal: VRSN  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+**Recommendation**: STRONG_BUY  |  **Score**: +8.1
 
-### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+### Technical Signal: STRONG_BUY (+8.1 / confidence 81%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 27 vs -DI 19)  |  Vol: HIGH_IV (IV30 39.5%, RV20 21.6%)
+**Regime**: ADX RANGING (ADX 16, +DI 25 vs -DI 17)  |  Vol: NORMAL_IV (IV30 37.9%, RV20 21.6%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+8.44 = +6.75 × 1.25 convergence)
-- Price: STRONG_UP  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 293.29 (anchor 16 bars ago), aVWAP-low 293.18 (anchor 11 bars ago)
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
 - RSI 60: neutral  Bollinger: neutral
@@ -19,4 +18,4 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Score**: +8.44 + +0.00 + +5.00 = +13.44 → **+10.00**
+**Score**: +3.12 + +0.00 + +5.00 = +8.12 → **+8.12**

@@ -1,21 +1,21 @@
 # Technical Signal: DLTR  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.9
+**Recommendation**: BUY  |  **Score**: +4.4
 
-### Technical Signal: BUY (+2.9 / confidence 29%)
+### Technical Signal: BUY (+4.4 / confidence 44%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 21 vs -DI 16)  |  Vol: LOW_IV (IV30 43.0%, RV20 28.5%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 28 vs -DI 14)  |  Vol: LOW_IV (IV30 41.6%, RV20 28.8%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: NORMAL
-- aVWAP-high 119.68 (anchor 36 bars ago), aVWAP-low 116.10 (anchor 10 bars ago)
+**Trend** (+4.69 = +3.75 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 119.78 (anchor 37 bars ago), aVWAP-low 116.77 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution -0.25)
-- RSI 58: neutral  Bollinger: upper-break
+- RSI 62: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.12 + -0.25 + +0.00 = +2.88 → **+2.88**
+**Score**: +4.69 + -0.25 + +0.00 = +4.44 → **+4.44**

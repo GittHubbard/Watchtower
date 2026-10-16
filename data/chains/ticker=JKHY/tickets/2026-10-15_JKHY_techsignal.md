@@ -1,21 +1,21 @@
 # Technical Signal: JKHY  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.5
+**Recommendation**: STRONG_BUY  |  **Score**: +6.0
 
-### Technical Signal: BUY (+2.5 / confidence 25%)
+### Technical Signal: STRONG_BUY (+6.0 / confidence 60%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 25 vs -DI 21)  |  Vol: NORMAL_IV (IV30 43.5%, RV20 21.4%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 30 vs -DI 19)  |  Vol: NORMAL_IV (IV30 42.2%, RV20 20.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+2.50 = +2.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
-- aVWAP-high 155.73 (anchor 34 bars ago), aVWAP-low 157.04 (anchor 41 bars ago)
+**Trend** (+6.25 = +5.00 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 155.77 (anchor 35 bars ago), aVWAP-low 157.04 (anchor 42 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 58: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 60: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +2.50 + +0.00 + +0.00 = +2.50 → **+2.50**
+**Score**: +6.25 + -0.25 + +0.00 = +6.00 → **+6.00**

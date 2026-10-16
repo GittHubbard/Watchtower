@@ -1,21 +1,20 @@
 # Technical Signal: WEC  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.8
+**Recommendation**: BUY  |  **Score**: +3.1
 
-### Technical Signal: BUY (+3.8 / confidence 38%)
+### Technical Signal: BUY (+3.1 / confidence 31%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 25 vs -DI 15)  |  Vol: NORMAL_IV (IV30 28.3%, RV20 15.7%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 24 vs -DI 14)  |  Vol: HIGH_IV (IV30 37.1%, RV20 15.7%)
+**Gate**: MR weight = 0.75
 
-**Trend** (+4.06 = +3.25 × 1.25 convergence)
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 104.45 (anchor 40 bars ago), aVWAP-low 102.68 (anchor 13 bars ago)
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Mean Reversion** (gate 0.50 → contribution -0.25)
-- RSI 63: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.75 → contribution +0.00)
+- RSI 63: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.06 + -0.25 + +0.00 = +3.81 → **+3.81**
+**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**

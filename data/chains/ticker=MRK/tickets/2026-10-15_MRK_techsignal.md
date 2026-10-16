@@ -1,20 +1,21 @@
 # Technical Signal: MRK  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -3.5
+**Recommendation**: HOLD  |  **Score**: -1.0
 
-### Technical Signal: SELL (-3.5 / confidence 35%)
+### Technical Signal: HOLD (-1.0 / confidence 10%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 21 vs -DI 25)  |  Vol: HIGH_IV (IV30 40.8%, RV20 24.4%)
+**Regime**: ADX RANGING (ADX 17, +DI 29 vs -DI 21)  |  Vol: HIGH_IV (IV30 43.4%, RV20 27.7%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-3.50 = -3.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-4.00 = -4.00 × 1.00 convergence)
+- Price: UP  MACD: BEARISH  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: SURGE
+- aVWAP-high 145.87 (anchor 17 bars ago), aVWAP-low 146.00 (anchor 22 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 51: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: -3.50 + +0.00 + +0.00 = -3.50 → **-3.50**
+**Score**: -4.00 + +0.00 + +3.00 = -1.00 → **-1.00**

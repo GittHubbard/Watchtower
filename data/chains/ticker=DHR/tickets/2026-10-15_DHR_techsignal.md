@@ -1,20 +1,21 @@
 # Technical Signal: DHR  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -2.4
+**Recommendation**: STRONG_BUY  |  **Score**: +7.7
 
-### Technical Signal: HOLD (-2.4 / confidence 24%)
+### Technical Signal: STRONG_BUY (+7.7 / confidence 77%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 28 vs -DI 13)  |  Vol: HIGH_IV (IV30 50.4%, RV20 28.4%)
+**Regime**: ADX TRENDING (ADX 29, +DI 33 vs -DI 12)  |  Vol: HIGH_IV (IV30 44.3%, RV20 29.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+0.62 = +0.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+10.94 = +8.75 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 220.96 (anchor 13 bars ago), aVWAP-low 217.39 (anchor 24 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 59: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 66: neutral  Bollinger: upper-break
 
 **Divergence** (-3.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
 
-**Score**: +0.62 + +0.00 + -3.00 = -2.38 → **-2.38**
+**Score**: +10.94 + -0.25 + -3.00 = +7.69 → **+7.69**

@@ -4,7 +4,7 @@
 
 ### Technical Signal: HOLD (+0.6 / confidence 6%)
 
-**Regime**: ADX TRENDING (ADX 25, +DI 15 vs -DI 25)  |  Vol: HIGH_IV (IV30 79.5%, RV20 30.3%)
+**Regime**: ADX TRENDING (ADX 26, +DI 14 vs -DI 27)  |  Vol: HIGH_IV (IV30 81.7%, RV20 29.2%)
 **Gate**: MR weight = 0.50
 
 **Trend** (+0.62 = +0.50 × 1.25 convergence)

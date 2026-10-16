@@ -1,20 +1,21 @@
 # Technical Signal: PLD  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.1
+**Recommendation**: SELL  |  **Score**: -2.5
 
-### Technical Signal: STRONG_BUY (+6.1 / confidence 61%)
+### Technical Signal: SELL (-2.5 / confidence 25%)
 
-**Regime**: ADX TRENDING (ADX 33, +DI 25 vs -DI 19)  |  Vol: HIGH_IV (IV30 33.1%, RV20 16.8%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 32, +DI 20 vs -DI 31)  |  Vol: NORMAL_IV (IV30 30.3%, RV20 20.2%)
+**Gate**: MR weight = 0.00
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (-5.50 = -5.50 × 1.00 convergence)
+- Price: STRONG_DOWN  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: SURGE
+- aVWAP-high 133.25 (anchor 35 bars ago), aVWAP-low 129.62 (anchor 10 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 36: neutral  Bollinger: neutral
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: +3.12 + +0.00 + +3.00 = +6.12 → **+6.12**
+**Score**: -5.50 + +0.00 + +3.00 = -2.50 → **-2.50**

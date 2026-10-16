@@ -1,22 +1,21 @@
 # Technical Signal: VMC  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -3.5
+**Recommendation**: HOLD  |  **Score**: -0.5
 
-### Technical Signal: SELL (-3.5 / confidence 35%)
+### Technical Signal: HOLD (-0.5 / confidence 5%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 13 vs -DI 27)  |  Vol: HIGH_IV (IV30 37.7%, RV20 18.0%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 26, +DI 12 vs -DI 25)  |  Vol: NORMAL_IV (IV30 35.7%, RV20 18.0%)
+**Gate**: MR weight = 0.00
 
-**Trend** (-2.50 = -2.00 × 1.25 convergence)
-- Price: STRONG_DOWN  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
-- aVWAP-high 259.70 (anchor 54 bars ago), aVWAP-low 244.32 (anchor 18 bars ago)
+**Trend** (+0.50 = +0.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
+**Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 39: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: -2.50 + +0.00 + -1.00 = -3.50 → **-3.50**
+**Score**: +0.50 + +0.00 + -1.00 = -0.50 → **-0.50**

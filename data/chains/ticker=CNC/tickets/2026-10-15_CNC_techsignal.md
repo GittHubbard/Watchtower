@@ -1,21 +1,20 @@
 # Technical Signal: CNC  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.3
+**Recommendation**: BUY  |  **Score**: +4.4
 
-### Technical Signal: STRONG_BUY (+7.3 / confidence 73%)
+### Technical Signal: BUY (+4.4 / confidence 44%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 30 vs -DI 15)  |  Vol: NORMAL_IV (IV30 53.7%, RV20 28.2%)
+**Regime**: ADX RANGING (ADX 16, +DI 28 vs -DI 14)  |  Vol: NORMAL_IV (IV30 52.3%, RV20 28.2%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+7.81 = +6.25 × 1.25 convergence)
-- Price: UP  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 64.89 (anchor 22 bars ago), aVWAP-low 65.11 (anchor 38 bars ago)
+**Trend** (+4.38 = +3.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 1.00 → contribution -0.50)
-- RSI 68: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 68: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +7.81 + -0.50 + +0.00 = +7.31 → **+7.31**
+**Score**: +4.38 + +0.00 + +0.00 = +4.38 → **+4.38**

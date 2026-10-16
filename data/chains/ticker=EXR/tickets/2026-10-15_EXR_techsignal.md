@@ -1,18 +1,17 @@
 # Technical Signal: EXR  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.8
+**Recommendation**: STRONG_BUY  |  **Score**: +5.6
 
-### Technical Signal: BUY (+3.8 / confidence 38%)
+### Technical Signal: STRONG_BUY (+5.6 / confidence 56%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 16 vs -DI 22)  |  Vol: HIGH_IV (IV30 33.3%, RV20 18.6%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 15 vs -DI 20)  |  Vol: LOW_IV (IV30 30.6%, RV20 18.6%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-1.25 = -1.25 × 1.00 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 139.04 (anchor 54 bars ago), aVWAP-low 140.18 (anchor 67 bars ago)
+**Trend** (+0.62 = +0.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
+**Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 46: neutral  Bollinger: neutral
 
 **Divergence** (+5.0)
@@ -20,4 +19,4 @@
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: -1.25 + +0.00 + +5.00 = +3.75 → **+3.75**
+**Score**: +0.62 + +0.00 + +5.00 = +5.62 → **+5.62**

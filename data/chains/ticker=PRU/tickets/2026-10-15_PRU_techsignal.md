@@ -1,16 +1,15 @@
 # Technical Signal: PRU  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -2.8
+**Recommendation**: SELL  |  **Score**: -2.0
 
-### Technical Signal: SELL (-2.8 / confidence 28%)
+### Technical Signal: HOLD (-2.0 / confidence 20%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 20 vs -DI 29)  |  Vol: HIGH_IV (IV30 37.8%, RV20 14.6%)
+**Regime**: ADX TRENDING (ADX 28, +DI 18 vs -DI 26)  |  Vol: HIGH_IV (IV30 33.2%, RV20 14.6%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-1.75 = -1.75 × 1.00 convergence)
+**Trend** (-1.00 = -1.00 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
-- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 116.23 (anchor 27 bars ago)
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 40: neutral  Bollinger: neutral
@@ -21,4 +20,4 @@
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 - ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Score**: -1.75 + +0.00 + -1.00 = -2.75 → **-2.75**
+**Score**: -1.00 + +0.00 + -1.00 = -2.00 → **-2.00**

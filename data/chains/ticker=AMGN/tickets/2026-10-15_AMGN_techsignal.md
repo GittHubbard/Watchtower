@@ -1,20 +1,21 @@
 # Technical Signal: AMGN  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.1
+**Recommendation**: STRONG_BUY  |  **Score**: +8.8
 
-### Technical Signal: BUY (+3.1 / confidence 31%)
+### Technical Signal: STRONG_BUY (+8.8 / confidence 88%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 27 vs -DI 18)  |  Vol: HIGH_IV (IV30 36.2%, RV20 27.0%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 37 vs -DI 16)  |  Vol: NORMAL_IV (IV30 35.7%, RV20 28.9%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+9.06 = +7.25 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-high 408.17 (anchor 36 bars ago), aVWAP-low 406.20 (anchor 21 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 64: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**
+**Score**: +9.06 + -0.25 + +0.00 = +8.81 → **+8.81**

@@ -1,21 +1,22 @@
 # Technical Signal: SNDK  2026-10-15
 
-**Recommendation**: STRONG_SELL  |  **Score**: -8.8
+**Recommendation**: STRONG_SELL  |  **Score**: -9.4
 
-### Technical Signal: STRONG_SELL (-8.8 / confidence 88%)
+### Technical Signal: STRONG_SELL (-9.4 / confidence 94%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 16 vs -DI 30)  |  Vol: LOW_IV (IV30 71.1%, RV20 66.6%)
+**Regime**: ADX RANGING (ADX 18, +DI 15 vs -DI 37)  |  Vol: LOW_IV (IV30 72.2%, RV20 64.9%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-3.75 = -3.00 × 1.25 convergence)
+**Trend** (-4.69 = -3.75 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: DRY
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 1655.81 (anchor 17 bars ago), aVWAP-low 1662.55 (anchor 21 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 38: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.25)
+- RSI 34: neutral  Bollinger: lower-break
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: -3.75 + +0.00 + -5.00 = -8.75 → **-8.75**
+**Score**: -4.69 + +0.25 + -5.00 = -9.44 → **-9.44**

@@ -1,20 +1,21 @@
 # Technical Signal: CVX  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +5.4
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
 
-### Technical Signal: BUY (+5.4 / confidence 54%)
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 27 vs -DI 14)  |  Vol: HIGH_IV (IV30 30.9%, RV20 22.7%)
+**Regime**: ADX RANGING (ADX 20, +DI 31 vs -DI 13)  |  Vol: NORMAL_IV (IV30 30.6%, RV20 21.6%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+4.38 = +3.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+9.06 = +7.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 209.65 (anchor 22 bars ago), aVWAP-low 209.25 (anchor 17 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 67: neutral  Bollinger: neutral
+- RSI 66: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ✓ CONFIRMED hid_bull on CMF (quality: strong)
 
-**Score**: +4.38 + +0.00 + +1.00 = +5.38 → **+5.38**
+**Score**: +9.06 + +0.00 + +1.00 = +10.06 → **+10.00**

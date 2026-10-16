@@ -1,21 +1,21 @@
 # Technical Signal: CHTR  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -4.2
+**Recommendation**: SELL  |  **Score**: -3.2
 
-### Technical Signal: SELL (-4.2 / confidence 42%)
+### Technical Signal: SELL (-3.2 / confidence 32%)
 
-**Regime**: ADX TRENDING (ADX 39, +DI 14 vs -DI 29)  |  Vol: HIGH_IV (IV30 75.8%, RV20 39.5%)
+**Regime**: ADX TRENDING (ADX 38, +DI 17 vs -DI 28)  |  Vol: HIGH_IV (IV30 76.8%, RV20 44.5%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-4.25 = -4.25 × 1.00 convergence)
+**Trend** (-3.25 = -3.25 × 1.00 convergence)
 - Price: STRONG_DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 122.03 (anchor 28 bars ago), aVWAP-low 133.57 (anchor 57 bars ago)
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 121.60 (anchor 29 bars ago), aVWAP-low 133.16 (anchor 58 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 33: neutral  Bollinger: neutral
+- RSI 41: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -4.25 + +0.00 + +0.00 = -4.25 → **-4.25**
+**Score**: -3.25 + +0.00 + +0.00 = -3.25 → **-3.25**

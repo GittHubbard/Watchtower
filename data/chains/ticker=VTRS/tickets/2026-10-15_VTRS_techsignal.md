@@ -1,21 +1,21 @@
 # Technical Signal: VTRS  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -1.9
+**Recommendation**: HOLD  |  **Score**: +0.9
 
-### Technical Signal: HOLD (-1.9 / confidence 19%)
+### Technical Signal: HOLD (+0.9 / confidence 9%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 23 vs -DI 21)  |  Vol: HIGH_IV (IV30 53.7%, RV20 20.3%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 27 vs -DI 18)  |  Vol: LOW_IV (IV30 42.5%, RV20 25.3%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-1.88 = -1.50 × 1.25 convergence)
-- Price: UP  MACD: BEARISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 17.62 (anchor 11 bars ago), aVWAP-low 17.34 (anchor 24 bars ago)
+**Trend** (+0.94 = +0.75 × 1.25 convergence)
+- Price: UP_EXHAUSTING  MACD: BEARISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 17.65 (anchor 12 bars ago), aVWAP-low 17.37 (anchor 25 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 65: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -1.88 + +0.00 + +0.00 = -1.88 → **-1.88**
+**Score**: +0.94 + +0.00 + +0.00 = +0.94 → **+0.94**

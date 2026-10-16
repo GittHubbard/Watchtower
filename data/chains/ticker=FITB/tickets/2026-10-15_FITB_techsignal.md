@@ -1,22 +1,21 @@
 # Technical Signal: FITB  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -1.8
+**Recommendation**: HOLD  |  **Score**: -0.4
 
-### Technical Signal: HOLD (-1.8 / confidence 18%)
+### Technical Signal: HOLD (-0.4 / confidence 4%)
 
-**Regime**: ADX TRENDING (ADX 37, +DI 13 vs -DI 38)  |  Vol: HIGH_IV (IV30 46.5%, RV20 16.4%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 38, +DI 12 vs -DI 35)  |  Vol: LOW_IV (IV30 34.7%, RV20 16.4%)
+**Gate**: MR weight = 0.00
 
-**Trend** (-0.75 = -0.75 × 1.00 convergence)
+**Trend** (+0.62 = +0.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 51.32 (anchor 21 bars ago), aVWAP-low 51.79 (anchor 30 bars ago)
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
+**Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 33: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: -0.75 + +0.00 + -1.00 = -1.75 → **-1.75**
+**Score**: +0.62 + +0.00 + -1.00 = -0.38 → **-0.38**

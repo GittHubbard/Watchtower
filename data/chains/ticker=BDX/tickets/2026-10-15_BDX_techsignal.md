@@ -1,21 +1,20 @@
 # Technical Signal: BDX  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.2
+**Recommendation**: BUY  |  **Score**: +4.4
 
-### Technical Signal: STRONG_BUY (+6.2 / confidence 62%)
+### Technical Signal: BUY (+4.4 / confidence 44%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 31 vs -DI 15)  |  Vol: HIGH_IV (IV30 38.3%, RV20 20.4%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 28 vs -DI 14)  |  Vol: NORMAL_IV (IV30 35.6%, RV20 20.4%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+6.56 = +5.25 × 1.25 convergence)
-- Price: UP  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 182.89 (anchor 36 bars ago), aVWAP-low 181.83 (anchor 23 bars ago)
+**Trend** (+4.38 = +3.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 0.75 → contribution -0.38)
-- RSI 62: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 62: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +6.56 + -0.38 + +0.00 = +6.19 → **+6.19**
+**Score**: +4.38 + +0.00 + +0.00 = +4.38 → **+4.38**

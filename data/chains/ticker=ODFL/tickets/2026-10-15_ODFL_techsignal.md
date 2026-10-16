@@ -1,22 +1,20 @@
 # Technical Signal: ODFL  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +0.9
+**Recommendation**: BUY  |  **Score**: +2.5
 
-### Technical Signal: HOLD (+0.9 / confidence 9%)
+### Technical Signal: BUY (+2.5 / confidence 25%)
 
-**Regime**: ADX TRENDING (ADX 39, +DI 15 vs -DI 23)  |  Vol: NORMAL_IV (IV30 47.1%, RV20 22.4%)
+**Regime**: ADX TRENDING (ADX 37, +DI 14 vs -DI 21)  |  Vol: LOW_IV (IV30 43.7%, RV20 22.4%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+1.88 = +1.50 × 1.25 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 196.23 (anchor 62 bars ago), aVWAP-low 178.16 (anchor 17 bars ago)
+**Trend** (+2.50 = +2.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 53: neutral  Bollinger: neutral
 
-**Divergence** (-1.0)
+**Divergence** (+0.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
-- ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: +1.88 + +0.00 + -1.00 = +0.88 → **+0.88**
+**Score**: +2.50 + +0.00 + +0.00 = +2.50 → **+2.50**

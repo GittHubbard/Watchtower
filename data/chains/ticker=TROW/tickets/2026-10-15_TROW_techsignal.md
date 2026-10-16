@@ -1,23 +1,22 @@
 # Technical Signal: TROW  2026-10-15
 
-**Recommendation**: STRONG_SELL  |  **Score**: -7.3
+**Recommendation**: SELL  |  **Score**: -4.4
 
-### Technical Signal: STRONG_SELL (-7.3 / confidence 73%)
+### Technical Signal: SELL (-4.4 / confidence 44%)
 
-**Regime**: ADX TRENDING (ADX 32, +DI 11 vs -DI 32)  |  Vol: HIGH_IV (IV30 40.9%, RV20 17.6%)
+**Regime**: ADX TRENDING (ADX 33, +DI 13 vs -DI 30)  |  Vol: HIGH_IV (IV30 35.7%, RV20 18.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-6.56 = -5.25 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 108.19 (anchor 55 bars ago), aVWAP-low 103.73 (anchor 19 bars ago)
+**Trend** (-3.44 = -2.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 107.95 (anchor 56 bars ago), aVWAP-low 103.50 (anchor 20 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.25)
-- RSI 31: neutral  Bollinger: lower-break
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 39: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: -6.56 + +0.25 + -1.00 = -7.31 → **-7.31**
+**Score**: -3.44 + +0.00 + -1.00 = -4.44 → **-4.44**

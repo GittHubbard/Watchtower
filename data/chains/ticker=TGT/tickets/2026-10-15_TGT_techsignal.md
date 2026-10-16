@@ -4,7 +4,7 @@
 
 ### Technical Signal: SELL (-3.0 / confidence 30%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 16 vs -DI 21)  |  Vol: HIGH_IV (IV30 36.2%, RV20 21.8%)
+**Regime**: ADX RANGING (ADX 15, +DI 15 vs -DI 20)  |  Vol: HIGH_IV (IV30 36.8%, RV20 23.2%)
 **Gate**: MR weight = 1.00
 
 **Trend** (-4.00 = -4.00 × 1.00 convergence)
@@ -12,7 +12,7 @@
 - OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 43: neutral  Bollinger: neutral
+- RSI 50: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)

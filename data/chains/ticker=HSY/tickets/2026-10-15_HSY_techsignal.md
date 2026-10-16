@@ -1,21 +1,20 @@
 # Technical Signal: HSY  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -0.2
+**Recommendation**: BUY  |  **Score**: +3.1
 
-### Technical Signal: HOLD (-0.2 / confidence 2%)
+### Technical Signal: BUY (+3.1 / confidence 31%)
 
-**Regime**: ADX TRENDING (ADX 34, +DI 15 vs -DI 23)  |  Vol: NORMAL_IV (IV30 36.4%, RV20 16.2%)
-**Gate**: MR weight = 0.00
+**Regime**: ADX TRENDING (ADX 33, +DI 14 vs -DI 21)  |  Vol: HIGH_IV (IV30 38.0%, RV20 16.2%)
+**Gate**: MR weight = 0.50
 
-**Trend** (-0.25 = -0.25 × 1.00 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: DIST
-- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 169.97 (anchor 38 bars ago), aVWAP-low 173.20 (anchor 60 bars ago)
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 0.00 → contribution +0.00)
+**Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 44: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -0.25 + +0.00 + +0.00 = -0.25 → **-0.25**
+**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**

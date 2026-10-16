@@ -1,21 +1,21 @@
 # Technical Signal: TAP  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.5
+**Recommendation**: BUY  |  **Score**: +3.4
 
-### Technical Signal: BUY (+2.5 / confidence 25%)
+### Technical Signal: BUY (+3.4 / confidence 34%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 23 vs -DI 16)  |  Vol: HIGH_IV (IV30 43.2%, RV20 25.2%)
+**Regime**: ADX RANGING (ADX 17, +DI 29 vs -DI 15)  |  Vol: NORMAL_IV (IV30 40.7%, RV20 25.5%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence)
+**Trend** (+0.94 = +0.75 × 1.25 convergence)
 - Price: DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 38.24 (anchor 36 bars ago), aVWAP-low 37.02 (anchor 12 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 38.26 (anchor 37 bars ago), aVWAP-low 37.18 (anchor 13 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 56: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 58: neutral  Bollinger: upper-break
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: -0.50 + +0.00 + +3.00 = +2.50 → **+2.50**
+**Score**: +0.94 + -0.50 + +3.00 = +3.44 → **+3.44**

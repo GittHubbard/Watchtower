@@ -1,21 +1,20 @@
 # Technical Signal: EBAY  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.5
+**Recommendation**: BUY  |  **Score**: +2.4
 
-### Technical Signal: BUY (+3.5 / confidence 35%)
+### Technical Signal: HOLD (+2.4 / confidence 24%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 33 vs -DI 12)  |  Vol: NORMAL_IV (IV30 50.8%, RV20 26.1%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 31 vs -DI 11)  |  Vol: HIGH_IV (IV30 52.0%, RV20 26.1%)
+**Gate**: MR weight = 0.75
 
-**Trend** (+5.00 = +4.00 × 1.25 convergence)
-- Price: UP_EXHAUSTING  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 110.21 (anchor 18 bars ago), aVWAP-low 107.30 (anchor 41 bars ago)
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Mean Reversion** (gate 1.00 → contribution -1.50)
-- RSI 71: overbought  Bollinger: upper-break
+**Mean Reversion** (gate 0.75 → contribution -0.75)
+- RSI 71: overbought  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.00 + -1.50 + +0.00 = +3.50 → **+3.50**
+**Score**: +3.12 + -0.75 + +0.00 = +2.38 → **+2.38**

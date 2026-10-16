@@ -1,21 +1,21 @@
 # Technical Signal: EG  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +1.9
+**Recommendation**: STRONG_BUY  |  **Score**: +6.1
 
-### Technical Signal: HOLD (+1.9 / confidence 19%)
+### Technical Signal: STRONG_BUY (+6.1 / confidence 61%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 17 vs -DI 18)  |  Vol: HIGH_IV (IV30 30.9%, RV20 16.5%)
+**Regime**: ADX RANGING (ADX 13, +DI 24 vs -DI 16)  |  Vol: HIGH_IV (IV30 30.9%, RV20 17.3%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+1.88 = +1.50 × 1.25 convergence)
+**Trend** (+6.56 = +5.25 × 1.25 convergence)
 - Price: UP  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
-- aVWAP-high 372.54 (anchor 28 bars ago), aVWAP-low 372.18 (anchor 25 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 372.84 (anchor 29 bars ago), aVWAP-low 372.52 (anchor 26 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 55: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 61: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +1.88 + +0.00 + +0.00 = +1.88 → **+1.88**
+**Score**: +6.56 + -0.50 + +0.00 = +6.06 → **+6.06**

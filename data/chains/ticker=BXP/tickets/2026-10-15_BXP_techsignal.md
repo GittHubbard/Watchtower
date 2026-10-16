@@ -1,21 +1,21 @@
 # Technical Signal: BXP  2026-10-15
 
-**Recommendation**: STRONG_SELL  |  **Score**: -5.8
+**Recommendation**: HOLD  |  **Score**: +2.2
 
-### Technical Signal: STRONG_SELL (-5.8 / confidence 57%)
+### Technical Signal: HOLD (+2.2 / confidence 22%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 14 vs -DI 30)  |  Vol: HIGH_IV (IV30 42.7%, RV20 22.7%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 28, +DI 13 vs -DI 27)  |  Vol: NORMAL_IV (IV30 38.8%, RV20 26.5%)
+**Gate**: MR weight = 0.00
 
-**Trend** (-6.25 = -6.25 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEAR_CROSS  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: SURGE
-- aVWAP-high 62.83 (anchor 34 bars ago), aVWAP-low 63.49 (anchor 40 bars ago)
+**Trend** (+2.19 = +1.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULL_CROSS  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 62.72 (anchor 35 bars ago), aVWAP-low 63.38 (anchor 41 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.50)
-- RSI 30: oversold  Bollinger: neutral
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 42: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -6.25 + +0.50 + +0.00 = -5.75 → **-5.75**
+**Score**: +2.19 + +0.00 + +0.00 = +2.19 → **+2.19**

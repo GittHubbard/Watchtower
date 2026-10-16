@@ -1,19 +1,19 @@
 # Technical Signal: UHS  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +1.4
+**Recommendation**: HOLD  |  **Score**: -0.4
 
-### Technical Signal: HOLD (+1.4 / confidence 14%)
+### Technical Signal: HOLD (-0.4 / confidence 4%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 30 vs -DI 13)  |  Vol: HIGH_IV (IV30 48.7%, RV20 23.7%)
+**Regime**: ADX RANGING (ADX 17, +DI 33 vs -DI 12)  |  Vol: HIGH_IV (IV30 44.6%, RV20 23.8%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+5.94 = +4.75 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULL_CROSS  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 178.10 (anchor 15 bars ago), aVWAP-low 177.29 (anchor 10 bars ago)
+**Trend** (+4.06 = +3.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 178.59 (anchor 16 bars ago), aVWAP-low 178.12 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution -0.50)
-- RSI 67: neutral  Bollinger: upper-break
+- RSI 69: neutral  Bollinger: upper-break
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: standard)
@@ -23,4 +23,4 @@
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
-**Score**: +5.94 + -0.50 + -4.00 = +1.44 → **+1.44**
+**Score**: +4.06 + -0.50 + -4.00 = -0.44 → **-0.44**

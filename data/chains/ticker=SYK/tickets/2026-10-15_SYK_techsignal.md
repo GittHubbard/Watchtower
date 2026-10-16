@@ -1,20 +1,21 @@
 # Technical Signal: SYK  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +0.5
+**Recommendation**: HOLD  |  **Score**: -0.4
 
-### Technical Signal: HOLD (+0.5 / confidence 5%)
+### Technical Signal: HOLD (-0.4 / confidence 4%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 20 vs -DI 19)  |  Vol: HIGH_IV (IV30 42.0%, RV20 22.8%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 26 vs -DI 17)  |  Vol: HIGH_IV (IV30 40.4%, RV20 25.8%)
 **Gate**: MR weight = 0.75
 
-**Trend** (+0.50 = +0.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+0.00 = +0.00 × 1.00 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: DIST
+- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 301.17 (anchor 55 bars ago), aVWAP-low 278.19 (anchor 15 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 48: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution -0.38)
+- RSI 58: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +0.50 + +0.00 + +0.00 = +0.50 → **+0.50**
+**Score**: +0.00 + -0.38 + +0.00 = -0.38 → **-0.38**

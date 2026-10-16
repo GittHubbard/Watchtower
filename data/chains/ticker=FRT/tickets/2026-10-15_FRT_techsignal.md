@@ -1,21 +1,21 @@
 # Technical Signal: FRT  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -1.2
+**Recommendation**: HOLD  |  **Score**: -0.8
 
-### Technical Signal: HOLD (-1.2 / confidence 12%)
+### Technical Signal: HOLD (-0.8 / confidence 8%)
 
-**Regime**: ADX TRENDING (ADX 46, +DI 11 vs -DI 25)  |  Vol: HIGH_IV (IV30 46.6%, RV20 10.3%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 45, +DI 13 vs -DI 23)  |  Vol: NORMAL_IV (IV30 32.5%, RV20 10.9%)
+**Gate**: MR weight = 0.00
 
-**Trend** (-1.75 = -1.75 × 1.00 convergence)
+**Trend** (-0.75 = -0.75 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
-- aVWAP-high 109.29 (anchor 28 bars ago), aVWAP-low 111.27 (anchor 45 bars ago)
+- aVWAP-high 109.13 (anchor 29 bars ago), aVWAP-low 111.08 (anchor 46 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.50)
-- RSI 28: oversold  Bollinger: neutral
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 33: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -1.75 + +0.50 + +0.00 = -1.25 → **-1.25**
+**Score**: -0.75 + +0.00 + +0.00 = -0.75 → **-0.75**

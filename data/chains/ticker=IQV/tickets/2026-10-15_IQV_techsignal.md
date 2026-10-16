@@ -4,7 +4,7 @@
 
 ### Technical Signal: STRONG_SELL (-8.5 / confidence 85%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 21 vs -DI 17)  |  Vol: HIGH_IV (IV30 48.9%, RV20 23.1%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 22 vs -DI 16)  |  Vol: HIGH_IV (IV30 48.9%, RV20 23.3%)
 **Gate**: MR weight = 0.75
 
 **Trend** (-3.50 = -3.50 × 1.00 convergence)
@@ -12,7 +12,7 @@
 - OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+- RSI 50: neutral  Bollinger: neutral
 
 **Divergence** (-5.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: strong)

@@ -1,19 +1,19 @@
 # Technical Signal: BEN  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -1.9
+**Recommendation**: HOLD  |  **Score**: -0.7
 
-### Technical Signal: HOLD (-1.9 / confidence 19%)
+### Technical Signal: HOLD (-0.7 / confidence 7%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 11 vs -DI 34)  |  Vol: NORMAL_IV (IV30 43.0%, RV20 18.3%)
+**Regime**: ADX TRENDING (ADX 29, +DI 12 vs -DI 31)  |  Vol: NORMAL_IV (IV30 41.5%, RV20 20.8%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-5.94 = -4.75 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
+**Trend** (-4.69 = -3.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 32.72 (anchor 33 bars ago), aVWAP-low 33.09 (anchor 58 bars ago)
+- aVWAP-high 32.67 (anchor 34 bars ago), aVWAP-low 33.06 (anchor 59 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 28: oversold  Bollinger: lower-break
+- RSI 40: neutral  Bollinger: neutral
 
 **Divergence** (+4.0)
 - ✓ CONFIRMED hid_bear on RSI (quality: standard)
@@ -22,4 +22,4 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: -5.94 + +0.00 + +4.00 = -1.94 → **-1.94**
+**Score**: -4.69 + +0.00 + +4.00 = -0.69 → **-0.69**

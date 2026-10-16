@@ -1,20 +1,21 @@
 # Technical Signal: BMY  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -3.6
+**Recommendation**: SELL  |  **Score**: -3.2
 
-### Technical Signal: SELL (-3.6 / confidence 36%)
+### Technical Signal: SELL (-3.2 / confidence 32%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 11 vs -DI 29)  |  Vol: HIGH_IV (IV30 37.1%, RV20 23.2%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 26 vs -DI 24)  |  Vol: HIGH_IV (IV30 37.6%, RV20 30.3%)
 **Gate**: MR weight = 0.75
 
-**Trend** (-4.38 = -3.50 × 1.25 convergence)
+**Trend** (-3.25 = -3.25 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 61.22 (anchor 29 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.75)
-- RSI 28: oversold  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution +0.00)
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -4.38 + +0.75 + +0.00 = -3.62 → **-3.62**
+**Score**: -3.25 + +0.00 + +0.00 = -3.25 → **-3.25**

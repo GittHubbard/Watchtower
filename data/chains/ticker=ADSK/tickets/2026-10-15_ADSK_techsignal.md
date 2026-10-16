@@ -1,16 +1,15 @@
 # Technical Signal: ADSK  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.8
+**Recommendation**: STRONG_BUY  |  **Score**: +8.0
 
-### Technical Signal: STRONG_BUY (+6.8 / confidence 68%)
+### Technical Signal: STRONG_BUY (+8.0 / confidence 80%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 28 vs -DI 22)  |  Vol: NORMAL_IV (IV30 50.6%, RV20 30.2%)
+**Regime**: ADX RANGING (ADX 18, +DI 26 vs -DI 21)  |  Vol: NORMAL_IV (IV30 51.0%, RV20 30.2%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+1.75 = +1.75 × 1.00 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 226.53 (anchor 33 bars ago), aVWAP-low 222.97 (anchor 11 bars ago)
+**Trend** (+3.00 = +3.00 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
 - RSI 55: neutral  Bollinger: neutral
@@ -19,4 +18,4 @@
 - ✓ CONFIRMED reg_bull on RSI (quality: standard)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: +1.75 + +0.00 + +5.00 = +6.75 → **+6.75**
+**Score**: +3.00 + +0.00 + +5.00 = +8.00 → **+8.00**

@@ -1,20 +1,21 @@
 # Technical Signal: WFC  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +0.0
+**Recommendation**: BUY  |  **Score**: +3.8
 
-### Technical Signal: HOLD (+0.0 / confidence 0%)
+### Technical Signal: BUY (+3.8 / confidence 38%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 22 vs -DI 32)  |  Vol: NORMAL_IV (IV30 30.0%, RV20 26.6%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 27 vs -DI 36)  |  Vol: NORMAL_IV (IV30 27.5%, RV20 26.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+0.00 = +0.00 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+3.75 = +3.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: BETWEEN  Volume: SURGE
+- aVWAP-high 82.78 (anchor 22 bars ago), aVWAP-low 81.37 (anchor 10 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 40: neutral  Bollinger: neutral
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +0.00 + +0.00 + +0.00 = +0.00 → **+0.00**
+**Score**: +3.75 + +0.00 + +0.00 = +3.75 → **+3.75**

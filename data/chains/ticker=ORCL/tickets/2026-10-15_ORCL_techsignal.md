@@ -1,20 +1,21 @@
 # Technical Signal: ORCL  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +5.0
+**Recommendation**: SELL  |  **Score**: -2.6
 
-### Technical Signal: BUY (+5.0 / confidence 50%)
+### Technical Signal: SELL (-2.6 / confidence 26%)
 
-**Regime**: ADX RANGING (ADX 9, +DI 22 vs -DI 22)  |  Vol: NORMAL_IV (IV30 58.2%, RV20 48.2%)
+**Regime**: ADX RANGING (ADX 10, +DI 19 vs -DI 26)  |  Vol: NORMAL_IV (IV30 56.4%, RV20 55.8%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+2.00 = +2.00 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (-5.62 = -4.50 × 1.25 convergence)
+- Price: DOWN  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 143.95 (anchor 27 bars ago), aVWAP-low 137.75 (anchor 13 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 51: neutral  Bollinger: neutral
+- RSI 44: neutral  Bollinger: neutral
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: +2.00 + +0.00 + +3.00 = +5.00 → **+5.00**
+**Score**: -5.62 + +0.00 + +3.00 = -2.62 → **-2.62**

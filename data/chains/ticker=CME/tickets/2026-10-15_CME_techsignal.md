@@ -1,18 +1,18 @@
 # Technical Signal: CME  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -0.9
+**Recommendation**: HOLD  |  **Score**: +1.0
 
-### Technical Signal: HOLD (-0.9 / confidence 9%)
+### Technical Signal: HOLD (+1.0 / confidence 10%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 23 vs -DI 15)  |  Vol: HIGH_IV (IV30 37.1%, RV20 22.0%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 27 vs -DI 14)  |  Vol: NORMAL_IV (IV30 34.6%, RV20 23.5%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+5.00 = +4.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 59: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 66: neutral  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED hid_bull on RSI (quality: standard)
@@ -23,4 +23,4 @@
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
-**Score**: +3.12 + +0.00 + -4.00 = -0.88 → **-0.88**
+**Score**: +5.00 + +0.00 + -4.00 = +1.00 → **+1.00**

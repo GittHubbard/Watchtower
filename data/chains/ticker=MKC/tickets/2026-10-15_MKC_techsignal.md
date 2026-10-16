@@ -1,21 +1,21 @@
 # Technical Signal: MKC  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -2.8
+**Recommendation**: SELL  |  **Score**: -1.8
 
-### Technical Signal: SELL (-2.8 / confidence 28%)
+### Technical Signal: HOLD (-1.8 / confidence 18%)
 
-**Regime**: ADX TRENDING (ADX 34, +DI 11 vs -DI 27)  |  Vol: LOW_IV (IV30 41.3%, RV20 30.5%)
+**Regime**: ADX TRENDING (ADX 32, +DI 20 vs -DI 24)  |  Vol: LOW_IV (IV30 38.0%, RV20 31.7%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-2.75 = -2.75 × 1.00 convergence)
+**Trend** (-1.75 = -1.75 × 1.00 convergence)
 - Price: STRONG_DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 48.51 (anchor 38 bars ago), aVWAP-low 49.46 (anchor 57 bars ago)
+- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 48.42 (anchor 39 bars ago), aVWAP-low 49.36 (anchor 58 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 36: neutral  Bollinger: neutral
+- RSI 42: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -2.75 + +0.00 + +0.00 = -2.75 → **-2.75**
+**Score**: -1.75 + +0.00 + +0.00 = -1.75 → **-1.75**

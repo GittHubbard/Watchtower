@@ -1,19 +1,19 @@
 # Technical Signal: CRL  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.8
+**Recommendation**: STRONG_BUY  |  **Score**: +8.8
 
-### Technical Signal: STRONG_BUY (+7.8 / confidence 78%)
+### Technical Signal: STRONG_BUY (+8.8 / confidence 88%)
 
-**Regime**: ADX TRENDING (ADX 33, +DI 34 vs -DI 15)  |  Vol: HIGH_IV (IV30 61.4%, RV20 40.1%)
+**Regime**: ADX TRENDING (ADX 34, +DI 31 vs -DI 14)  |  Vol: HIGH_IV (IV30 62.0%, RV20 39.2%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+6.75 = +6.75 × 1.00 convergence)
+**Trend** (+7.75 = +7.75 × 1.00 convergence)
 - Price: STRONG_UP  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 289.44 (anchor 33 bars ago), aVWAP-low 289.79 (anchor 24 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 289.84 (anchor 34 bars ago), aVWAP-low 290.28 (anchor 25 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 58: neutral  Bollinger: neutral
+- RSI 61: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ⏳ PENDING reg_bear on RSI (quality: strong)
@@ -23,4 +23,4 @@
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 - ⏳ PENDING reg_bear on OBV (quality: standard)
 
-**Score**: +6.75 + +0.00 + +1.00 = +7.75 → **+7.75**
+**Score**: +7.75 + +0.00 + +1.00 = +8.75 → **+8.75**

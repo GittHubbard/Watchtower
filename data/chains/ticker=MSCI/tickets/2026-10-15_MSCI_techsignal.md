@@ -1,16 +1,15 @@
 # Technical Signal: MSCI  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +9.7
+**Recommendation**: STRONG_BUY  |  **Score**: +7.5
 
-### Technical Signal: STRONG_BUY (+9.7 / confidence 97%)
+### Technical Signal: STRONG_BUY (+7.5 / confidence 75%)
 
-**Regime**: ADX RANGING (ADX 11, +DI 21 vs -DI 19)  |  Vol: HIGH_IV (IV30 36.9%, RV20 19.8%)
+**Regime**: ADX RANGING (ADX 11, +DI 20 vs -DI 18)  |  Vol: HIGH_IV (IV30 35.0%, RV20 19.8%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+4.69 = +3.75 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 553.42 (anchor 32 bars ago), aVWAP-low 551.77 (anchor 11 bars ago)
+**Trend** (+2.50 = +2.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
 - RSI 53: neutral  Bollinger: neutral
@@ -22,4 +21,4 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Score**: +4.69 + +0.00 + +5.00 = +9.69 → **+9.69**
+**Score**: +2.50 + +0.00 + +5.00 = +7.50 → **+7.50**

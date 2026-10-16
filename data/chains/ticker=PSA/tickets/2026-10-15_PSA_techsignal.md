@@ -4,7 +4,7 @@
 
 ### Technical Signal: HOLD (-0.5 / confidence 5%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 16 vs -DI 19)  |  Vol: NORMAL_IV (IV30 29.6%, RV20 18.6%)
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 15 vs -DI 18)  |  Vol: NORMAL_IV (IV30 28.4%, RV20 18.5%)
 **Gate**: MR weight = 0.50
 
 **Trend** (-0.50 = -0.50 × 1.00 convergence)

@@ -1,20 +1,21 @@
 # Technical Signal: NVDA  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -3.2
+**Recommendation**: STRONG_SELL  |  **Score**: -6.8
 
-### Technical Signal: SELL (-3.2 / confidence 32%)
+### Technical Signal: STRONG_SELL (-6.8 / confidence 68%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 24 vs -DI 27)  |  Vol: NORMAL_IV (IV30 34.6%, RV20 22.2%)
+**Regime**: ADX RANGING (ADX 17, +DI 21 vs -DI 35)  |  Vol: NORMAL_IV (IV30 35.3%, RV20 24.9%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-1.25 = -1.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-5.31 = -4.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 226.01 (anchor 28 bars ago), aVWAP-low 226.22 (anchor 23 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 52: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.50)
+- RSI 40: neutral  Bollinger: lower-break
 
 **Divergence** (-2.0)
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Score**: -1.25 + +0.00 + -2.00 = -3.25 → **-3.25**
+**Score**: -5.31 + +0.50 + -2.00 = -6.81 → **-6.81**

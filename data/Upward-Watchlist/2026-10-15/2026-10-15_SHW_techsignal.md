@@ -4,7 +4,7 @@
 
 ### Technical Signal: STRONG_BUY (+8.1 / confidence 81%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 19 vs -DI 27)  |  Vol: HIGH_IV (IV30 35.4%, RV20 21.0%)
+**Regime**: ADX RANGING (ADX 18, +DI 19 vs -DI 25)  |  Vol: HIGH_IV (IV30 34.2%, RV20 20.9%)
 **Gate**: MR weight = 1.00
 
 **Trend** (+3.12 = +2.50 × 1.25 convergence)

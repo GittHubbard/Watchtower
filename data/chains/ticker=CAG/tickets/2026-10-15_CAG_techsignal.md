@@ -1,21 +1,21 @@
 # Technical Signal: CAG  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -2.8
+**Recommendation**: HOLD  |  **Score**: +0.6
 
-### Technical Signal: SELL (-2.8 / confidence 28%)
+### Technical Signal: HOLD (+0.6 / confidence 6%)
 
-**Regime**: ADX TRENDING (ADX 36, +DI 16 vs -DI 24)  |  Vol: NORMAL_IV (IV30 41.3%, RV20 26.7%)
+**Regime**: ADX TRENDING (ADX 34, +DI 27 vs -DI 21)  |  Vol: NORMAL_IV (IV30 43.2%, RV20 28.5%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-2.75 = -2.75 × 1.00 convergence)
-- Price: STRONG_DOWN  MACD: BULLISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 14.53 (anchor 36 bars ago)
+**Trend** (+0.62 = +0.50 × 1.25 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: DIST
+- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 14.53 (anchor 37 bars ago), aVWAP-low 13.47 (anchor 10 bars ago)
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 43: neutral  Bollinger: neutral
+- RSI 50: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 
-**Score**: -2.75 + +0.00 + +0.00 = -2.75 → **-2.75**
+**Score**: +0.62 + +0.00 + +0.00 = +0.62 → **+0.62**

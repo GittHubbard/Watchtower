@@ -1,20 +1,21 @@
 # Technical Signal: RTX  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +0.6
+**Recommendation**: BUY  |  **Score**: +1.6
 
-### Technical Signal: HOLD (+0.6 / confidence 6%)
+### Technical Signal: HOLD (+1.6 / confidence 16%)
 
-**Regime**: ADX TRENDING (ADX 49, +DI 10 vs -DI 32)  |  Vol: NORMAL_IV (IV30 34.2%, RV20 17.4%)
-**Gate**: MR weight = 0.00
+**Regime**: ADX TRENDING (ADX 47, +DI 17 vs -DI 29)  |  Vol: HIGH_IV (IV30 34.2%, RV20 18.1%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+0.62 = +0.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+1.56 = +1.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 196.27 (anchor 40 bars ago)
 
-**Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 34: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 43: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on CMF (quality: standard)
 
-**Score**: +0.62 + +0.00 + +0.00 = +0.62 → **+0.62**
+**Score**: +1.56 + +0.00 + +0.00 = +1.56 → **+1.56**

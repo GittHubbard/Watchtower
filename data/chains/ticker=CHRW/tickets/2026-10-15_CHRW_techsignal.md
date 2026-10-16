@@ -1,21 +1,21 @@
 # Technical Signal: CHRW  2026-10-15
 
-**Recommendation**: STRONG_SELL  |  **Score**: -5.8
+**Recommendation**: SELL  |  **Score**: -4.0
 
-### Technical Signal: STRONG_SELL (-5.8 / confidence 57%)
+### Technical Signal: SELL (-4.0 / confidence 40%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 20 vs -DI 32)  |  Vol: HIGH_IV (IV30 48.3%, RV20 52.1%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX RANGING (ADX 20, +DI 25 vs -DI 30)  |  Vol: HIGH_IV (IV30 52.2%, RV20 53.5%)
+**Gate**: MR weight = 1.00
 
-**Trend** (-5.75 = -5.75 × 1.00 convergence)
+**Trend** (-4.00 = -4.00 × 1.00 convergence)
 - Price: STRONG_DOWN  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 144.33 (anchor 21 bars ago), aVWAP-low 145.86 (anchor 36 bars ago)
+- OBV: NEUTRAL  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 144.26 (anchor 22 bars ago), aVWAP-low 145.78 (anchor 37 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 42: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 47: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 
-**Score**: -5.75 + +0.00 + +0.00 = -5.75 → **-5.75**
+**Score**: -4.00 + +0.00 + +0.00 = -4.00 → **-4.00**

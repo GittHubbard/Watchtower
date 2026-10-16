@@ -1,20 +1,20 @@
 # Technical Signal: WMB  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +5.6
+**Recommendation**: BUY  |  **Score**: +3.1
 
-### Technical Signal: STRONG_BUY (+5.6 / confidence 56%)
+### Technical Signal: BUY (+3.1 / confidence 31%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 22 vs -DI 12)  |  Vol: HIGH_IV (IV30 37.0%, RV20 19.4%)
+**Regime**: ADX RANGING (ADX 17, +DI 20 vs -DI 15)  |  Vol: HIGH_IV (IV30 39.9%, RV20 21.1%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+5.62 = +4.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 63: neutral  Bollinger: neutral
+- RSI 54: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.62 + +0.00 + +0.00 = +5.62 → **+5.62**
+**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**

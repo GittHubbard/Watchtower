@@ -1,21 +1,20 @@
 # Technical Signal: FAST  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+**Recommendation**: STRONG_BUY  |  **Score**: +6.6
 
-### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+### Technical Signal: STRONG_BUY (+6.6 / confidence 66%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 16 vs -DI 32)  |  Vol: LOW_IV (IV30 39.9%, RV20 15.8%)
+**Regime**: ADX RANGING (ADX 14, +DI 15 vs -DI 29)  |  Vol: LOW_IV (IV30 37.2%, RV20 15.8%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+10.94 = +8.75 × 1.25 convergence)
-- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
-- aVWAP-high 50.55 (anchor 14 bars ago), aVWAP-low 49.97 (anchor 29 bars ago)
+**Trend** (+5.62 = +4.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Mean Reversion** (gate 0.50 → contribution -0.25)
-- RSI 64: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 64: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
-**Score**: +10.94 + -0.25 + +1.00 = +11.69 → **+10.00**
+**Score**: +5.62 + +0.00 + +1.00 = +6.62 → **+6.62**

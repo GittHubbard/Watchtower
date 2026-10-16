@@ -1,16 +1,15 @@
 # Technical Signal: TTWO  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +1.2
+**Recommendation**: STRONG_BUY  |  **Score**: +4.5
 
-### Technical Signal: HOLD (+1.2 / confidence 12%)
+### Technical Signal: BUY (+4.5 / confidence 45%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 17 vs -DI 25)  |  Vol: HIGH_IV (IV30 53.6%, RV20 28.3%)
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 16 vs -DI 23)  |  Vol: HIGH_IV (IV30 53.4%, RV20 28.3%)
 **Gate**: MR weight = 0.75
 
-**Trend** (-2.75 = -2.75 × 1.00 convergence)
-- Price: STRONG_DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 219.06 (anchor 46 bars ago), aVWAP-low 204.85 (anchor 11 bars ago)
+**Trend** (+0.50 = +0.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
 
 **Mean Reversion** (gate 0.75 → contribution +0.00)
 - RSI 40: neutral  Bollinger: neutral
@@ -22,4 +21,4 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: -2.75 + +0.00 + +4.00 = +1.25 → **+1.25**
+**Score**: +0.50 + +0.00 + +4.00 = +4.50 → **+4.50**

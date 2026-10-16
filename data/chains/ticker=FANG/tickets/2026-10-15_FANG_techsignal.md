@@ -1,20 +1,20 @@
 # Technical Signal: FANG  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.1
+**Recommendation**: HOLD  |  **Score**: +0.6
 
-### Technical Signal: BUY (+3.1 / confidence 31%)
+### Technical Signal: HOLD (+0.6 / confidence 6%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 25 vs -DI 15)  |  Vol: HIGH_IV (IV30 43.0%, RV20 38.5%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 17, +DI 27 vs -DI 15)  |  Vol: LOW_IV (IV30 38.5%, RV20 24.1%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+0.62 = +0.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 59: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 58: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**
+**Score**: +0.62 + +0.00 + +0.00 = +0.62 → **+0.62**

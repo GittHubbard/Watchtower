@@ -1,25 +1,22 @@
 # Technical Signal: APTV  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.1
+**Recommendation**: HOLD  |  **Score**: +0.0
 
-### Technical Signal: HOLD (+2.1 / confidence 21%)
+### Technical Signal: HOLD (+0.0 / confidence 0%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 14 vs -DI 19)  |  Vol: HIGH_IV (IV30 57.3%, RV20 26.1%)
+**Regime**: ADX RANGING (ADX 18, +DI 21 vs -DI 17)  |  Vol: NORMAL_IV (IV30 53.1%, RV20 28.2%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-1.88 = -1.50 × 1.25 convergence)
-- Price: STRONG_DOWN  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 46.51 (anchor 54 bars ago), aVWAP-low 43.79 (anchor 10 bars ago)
+**Trend** (+1.00 = +1.00 × 1.00 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 46.49 (anchor 55 bars ago), aVWAP-low 43.88 (anchor 11 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 53: neutral  Bollinger: neutral
 
-**Divergence** (+4.0)
-- ✓ CONFIRMED reg_bull on RSI (quality: standard)
+**Divergence** (-1.0)
 - ✓ CONFIRMED hid_bear on RSI (quality: standard)
-- ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
-- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: -1.88 + +0.00 + +4.00 = +2.12 → **+2.12**
+**Score**: +1.00 + +0.00 + -1.00 = +0.00 → **+0.00**

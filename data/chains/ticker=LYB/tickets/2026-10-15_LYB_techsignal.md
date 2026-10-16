@@ -1,21 +1,21 @@
 # Technical Signal: LYB  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +1.9
+**Recommendation**: BUY  |  **Score**: +5.4
 
-### Technical Signal: HOLD (+1.9 / confidence 19%)
+### Technical Signal: BUY (+5.4 / confidence 54%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 22 vs -DI 23)  |  Vol: NORMAL_IV (IV30 47.3%, RV20 27.8%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 19, +DI 27 vs -DI 21)  |  Vol: LOW_IV (IV30 44.9%, RV20 29.3%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+1.88 = +1.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: DRY
-- aVWAP-high 61.98 (anchor 37 bars ago), aVWAP-low 60.56 (anchor 71 bars ago)
+**Trend** (+5.62 = +4.50 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 61.99 (anchor 38 bars ago), aVWAP-low 59.62 (anchor 10 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 53: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 59: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +1.88 + +0.00 + +0.00 = +1.88 → **+1.88**
+**Score**: +5.62 + -0.25 + +0.00 = +5.38 → **+5.38**

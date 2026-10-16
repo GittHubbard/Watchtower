@@ -1,22 +1,23 @@
 # Technical Signal: PH  2026-10-15
 
-**Recommendation**: STRONG_SELL  |  **Score**: -5.9
+**Recommendation**: HOLD  |  **Score**: +1.0
 
-### Technical Signal: STRONG_SELL (-5.9 / confidence 59%)
+### Technical Signal: HOLD (+1.0 / confidence 10%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 19 vs -DI 27)  |  Vol: HIGH_IV (IV30 37.3%, RV20 19.4%)
+**Regime**: ADX RANGING (ADX 16, +DI 18 vs -DI 28)  |  Vol: HIGH_IV (IV30 35.4%, RV20 19.1%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-1.88 = -1.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+5.00 = +5.00 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULL_CROSS  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 987.74 (anchor 49 bars ago), aVWAP-low 959.13 (anchor 20 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 46: neutral  Bollinger: neutral
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Score**: -1.88 + +0.00 + -4.00 = -5.88 → **-5.88**
+**Score**: +5.00 + +0.00 + -4.00 = +1.00 → **+1.00**

@@ -1,24 +1,24 @@
 # Technical Signal: SPY  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -1.5
+**Recommendation**: SELL  |  **Score**: -3.8
 
-### Technical Signal: HOLD (-1.5 / confidence 15%)
+### Technical Signal: SELL (-3.8 / confidence 38%)
 
-**Regime**: ADX RANGING (ADX 9, +DI 27 vs -DI 24)  |  Vol: NORMAL_IV (IV30 13.7%, RV20 9.5%)
+**Regime**: ADX RANGING (ADX 10, +DI 23 vs -DI 32)  |  Vol: NORMAL_IV (IV30 13.0%, RV20 9.6%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+2.50 = +2.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+0.25 = +0.25 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BEAR_CROSS  CMF: ACCUM
+- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 766.53 (anchor 44 bars ago), aVWAP-low 766.67 (anchor 25 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 60: neutral  Bollinger: neutral
+- RSI 52: neutral  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
-- ⏳ PENDING reg_bear on CMF (quality: strong)
+- ✓ CONFIRMED reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
-- ⏳ PENDING reg_bear on OBV (quality: standard)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
-**Score**: +2.50 + +0.00 + -4.00 = -1.50 → **-1.50**
+**Score**: +0.25 + +0.00 + -4.00 = -3.75 → **-3.75**

@@ -1,18 +1,19 @@
 # Technical Signal: GE  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -0.4
+**Recommendation**: HOLD  |  **Score**: +0.9
 
-### Technical Signal: HOLD (-0.4 / confidence 4%)
+### Technical Signal: HOLD (+0.9 / confidence 9%)
 
-**Regime**: ADX TRENDING (ADX 25, +DI 16 vs -DI 26)  |  Vol: HIGH_IV (IV30 40.4%, RV20 19.7%)
+**Regime**: ADX WEAK_TREND (ADX 25, +DI 16 vs -DI 25)  |  Vol: NORMAL_IV (IV30 39.8%, RV20 19.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+0.62 = +0.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+1.88 = +1.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BEARISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 329.45 (anchor 49 bars ago), aVWAP-low 312.38 (anchor 19 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 38: neutral  Bollinger: neutral
+- RSI 45: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ⏳ PENDING reg_bull on RSI (quality: strong)
@@ -22,4 +23,4 @@
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 - ⏳ PENDING reg_bull on OBV (quality: standard)
 
-**Score**: +0.62 + +0.00 + -1.00 = -0.38 → **-0.38**
+**Score**: +1.88 + +0.00 + -1.00 = +0.88 → **+0.88**

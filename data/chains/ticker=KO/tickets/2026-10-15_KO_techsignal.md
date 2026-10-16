@@ -1,20 +1,21 @@
 # Technical Signal: KO  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.4
+**Recommendation**: STRONG_BUY  |  **Score**: +9.1
 
-### Technical Signal: STRONG_BUY (+7.4 / confidence 74%)
+### Technical Signal: STRONG_BUY (+9.1 / confidence 91%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 27 vs -DI 15)  |  Vol: HIGH_IV (IV30 23.7%, RV20 15.5%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 41 vs -DI 12)  |  Vol: HIGH_IV (IV30 30.9%, RV20 16.1%)
+**Gate**: MR weight = 0.75
 
-**Trend** (+4.38 = +3.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+7.19 = +5.75 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: DIST
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-high 87.98 (anchor 23 bars ago), aVWAP-low 87.94 (anchor 26 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 64: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution -1.12)
+- RSI 71: overbought  Bollinger: upper-break
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: +4.38 + +0.00 + +3.00 = +7.38 → **+7.38**
+**Score**: +7.19 + -1.12 + +3.00 = +9.06 → **+9.06**

@@ -1,21 +1,21 @@
 # Technical Signal: AIZ  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +4.4
+**Recommendation**: STRONG_BUY  |  **Score**: +5.7
 
-### Technical Signal: BUY (+4.4 / confidence 44%)
+### Technical Signal: STRONG_BUY (+5.7 / confidence 57%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 20 vs -DI 15)  |  Vol: NORMAL_IV (IV30 35.0%, RV20 22.7%)
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 27 vs -DI 14)  |  Vol: NORMAL_IV (IV30 35.0%, RV20 23.9%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+4.38 = +3.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: NORMAL
-- aVWAP-high 274.17 (anchor 28 bars ago), aVWAP-low 268.37 (anchor 10 bars ago)
+**Trend** (+5.94 = +4.75 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: DIST
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-high 274.50 (anchor 29 bars ago), aVWAP-low 270.01 (anchor 11 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 55: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 60: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.38 + +0.00 + +0.00 = +4.38 → **+4.38**
+**Score**: +5.94 + -0.25 + +0.00 = +5.69 → **+5.69**

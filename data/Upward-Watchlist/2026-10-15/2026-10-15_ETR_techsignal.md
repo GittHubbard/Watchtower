@@ -1,21 +1,20 @@
 # Technical Signal: ETR  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.7
+**Recommendation**: STRONG_BUY  |  **Score**: +6.1
 
-### Technical Signal: STRONG_BUY (+7.7 / confidence 77%)
+### Technical Signal: STRONG_BUY (+6.1 / confidence 61%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 24 vs -DI 18)  |  Vol: HIGH_IV (IV30 36.9%, RV20 16.7%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX RANGING (ADX 20, +DI 22 vs -DI 17)  |  Vol: LOW_IV (IV30 31.0%, RV20 16.7%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+4.69 = +3.75 × 1.25 convergence)
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 102.31 (anchor 26 bars ago), aVWAP-low 101.37 (anchor 12 bars ago)
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
+**Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 57: neutral  Bollinger: neutral
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: +4.69 + +0.00 + +3.00 = +7.69 → **+7.69**
+**Score**: +3.12 + +0.00 + +3.00 = +6.12 → **+6.12**

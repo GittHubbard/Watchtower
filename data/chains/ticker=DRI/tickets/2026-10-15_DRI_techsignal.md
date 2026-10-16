@@ -1,23 +1,20 @@
 # Technical Signal: DRI  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.8
+**Recommendation**: HOLD  |  **Score**: +1.9
 
-### Technical Signal: BUY (+2.8 / confidence 28%)
+### Technical Signal: HOLD (+1.9 / confidence 19%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 27 vs -DI 20)  |  Vol: NORMAL_IV (IV30 34.0%, RV20 26.6%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 15, +DI 25 vs -DI 19)  |  Vol: LOW_IV (IV30 30.9%, RV20 26.6%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+3.75 = +3.00 × 1.25 convergence)
+**Trend** (+1.88 = +1.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: DRY
-- aVWAP-high 208.41 (anchor 43 bars ago), aVWAP-low 198.67 (anchor 10 bars ago)
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
+**Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 56: neutral  Bollinger: neutral
 
-**Divergence** (-1.0)
-- ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
-- ✓ CONFIRMED hid_bear on CMF (quality: standard)
-- ✓ CONFIRMED hid_bear on OBV (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: +3.75 + +0.00 + -1.00 = +2.75 → **+2.75**
+**Score**: +1.88 + +0.00 + +0.00 = +1.88 → **+1.88**

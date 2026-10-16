@@ -1,21 +1,21 @@
 # Technical Signal: BAX  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.1
+**Recommendation**: STRONG_BUY  |  **Score**: +9.0
 
-### Technical Signal: BUY (+3.1 / confidence 31%)
+### Technical Signal: STRONG_BUY (+9.0 / confidence 90%)
 
-**Regime**: ADX RANGING (ADX 20, +DI 25 vs -DI 12)  |  Vol: HIGH_IV (IV30 59.6%, RV20 23.9%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 31 vs -DI 11)  |  Vol: HIGH_IV (IV30 59.5%, RV20 25.1%)
+**Gate**: MR weight = 0.75
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 25.33 (anchor 53 bars ago), aVWAP-low 23.77 (anchor 17 bars ago)
+**Trend** (+9.38 = +7.50 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 25.34 (anchor 54 bars ago), aVWAP-low 23.84 (anchor 18 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 57: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution -0.38)
+- RSI 66: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**
+**Score**: +9.38 + -0.38 + +0.00 = +9.00 → **+9.00**

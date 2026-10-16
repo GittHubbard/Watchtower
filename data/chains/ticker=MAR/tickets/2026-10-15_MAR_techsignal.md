@@ -1,20 +1,20 @@
 # Technical Signal: MAR  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +4.5
+**Recommendation**: STRONG_BUY  |  **Score**: +5.6
 
-### Technical Signal: BUY (+4.5 / confidence 45%)
+### Technical Signal: STRONG_BUY (+5.6 / confidence 56%)
 
-**Regime**: ADX WEAK_TREND (ADX 25, +DI 28 vs -DI 12)  |  Vol: NORMAL_IV (IV30 34.3%, RV20 16.4%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 26, +DI 27 vs -DI 11)  |  Vol: NORMAL_IV (IV30 33.5%, RV20 15.9%)
+**Gate**: MR weight = 0.00
 
-**Trend** (+4.50 = +4.50 × 1.00 convergence)
+**Trend** (+5.62 = +4.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
+**Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 67: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +4.50 + +0.00 + +0.00 = +4.50 → **+4.50**
+**Score**: +5.62 + +0.00 + +0.00 = +5.62 → **+5.62**

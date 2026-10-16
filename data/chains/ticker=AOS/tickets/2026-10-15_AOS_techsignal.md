@@ -1,19 +1,19 @@
 # Technical Signal: AOS  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.5
+**Recommendation**: STRONG_BUY  |  **Score**: +7.9
 
-### Technical Signal: BUY (+3.5 / confidence 35%)
+### Technical Signal: STRONG_BUY (+7.9 / confidence 79%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 19 vs -DI 26)  |  Vol: HIGH_IV (IV30 48.1%, RV20 21.4%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX RANGING (ADX 20, +DI 27 vs -DI 24)  |  Vol: NORMAL_IV (IV30 42.1%, RV20 23.5%)
+**Gate**: MR weight = 1.00
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 56.94 (anchor 13 bars ago), aVWAP-low 59.50 (anchor 61 bars ago)
+**Trend** (+4.38 = +3.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
+- aVWAP-high 57.12 (anchor 14 bars ago), aVWAP-low 59.50 (anchor 62 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 51: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 60: neutral  Bollinger: upper-break
 
 **Divergence** (+4.0)
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
@@ -22,4 +22,4 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Score**: -0.50 + +0.00 + +4.00 = +3.50 → **+3.50**
+**Score**: +4.38 + -0.50 + +4.00 = +7.88 → **+7.88**

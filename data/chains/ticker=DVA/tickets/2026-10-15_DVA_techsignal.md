@@ -1,21 +1,21 @@
 # Technical Signal: DVA  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.8
+**Recommendation**: BUY  |  **Score**: +5.1
 
-### Technical Signal: BUY (+3.8 / confidence 38%)
+### Technical Signal: BUY (+5.1 / confidence 51%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 21 vs -DI 22)  |  Vol: HIGH_IV (IV30 49.6%, RV20 31.1%)
+**Regime**: ADX RANGING (ADX 15, +DI 26 vs -DI 19)  |  Vol: HIGH_IV (IV30 47.9%, RV20 29.0%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+3.75 = +3.00 × 1.25 convergence)
+**Trend** (+5.62 = +4.50 × 1.25 convergence)
 - Price: UP  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: DRY
-- aVWAP-high 180.85 (anchor 19 bars ago), aVWAP-low 178.52 (anchor 11 bars ago)
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 181.13 (anchor 20 bars ago), aVWAP-low 179.30 (anchor 12 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 61: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.75 + +0.00 + +0.00 = +3.75 → **+3.75**
+**Score**: +5.62 + -0.50 + +0.00 = +5.12 → **+5.12**

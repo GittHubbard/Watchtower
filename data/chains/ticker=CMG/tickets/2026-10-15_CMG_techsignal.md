@@ -1,21 +1,22 @@
 # Technical Signal: CMG  2026-10-15
 
-**Recommendation**: STRONG_SELL  |  **Score**: -6.2
+**Recommendation**: SELL  |  **Score**: -2.2
 
-### Technical Signal: STRONG_SELL (-6.2 / confidence 62%)
+### Technical Signal: HOLD (-2.2 / confidence 22%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 20 vs -DI 26)  |  Vol: HIGH_IV (IV30 51.3%, RV20 36.0%)
+**Regime**: ADX RANGING (ADX 17, +DI 18 vs -DI 24)  |  Vol: NORMAL_IV (IV30 50.7%, RV20 36.0%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-6.25 = -6.25 × 1.00 convergence)
-- Price: STRONG_DOWN  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 32.70 (anchor 28 bars ago), aVWAP-low 33.61 (anchor 45 bars ago)
+**Trend** (-1.25 = -1.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
 - RSI 37: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
+**Divergence** (-1.0)
+- ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
 - ⏳ PENDING reg_bull on CMF (quality: strong)
+- ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Score**: -6.25 + +0.00 + +0.00 = -6.25 → **-6.25**
+**Score**: -1.25 + +0.00 + -1.00 = -2.25 → **-2.25**

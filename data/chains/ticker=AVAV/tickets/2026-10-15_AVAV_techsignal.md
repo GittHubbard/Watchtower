@@ -1,21 +1,21 @@
 # Technical Signal: AVAV  2026-10-15
 
-**Recommendation**: STRONG_SELL  |  **Score**: -10.0
+**Recommendation**: STRONG_SELL  |  **Score**: -9.8
 
-### Technical Signal: STRONG_SELL (-10.0 / confidence 100%)
+### Technical Signal: STRONG_SELL (-9.8 / confidence 98%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 13 vs -DI 32)  |  Vol: LOW_IV (IV30 57.7%, RV20 39.6%)
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 12 vs -DI 33)  |  Vol: LOW_IV (IV30 58.8%, RV20 36.1%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-10.94 = -8.75 × 1.25 convergence)
+**Trend** (-10.31 = -8.25 × 1.25 convergence)
 - Price: STRONG_DOWN  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 144.05 (anchor 18 bars ago), aVWAP-low 146.48 (anchor 23 bars ago)
+- aVWAP-high 142.84 (anchor 19 bars ago), aVWAP-low 145.56 (anchor 24 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.75)
-- RSI 26: oversold  Bollinger: lower-break
+**Mean Reversion** (gate 0.50 → contribution +0.50)
+- RSI 29: oversold  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -10.94 + +0.75 + +0.00 = -10.19 → **-10.00**
+**Score**: -10.31 + +0.50 + +0.00 = -9.81 → **-9.81**

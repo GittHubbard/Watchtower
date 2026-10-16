@@ -1,16 +1,15 @@
 # Technical Signal: HAL  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -0.8
+**Recommendation**: HOLD  |  **Score**: +1.9
 
-### Technical Signal: HOLD (-0.8 / confidence 8%)
+### Technical Signal: HOLD (+1.9 / confidence 19%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 17 vs -DI 20)  |  Vol: HIGH_IV (IV30 45.6%, RV20 23.0%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 15 vs -DI 19)  |  Vol: HIGH_IV (IV30 46.6%, RV20 23.0%)
 **Gate**: MR weight = 0.75
 
-**Trend** (-0.75 = -0.75 × 1.00 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 33.86 (anchor 28 bars ago), aVWAP-low 33.94 (anchor 53 bars ago)
+**Trend** (+1.88 = +1.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.75 → contribution +0.00)
 - RSI 47: neutral  Bollinger: neutral
@@ -18,4 +17,4 @@
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -0.75 + +0.00 + +0.00 = -0.75 → **-0.75**
+**Score**: +1.88 + +0.00 + +0.00 = +1.88 → **+1.88**

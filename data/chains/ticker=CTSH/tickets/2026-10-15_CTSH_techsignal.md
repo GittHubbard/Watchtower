@@ -1,23 +1,22 @@
 # Technical Signal: CTSH  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.4
+**Recommendation**: HOLD  |  **Score**: +1.1
 
-### Technical Signal: BUY (+3.4 / confidence 34%)
+### Technical Signal: HOLD (+1.1 / confidence 11%)
 
-**Regime**: ADX RANGING (ADX 20, +DI 33 vs -DI 18)  |  Vol: HIGH_IV (IV30 54.9%, RV20 39.7%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 31 vs -DI 17)  |  Vol: HIGH_IV (IV30 55.7%, RV20 39.7%)
+**Gate**: MR weight = 0.75
 
-**Trend** (+5.94 = +4.75 × 1.25 convergence)
-- Price: UP  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 59.95 (anchor 28 bars ago), aVWAP-low 59.20 (anchor 11 bars ago)
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 1.00 → contribution -0.50)
-- RSI 60: neutral  Bollinger: upper-break
+**Mean Reversion** (gate 0.75 → contribution +0.00)
+- RSI 60: neutral  Bollinger: neutral
 
 **Divergence** (-2.0)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Score**: +5.94 + -0.50 + -2.00 = +3.44 → **+3.44**
+**Score**: +3.12 + +0.00 + -2.00 = +1.12 → **+1.12**

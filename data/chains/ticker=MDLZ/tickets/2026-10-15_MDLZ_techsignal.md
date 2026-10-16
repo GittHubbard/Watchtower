@@ -1,21 +1,21 @@
 # Technical Signal: MDLZ  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +5.6
+**Recommendation**: STRONG_BUY  |  **Score**: +9.4
 
-### Technical Signal: STRONG_BUY (+5.6 / confidence 56%)
+### Technical Signal: STRONG_BUY (+9.4 / confidence 94%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 28 vs -DI 15)  |  Vol: HIGH_IV (IV30 49.9%, RV20 19.8%)
+**Regime**: ADX RANGING (ADX 17, +DI 28 vs -DI 14)  |  Vol: NORMAL_IV (IV30 36.8%, RV20 20.7%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+0.62 = +0.50 × 1.25 convergence)
+**Trend** (+4.38 = +3.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 57: neutral  Bollinger: neutral
+- RSI 63: neutral  Bollinger: neutral
 
 **Divergence** (+5.0)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Score**: +0.62 + +0.00 + +5.00 = +5.62 → **+5.62**
+**Score**: +4.38 + +0.00 + +5.00 = +9.38 → **+9.38**

@@ -4,17 +4,17 @@
 
 ### Technical Signal: SELL (-4.5 / confidence 45%)
 
-**Regime**: ADX TRENDING (ADX 30, +DI 13 vs -DI 33)  |  Vol: NORMAL_IV (IV30 53.6%, RV20 26.5%)
+**Regime**: ADX TRENDING (ADX 31, +DI 12 vs -DI 34)  |  Vol: NORMAL_IV (IV30 51.6%, RV20 25.6%)
 **Gate**: MR weight = 0.00
 
-**Trend** (-3.50 = -3.50 × 1.00 convergence)
+**Trend** (-4.50 = -4.50 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: DRY
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 35: neutral  Bollinger: neutral
+- RSI 32: neutral  Bollinger: neutral
 
-**Divergence** (-1.0)
-- ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: -3.50 + +0.00 + -1.00 = -4.50 → **-4.50**
+**Score**: -4.50 + +0.00 + +0.00 = -4.50 → **-4.50**

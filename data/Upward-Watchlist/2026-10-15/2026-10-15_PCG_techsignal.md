@@ -1,16 +1,15 @@
 # Technical Signal: PCG  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.9
+**Recommendation**: STRONG_BUY  |  **Score**: +8.8
 
-### Technical Signal: STRONG_BUY (+6.9 / confidence 69%)
+### Technical Signal: STRONG_BUY (+8.8 / confidence 88%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 26 vs -DI 23)  |  Vol: NORMAL_IV (IV30 56.4%, RV20 28.5%)
+**Regime**: ADX TRENDING (ADX 25, +DI 24 vs -DI 21)  |  Vol: NORMAL_IV (IV30 55.3%, RV20 28.5%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+1.88 = +1.50 × 1.25 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: ACCUM
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 13.81 (anchor 38 bars ago), aVWAP-low 12.59 (anchor 11 bars ago)
+**Trend** (+3.75 = +3.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 48: neutral  Bollinger: neutral
@@ -19,4 +18,4 @@
 - ✓ CONFIRMED reg_bull on RSI (quality: strong)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: +1.88 + +0.00 + +5.00 = +6.88 → **+6.88**
+**Score**: +3.75 + +0.00 + +5.00 = +8.75 → **+8.75**

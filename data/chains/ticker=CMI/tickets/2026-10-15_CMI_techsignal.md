@@ -1,18 +1,18 @@
 # Technical Signal: CMI  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.5
+**Recommendation**: BUY  |  **Score**: +1.5
 
-### Technical Signal: BUY (+2.5 / confidence 25%)
+### Technical Signal: HOLD (+1.5 / confidence 15%)
 
-**Regime**: ADX TRENDING (ADX 44, +DI 13 vs -DI 24)  |  Vol: NORMAL_IV (IV30 42.5%, RV20 22.4%)
+**Regime**: ADX TRENDING (ADX 43, +DI 13 vs -DI 23)  |  Vol: NORMAL_IV (IV30 41.5%, RV20 21.4%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+3.50 = +3.50 × 1.00 convergence)
+**Trend** (+2.50 = +2.50 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 44: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
 - ⏳ PENDING reg_bull on RSI (quality: strong)
@@ -22,4 +22,4 @@
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED hid_bear on CMF (quality: strong)
 
-**Score**: +3.50 + +0.00 + -1.00 = +2.50 → **+2.50**
+**Score**: +2.50 + +0.00 + -1.00 = +1.50 → **+1.50**

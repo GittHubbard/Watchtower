@@ -1,20 +1,20 @@
 # Technical Signal: D  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: BUY  |  **Score**: +2.5
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: BUY (+2.5 / confidence 25%)
 
-**Regime**: ADX TRENDING (ADX 39, +DI 17 vs -DI 21)  |  Vol: HIGH_IV (IV30 28.6%, RV20 15.3%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 37, +DI 15 vs -DI 20)  |  Vol: LOW_IV (IV30 25.0%, RV20 15.5%)
+**Gate**: MR weight = 0.00
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+2.50 = +2.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 47: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 51: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -0.50 + +0.00 + +0.00 = -0.50 → **-0.50**
+**Score**: +2.50 + +0.00 + +0.00 = +2.50 → **+2.50**

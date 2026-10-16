@@ -1,20 +1,20 @@
 # Technical Signal: REGN  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -3.5
+**Recommendation**: STRONG_BUY  |  **Score**: +6.1
 
-### Technical Signal: SELL (-3.5 / confidence 35%)
+### Technical Signal: STRONG_BUY (+6.1 / confidence 61%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 21 vs -DI 20)  |  Vol: HIGH_IV (IV30 45.2%, RV20 26.5%)
+**Regime**: ADX RANGING (ADX 17, +DI 24 vs -DI 18)  |  Vol: HIGH_IV (IV30 44.0%, RV20 29.1%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-3.50 = -3.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 54: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: -3.50 + +0.00 + +0.00 = -3.50 → **-3.50**
+**Score**: +3.12 + +0.00 + +3.00 = +6.12 → **+6.12**

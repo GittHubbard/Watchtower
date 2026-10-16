@@ -1,20 +1,21 @@
 # Technical Signal: PGR  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +5.0
+**Recommendation**: BUY  |  **Score**: +3.5
 
-### Technical Signal: BUY (+5.0 / confidence 50%)
+### Technical Signal: BUY (+3.5 / confidence 35%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 28 vs -DI 14)  |  Vol: NORMAL_IV (IV30 31.7%, RV20 22.6%)
+**Regime**: ADX RANGING (ADX 16, +DI 28 vs -DI 31)  |  Vol: NORMAL_IV (IV30 30.6%, RV20 26.6%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+5.00 = +4.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+3.50 = +3.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
+- aVWAP-high 212.49 (anchor 29 bars ago), aVWAP-low 211.20 (anchor 15 bars ago)
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 63: neutral  Bollinger: neutral
+- RSI 49: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.00 + +0.00 + +0.00 = +5.00 → **+5.00**
+**Score**: +3.50 + +0.00 + +0.00 = +3.50 → **+3.50**

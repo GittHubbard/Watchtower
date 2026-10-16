@@ -1,21 +1,21 @@
 # Technical Signal: EFX  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +0.6
+**Recommendation**: BUY  |  **Score**: +3.8
 
-### Technical Signal: HOLD (+0.6 / confidence 6%)
+### Technical Signal: BUY (+3.8 / confidence 38%)
 
-**Regime**: ADX TRENDING (ADX 29, +DI 19 vs -DI 25)  |  Vol: HIGH_IV (IV30 53.8%, RV20 29.1%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX TRENDING (ADX 29, +DI 31 vs -DI 21)  |  Vol: NORMAL_IV (IV30 52.1%, RV20 38.9%)
+**Gate**: MR weight = 0.00
 
-**Trend** (+0.62 = +0.50 × 1.25 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: DIST
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 155.73 (anchor 32 bars ago), aVWAP-low 143.03 (anchor 10 bars ago)
+**Trend** (+3.75 = +3.00 × 1.25 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: NORMAL
+- aVWAP-high 155.81 (anchor 33 bars ago), aVWAP-low 144.35 (anchor 11 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 44: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.00 → contribution +0.00)
+- RSI 59: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +0.62 + +0.00 + +0.00 = +0.62 → **+0.62**
+**Score**: +3.75 + +0.00 + +0.00 = +3.75 → **+3.75**

@@ -1,21 +1,21 @@
 # Technical Signal: GOOG  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +1.1
+**Recommendation**: BUY  |  **Score**: +2.8
 
-### Technical Signal: HOLD (+1.1 / confidence 11%)
+### Technical Signal: BUY (+2.8 / confidence 28%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 26 vs -DI 12)  |  Vol: HIGH_IV (IV30 38.6%, RV20 20.5%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX RANGING (ADX 19, +DI 22 vs -DI 19)  |  Vol: HIGH_IV (IV30 38.2%, RV20 20.9%)
+**Gate**: MR weight = 1.00
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+2.75 = +2.75 × 1.00 convergence)
+- Price: UP_EXHAUSTING  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: TESTING_RESISTANCE  Volume: NORMAL
+- aVWAP-high 343.31 (anchor 17 bars ago), aVWAP-low 342.36 (anchor 26 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 57: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.00)
+- RSI 52: neutral  Bollinger: neutral
 
-**Divergence** (-2.0)
-- ✓ CONFIRMED reg_bear on CMF (quality: strong)
-- ✓ CONFIRMED hid_bull on CMF (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: +3.12 + +0.00 + -2.00 = +1.12 → **+1.12**
+**Score**: +2.75 + +0.00 + +0.00 = +2.75 → **+2.75**

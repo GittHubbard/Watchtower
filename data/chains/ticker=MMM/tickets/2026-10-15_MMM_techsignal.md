@@ -1,21 +1,20 @@
 # Technical Signal: MMM  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -3.0
+**Recommendation**: BUY  |  **Score**: +3.8
 
-### Technical Signal: SELL (-3.0 / confidence 30%)
+### Technical Signal: BUY (+3.8 / confidence 38%)
 
-**Regime**: ADX TRENDING (ADX 33, +DI 8 vs -DI 20)  |  Vol: HIGH_IV (IV30 45.9%, RV20 20.7%)
+**Regime**: ADX TRENDING (ADX 32, +DI 11 vs -DI 19)  |  Vol: HIGH_IV (IV30 36.8%, RV20 20.5%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-2.00 = -2.00 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+3.75 = +3.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 44: neutral  Bollinger: neutral
+- RSI 48: neutral  Bollinger: neutral
 
-**Divergence** (-1.0)
-- ✓ CONFIRMED hid_bear on MACDHist (quality: standard)
-- ✓ CONFIRMED hid_bear on CMF (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: -2.00 + +0.00 + -1.00 = -3.00 → **-3.00**
+**Score**: +3.75 + +0.00 + +0.00 = +3.75 → **+3.75**

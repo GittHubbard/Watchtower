@@ -1,20 +1,21 @@
 # Technical Signal: CAT  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -3.8
+**Recommendation**: SELL  |  **Score**: -4.2
 
-### Technical Signal: SELL (-3.8 / confidence 38%)
+### Technical Signal: SELL (-4.2 / confidence 42%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 18 vs -DI 33)  |  Vol: HIGH_IV (IV30 50.6%, RV20 32.7%)
+**Regime**: ADX RANGING (ADX 16, +DI 16 vs -DI 41)  |  Vol: HIGH_IV (IV30 49.4%, RV20 33.8%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-3.75 = -3.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (-4.69 = -3.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 818.91 (anchor 51 bars ago), aVWAP-low 801.43 (anchor 31 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 38: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution +0.50)
+- RSI 31: neutral  Bollinger: lower-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -3.75 + +0.00 + +0.00 = -3.75 → **-3.75**
+**Score**: -4.69 + +0.50 + +0.00 = -4.19 → **-4.19**

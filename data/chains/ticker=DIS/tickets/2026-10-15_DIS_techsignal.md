@@ -1,20 +1,21 @@
 # Technical Signal: DIS  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.4
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
 
-### Technical Signal: STRONG_BUY (+7.4 / confidence 74%)
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 30 vs -DI 15)  |  Vol: NORMAL_IV (IV30 28.7%, RV20 22.3%)
+**Regime**: ADX RANGING (ADX 18, +DI 37 vs -DI 15)  |  Vol: NORMAL_IV (IV30 28.5%, RV20 21.9%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+4.38 = +3.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+7.81 = +6.25 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 105.68 (anchor 23 bars ago), aVWAP-low 103.81 (anchor 59 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 61: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 66: neutral  Bollinger: upper-break
 
 **Divergence** (+3.0)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: +4.38 + +0.00 + +3.00 = +7.38 → **+7.38**
+**Score**: +7.81 + -0.50 + +3.00 = +10.31 → **+10.00**

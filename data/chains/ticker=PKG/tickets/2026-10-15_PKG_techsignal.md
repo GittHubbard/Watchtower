@@ -1,21 +1,21 @@
 # Technical Signal: PKG  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -1.8
+**Recommendation**: BUY  |  **Score**: +2.5
 
-### Technical Signal: HOLD (-1.8 / confidence 18%)
+### Technical Signal: BUY (+2.5 / confidence 25%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 14 vs -DI 25)  |  Vol: NORMAL_IV (IV30 39.6%, RV20 18.3%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 18 vs -DI 23)  |  Vol: LOW_IV (IV30 37.5%, RV20 17.6%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-0.75 = -0.75 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
-- aVWAP-high 232.68 (anchor 17 bars ago), aVWAP-low 232.71 (anchor 21 bars ago)
+**Trend** (+2.50 = +2.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: TESTING_SUPPORT  Volume: NORMAL
+- aVWAP-high 232.69 (anchor 18 bars ago), aVWAP-low 232.71 (anchor 22 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 45: neutral  Bollinger: neutral
+- RSI 50: neutral  Bollinger: neutral
 
-**Divergence** (-1.0)
-- ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: -0.75 + +0.00 + -1.00 = -1.75 → **-1.75**
+**Score**: +2.50 + +0.00 + +0.00 = +2.50 → **+2.50**

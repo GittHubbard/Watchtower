@@ -1,20 +1,20 @@
 # Technical Signal: VLTO  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +5.0
+**Recommendation**: STRONG_BUY  |  **Score**: +5.6
 
-### Technical Signal: BUY (+5.0 / confidence 50%)
+### Technical Signal: STRONG_BUY (+5.6 / confidence 56%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 25 vs -DI 16)  |  Vol: LOW_IV (IV30 39.7%, RV20 14.8%)
+**Regime**: ADX RANGING (ADX 15, +DI 27 vs -DI 15)  |  Vol: LOW_IV (IV30 35.6%, RV20 15.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+5.00 = +4.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+5.62 = +4.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 63: neutral  Bollinger: neutral
+- RSI 68: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +5.00 + +0.00 + +0.00 = +5.00 → **+5.00**
+**Score**: +5.62 + +0.00 + +0.00 = +5.62 → **+5.62**

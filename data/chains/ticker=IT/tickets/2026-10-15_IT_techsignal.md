@@ -1,22 +1,21 @@
 # Technical Signal: IT  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.9
+**Recommendation**: STRONG_BUY  |  **Score**: +7.6
 
-### Technical Signal: STRONG_BUY (+6.9 / confidence 69%)
+### Technical Signal: STRONG_BUY (+7.6 / confidence 76%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 33 vs -DI 15)  |  Vol: HIGH_IV (IV30 58.0%, RV20 37.5%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX TRENDING (ADX 26, +DI 37 vs -DI 13)  |  Vol: HIGH_IV (IV30 56.4%, RV20 41.5%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+5.94 = +4.75 × 1.25 convergence)
-- Price: UP  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
-- aVWAP-high 188.52 (anchor 21 bars ago), aVWAP-low 187.65 (anchor 24 bars ago)
+**Trend** (+7.81 = +6.25 × 1.25 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_DIST
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 189.44 (anchor 22 bars ago), aVWAP-low 188.47 (anchor 25 bars ago)
 
-**Mean Reversion** (gate 0.75 → contribution +0.00)
-- RSI 58: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.25)
+- RSI 65: neutral  Bollinger: upper-break
 
-**Divergence** (+1.0)
-- ✓ CONFIRMED hid_bull on CMF (quality: standard)
-- ✓ CONFIRMED hid_bull on OBV (quality: standard)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: +5.94 + +0.00 + +1.00 = +6.94 → **+6.94**
+**Score**: +7.81 + -0.25 + +0.00 = +7.56 → **+7.56**

@@ -1,20 +1,21 @@
 # Technical Signal: PEP  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.5
+**Recommendation**: HOLD  |  **Score**: -0.2
 
-### Technical Signal: BUY (+2.5 / confidence 25%)
+### Technical Signal: HOLD (-0.2 / confidence 2%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 18 vs -DI 20)  |  Vol: LOW_IV (IV30 25.8%, RV20 21.8%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 28 vs -DI 17)  |  Vol: NORMAL_IV (IV30 27.6%, RV20 22.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+2.50 = +2.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-0.25 = -0.25 × 1.00 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 131.89 (anchor 37 bars ago), aVWAP-low 132.80 (anchor 46 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 42: neutral  Bollinger: neutral
+- RSI 46: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +2.50 + +0.00 + +0.00 = +2.50 → **+2.50**
+**Score**: -0.25 + +0.00 + +0.00 = -0.25 → **-0.25**

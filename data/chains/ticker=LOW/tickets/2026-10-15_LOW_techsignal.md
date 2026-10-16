@@ -1,20 +1,21 @@
 # Technical Signal: LOW  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: HOLD  |  **Score**: -0.2
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: HOLD (-0.2 / confidence 2%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 22 vs -DI 20)  |  Vol: NORMAL_IV (IV30 34.0%, RV20 25.6%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 33 vs -DI 19)  |  Vol: NORMAL_IV (IV30 34.2%, RV20 29.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-0.25 = -0.25 × 1.00 convergence)
+- Price: DOWN  MACD: BULLISH  CMF: NEUTRAL
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 196.73 (anchor 40 bars ago), aVWAP-low 201.56 (anchor 59 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 47: neutral  Bollinger: neutral
+- RSI 56: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 
-**Score**: -0.50 + +0.00 + +0.00 = -0.50 → **-0.50**
+**Score**: -0.25 + +0.00 + +0.00 = -0.25 → **-0.25**

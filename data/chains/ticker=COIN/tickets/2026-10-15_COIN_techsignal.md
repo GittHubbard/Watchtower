@@ -1,23 +1,26 @@
 # Technical Signal: COIN  2026-10-15
 
-**Recommendation**: STRONG_SELL  |  **Score**: -7.5
+**Recommendation**: STRONG_SELL  |  **Score**: -8.5
 
-### Technical Signal: STRONG_SELL (-7.5 / confidence 75%)
+### Technical Signal: STRONG_SELL (-8.5 / confidence 85%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 20 vs -DI 17)  |  Vol: NORMAL_IV (IV30 69.1%, RV20 59.8%)
+**Regime**: ADX RANGING (ADX 17, +DI 19 vs -DI 21)  |  Vol: NORMAL_IV (IV30 69.8%, RV20 60.3%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-2.50 = -2.50 × 1.00 convergence)
+**Trend** (-4.50 = -4.50 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+- RSI 44: neutral  Bollinger: neutral
 
-**Divergence** (-5.0)
+**Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on RSI (quality: standard)
+- ✓ CONFIRMED hid_bull on RSI (quality: standard)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
+- ✓ CONFIRMED hid_bull on CMF (quality: standard)
 
-**Score**: -2.50 + +0.00 + -5.00 = -7.50 → **-7.50**
+**Score**: -4.50 + +0.00 + -4.00 = -8.50 → **-8.50**

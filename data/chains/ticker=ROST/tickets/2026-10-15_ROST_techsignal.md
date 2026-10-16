@@ -4,7 +4,7 @@
 
 ### Technical Signal: SELL (-3.5 / confidence 35%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 16 vs -DI 20)  |  Vol: NORMAL_IV (IV30 31.9%, RV20 18.3%)
+**Regime**: ADX RANGING (ADX 16, +DI 17 vs -DI 19)  |  Vol: NORMAL_IV (IV30 32.3%, RV20 19.6%)
 **Gate**: MR weight = 1.00
 
 **Trend** (-3.50 = -3.50 × 1.00 convergence)
@@ -12,7 +12,7 @@
 - OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 43: neutral  Bollinger: neutral
+- RSI 52: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences

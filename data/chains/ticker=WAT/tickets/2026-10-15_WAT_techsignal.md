@@ -1,16 +1,15 @@
 # Technical Signal: WAT  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.8
+**Recommendation**: HOLD  |  **Score**: -2.1
 
-### Technical Signal: BUY (+2.8 / confidence 28%)
+### Technical Signal: HOLD (-2.1 / confidence 21%)
 
-**Regime**: ADX TRENDING (ADX 29, +DI 25 vs -DI 15)  |  Vol: NORMAL_IV (IV30 46.2%, RV20 26.5%)
+**Regime**: ADX TRENDING (ADX 29, +DI 23 vs -DI 14)  |  Vol: NORMAL_IV (IV30 46.4%, RV20 26.5%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+1.75 = +1.75 × 1.00 convergence)
-- Price: STRONG_UP  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 425.10 (anchor 33 bars ago), aVWAP-low 428.33 (anchor 24 bars ago)
+**Trend** (-3.12 = -2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
 - RSI 57: neutral  Bollinger: neutral
@@ -20,4 +19,4 @@
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 
-**Score**: +1.75 + +0.00 + +1.00 = +2.75 → **+2.75**
+**Score**: -3.12 + +0.00 + +1.00 = -2.12 → **-2.12**

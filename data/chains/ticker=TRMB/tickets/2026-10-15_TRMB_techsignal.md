@@ -1,21 +1,21 @@
 # Technical Signal: TRMB  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +1.0
+**Recommendation**: BUY  |  **Score**: +4.8
 
-### Technical Signal: HOLD (+1.0 / confidence 10%)
+### Technical Signal: BUY (+4.8 / confidence 48%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 24 vs -DI 15)  |  Vol: LOW_IV (IV30 51.7%, RV20 23.1%)
+**Regime**: ADX RANGING (ADX 19, +DI 25 vs -DI 14)  |  Vol: LOW_IV (IV30 46.3%, RV20 25.3%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+1.00 = +1.00 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: TESTING_RESISTANCE  Volume: DRY
-- aVWAP-high 59.00 (anchor 32 bars ago), aVWAP-low 58.63 (anchor 12 bars ago)
+**Trend** (+4.75 = +4.75 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 59.02 (anchor 33 bars ago), aVWAP-low 58.73 (anchor 13 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 52: neutral  Bollinger: neutral
+- RSI 60: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +1.00 + +0.00 + +0.00 = +1.00 → **+1.00**
+**Score**: +4.75 + +0.00 + +0.00 = +4.75 → **+4.75**

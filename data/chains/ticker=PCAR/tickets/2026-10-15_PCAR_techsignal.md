@@ -4,7 +4,7 @@
 
 ### Technical Signal: HOLD (-0.5 / confidence 5%)
 
-**Regime**: ADX TRENDING (ADX 55, +DI 5 vs -DI 30)  |  Vol: NORMAL_IV (IV30 41.2%, RV20 20.0%)
+**Regime**: ADX TRENDING (ADX 57, +DI 5 vs -DI 29)  |  Vol: NORMAL_IV (IV30 38.2%, RV20 17.2%)
 **Gate**: MR weight = 0.00
 
 **Trend** (-0.50 = -0.50 × 1.00 convergence)
@@ -12,7 +12,7 @@
 - OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 29: oversold  Bollinger: neutral
+- RSI 32: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)

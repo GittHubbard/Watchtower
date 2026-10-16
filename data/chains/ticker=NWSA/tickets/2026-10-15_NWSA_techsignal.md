@@ -1,20 +1,20 @@
 # Technical Signal: NWSA  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.1
+**Recommendation**: BUY  |  **Score**: +1.9
 
-### Technical Signal: BUY (+3.1 / confidence 31%)
+### Technical Signal: HOLD (+1.9 / confidence 19%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 19 vs -DI 13)  |  Vol: HIGH_IV (IV30 75.6%, RV20 21.9%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX RANGING (ADX 16, +DI 18 vs -DI 15)  |  Vol: LOW_IV (IV30 55.9%, RV20 21.8%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
+**Trend** (+1.88 = +1.50 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 56: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 55: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**
+**Score**: +1.88 + +0.00 + +0.00 = +1.88 → **+1.88**

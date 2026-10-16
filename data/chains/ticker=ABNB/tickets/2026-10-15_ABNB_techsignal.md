@@ -1,20 +1,20 @@
 # Technical Signal: ABNB  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: +1.2
+**Recommendation**: BUY  |  **Score**: +3.1
 
-### Technical Signal: HOLD (+1.2 / confidence 12%)
+### Technical Signal: BUY (+3.1 / confidence 31%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 21 vs -DI 18)  |  Vol: HIGH_IV (IV30 49.2%, RV20 38.6%)
+**Regime**: ADX RANGING (ADX 15, +DI 22 vs -DI 17)  |  Vol: HIGH_IV (IV30 50.4%, RV20 38.7%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+1.25 = +1.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+3.12 = +2.50 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 51: neutral  Bollinger: neutral
+- RSI 53: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +1.25 + +0.00 + +0.00 = +1.25 → **+1.25**
+**Score**: +3.12 + +0.00 + +0.00 = +3.12 → **+3.12**

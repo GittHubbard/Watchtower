@@ -1,22 +1,22 @@
 # Technical Signal: DGX  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 15 vs -DI 19)  |  Vol: HIGH_IV (IV30 37.5%, RV20 21.8%)
-**Gate**: MR weight = 0.50
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 19 vs -DI 17)  |  Vol: HIGH_IV (IV30 34.7%, RV20 23.8%)
+**Gate**: MR weight = 0.75
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: RECLAIM_HIGH  Volume: NORMAL
-- aVWAP-high 232.48 (anchor 17 bars ago), aVWAP-low 235.00 (anchor 23 bars ago)
+**Trend** (+8.44 = +6.75 × 1.25 convergence)
+- Price: UP  MACD: BULL_CROSS  CMF: ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 232.74 (anchor 18 bars ago), aVWAP-low 235.11 (anchor 24 bars ago)
 
-**Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 50: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution +0.00)
+- RSI 58: neutral  Bollinger: neutral
 
-**Divergence** (+0.0)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
-- ⏳ PENDING reg_bull on CMF (quality: standard)
+**Divergence** (+5.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bull on CMF (quality: standard)
 
-**Score**: -0.50 + +0.00 + +0.00 = -0.50 → **-0.50**
+**Score**: +8.44 + +0.00 + +5.00 = +13.44 → **+10.00**

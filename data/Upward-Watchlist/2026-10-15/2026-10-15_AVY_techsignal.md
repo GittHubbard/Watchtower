@@ -1,21 +1,21 @@
 # Technical Signal: AVY  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.8
+**Recommendation**: STRONG_BUY  |  **Score**: +5.8
 
-### Technical Signal: STRONG_BUY (+6.8 / confidence 68%)
+### Technical Signal: STRONG_BUY (+5.8 / confidence 57%)
 
-**Regime**: ADX RANGING (ADX 10, +DI 19 vs -DI 16)  |  Vol: NORMAL_IV (IV30 37.4%, RV20 16.9%)
+**Regime**: ADX RANGING (ADX 11, +DI 26 vs -DI 14)  |  Vol: NORMAL_IV (IV30 34.6%, RV20 18.6%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+3.75 = +3.00 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULL_CROSS  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 172.20 (anchor 36 bars ago), aVWAP-low 170.08 (anchor 24 bars ago)
+**Trend** (+6.25 = +5.00 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: DIST
+- OBV: BULLISH  aVWAP: RECLAIM_HIGH  Volume: DRY
+- aVWAP-high 172.25 (anchor 37 bars ago), aVWAP-low 170.24 (anchor 25 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 54: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 62: neutral  Bollinger: upper-break
 
-**Divergence** (+3.0)
-- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: +3.75 + +0.00 + +3.00 = +6.75 → **+6.75**
+**Score**: +6.25 + -0.50 + +0.00 = +5.75 → **+5.75**

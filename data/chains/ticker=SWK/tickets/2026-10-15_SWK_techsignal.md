@@ -1,21 +1,21 @@
 # Technical Signal: SWK  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +3.8
+**Recommendation**: BUY  |  **Score**: +4.8
 
-### Technical Signal: BUY (+3.8 / confidence 38%)
+### Technical Signal: BUY (+4.8 / confidence 48%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 19 vs -DI 23)  |  Vol: HIGH_IV (IV30 48.4%, RV20 25.4%)
+**Regime**: ADX RANGING (ADX 17, +DI 25 vs -DI 21)  |  Vol: NORMAL_IV (IV30 42.2%, RV20 27.0%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+3.75 = +3.00 × 1.25 convergence)
+**Trend** (+5.31 = +4.25 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: TESTING_RESISTANCE  Volume: DRY
-- aVWAP-high 89.27 (anchor 11 bars ago), aVWAP-low 89.51 (anchor 21 bars ago)
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 89.46 (anchor 12 bars ago), aVWAP-low 89.60 (anchor 22 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 49: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -0.50)
+- RSI 56: neutral  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +3.75 + +0.00 + +0.00 = +3.75 → **+3.75**
+**Score**: +5.31 + -0.50 + +0.00 = +4.81 → **+4.81**

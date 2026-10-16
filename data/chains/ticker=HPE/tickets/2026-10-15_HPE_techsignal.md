@@ -1,20 +1,20 @@
 # Technical Signal: HPE  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.5
+**Recommendation**: SELL  |  **Score**: -3.8
 
-### Technical Signal: BUY (+2.5 / confidence 25%)
+### Technical Signal: SELL (-3.8 / confidence 38%)
 
-**Regime**: ADX TRENDING (ADX 29, +DI 25 vs -DI 15)  |  Vol: NORMAL_IV (IV30 66.0%, RV20 48.2%)
+**Regime**: ADX TRENDING (ADX 26, +DI 22 vs -DI 21)  |  Vol: NORMAL_IV (IV30 65.3%, RV20 59.2%)
 **Gate**: MR weight = 0.00
 
-**Trend** (+2.50 = +2.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-3.75 = -3.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
 **Mean Reversion** (gate 0.00 → contribution +0.00)
-- RSI 60: neutral  Bollinger: neutral
+- RSI 48: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +2.50 + +0.00 + +0.00 = +2.50 → **+2.50**
+**Score**: -3.75 + +0.00 + +0.00 = -3.75 → **-3.75**

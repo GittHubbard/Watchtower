@@ -4,7 +4,7 @@
 
 ### Technical Signal: STRONG_BUY (+6.6 / confidence 66%)
 
-**Regime**: ADX TRENDING (ADX 63, +DI 34 vs -DI 9)  |  Vol: HIGH_IV (IV30 109.7%, RV20 88.2%)
+**Regime**: ADX TRENDING (ADX 63, +DI 35 vs -DI 8)  |  Vol: HIGH_IV (IV30 110.2%, RV20 88.6%)
 **Gate**: MR weight = 0.50
 
 **Trend** (+5.62 = +4.50 × 1.25 convergence)
@@ -12,7 +12,7 @@
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 66: neutral  Bollinger: neutral
+- RSI 69: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ⏳ PENDING reg_bear on RSI (quality: strong)

@@ -1,18 +1,18 @@
 # Technical Signal: HCA  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -1.6
+**Recommendation**: HOLD  |  **Score**: -0.8
 
-### Technical Signal: HOLD (-1.6 / confidence 16%)
+### Technical Signal: HOLD (-0.8 / confidence 8%)
 
-**Regime**: ADX WEAK_TREND (ADX 25, +DI 27 vs -DI 10)  |  Vol: HIGH_IV (IV30 39.8%, RV20 23.3%)
-**Gate**: MR weight = 0.75
+**Regime**: ADX TRENDING (ADX 27, +DI 30 vs -DI 9)  |  Vol: HIGH_IV (IV30 39.1%, RV20 23.6%)
+**Gate**: MR weight = 0.50
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
+**Trend** (+3.75 = +3.00 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Mean Reversion** (gate 0.75 → contribution -0.75)
-- RSI 70: overbought  Bollinger: neutral
+**Mean Reversion** (gate 0.50 → contribution -0.50)
+- RSI 74: overbought  Bollinger: neutral
 
 **Divergence** (-4.0)
 - ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
@@ -21,4 +21,4 @@
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
-**Score**: +3.12 + -0.75 + -4.00 = -1.62 → **-1.62**
+**Score**: +3.75 + -0.50 + -4.00 = -0.75 → **-0.75**

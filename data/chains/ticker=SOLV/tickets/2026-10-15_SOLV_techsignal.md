@@ -1,20 +1,20 @@
 # Technical Signal: SOLV  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -2.5
+**Recommendation**: HOLD  |  **Score**: -1.0
 
-### Technical Signal: SELL (-2.5 / confidence 25%)
+### Technical Signal: HOLD (-1.0 / confidence 10%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 14 vs -DI 28)  |  Vol: NORMAL_IV (IV30 41.8%, RV20 16.2%)
+**Regime**: ADX RANGING (ADX 18, +DI 16 vs -DI 26)  |  Vol: NORMAL_IV (IV30 39.9%, RV20 16.2%)
 **Gate**: MR weight = 1.00
 
-**Trend** (-2.50 = -2.50 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-1.00 = -1.00 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 43: neutral  Bollinger: neutral
+- RSI 48: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -2.50 + +0.00 + +0.00 = -2.50 → **-2.50**
+**Score**: -1.00 + +0.00 + +0.00 = -1.00 → **-1.00**

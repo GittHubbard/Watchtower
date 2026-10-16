@@ -4,15 +4,15 @@
 
 ### Technical Signal: BUY (+4.5 / confidence 45%)
 
-**Regime**: ADX TRENDING (ADX 34, +DI 35 vs -DI 15)  |  Vol: HIGH_IV (IV30 77.6%, RV20 63.7%)
+**Regime**: ADX TRENDING (ADX 35, +DI 33 vs -DI 14)  |  Vol: HIGH_IV (IV30 65.3%, RV20 62.6%)
 **Gate**: MR weight = 0.50
 
 **Trend** (+3.50 = +3.50 × 1.00 convergence)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 57: neutral  Bollinger: neutral
+- RSI 58: neutral  Bollinger: neutral
 
 **Divergence** (+1.0)
 - ⏳ PENDING reg_bear on RSI (quality: strong)

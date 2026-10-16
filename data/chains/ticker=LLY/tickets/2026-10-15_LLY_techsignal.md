@@ -1,20 +1,21 @@
 # Technical Signal: LLY  2026-10-15
 
-**Recommendation**: BUY  |  **Score**: +2.0
+**Recommendation**: STRONG_BUY  |  **Score**: +8.1
 
-### Technical Signal: HOLD (+2.0 / confidence 20%)
+### Technical Signal: STRONG_BUY (+8.1 / confidence 81%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 19 vs -DI 15)  |  Vol: HIGH_IV (IV30 48.0%, RV20 20.8%)
-**Gate**: MR weight = 1.00
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 31 vs -DI 13)  |  Vol: HIGH_IV (IV30 45.8%, RV20 26.4%)
+**Gate**: MR weight = 0.75
 
-**Trend** (+3.00 = +3.00 × 1.00 convergence)
-- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+8.44 = +6.75 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-high 1178.45 (anchor 40 bars ago), aVWAP-low 1168.96 (anchor 24 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 50: neutral  Bollinger: neutral
+**Mean Reversion** (gate 0.75 → contribution -0.38)
+- RSI 68: neutral  Bollinger: upper-break
 
-**Divergence** (-1.0)
-- ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
+**Divergence** (+0.0)
+- No active divergences
 
-**Score**: +3.00 + +0.00 + -1.00 = +2.00 → **+2.00**
+**Score**: +8.44 + -0.38 + +0.00 = +8.06 → **+8.06**

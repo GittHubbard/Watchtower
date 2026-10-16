@@ -1,21 +1,21 @@
 # Technical Signal: WDC  2026-10-15
 
-**Recommendation**: SELL  |  **Score**: -4.1
+**Recommendation**: STRONG_SELL  |  **Score**: -5.7
 
-### Technical Signal: SELL (-4.1 / confidence 41%)
+### Technical Signal: STRONG_SELL (-5.7 / confidence 57%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 13 vs -DI 34)  |  Vol: LOW_IV (IV30 68.6%, RV20 62.6%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 12 vs -DI 39)  |  Vol: LOW_IV (IV30 68.2%, RV20 63.5%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-3.12 = -2.50 × 1.25 convergence)
+**Trend** (-4.69 = -3.75 × 1.25 convergence)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: SURGE
+- aVWAP-high 422.60 (anchor 26 bars ago), aVWAP-low 419.76 (anchor 21 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 35: neutral  Bollinger: neutral
+- RSI 31: neutral  Bollinger: neutral
 
 **Divergence** (-1.0)
-- ✓ CONFIRMED hid_bear on RSI (quality: standard)
 - ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Score**: -3.12 + +0.00 + -1.00 = -4.12 → **-4.12**
+**Score**: -4.69 + +0.00 + -1.00 = -5.69 → **-5.69**

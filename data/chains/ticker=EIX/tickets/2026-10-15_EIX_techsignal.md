@@ -1,16 +1,15 @@
 # Technical Signal: EIX  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +6.2
+**Recommendation**: STRONG_BUY  |  **Score**: +7.5
 
-### Technical Signal: STRONG_BUY (+6.2 / confidence 62%)
+### Technical Signal: STRONG_BUY (+7.5 / confidence 75%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 16 vs -DI 29)  |  Vol: HIGH_IV (IV30 51.6%, RV20 23.7%)
+**Regime**: ADX TRENDING (ADX 27, +DI 15 vs -DI 27)  |  Vol: HIGH_IV (IV30 47.5%, RV20 23.7%)
 **Gate**: MR weight = 0.50
 
-**Trend** (+1.25 = +1.00 × 1.25 convergence)
-- Price: DOWN  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: BETWEEN  Volume: NORMAL
-- aVWAP-high 56.18 (anchor 38 bars ago), aVWAP-low 53.45 (anchor 13 bars ago)
+**Trend** (+2.50 = +2.50 × 1.00 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
 - RSI 48: neutral  Bollinger: neutral
@@ -19,4 +18,4 @@
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Score**: +1.25 + +0.00 + +5.00 = +6.25 → **+6.25**
+**Score**: +2.50 + +0.00 + +5.00 = +7.50 → **+7.50**

@@ -1,21 +1,21 @@
 # Technical Signal: HST  2026-10-15
 
-**Recommendation**: STRONG_BUY  |  **Score**: +7.8
+**Recommendation**: STRONG_BUY  |  **Score**: +6.9
 
-### Technical Signal: STRONG_BUY (+7.8 / confidence 78%)
+### Technical Signal: STRONG_BUY (+6.9 / confidence 69%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 26 vs -DI 15)  |  Vol: HIGH_IV (IV30 60.0%, RV20 15.0%)
+**Regime**: ADX RANGING (ADX 19, +DI 32 vs -DI 13)  |  Vol: NORMAL_IV (IV30 52.0%, RV20 19.8%)
 **Gate**: MR weight = 1.00
 
-**Trend** (+7.81 = +6.25 × 1.25 convergence)
-- Price: UP  MACD: BULLISH  CMF: ACCUM
+**Trend** (+8.44 = +6.75 × 1.25 convergence)
+- Price: UP  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
-- aVWAP-high 22.64 (anchor 53 bars ago), aVWAP-low 22.31 (anchor 18 bars ago)
+- aVWAP-high 22.66 (anchor 54 bars ago), aVWAP-low 22.39 (anchor 19 bars ago)
 
-**Mean Reversion** (gate 1.00 → contribution +0.00)
-- RSI 59: neutral  Bollinger: neutral
+**Mean Reversion** (gate 1.00 → contribution -1.50)
+- RSI 70: overbought  Bollinger: upper-break
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: +7.81 + +0.00 + +0.00 = +7.81 → **+7.81**
+**Score**: +8.44 + -1.50 + +0.00 = +6.94 → **+6.94**

@@ -1,20 +1,21 @@
 # Technical Signal: CRWD  2026-10-15
 
-**Recommendation**: HOLD  |  **Score**: -1.9
+**Recommendation**: HOLD  |  **Score**: -0.9
 
-### Technical Signal: HOLD (-1.9 / confidence 19%)
+### Technical Signal: HOLD (-0.9 / confidence 9%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 23 vs -DI 16)  |  Vol: NORMAL_IV (IV30 53.4%, RV20 45.0%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 21 vs -DI 26)  |  Vol: NORMAL_IV (IV30 52.9%, RV20 48.5%)
 **Gate**: MR weight = 0.50
 
-**Trend** (-1.88 = -1.50 × 1.25 convergence)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-0.94 = -0.75 × 1.25 convergence)
+- Price: UP  MACD: BEARISH  CMF: NEUTRAL
+- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 223.84 (anchor 65 bars ago), aVWAP-low 237.89 (anchor 35 bars ago)
 
 **Mean Reversion** (gate 0.50 → contribution +0.00)
-- RSI 56: neutral  Bollinger: neutral
+- RSI 47: neutral  Bollinger: neutral
 
 **Divergence** (+0.0)
 - No active divergences
 
-**Score**: -1.88 + +0.00 + +0.00 = -1.88 → **-1.88**
+**Score**: -0.94 + +0.00 + +0.00 = -0.94 → **-0.94**
