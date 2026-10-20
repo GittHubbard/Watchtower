@@ -1,0 +1,21 @@
+# Technical Signal: DRI  2026-09-28
+
+**Recommendation**: STRONG_SELL  |  **Score**: -6.9
+
+### Technical Signal: STRONG_SELL (-6.9 / confidence 69%)
+
+**Regime**: ADX RANGING (ADX 17, +DI 22 vs -DI 34)  |  Vol: LOW_IV (IV30 32.6%, RV20 31.6%)
+**Gate**: MR weight = 0.50
+
+**Trend** (-7.19 = -5.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 213.94 (anchor 31 bars ago), aVWAP-low 211.15 (anchor 48 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.25)
+- RSI 35: neutral  Bollinger: lower-break
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: -7.19 + +0.25 + +0.00 = -6.94 → **-6.94**

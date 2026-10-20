@@ -1562,3 +1562,27 @@ tickers:
 - symbol: RYCEY
   kind: single_name
   market_cap_b: 149.242315
+- symbol: VIK
+  kind: single_name
+  market_cap_b: 35.141478
+- symbol: ASTS
+  kind: single_name
+  market_cap_b: 23.100000
+- symbol: VG
+  kind: single_name
+  market_cap_b: 31.351166
+- symbol: CCJ
+  kind: single_name
+  market_cap_b: 37.950000
+- symbol: BRK
+  kind: single_name
+  market_cap_b: 1076.599000
+- symbol: SOLS
+  kind: single_name
+  market_cap_b: 8.899395
+- symbol: BKR
+  kind: single_name
+  market_cap_b: 55.510336
+- symbol: POWL
+  kind: single_name
+  market_cap_b: 6.866080
