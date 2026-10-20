@@ -119,6 +119,16 @@ _MR_HEAD_RE = re.compile(
 )
 # - RSI 55: neutral  Bollinger: neutral   (RSI state may be hyphenated, e.g. extreme-overbought)
 _MR_L1_RE = re.compile(r"RSI\s+(\d+):\s*([a-z-]+)\s+Bollinger:\s*([a-z-]+)")
+# Setup-score tickets (new layout) — these sections replace Mean Reversion:
+# **Pullback setup** (+4.29)  /  - Price vs 20-day average: -3.1 ATR → +2.29  /  - RSI 38 → +1.20
+_PULL_HEAD_RE = re.compile(r"\*\*Pullback setup\*\*\s*\(([+-][\d.]+)\)")
+_PULL_ATR_RE = re.compile(r"Price vs 20-day average:\s*([+-][\d.]+|N/A)\s*ATR")
+_PULL_RSI_RE = re.compile(r"^- RSI\s+(\d+|N/A)\s*\S", re.MULTILINE)
+# **Overextension penalties** (-2.00)  /  **Confirmation** (+0.50)
+_OVEREXT_HEAD_RE = re.compile(r"\*\*Overextension penalties\*\*\s*\(([+-][\d.]+)\)")
+_CONFIRM_HEAD_RE = re.compile(r"\*\*Confirmation\*\*\s*\(([+-][\d.]+)\)")
+# ... convergence) → momentum -0.43 (capped ±1)
+_MOMENTUM_RE = re.compile(r"convergence\)\s*\S\s*momentum\s*([+-][\d.]+)")
 # **Divergence** (+4.0)
 _DIV_HEAD_RE = re.compile(r"\*\*Divergence\*\*\s*\(([+-][\d.]+)\)")
 # - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
@@ -136,6 +146,8 @@ NUMERIC_FEATURES = [
     "mr_gate", "mr_contribution", "rsi", "divergence_score",
     "div_reg_bull", "div_reg_bear", "div_hid_bull", "div_hid_bear",
     "div_confirmed", "div_pending",
+    # setup-score layout only (NaN on older momentum-score tickets)
+    "pullback", "ext_atr", "overextension", "confirmation", "momentum",
 ]
 FEATURE_COLUMNS = CATEGORICAL_FEATURES + NUMERIC_FEATURES
 
@@ -224,15 +236,41 @@ def _parse_features(text: str, source: str) -> dict:
     trend2 = _TREND_L2_RE.search(text)
     mr_h = _MR_HEAD_RE.search(text)
     mr1 = _MR_L1_RE.search(text)
+    pull_h = _PULL_HEAD_RE.search(text)
     div_h = _DIV_HEAD_RE.search(text)
+    # Older tickets carry a Mean Reversion section; setup-score tickets carry a
+    # Pullback section instead. Exactly one of the two layouts is required.
+    layout = (("Mean Reversion header", mr_h), ("Mean Reversion line", mr1)) if not pull_h else ()
     for name, match in (
         ("Regime", regime), ("Vol", vol), ("Trend header", trend_h),
         ("Trend line 1", trend1), ("Trend line 2", trend2),
-        ("Mean Reversion header", mr_h), ("Mean Reversion line", mr1),
+        *layout,
         ("Divergence header", div_h),
     ):
         if not match:
             raise ValueError(f"Missing {name} section in {source}")
+
+    nan = float("nan")
+    if pull_h:
+        rsi_m = _PULL_RSI_RE.search(text)
+        atr_m = _PULL_ATR_RE.search(text)
+        ov, cf, mo = _OVEREXT_HEAD_RE.search(text), _CONFIRM_HEAD_RE.search(text), _MOMENTUM_RE.search(text)
+        setup = {
+            "mr_gate": nan, "mr_contribution": nan, "rsi_state": None, "bollinger": None,
+            "rsi": _nan_or_float(rsi_m.group(1)) if rsi_m else nan,
+            "pullback": float(pull_h.group(1)),
+            "ext_atr": _nan_or_float(atr_m.group(1)) if atr_m else nan,
+            "overextension": float(ov.group(1)) if ov else nan,
+            "confirmation": float(cf.group(1)) if cf else nan,
+            "momentum": float(mo.group(1)) if mo else nan,
+        }
+    else:
+        setup = {
+            "mr_gate": float(mr_h.group(1)), "mr_contribution": float(mr_h.group(2)),
+            "rsi": int(mr1.group(1)), "rsi_state": mr1.group(2), "bollinger": mr1.group(3),
+            "pullback": nan, "ext_atr": nan, "overextension": nan,
+            "confirmation": nan, "momentum": nan,
+        }
 
     # Divergence detail: count active divergences by type and confirmation state.
     div_counts = {"reg_bull": 0, "reg_bear": 0, "hid_bull": 0, "hid_bear": 0}
@@ -261,11 +299,6 @@ def _parse_features(text: str, source: str) -> dict:
         "obv": trend2.group(1),
         "avwap": trend2.group(2),
         "volume": trend2.group(3),
-        "mr_gate": float(mr_h.group(1)),
-        "mr_contribution": float(mr_h.group(2)),
-        "rsi": int(mr1.group(1)),
-        "rsi_state": mr1.group(2),
-        "bollinger": mr1.group(3),
         "divergence_score": float(div_h.group(1)),
         "div_reg_bull": div_counts["reg_bull"],
         "div_reg_bear": div_counts["reg_bear"],
@@ -273,6 +306,7 @@ def _parse_features(text: str, source: str) -> dict:
         "div_hid_bear": div_counts["hid_bear"],
         "div_confirmed": confirmed,
         "div_pending": pending,
+        **setup,
     }
 
 
