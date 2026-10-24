@@ -1,15 +1,15 @@
 # Technical Signal: FIS  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: HOLD  |  **Score**: -1.4
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: HOLD (-1.4 / confidence 14%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 33 vs -DI 17)  |  Vol: NORMAL_IV (IV30 51.0%, RV20 27.1%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 31 vs -DI 15)  |  Vol: NORMAL_IV (IV30 52.2%, RV20 31.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.57)
+**Pullback setup** (-1.65)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 56 → -0.57
+- RSI 66 → -1.65
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 
-**Trend** (+1.00 = +1.00 × 1.00 convergence) → momentum +0.09 (capped ±1)
+**Trend** (+3.00 = +3.00 × 1.00 convergence) → momentum +0.27 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -0.57 pullback + +0.00 overextension + +0.00 confirmation + +0.09 momentum = -0.48 → **-0.48**
+**Score**: -1.65 pullback + +0.00 overextension + +0.00 confirmation + +0.27 momentum = -1.38 → **-1.38**

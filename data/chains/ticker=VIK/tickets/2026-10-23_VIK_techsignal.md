@@ -1,15 +1,15 @@
 # Technical Signal: VIK  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.3
+**Recommendation**: HOLD  |  **Score**: +0.9
 
-### Technical Signal: HOLD (+0.3 / confidence 3%)
+### Technical Signal: HOLD (+0.9 / confidence 9%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 24 vs -DI 12)  |  Vol: UNKNOWN (IV30 48.0%, RV20 21.2%)
+**Regime**: ADX RANGING (ADX 18, +DI 22 vs -DI 13)  |  Vol: UNKNOWN (IV30 48.3%, RV20 22.3%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.03)
+**Pullback setup** (-0.37)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 60 → -1.03
+- RSI 54 → -0.37
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,8 @@
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence) → momentum +0.28 (capped ±1)
+**Trend** (+2.50 = +2.50 × 1.00 convergence) → momentum +0.23 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -1.03 pullback + +0.00 overextension + +1.00 confirmation + +0.28 momentum = +0.26 → **+0.26**
+**Score**: -0.37 pullback + +0.00 overextension + +1.00 confirmation + +0.23 momentum = +0.85 → **+0.85**

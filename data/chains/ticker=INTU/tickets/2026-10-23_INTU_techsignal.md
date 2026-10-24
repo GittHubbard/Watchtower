@@ -1,15 +1,15 @@
 # Technical Signal: INTU  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.4
+**Recommendation**: HOLD  |  **Score**: -0.8
 
-### Technical Signal: HOLD (-0.4 / confidence 4%)
+### Technical Signal: HOLD (-0.8 / confidence 8%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 35 vs -DI 16)  |  Vol: NORMAL_IV (IV30 53.9%, RV20 36.2%)
+**Regime**: ADX TRENDING (ADX 26, +DI 42 vs -DI 14)  |  Vol: NORMAL_IV (IV30 54.7%, RV20 36.4%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.56)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 66 → -1.56
+- RSI 72 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,6 +21,6 @@
 
 **Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -1.56 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.40 → **-0.40**
+**Score**: -2.00 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.84 → **-0.84**

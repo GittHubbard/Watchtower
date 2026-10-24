@@ -1,15 +1,15 @@
 # Technical Signal: COHR  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.6
+**Recommendation**: HOLD  |  **Score**: +1.1
 
-### Technical Signal: HOLD (+0.6 / confidence 6%)
+### Technical Signal: HOLD (+1.1 / confidence 11%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 15 vs -DI 33)  |  Vol: NORMAL_IV (IV30 84.9%, RV20 83.2%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 13 vs -DI 38)  |  Vol: NORMAL_IV (IV30 81.4%, RV20 93.6%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+1.45)
+**Pullback setup** (+2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 36 → +1.45
+- RSI 30 → +2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (-2.0) → -0.50 toward Confirmation
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Trend** (-4.38 = -3.50 × 1.25 convergence) → momentum -0.40 (capped ±1)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (-4.00 = -4.00 × 1.00 convergence) → momentum -0.36 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +1.45 pullback + +0.00 overextension + -0.50 confirmation + -0.40 momentum = +0.55 → **+0.55**
+**Score**: +2.00 pullback + +0.00 overextension + -0.50 confirmation + -0.36 momentum = +1.14 → **+1.14**

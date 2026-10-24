@@ -1,15 +1,15 @@
 # Technical Signal: COR  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.3
+**Recommendation**: HOLD  |  **Score**: -1.1
 
-### Technical Signal: HOLD (-1.3 / confidence 13%)
+### Technical Signal: HOLD (-1.1 / confidence 11%)
 
-**Regime**: ADX WEAK_TREND (ADX 25, +DI 29 vs -DI 14)  |  Vol: HIGH_IV (IV30 40.7%, RV20 20.6%)
+**Regime**: ADX WEAK_TREND (ADX 25, +DI 27 vs -DI 14)  |  Vol: HIGH_IV (IV30 41.6%, RV20 20.5%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.67)
+**Pullback setup** (-1.39)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 67 → -1.67
+- RSI 64 → -1.39
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.67 pullback + +0.00 overextension + +0.00 confirmation + +0.32 momentum = -1.35 → **-1.35**
+**Score**: -1.39 pullback + +0.00 overextension + +0.00 confirmation + +0.32 momentum = -1.07 → **-1.07**

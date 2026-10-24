@@ -1,15 +1,15 @@
 # Technical Signal: XYZ  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.5
+**Recommendation**: HOLD  |  **Score**: +0.3
 
-### Technical Signal: HOLD (+0.5 / confidence 5%)
+### Technical Signal: HOLD (+0.3 / confidence 3%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 25 vs -DI 17)  |  Vol: NORMAL_IV (IV30 54.2%, RV20 31.8%)
+**Regime**: ADX RANGING (ADX 15, +DI 24 vs -DI 16)  |  Vol: HIGH_IV (IV30 55.6%, RV20 30.6%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.32)
+**Pullback setup** (-0.57)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 53 → -0.32
+- RSI 56 → -0.57
 
 **Overextension penalties** (+0.00)
 - None
@@ -25,4 +25,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.32 pullback + +0.00 overextension + +0.50 confirmation + +0.36 momentum = +0.54 → **+0.54**
+**Score**: -0.57 pullback + +0.00 overextension + +0.50 confirmation + +0.36 momentum = +0.29 → **+0.29**

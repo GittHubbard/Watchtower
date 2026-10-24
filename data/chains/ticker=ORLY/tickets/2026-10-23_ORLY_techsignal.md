@@ -1,15 +1,15 @@
 # Technical Signal: ORLY  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.7
+**Recommendation**: HOLD  |  **Score**: -1.4
 
-### Technical Signal: HOLD (-0.7 / confidence 7%)
+### Technical Signal: HOLD (-1.4 / confidence 14%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 27 vs -DI 15)  |  Vol: NORMAL_IV (IV30 39.1%, RV20 14.5%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 32 vs -DI 13)  |  Vol: HIGH_IV (IV30 40.3%, RV20 17.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.01)
+**Pullback setup** (-1.85)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 60 → -1.01
+- RSI 69 → -1.85
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - No active divergences
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence) → momentum +0.28 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+5.00 = +4.00 × 1.25 convergence) → momentum +0.45 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.01 pullback + +0.00 overextension + +0.00 confirmation + +0.28 momentum = -0.72 → **-0.72**
+**Score**: -1.85 pullback + +0.00 overextension + +0.00 confirmation + +0.45 momentum = -1.40 → **-1.40**

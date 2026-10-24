@@ -1,15 +1,15 @@
 # Technical Signal: TSM  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.2
+**Recommendation**: HOLD  |  **Score**: +0.9
 
-### Technical Signal: HOLD (+0.2 / confidence 2%)
+### Technical Signal: HOLD (+0.9 / confidence 9%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 21 vs -DI 30)  |  Vol: NORMAL_IV (IV30 36.0%, RV20 29.4%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 18 vs -DI 33)  |  Vol: NORMAL_IV (IV30 36.3%, RV20 33.0%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.40)
+**Pullback setup** (+1.20)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 46 → +0.40
+- RSI 38 → +1.20
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - No active divergences
 
-**Trend** (-2.50 = -2.50 × 1.00 convergence) → momentum -0.23 (capped ±1)
+**Trend** (-3.50 = -3.50 × 1.00 convergence) → momentum -0.32 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +0.40 pullback + +0.00 overextension + +0.00 confirmation + -0.23 momentum = +0.18 → **+0.18**
+**Score**: +1.20 pullback + +0.00 overextension + +0.00 confirmation + -0.32 momentum = +0.88 → **+0.88**

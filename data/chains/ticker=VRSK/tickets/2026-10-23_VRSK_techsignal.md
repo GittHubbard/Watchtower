@@ -1,18 +1,18 @@
 # Technical Signal: VRSK  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.7
+**Recommendation**: HOLD  |  **Score**: -1.8
 
-### Technical Signal: HOLD (-0.7 / confidence 7%)
+### Technical Signal: HOLD (-1.8 / confidence 18%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 33 vs -DI 15)  |  Vol: HIGH_IV (IV30 49.8%, RV20 27.0%)
+**Regime**: ADX TRENDING (ADX 27, +DI 38 vs -DI 13)  |  Vol: HIGH_IV (IV30 47.8%, RV20 30.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.82)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 68 → -1.82
+- RSI 76 → -2.00
 
-**Overextension penalties** (+0.00)
-- None
+**Overextension penalties** (-1.00)
+- RSI ≥ 75 (-1.0)
 
 **Confirmation** (+0.75)
 - No accumulation / turn signals
@@ -21,6 +21,6 @@
 
 **Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: -1.82 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.66 → **-0.66**
+**Score**: -2.00 pullback + -1.00 overextension + +0.75 confirmation + +0.41 momentum = -1.84 → **-1.84**

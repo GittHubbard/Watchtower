@@ -1,18 +1,18 @@
 # Technical Signal: ALLE  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.4
+**Recommendation**: HOLD  |  **Score**: -1.5
 
-### Technical Signal: HOLD (+0.4 / confidence 4%)
+### Technical Signal: HOLD (-1.5 / confidence 15%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 24 vs -DI 21)  |  Vol: NORMAL_IV (IV30 36.7%, RV20 23.8%)
+**Regime**: ADX RANGING (ADX 20, +DI 44 vs -DI 15)  |  Vol: NORMAL_IV (IV30 38.6%, RV20 43.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.09)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 61 → -1.09
+- RSI 79 → -2.00
 
-**Overextension penalties** (+0.00)
-- None
+**Overextension penalties** (-1.00)
+- RSI ≥ 75 (-1.0)
 
 **Confirmation** (+1.00)
 - No accumulation / turn signals
@@ -26,4 +26,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: -1.09 pullback + +0.00 overextension + +1.00 confirmation + +0.51 momentum = +0.42 → **+0.42**
+**Score**: -2.00 pullback + -1.00 overextension + +1.00 confirmation + +0.51 momentum = -1.49 → **-1.49**

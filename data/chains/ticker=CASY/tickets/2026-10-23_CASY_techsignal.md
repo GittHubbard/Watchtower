@@ -1,15 +1,15 @@
 # Technical Signal: CASY  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.0
+**Recommendation**: HOLD  |  **Score**: -1.4
 
-### Technical Signal: HOLD (-1.0 / confidence 10%)
+### Technical Signal: HOLD (-1.4 / confidence 14%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 29 vs -DI 17)  |  Vol: NORMAL_IV (IV30 37.1%, RV20 18.6%)
+**Regime**: ADX TRENDING (ADX 25, +DI 33 vs -DI 16)  |  Vol: NORMAL_IV (IV30 38.3%, RV20 19.6%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.34)
+**Pullback setup** (-1.80)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 63 → -1.34
+- RSI 68 → -1.80
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - No active divergences
 
-**Trend** (+3.50 = +3.50 × 1.00 convergence) → momentum +0.32 (capped ±1)
+**Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.34 pullback + +0.00 overextension + +0.00 confirmation + +0.32 momentum = -1.02 → **-1.02**
+**Score**: -1.80 pullback + +0.00 overextension + +0.00 confirmation + +0.41 momentum = -1.39 → **-1.39**

@@ -1,27 +1,26 @@
 # Technical Signal: CSX  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.3
+**Recommendation**: HOLD  |  **Score**: -1.5
 
-### Technical Signal: HOLD (-0.3 / confidence 3%)
+### Technical Signal: HOLD (-1.5 / confidence 15%)
 
-**Regime**: ADX RANGING (ADX 14, +DI 20 vs -DI 19)  |  Vol: NORMAL_IV (IV30 38.7%, RV20 13.8%)
+**Regime**: ADX RANGING (ADX 19, +DI 39 vs -DI 14)  |  Vol: NORMAL_IV (IV30 39.2%, RV20 26.4%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.48)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 55 → -0.48
+- RSI 73 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
 
-**Confirmation** (-0.25)
+**Confirmation** (+0.00)
 - No accumulation / turn signals
-**Divergence** (-1.0) → -0.25 toward Confirmation
-- ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
-- ✓ CONFIRMED hid_bear on CMF (quality: standard)
+**Divergence** (+0.0) → +0.00 toward Confirmation
+- No active divergences
 
-**Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
+**Trend** (+5.62 = +4.50 × 1.25 convergence) → momentum +0.51 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: -0.48 pullback + +0.00 overextension + -0.25 confirmation + +0.41 momentum = -0.32 → **-0.32**
+**Score**: -2.00 pullback + +0.00 overextension + +0.00 confirmation + +0.51 momentum = -1.49 → **-1.49**

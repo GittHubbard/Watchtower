@@ -1,15 +1,15 @@
 # Technical Signal: PODD  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.9
+**Recommendation**: HOLD  |  **Score**: +0.0
 
-### Technical Signal: HOLD (+0.9 / confidence 9%)
+### Technical Signal: HOLD (+0.0 / confidence 0%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 24 vs -DI 15)  |  Vol: HIGH_IV (IV30 57.4%, RV20 27.3%)
+**Regime**: ADX RANGING (ADX 18, +DI 24 vs -DI 13)  |  Vol: NORMAL_IV (IV30 55.4%, RV20 30.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.63)
+**Pullback setup** (-1.49)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 56 → -0.63
+- RSI 65 → -1.49
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,6 +23,6 @@
 
 **Trend** (+5.62 = +4.50 × 1.25 convergence) → momentum +0.51 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -0.63 pullback + +0.00 overextension + +1.00 confirmation + +0.51 momentum = +0.88 → **+0.88**
+**Score**: -1.49 pullback + +0.00 overextension + +1.00 confirmation + +0.51 momentum = +0.02 → **+0.02**

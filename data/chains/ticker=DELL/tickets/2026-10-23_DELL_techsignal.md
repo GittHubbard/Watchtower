@@ -1,15 +1,15 @@
 # Technical Signal: DELL  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.4
+**Recommendation**: HOLD  |  **Score**: +1.0
 
-### Technical Signal: HOLD (+0.4 / confidence 4%)
+### Technical Signal: HOLD (+1.0 / confidence 10%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 19 vs -DI 25)  |  Vol: NORMAL_IV (IV30 68.4%, RV20 65.3%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 18 vs -DI 30)  |  Vol: NORMAL_IV (IV30 67.4%, RV20 68.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.74)
+**Pullback setup** (+1.29)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 43 → +0.74
+- RSI 37 → +1.29
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - No active divergences
 
-**Trend** (-3.75 = -3.00 × 1.25 convergence) → momentum -0.34 (capped ±1)
-- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-3.50 = -3.50 × 1.00 convergence) → momentum -0.32 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: +0.74 pullback + +0.00 overextension + +0.00 confirmation + -0.34 momentum = +0.40 → **+0.40**
+**Score**: +1.29 pullback + +0.00 overextension + +0.00 confirmation + -0.32 momentum = +0.97 → **+0.97**

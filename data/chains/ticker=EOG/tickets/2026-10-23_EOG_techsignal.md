@@ -1,10 +1,10 @@
 # Technical Signal: EOG  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.7
+**Recommendation**: HOLD  |  **Score**: -0.6
 
-### Technical Signal: HOLD (-0.7 / confidence 7%)
+### Technical Signal: HOLD (-0.6 / confidence 6%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 27 vs -DI 14)  |  Vol: HIGH_IV (IV30 41.2%, RV20 23.8%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 24 vs -DI 14)  |  Vol: HIGH_IV (IV30 41.7%, RV20 23.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
 **Pullback setup** (-2.00)
@@ -21,8 +21,8 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Trend** (+3.50 = +3.50 × 1.00 convergence) → momentum +0.32 (capped ±1)
+**Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: DRY
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -2.00 pullback + +0.00 overextension + +1.00 confirmation + +0.32 momentum = -0.68 → **-0.68**
+**Score**: -2.00 pullback + +0.00 overextension + +1.00 confirmation + +0.41 momentum = -0.59 → **-0.59**

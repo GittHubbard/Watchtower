@@ -1,15 +1,15 @@
 # Technical Signal: XEL  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.3
+**Recommendation**: HOLD  |  **Score**: -0.8
 
-### Technical Signal: HOLD (-0.3 / confidence 3%)
+### Technical Signal: HOLD (-0.8 / confidence 8%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 26 vs -DI 13)  |  Vol: LOW_IV (IV30 31.6%, RV20 16.4%)
+**Regime**: ADX TRENDING (ADX 30, +DI 31 vs -DI 11)  |  Vol: LOW_IV (IV30 34.3%, RV20 16.6%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.47)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 65 → -1.47
+- RSI 71 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,6 +21,6 @@
 
 **Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -1.47 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.31 → **-0.31**
+**Score**: -2.00 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.84 → **-0.84**

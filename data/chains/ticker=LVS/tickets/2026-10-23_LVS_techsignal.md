@@ -1,15 +1,15 @@
 # Technical Signal: LVS  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.6
+**Recommendation**: HOLD  |  **Score**: +1.3
 
-### Technical Signal: HOLD (+0.6 / confidence 6%)
+### Technical Signal: HOLD (+1.3 / confidence 13%)
 
-**Regime**: ADX TRENDING (ADX 39, +DI 20 vs -DI 27)  |  Vol: NORMAL_IV (IV30 43.4%, RV20 23.6%)
+**Regime**: ADX TRENDING (ADX 40, +DI 16 vs -DI 37)  |  Vol: NORMAL_IV (IV30 45.3%, RV20 24.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.94)
+**Pullback setup** (+1.53)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 41 → +0.94
+- RSI 35 → +1.53
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,8 @@
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
 
-**Trend** (-0.50 = -0.50 × 1.00 convergence) → momentum -0.05 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+0.00 = +0.00 × 1.00 convergence) → momentum +0.00 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +0.94 pullback + +0.00 overextension + -0.25 confirmation + -0.05 momentum = +0.65 → **+0.65**
+**Score**: +1.53 pullback + +0.00 overextension + -0.25 confirmation + +0.00 momentum = +1.28 → **+1.28**

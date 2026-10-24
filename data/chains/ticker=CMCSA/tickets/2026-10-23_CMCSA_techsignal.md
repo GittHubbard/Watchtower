@@ -1,15 +1,15 @@
 # Technical Signal: CMCSA  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.3
+**Recommendation**: HOLD  |  **Score**: +0.6
 
-### Technical Signal: HOLD (+1.3 / confidence 13%)
+### Technical Signal: HOLD (+0.6 / confidence 6%)
 
-**Regime**: ADX TRENDING (ADX 37, +DI 18 vs -DI 27)  |  Vol: NORMAL_IV (IV30 42.4%, RV20 21.9%)
+**Regime**: ADX TRENDING (ADX 33, +DI 27 vs -DI 24)  |  Vol: HIGH_IV (IV30 60.2%, RV20 23.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.04)
+**Pullback setup** (-0.84)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 50 → +0.04
+- RSI 58 → -0.84
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,8 @@
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence) → momentum +0.28 (capped ±1)
+**Trend** (+4.38 = +3.50 × 1.25 convergence) → momentum +0.40 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +0.04 pullback + +0.00 overextension + +1.00 confirmation + +0.28 momentum = +1.32 → **+1.32**
+**Score**: -0.84 pullback + +0.00 overextension + +1.00 confirmation + +0.40 momentum = +0.56 → **+0.56**

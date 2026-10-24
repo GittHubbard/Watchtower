@@ -1,15 +1,15 @@
 # Technical Signal: SJM  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.1
+**Recommendation**: HOLD  |  **Score**: -0.5
 
-### Technical Signal: HOLD (-0.1 / confidence 1%)
+### Technical Signal: HOLD (-0.5 / confidence 5%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 29 vs -DI 12)  |  Vol: NORMAL_IV (IV30 31.9%, RV20 23.0%)
+**Regime**: ADX TRENDING (ADX 25, +DI 34 vs -DI 10)  |  Vol: NORMAL_IV (IV30 32.8%, RV20 26.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.36)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 64 → -1.36
+- RSI 72 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,8 +21,8 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence) → momentum +0.28 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+5.00 = +4.00 × 1.25 convergence) → momentum +0.45 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.36 pullback + +0.00 overextension + +1.00 confirmation + +0.28 momentum = -0.08 → **-0.08**
+**Score**: -2.00 pullback + +0.00 overextension + +1.00 confirmation + +0.45 momentum = -0.55 → **-0.55**

@@ -1,15 +1,15 @@
 # Technical Signal: SPY  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.4
+**Recommendation**: HOLD  |  **Score**: +0.3
 
-### Technical Signal: HOLD (-1.4 / confidence 14%)
+### Technical Signal: HOLD (+0.3 / confidence 3%)
 
-**Regime**: ADX RANGING (ADX 12, +DI 19 vs -DI 24)  |  Vol: HIGH_IV (IV30 15.3%, RV20 8.8%)
-**Long-term context** (not scored): price below 200-day average (+nan%)
+**Regime**: ADX RANGING (ADX 15, +DI 17 vs -DI 31)  |  Vol: HIGH_IV (IV30 15.5%, RV20 9.8%)
+**Long-term context** (not scored): price above 200-day average (+5.0%)
 
-**Pullback setup** (-0.38)
-- Price vs 20-day average: N/A ATR → +0.00
-- RSI 54 → -0.38
+**Pullback setup** (+1.84)
+- Price vs 20-day average: -1.4 ATR → +1.07
+- RSI 42 → +0.77
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,9 @@
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED reg_bear on OBV (quality: standard)
 
-**Trend** (-0.62 = -0.50 × 1.25 convergence) → momentum -0.06 (capped ±1)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-5.94 = -4.75 × 1.25 convergence) → momentum -0.54 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 770.54 (anchor 13 bars ago), aVWAP-low 766.59 (anchor 31 bars ago)
 
-**Score**: -0.38 pullback + +0.00 overextension + -1.00 confirmation + -0.06 momentum = -1.44 → **-1.44**
+**Score**: +1.84 pullback + +0.00 overextension + -1.00 confirmation + -0.54 momentum = +0.30 → **+0.30**

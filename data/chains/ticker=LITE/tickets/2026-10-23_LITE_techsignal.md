@@ -1,15 +1,15 @@
 # Technical Signal: LITE  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.0
+**Recommendation**: HOLD  |  **Score**: +0.8
 
-### Technical Signal: HOLD (-0.0 / confidence 0%)
+### Technical Signal: HOLD (+0.8 / confidence 8%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 20 vs -DI 31)  |  Vol: NORMAL_IV (IV30 82.5%, RV20 75.8%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 18 vs -DI 35)  |  Vol: NORMAL_IV (IV30 80.4%, RV20 86.6%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.89)
+**Pullback setup** (+1.59)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 41 → +0.89
+- RSI 34 → +1.59
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (-2.0) → -0.50 toward Confirmation
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Trend** (-4.38 = -3.50 × 1.25 convergence) → momentum -0.40 (capped ±1)
+**Trend** (-3.50 = -3.50 × 1.00 convergence) → momentum -0.32 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
 - OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +0.89 pullback + +0.00 overextension + -0.50 confirmation + -0.40 momentum = -0.00 → **-0.00**
+**Score**: +1.59 pullback + +0.00 overextension + -0.50 confirmation + -0.32 momentum = +0.77 → **+0.77**

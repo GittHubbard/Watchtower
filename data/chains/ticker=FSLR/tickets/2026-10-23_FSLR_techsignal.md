@@ -1,15 +1,15 @@
 # Technical Signal: FSLR  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.8
+**Recommendation**: HOLD  |  **Score**: +1.0
 
-### Technical Signal: HOLD (+0.8 / confidence 8%)
+### Technical Signal: HOLD (+1.0 / confidence 10%)
 
-**Regime**: ADX WEAK_TREND (ADX 23, +DI 14 vs -DI 21)  |  Vol: NORMAL_IV (IV30 62.7%, RV20 51.0%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 13 vs -DI 23)  |  Vol: NORMAL_IV (IV30 61.1%, RV20 33.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.90)
+**Pullback setup** (+1.18)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 41 → +0.90
+- RSI 38 → +1.18
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,8 +21,8 @@
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 
-**Trend** (+1.50 = +1.50 × 1.00 convergence) → momentum +0.14 (capped ±1)
+**Trend** (+0.50 = +0.50 × 1.00 convergence) → momentum +0.05 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: +0.90 pullback + +0.00 overextension + -0.25 confirmation + +0.14 momentum = +0.79 → **+0.79**
+**Score**: +1.18 pullback + +0.00 overextension + -0.25 confirmation + +0.05 momentum = +0.98 → **+0.98**

@@ -1,15 +1,15 @@
 # Technical Signal: NOC  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.1
+**Recommendation**: HOLD  |  **Score**: -0.4
 
-### Technical Signal: HOLD (-0.1 / confidence 1%)
+### Technical Signal: HOLD (-0.4 / confidence 4%)
 
-**Regime**: ADX TRENDING (ADX 33, +DI 31 vs -DI 12)  |  Vol: NORMAL_IV (IV30 33.4%, RV20 33.1%)
+**Regime**: ADX TRENDING (ADX 35, +DI 34 vs -DI 11)  |  Vol: NORMAL_IV (IV30 33.6%, RV20 33.6%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.45)
+**Pullback setup** (-1.83)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 65 → -1.45
+- RSI 68 → -1.83
 
 **Overextension penalties** (+0.00)
 - None
@@ -24,4 +24,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.45 pullback + +0.00 overextension + +1.00 confirmation + +0.40 momentum = -0.06 → **-0.06**
+**Score**: -1.83 pullback + +0.00 overextension + +1.00 confirmation + +0.40 momentum = -0.44 → **-0.44**

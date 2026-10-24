@@ -1,15 +1,15 @@
 # Technical Signal: EBAY  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.7
+**Recommendation**: HOLD  |  **Score**: -1.8
 
-### Technical Signal: HOLD (-1.7 / confidence 17%)
+### Technical Signal: HOLD (-1.8 / confidence 18%)
 
-**Regime**: ADX TRENDING (ADX 34, +DI 33 vs -DI 7)  |  Vol: NORMAL_IV (IV30 51.3%, RV20 27.2%)
+**Regime**: ADX TRENDING (ADX 36, +DI 31 vs -DI 7)  |  Vol: NORMAL_IV (IV30 49.4%, RV20 26.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
 **Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 73 → -2.00
+- RSI 71 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,8 @@
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 - ⏳ PENDING reg_bear on OBV (quality: standard)
 
-**Trend** (+3.50 = +3.50 × 1.00 convergence) → momentum +0.32 (capped ±1)
+**Trend** (+2.50 = +2.50 × 1.00 convergence) → momentum +0.23 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -2.00 pullback + +0.00 overextension + +0.00 confirmation + +0.32 momentum = -1.68 → **-1.68**
+**Score**: -2.00 pullback + +0.00 overextension + +0.00 confirmation + +0.23 momentum = -1.77 → **-1.77**

@@ -1,15 +1,15 @@
 # Technical Signal: KVUE  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.3
+**Recommendation**: HOLD  |  **Score**: -0.6
 
-### Technical Signal: HOLD (-0.3 / confidence 3%)
+### Technical Signal: HOLD (-0.6 / confidence 6%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 33 vs -DI 14)  |  Vol: HIGH_IV (IV30 63.5%, RV20 21.4%)
+**Regime**: ADX TRENDING (ADX 27, +DI 39 vs -DI 11)  |  Vol: HIGH_IV (IV30 54.2%, RV20 25.3%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.66)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 67 → -1.66
+- RSI 75 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,6 +23,6 @@
 
 **Trend** (+4.38 = +3.50 × 1.25 convergence) → momentum +0.40 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -1.66 pullback + +0.00 overextension + +1.00 confirmation + +0.40 momentum = -0.26 → **-0.26**
+**Score**: -2.00 pullback + +0.00 overextension + +1.00 confirmation + +0.40 momentum = -0.60 → **-0.60**

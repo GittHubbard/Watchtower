@@ -1,18 +1,18 @@
 # Technical Signal: MAS  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.2
+**Recommendation**: HOLD  |  **Score**: -2.5
 
-### Technical Signal: HOLD (-1.2 / confidence 12%)
+### Technical Signal: HOLD (-2.5 / confidence 25%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 37 vs -DI 11)  |  Vol: NORMAL_IV (IV30 54.5%, RV20 23.6%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 35 vs -DI 10)  |  Vol: NORMAL_IV (IV30 51.5%, RV20 26.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.73)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 67 → -1.73
+- RSI 75 → -2.00
 
-**Overextension penalties** (+0.00)
-- None
+**Overextension penalties** (-1.00)
+- RSI ≥ 75 (-1.0)
 
 **Confirmation** (+0.00)
 - No accumulation / turn signals
@@ -21,6 +21,6 @@
 
 **Trend** (+5.62 = +4.50 × 1.25 convergence) → momentum +0.51 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.73 pullback + +0.00 overextension + +0.00 confirmation + +0.51 momentum = -1.22 → **-1.22**
+**Score**: -2.00 pullback + -1.00 overextension + +0.00 confirmation + +0.51 momentum = -2.49 → **-2.49**

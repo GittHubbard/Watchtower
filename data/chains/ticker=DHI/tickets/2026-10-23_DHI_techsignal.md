@@ -1,15 +1,15 @@
 # Technical Signal: DHI  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.1
+**Recommendation**: HOLD  |  **Score**: +0.2
 
-### Technical Signal: HOLD (+1.1 / confidence 11%)
+### Technical Signal: HOLD (+0.2 / confidence 2%)
 
-**Regime**: ADX RANGING (ADX 11, +DI 25 vs -DI 20)  |  Vol: NORMAL_IV (IV30 47.9%, RV20 30.9%)
+**Regime**: ADX RANGING (ADX 14, +DI 32 vs -DI 17)  |  Vol: HIGH_IV (IV30 49.9%, RV20 37.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.12)
+**Pullback setup** (-1.21)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 51 → -0.12
+- RSI 62 → -1.21
 
 **Overextension penalties** (+0.00)
 - None
@@ -22,8 +22,8 @@
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Trend** (+2.50 = +2.00 × 1.25 convergence) → momentum +0.23 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+**Trend** (+4.38 = +3.50 × 1.25 convergence) → momentum +0.40 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.12 pullback + +0.00 overextension + +1.00 confirmation + +0.23 momentum = +1.10 → **+1.10**
+**Score**: -1.21 pullback + +0.00 overextension + +1.00 confirmation + +0.40 momentum = +0.19 → **+0.19**

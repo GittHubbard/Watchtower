@@ -1,15 +1,15 @@
 # Technical Signal: DLR  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.8
+**Recommendation**: HOLD  |  **Score**: +1.3
 
-### Technical Signal: HOLD (+0.8 / confidence 8%)
+### Technical Signal: HOLD (+1.3 / confidence 13%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 18 vs -DI 28)  |  Vol: HIGH_IV (IV30 42.6%, RV20 24.9%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 16 vs -DI 32)  |  Vol: HIGH_IV (IV30 41.8%, RV20 27.0%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.39)
+**Pullback setup** (+1.04)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 46 → +0.39
+- RSI 40 → +1.04
 
 **Overextension penalties** (+0.00)
 - None
@@ -26,8 +26,8 @@
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 - ⏳ PENDING reg_bull on OBV (quality: standard)
 
-**Trend** (-1.50 = -1.50 × 1.00 convergence) → momentum -0.14 (capped ±1)
-- Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-2.50 = -2.00 × 1.25 convergence) → momentum -0.23 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +0.39 pullback + +0.00 overextension + +0.50 confirmation + -0.14 momentum = +0.75 → **+0.75**
+**Score**: +1.04 pullback + +0.00 overextension + +0.50 confirmation + -0.23 momentum = +1.31 → **+1.31**

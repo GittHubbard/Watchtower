@@ -1,15 +1,15 @@
 # Technical Signal: ZTS  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.7
+**Recommendation**: HOLD  |  **Score**: -0.8
 
-### Technical Signal: HOLD (-0.7 / confidence 7%)
+### Technical Signal: HOLD (-0.8 / confidence 8%)
 
-**Regime**: ADX TRENDING (ADX 30, +DI 29 vs -DI 10)  |  Vol: HIGH_IV (IV30 51.4%, RV20 24.5%)
+**Regime**: ADX TRENDING (ADX 33, +DI 34 vs -DI 9)  |  Vol: HIGH_IV (IV30 50.3%, RV20 24.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.86)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 69 → -1.86
+- RSI 74 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,6 +21,6 @@
 
 **Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -1.86 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.70 → **-0.70**
+**Score**: -2.00 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.84 → **-0.84**

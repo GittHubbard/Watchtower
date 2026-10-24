@@ -1,26 +1,28 @@
 # Technical Signal: HPE  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: HOLD  |  **Score**: +0.2
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: HOLD (+0.2 / confidence 2%)
 
-**Regime**: ADX WEAK_TREND (ADX 25, +DI 21 vs -DI 28)  |  Vol: NORMAL_IV (IV30 65.2%, RV20 63.9%)
+**Regime**: ADX TRENDING (ADX 25, +DI 19 vs -DI 31)  |  Vol: NORMAL_IV (IV30 64.5%, RV20 65.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.65)
+**Pullback setup** (+1.03)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 44 → +0.65
+- RSI 40 → +1.03
 
 **Overextension penalties** (+0.00)
 - None
 
-**Confirmation** (-0.75)
+**Confirmation** (-0.50)
 - No accumulation / turn signals
-**Divergence** (-3.0) → -0.75 toward Confirmation
+**Divergence** (-2.0) → -0.50 toward Confirmation
+- ✓ CONFIRMED hid_bull on RSI (quality: standard)
+- ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 
-**Trend** (-4.38 = -3.50 × 1.25 convergence) → momentum -0.40 (capped ±1)
-- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (-4.00 = -4.00 × 1.00 convergence) → momentum -0.36 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +0.65 pullback + +0.00 overextension + -0.75 confirmation + -0.40 momentum = -0.50 → **-0.50**
+**Score**: +1.03 pullback + +0.00 overextension + -0.50 confirmation + -0.36 momentum = +0.17 → **+0.17**

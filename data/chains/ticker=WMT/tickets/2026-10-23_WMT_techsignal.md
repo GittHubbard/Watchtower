@@ -1,18 +1,18 @@
 # Technical Signal: WMT  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.6
+**Recommendation**: SELL  |  **Score**: -3.9
 
-### Technical Signal: HOLD (-0.6 / confidence 6%)
+### Technical Signal: SELL (-3.9 / confidence 39%)
 
-**Regime**: ADX TRENDING (ADX 31, +DI 38 vs -DI 12)  |  Vol: HIGH_IV (IV30 34.3%, RV20 24.5%)
-**Long-term context** (not scored): price below 200-day average (+nan%)
+**Regime**: ADX TRENDING (ADX 34, +DI 45 vs -DI 11)  |  Vol: HIGH_IV (IV30 34.5%, RV20 23.9%)
+**Long-term context** (not scored): price above 200-day average (+1.6%)
 
-**Pullback setup** (-1.90)
-- Price vs 20-day average: N/A ATR → +0.00
-- RSI 69 → -1.90
+**Pullback setup** (-4.26)
+- Price vs 20-day average: +3.1 ATR → -2.31
+- RSI 70 → -1.96
 
-**Overextension penalties** (+0.00)
-- None
+**Overextension penalties** (-1.00)
+- > 3 ATR above 20-day average (-1.0)
 
 **Confirmation** (+1.00)
 - No accumulation / turn signals
@@ -20,8 +20,9 @@
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Trend** (+3.00 = +3.00 × 1.00 convergence) → momentum +0.27 (capped ±1)
+**Trend** (+3.75 = +3.75 × 1.00 convergence) → momentum +0.34 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 111.70 (anchor 22 bars ago), aVWAP-low 114.68 (anchor 14 bars ago)
 
-**Score**: -1.90 pullback + +0.00 overextension + +1.00 confirmation + +0.27 momentum = -0.63 → **-0.63**
+**Score**: -4.26 pullback + -1.00 overextension + +1.00 confirmation + +0.34 momentum = -3.92 → **-3.92**

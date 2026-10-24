@@ -1,18 +1,18 @@
 # Technical Signal: LMT  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.1
+**Recommendation**: HOLD  |  **Score**: -1.5
 
-### Technical Signal: HOLD (+0.1 / confidence 1%)
+### Technical Signal: HOLD (-1.5 / confidence 15%)
 
-**Regime**: ADX TRENDING (ADX 33, +DI 26 vs -DI 16)  |  Vol: NORMAL_IV (IV30 33.2%, RV20 23.8%)
+**Regime**: ADX TRENDING (ADX 37, +DI 43 vs -DI 12)  |  Vol: NORMAL_IV (IV30 33.3%, RV20 33.0%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.38)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 64 → -1.38
+- RSI 75 → -2.00
 
-**Overextension penalties** (+0.00)
-- None
+**Overextension penalties** (-1.00)
+- RSI ≥ 75 (-1.0)
 
 **Confirmation** (+1.00)
 - No accumulation / turn signals
@@ -24,4 +24,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: -1.38 pullback + +0.00 overextension + +1.00 confirmation + +0.51 momentum = +0.13 → **+0.13**
+**Score**: -2.00 pullback + -1.00 overextension + +1.00 confirmation + +0.51 momentum = -1.49 → **-1.49**

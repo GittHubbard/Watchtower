@@ -1,15 +1,15 @@
 # Technical Signal: CBRE  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.0
+**Recommendation**: HOLD  |  **Score**: +0.3
 
-### Technical Signal: HOLD (-0.0 / confidence 0%)
+### Technical Signal: HOLD (+0.3 / confidence 3%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 22 vs -DI 19)  |  Vol: NORMAL_IV (IV30 40.7%, RV20 30.9%)
+**Regime**: ADX RANGING (ADX 17, +DI 20 vs -DI 23)  |  Vol: NORMAL_IV (IV30 41.5%, RV20 32.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.08)
+**Pullback setup** (+0.49)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 51 → -0.08
+- RSI 45 → +0.49
 
 **Overextension penalties** (+0.00)
 - None
@@ -24,8 +24,8 @@
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 - ⏳ PENDING reg_bull on OBV (quality: standard)
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence) → momentum +0.28 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+1.00 = +1.00 × 1.00 convergence) → momentum +0.09 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: -0.08 pullback + +0.00 overextension + -0.25 confirmation + +0.28 momentum = -0.05 → **-0.05**
+**Score**: +0.49 pullback + +0.00 overextension + -0.25 confirmation + +0.09 momentum = +0.33 → **+0.33**

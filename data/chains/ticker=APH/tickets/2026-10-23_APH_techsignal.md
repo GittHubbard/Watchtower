@@ -1,15 +1,15 @@
 # Technical Signal: APH  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.2
+**Recommendation**: HOLD  |  **Score**: +0.7
 
-### Technical Signal: HOLD (-0.2 / confidence 2%)
+### Technical Signal: HOLD (+0.7 / confidence 7%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 13 vs -DI 30)  |  Vol: HIGH_IV (IV30 53.1%, RV20 26.0%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 11 vs -DI 40)  |  Vol: NORMAL_IV (IV30 51.9%, RV20 37.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+1.04)
+**Pullback setup** (+2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 40 → +1.04
+- RSI 29 → +2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,6 +21,6 @@
 
 **Trend** (-5.62 = -4.50 × 1.25 convergence) → momentum -0.51 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +1.04 pullback + +0.00 overextension + -0.75 confirmation + -0.51 momentum = -0.22 → **-0.22**
+**Score**: +2.00 pullback + +0.00 overextension + -0.75 confirmation + -0.51 momentum = +0.74 → **+0.74**

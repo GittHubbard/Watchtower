@@ -1,15 +1,15 @@
 # Technical Signal: RCL  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.1
+**Recommendation**: HOLD  |  **Score**: -0.8
 
-### Technical Signal: HOLD (-1.1 / confidence 11%)
+### Technical Signal: HOLD (-0.8 / confidence 8%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 26 vs -DI 13)  |  Vol: HIGH_IV (IV30 53.0%, RV20 37.4%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 25 vs -DI 13)  |  Vol: HIGH_IV (IV30 53.5%, RV20 36.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.21)
+**Pullback setup** (-0.97)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 62 → -1.21
+- RSI 60 → -0.97
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.21 pullback + +0.00 overextension + -0.25 confirmation + +0.41 momentum = -1.05 → **-1.05**
+**Score**: -0.97 pullback + +0.00 overextension + -0.25 confirmation + +0.41 momentum = -0.81 → **-0.81**

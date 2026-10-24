@@ -1,26 +1,27 @@
 # Technical Signal: WFC  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.6
+**Recommendation**: HOLD  |  **Score**: +0.1
 
-### Technical Signal: HOLD (+0.6 / confidence 6%)
+### Technical Signal: HOLD (+0.1 / confidence 1%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 25 vs -DI 32)  |  Vol: NORMAL_IV (IV30 27.5%, RV20 24.2%)
+**Regime**: ADX RANGING (ADX 20, +DI 23 vs -DI 32)  |  Vol: NORMAL_IV (IV30 29.0%, RV20 24.3%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.22)
+**Pullback setup** (-0.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 48 → +0.22
+- RSI 50 → -0.00
 
 **Overextension penalties** (+0.00)
 - None
 
-**Confirmation** (+0.00)
+**Confirmation** (-0.25)
 - No accumulation / turn signals
-**Divergence** (+0.0) → +0.00 toward Confirmation
-- No active divergences
+**Divergence** (-1.0) → -0.25 toward Confirmation
+- ✓ CONFIRMED hid_bear on CMF (quality: standard)
+- ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Trend** (+4.38 = +3.50 × 1.25 convergence) → momentum +0.40 (capped ±1)
+**Trend** (+3.50 = +3.50 × 1.00 convergence) → momentum +0.32 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: +0.22 pullback + +0.00 overextension + +0.00 confirmation + +0.40 momentum = +0.62 → **+0.62**
+**Score**: -0.00 pullback + +0.00 overextension + -0.25 confirmation + +0.32 momentum = +0.06 → **+0.06**

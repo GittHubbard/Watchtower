@@ -1,15 +1,15 @@
 # Technical Signal: PFE  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.3
+**Recommendation**: HOLD  |  **Score**: -1.5
 
-### Technical Signal: HOLD (-1.3 / confidence 13%)
+### Technical Signal: HOLD (-1.5 / confidence 15%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 32 vs -DI 14)  |  Vol: HIGH_IV (IV30 30.6%, RV20 19.2%)
+**Regime**: ADX TRENDING (ADX 29, +DI 33 vs -DI 13)  |  Vol: HIGH_IV (IV30 29.7%, RV20 19.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.78)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 68 → -1.78
+- RSI 72 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.78 pullback + +0.00 overextension + +0.00 confirmation + +0.45 momentum = -1.33 → **-1.33**
+**Score**: -2.00 pullback + +0.00 overextension + +0.00 confirmation + +0.45 momentum = -1.55 → **-1.55**

@@ -1,15 +1,15 @@
 # Technical Signal: LNT  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.7
+**Recommendation**: HOLD  |  **Score**: -1.4
 
-### Technical Signal: HOLD (-0.7 / confidence 7%)
+### Technical Signal: HOLD (-1.4 / confidence 14%)
 
-**Regime**: ADX TRENDING (ADX 25, +DI 22 vs -DI 12)  |  Vol: HIGH_IV (IV30 40.7%, RV20 18.0%)
+**Regime**: ADX TRENDING (ADX 28, +DI 29 vs -DI 11)  |  Vol: HIGH_IV (IV30 44.4%, RV20 19.5%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.08)
+**Pullback setup** (-1.80)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 61 → -1.08
+- RSI 68 → -1.80
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.08 pullback + +0.00 overextension + +0.00 confirmation + +0.41 momentum = -0.68 → **-0.68**
+**Score**: -1.80 pullback + +0.00 overextension + +0.00 confirmation + +0.41 momentum = -1.40 → **-1.40**

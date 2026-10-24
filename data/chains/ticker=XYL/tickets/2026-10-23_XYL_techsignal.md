@@ -1,15 +1,15 @@
 # Technical Signal: XYL  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.6
+**Recommendation**: HOLD  |  **Score**: -0.2
 
-### Technical Signal: HOLD (+0.6 / confidence 6%)
+### Technical Signal: HOLD (-0.2 / confidence 2%)
 
-**Regime**: ADX RANGING (ADX 19, +DI 24 vs -DI 17)  |  Vol: HIGH_IV (IV30 45.8%, RV20 26.5%)
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 27 vs -DI 14)  |  Vol: HIGH_IV (IV30 42.9%, RV20 18.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.66)
+**Pullback setup** (-1.50)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 57 → -0.66
+- RSI 65 → -1.50
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,8 +23,8 @@
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 - ✓ CONFIRMED hid_bear on OBV (quality: standard)
 
-**Trend** (+3.12 = +2.50 × 1.25 convergence) → momentum +0.28 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+**Trend** (+3.75 = +3.00 × 1.25 convergence) → momentum +0.34 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.66 pullback + +0.00 overextension + +1.00 confirmation + +0.28 momentum = +0.63 → **+0.63**
+**Score**: -1.50 pullback + +0.00 overextension + +1.00 confirmation + +0.34 momentum = -0.15 → **-0.15**

@@ -1,18 +1,18 @@
 # Technical Signal: STZ  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.8
+**Recommendation**: HOLD  |  **Score**: -1.8
 
-### Technical Signal: HOLD (-0.8 / confidence 8%)
+### Technical Signal: HOLD (-1.8 / confidence 18%)
 
-**Regime**: ADX TRENDING (ADX 31, +DI 30 vs -DI 13)  |  Vol: NORMAL_IV (IV30 35.5%, RV20 23.7%)
+**Regime**: ADX TRENDING (ADX 34, +DI 39 vs -DI 11)  |  Vol: NORMAL_IV (IV30 35.7%, RV20 26.6%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.98)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 70 → -1.98
+- RSI 78 → -2.00
 
-**Overextension penalties** (+0.00)
-- None
+**Overextension penalties** (-1.00)
+- RSI ≥ 75 (-1.0)
 
 **Confirmation** (+0.75)
 - No accumulation / turn signals
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.98 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.82 → **-0.82**
+**Score**: -2.00 pullback + -1.00 overextension + +0.75 confirmation + +0.41 momentum = -1.84 → **-1.84**

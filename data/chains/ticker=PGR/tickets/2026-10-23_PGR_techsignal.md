@@ -1,15 +1,15 @@
 # Technical Signal: PGR  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.4
+**Recommendation**: HOLD  |  **Score**: -1.1
 
-### Technical Signal: HOLD (-0.4 / confidence 4%)
+### Technical Signal: HOLD (-1.1 / confidence 11%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 26 vs -DI 23)  |  Vol: LOW_IV (IV30 29.4%, RV20 24.2%)
+**Regime**: ADX RANGING (ADX 14, +DI 31 vs -DI 21)  |  Vol: NORMAL_IV (IV30 31.6%, RV20 26.5%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.81)
+**Pullback setup** (-1.63)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 58 → -0.81
+- RSI 66 → -1.63
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,8 @@
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 - ⏳ PENDING reg_bear on OBV (quality: standard)
 
-**Trend** (+4.38 = +3.50 × 1.25 convergence) → momentum +0.40 (capped ±1)
+**Trend** (+5.62 = +4.50 × 1.25 convergence) → momentum +0.51 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.81 pullback + +0.00 overextension + +0.00 confirmation + +0.40 momentum = -0.42 → **-0.42**
+**Score**: -1.63 pullback + +0.00 overextension + +0.00 confirmation + +0.51 momentum = -1.12 → **-1.12**

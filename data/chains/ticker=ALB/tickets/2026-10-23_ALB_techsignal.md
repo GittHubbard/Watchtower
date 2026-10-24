@@ -4,12 +4,12 @@
 
 ### Technical Signal: HOLD (+1.7 / confidence 17%)
 
-**Regime**: ADX TRENDING (ADX 40, +DI 11 vs -DI 28)  |  Vol: NORMAL_IV (IV30 56.8%, RV20 26.4%)
+**Regime**: ADX TRENDING (ADX 41, +DI 10 vs -DI 29)  |  Vol: NORMAL_IV (IV30 57.6%, RV20 22.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
 **Pullback setup** (+2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 27 → +2.00
+- RSI 25 → +2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,6 +21,6 @@
 
 **Trend** (-3.50 = -3.50 × 1.00 convergence) → momentum -0.32 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: DRY
 
 **Score**: +2.00 pullback + +0.00 overextension + +0.00 confirmation + -0.32 momentum = +1.68 → **+1.68**

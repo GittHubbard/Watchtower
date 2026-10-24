@@ -1,15 +1,15 @@
 # Technical Signal: NSC  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.7
+**Recommendation**: HOLD  |  **Score**: -1.6
 
-### Technical Signal: HOLD (-0.7 / confidence 7%)
+### Technical Signal: HOLD (-1.6 / confidence 16%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 19 vs -DI 13)  |  Vol: LOW_IV (IV30 23.6%, RV20 13.2%)
+**Regime**: ADX TRENDING (ADX 29, +DI 27 vs -DI 10)  |  Vol: NORMAL_IV (IV30 25.8%, RV20 16.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.07)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 61 → -1.07
+- RSI 71 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.07 pullback + +0.00 overextension + +0.00 confirmation + +0.41 momentum = -0.66 → **-0.66**
+**Score**: -2.00 pullback + +0.00 overextension + +0.00 confirmation + +0.41 momentum = -1.59 → **-1.59**

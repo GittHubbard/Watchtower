@@ -1,15 +1,15 @@
 # Technical Signal: BAX  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.3
+**Recommendation**: HOLD  |  **Score**: -1.0
 
-### Technical Signal: HOLD (-0.3 / confidence 3%)
+### Technical Signal: HOLD (-1.0 / confidence 10%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 21 vs -DI 19)  |  Vol: NORMAL_IV (IV30 58.7%, RV20 25.7%)
+**Regime**: ADX WEAK_TREND (ADX 22, +DI 26 vs -DI 17)  |  Vol: HIGH_IV (IV30 60.1%, RV20 28.5%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.24)
+**Pullback setup** (-1.08)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 52 → -0.24
+- RSI 61 → -1.08
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (-1.0) → -0.25 toward Confirmation
 - ✓ CONFIRMED hid_bear on CMF (quality: strong)
 
-**Trend** (+2.50 = +2.50 × 1.00 convergence) → momentum +0.23 (capped ±1)
+**Trend** (+3.50 = +3.50 × 1.00 convergence) → momentum +0.32 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.24 pullback + +0.00 overextension + -0.25 confirmation + +0.23 momentum = -0.26 → **-0.26**
+**Score**: -1.08 pullback + +0.00 overextension + -0.25 confirmation + +0.32 momentum = -1.01 → **-1.01**

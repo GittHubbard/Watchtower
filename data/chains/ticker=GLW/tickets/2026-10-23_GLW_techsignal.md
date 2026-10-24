@@ -1,15 +1,15 @@
 # Technical Signal: GLW  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.4
+**Recommendation**: HOLD  |  **Score**: +0.9
 
-### Technical Signal: HOLD (+0.4 / confidence 4%)
+### Technical Signal: HOLD (+0.9 / confidence 9%)
 
-**Regime**: ADX WEAK_TREND (ADX 20, +DI 14 vs -DI 28)  |  Vol: NORMAL_IV (IV30 65.3%, RV20 58.8%)
+**Regime**: ADX WEAK_TREND (ADX 23, +DI 13 vs -DI 34)  |  Vol: NORMAL_IV (IV30 61.7%, RV20 64.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+1.11)
+**Pullback setup** (+1.71)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 39 → +1.11
+- RSI 33 → +1.71
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (-2.0) → -0.50 toward Confirmation
 - ✓ CONFIRMED reg_bear on CMF (quality: standard)
 
-**Trend** (-2.50 = -2.50 × 1.00 convergence) → momentum -0.23 (capped ±1)
+**Trend** (-3.50 = -3.50 × 1.00 convergence) → momentum -0.32 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +1.11 pullback + +0.00 overextension + -0.50 confirmation + -0.23 momentum = +0.38 → **+0.38**
+**Score**: +1.71 pullback + +0.00 overextension + -0.50 confirmation + -0.32 momentum = +0.89 → **+0.89**

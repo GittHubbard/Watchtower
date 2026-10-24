@@ -1,15 +1,15 @@
 # Technical Signal: T  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.1
+**Recommendation**: HOLD  |  **Score**: +0.3
 
-### Technical Signal: HOLD (+1.1 / confidence 11%)
+### Technical Signal: HOLD (+0.3 / confidence 3%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 18 vs -DI 39)  |  Vol: NORMAL_IV (IV30 33.1%, RV20 46.6%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 19 vs -DI 35)  |  Vol: HIGH_IV (IV30 37.4%, RV20 49.0%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+1.74)
+**Pullback setup** (+0.85)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 33 → +1.74
+- RSI 41 → +0.85
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,8 +21,8 @@
 - ✓ CONFIRMED hid_bear on CMF (quality: standard)
 - ⏳ PENDING reg_bull on OBV (quality: standard)
 
-**Trend** (-4.50 = -4.50 × 1.00 convergence) → momentum -0.41 (capped ±1)
+**Trend** (-3.50 = -3.50 × 1.00 convergence) → momentum -0.32 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: +1.74 pullback + +0.00 overextension + -0.25 confirmation + -0.41 momentum = +1.08 → **+1.08**
+**Score**: +0.85 pullback + +0.00 overextension + -0.25 confirmation + -0.32 momentum = +0.28 → **+0.28**

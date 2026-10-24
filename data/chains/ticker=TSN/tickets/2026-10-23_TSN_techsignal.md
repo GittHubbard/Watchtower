@@ -1,15 +1,15 @@
 # Technical Signal: TSN  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.2
+**Recommendation**: HOLD  |  **Score**: -0.6
 
-### Technical Signal: HOLD (-0.2 / confidence 2%)
+### Technical Signal: HOLD (-0.6 / confidence 6%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 33 vs -DI 13)  |  Vol: HIGH_IV (IV30 36.0%, RV20 18.3%)
+**Regime**: ADX TRENDING (ADX 27, +DI 37 vs -DI 12)  |  Vol: NORMAL_IV (IV30 35.2%, RV20 18.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.65)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 66 → -1.65
+- RSI 71 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -25,4 +25,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.65 pullback + +0.00 overextension + +1.00 confirmation + +0.41 momentum = -0.24 → **-0.24**
+**Score**: -2.00 pullback + +0.00 overextension + +1.00 confirmation + +0.41 momentum = -0.59 → **-0.59**

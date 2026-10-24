@@ -1,15 +1,15 @@
 # Technical Signal: QQQ  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.9
+**Recommendation**: HOLD  |  **Score**: +1.8
 
-### Technical Signal: HOLD (-0.9 / confidence 9%)
+### Technical Signal: HOLD (+1.8 / confidence 18%)
 
-**Regime**: ADX WEAK_TREND (ADX 22, +DI 16 vs -DI 33)  |  Vol: HIGH_IV (IV30 25.5%, RV20 15.9%)
-**Long-term context** (not scored): price below 200-day average (+nan%)
+**Regime**: ADX WEAK_TREND (ADX 25, +DI 14 vs -DI 40)  |  Vol: HIGH_IV (IV30 24.7%, RV20 18.5%)
+**Long-term context** (not scored): price above 200-day average (+4.2%)
 
-**Pullback setup** (+0.39)
-- Price vs 20-day average: N/A ATR → +0.00
-- RSI 46 → +0.39
+**Pullback setup** (+3.42)
+- Price vs 20-day average: -2.8 ATR → +2.08
+- RSI 37 → +1.34
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,9 @@
 - ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bear on CMF (quality: strong)
 
-**Trend** (-3.75 = -3.00 × 1.25 convergence) → momentum -0.34 (capped ±1)
-- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (-6.56 = -5.25 × 1.25 convergence) → momentum -0.60 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: BEARISH  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 728.59 (anchor 13 bars ago), aVWAP-low 731.11 (anchor 28 bars ago)
 
-**Score**: +0.39 pullback + +0.00 overextension + -1.00 confirmation + -0.34 momentum = -0.95 → **-0.95**
+**Score**: +3.42 pullback + +0.00 overextension + -1.00 confirmation + -0.60 momentum = +1.82 → **+1.82**

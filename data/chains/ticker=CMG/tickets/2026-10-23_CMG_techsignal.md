@@ -4,7 +4,7 @@
 
 ### Technical Signal: HOLD (+1.4 / confidence 14%)
 
-**Regime**: ADX RANGING (ADX 16, +DI 20 vs -DI 31)  |  Vol: NORMAL_IV (IV30 50.7%, RV20 40.2%)
+**Regime**: ADX RANGING (ADX 16, +DI 20 vs -DI 30)  |  Vol: NORMAL_IV (IV30 49.1%, RV20 39.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
 **Pullback setup** (+2.00)
@@ -23,6 +23,6 @@
 
 **Trend** (-4.38 = -3.50 × 1.25 convergence) → momentum -0.40 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
 **Score**: +2.00 pullback + +0.00 overextension + -0.25 confirmation + -0.40 momentum = +1.35 → **+1.35**

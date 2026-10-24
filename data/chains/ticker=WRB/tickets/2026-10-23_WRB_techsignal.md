@@ -1,15 +1,15 @@
 # Technical Signal: WRB  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.1
+**Recommendation**: HOLD  |  **Score**: -0.4
 
-### Technical Signal: HOLD (-0.1 / confidence 1%)
+### Technical Signal: HOLD (-0.4 / confidence 4%)
 
-**Regime**: ADX TRENDING (ADX 35, +DI 24 vs -DI 10)  |  Vol: NORMAL_IV (IV30 31.6%, RV20 19.9%)
+**Regime**: ADX TRENDING (ADX 37, +DI 29 vs -DI 9)  |  Vol: NORMAL_IV (IV30 32.5%, RV20 19.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.46)
+**Pullback setup** (-1.85)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 65 → -1.46
+- RSI 69 → -1.85
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,8 @@
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 
-**Trend** (+3.50 = +3.50 × 1.00 convergence) → momentum +0.32 (capped ±1)
+**Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.46 pullback + +0.00 overextension + +1.00 confirmation + +0.32 momentum = -0.15 → **-0.15**
+**Score**: -1.85 pullback + +0.00 overextension + +1.00 confirmation + +0.41 momentum = -0.44 → **-0.44**

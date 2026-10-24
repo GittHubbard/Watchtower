@@ -1,15 +1,15 @@
 # Technical Signal: CPB  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.5
+**Recommendation**: HOLD  |  **Score**: +0.2
 
-### Technical Signal: HOLD (+1.5 / confidence 15%)
+### Technical Signal: HOLD (+0.2 / confidence 2%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 21 vs -DI 23)  |  Vol: NORMAL_IV (IV30 44.0%, RV20 31.1%)
+**Regime**: ADX TRENDING (ADX 27, +DI 31 vs -DI 19)  |  Vol: NORMAL_IV (IV30 43.4%, RV20 42.1%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.40)
+**Pullback setup** (-1.16)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 46 → +0.40
+- RSI 62 → -1.16
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,12 +19,11 @@
 **Divergence** (+5.0) → +1.00 toward Confirmation
 - ✓ CONFIRMED reg_bull on RSI (quality: strong)
 - ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
-- ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
-- ⏳ PENDING reg_bull on OBV (quality: standard)
+- ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Trend** (+0.62 = +0.50 × 1.25 convergence) → momentum +0.06 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+3.75 = +3.00 × 1.25 convergence) → momentum +0.34 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: ACCUM
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +0.40 pullback + +0.00 overextension + +1.00 confirmation + +0.06 momentum = +1.46 → **+1.46**
+**Score**: -1.16 pullback + +0.00 overextension + +1.00 confirmation + +0.34 momentum = +0.18 → **+0.18**

@@ -1,15 +1,15 @@
 # Technical Signal: AON  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.0
+**Recommendation**: HOLD  |  **Score**: -0.9
 
-### Technical Signal: HOLD (-0.0 / confidence 0%)
+### Technical Signal: HOLD (-0.9 / confidence 9%)
 
-**Regime**: ADX TRENDING (ADX 35, +DI 25 vs -DI 18)  |  Vol: HIGH_IV (IV30 36.7%, RV20 26.9%)
+**Regime**: ADX TRENDING (ADX 36, +DI 31 vs -DI 16)  |  Vol: HIGH_IV (IV30 38.2%, RV20 29.0%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.43)
+**Pullback setup** (-1.27)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 54 → -0.43
+- RSI 63 → -1.27
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.43 pullback + +0.00 overextension + +0.00 confirmation + +0.40 momentum = -0.03 → **-0.03**
+**Score**: -1.27 pullback + +0.00 overextension + +0.00 confirmation + +0.40 momentum = -0.87 → **-0.87**

@@ -1,15 +1,15 @@
 # Technical Signal: AJG  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.1
+**Recommendation**: HOLD  |  **Score**: -1.5
 
-### Technical Signal: HOLD (-1.1 / confidence 11%)
+### Technical Signal: HOLD (-1.5 / confidence 15%)
 
-**Regime**: ADX TRENDING (ADX 27, +DI 34 vs -DI 14)  |  Vol: HIGH_IV (IV30 40.3%, RV20 28.7%)
+**Regime**: ADX TRENDING (ADX 30, +DI 40 vs -DI 12)  |  Vol: HIGH_IV (IV30 39.6%, RV20 31.5%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.63)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 66 → -1.63
+- RSI 73 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: -1.63 pullback + +0.00 overextension + +0.00 confirmation + +0.51 momentum = -1.12 → **-1.12**
+**Score**: -2.00 pullback + +0.00 overextension + +0.00 confirmation + +0.51 momentum = -1.49 → **-1.49**

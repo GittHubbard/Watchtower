@@ -1,15 +1,15 @@
 # Technical Signal: VZ  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.1
+**Recommendation**: HOLD  |  **Score**: +0.2
 
-### Technical Signal: HOLD (+1.1 / confidence 11%)
+### Technical Signal: HOLD (+0.2 / confidence 2%)
 
-**Regime**: ADX TRENDING (ADX 29, +DI 20 vs -DI 34)  |  Vol: NORMAL_IV (IV30 31.3%, RV20 38.8%)
+**Regime**: ADX TRENDING (ADX 27, +DI 25 vs -DI 31)  |  Vol: HIGH_IV (IV30 38.8%, RV20 40.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+1.01)
+**Pullback setup** (+0.03)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 40 → +1.01
+- RSI 50 → +0.03
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - No active divergences
 
-**Trend** (+0.62 = +0.50 × 1.25 convergence) → momentum +0.06 (capped ±1)
+**Trend** (+1.88 = +1.50 × 1.25 convergence) → momentum +0.17 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: +1.01 pullback + +0.00 overextension + +0.00 confirmation + +0.06 momentum = +1.07 → **+1.07**
+**Score**: +0.03 pullback + +0.00 overextension + +0.00 confirmation + +0.17 momentum = +0.20 → **+0.20**

@@ -1,15 +1,15 @@
 # Technical Signal: WEC  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.0
+**Recommendation**: HOLD  |  **Score**: -1.7
 
-### Technical Signal: HOLD (-1.0 / confidence 10%)
+### Technical Signal: HOLD (-1.7 / confidence 17%)
 
-**Regime**: ADX TRENDING (ADX 30, +DI 24 vs -DI 9)  |  Vol: HIGH_IV (IV30 32.8%, RV20 16.9%)
+**Regime**: ADX TRENDING (ADX 33, +DI 30 vs -DI 8)  |  Vol: HIGH_IV (IV30 33.3%, RV20 19.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.28)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 63 → -1.28
+- RSI 71 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.28 pullback + +0.00 overextension + +0.00 confirmation + +0.32 momentum = -0.96 → **-0.96**
+**Score**: -2.00 pullback + +0.00 overextension + +0.00 confirmation + +0.32 momentum = -1.68 → **-1.68**

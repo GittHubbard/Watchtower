@@ -1,30 +1,26 @@
 # Technical Signal: IQV  2026-10-23
 
-**Recommendation**: SELL  |  **Score**: -1.9
+**Recommendation**: HOLD  |  **Score**: -1.1
 
-### Technical Signal: HOLD (-1.9 / confidence 19%)
+### Technical Signal: HOLD (-1.1 / confidence 11%)
 
-**Regime**: ADX TRENDING (ADX 25, +DI 24 vs -DI 10)  |  Vol: HIGH_IV (IV30 51.1%, RV20 28.6%)
+**Regime**: ADX TRENDING (ADX 27, +DI 26 vs -DI 9)  |  Vol: HIGH_IV (IV30 52.0%, RV20 27.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.34)
+**Pullback setup** (-1.47)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 63 → -1.34
+- RSI 65 → -1.47
 
 **Overextension penalties** (+0.00)
 - None
 
-**Confirmation** (-1.00)
+**Confirmation** (+0.00)
 - No accumulation / turn signals
-**Divergence** (-5.0) → -1.00 toward Confirmation
-- ✓ CONFIRMED reg_bear on RSI (quality: strong)
-- ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
-- ✓ CONFIRMED reg_bear on MACDHist (quality: standard)
-- ✓ CONFIRMED reg_bear on CMF (quality: strong)
-- ✓ CONFIRMED reg_bear on OBV (quality: standard)
+**Divergence** (+0.0) → +0.00 toward Confirmation
+- No active divergences
 
 **Trend** (+4.38 = +3.50 × 1.25 convergence) → momentum +0.40 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -1.34 pullback + +0.00 overextension + -1.00 confirmation + +0.40 momentum = -1.95 → **-1.95**
+**Score**: -1.47 pullback + +0.00 overextension + +0.00 confirmation + +0.40 momentum = -1.07 → **-1.07**

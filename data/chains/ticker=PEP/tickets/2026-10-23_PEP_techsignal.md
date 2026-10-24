@@ -1,15 +1,15 @@
 # Technical Signal: PEP  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.8
+**Recommendation**: HOLD  |  **Score**: -1.4
 
-### Technical Signal: HOLD (-0.8 / confidence 8%)
+### Technical Signal: HOLD (-1.4 / confidence 14%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 28 vs -DI 12)  |  Vol: NORMAL_IV (IV30 27.1%, RV20 22.0%)
+**Regime**: ADX TRENDING (ADX 31, +DI 33 vs -DI 10)  |  Vol: LOW_IV (IV30 26.2%, RV20 23.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.17)
+**Pullback setup** (-1.92)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 62 → -1.17
+- RSI 69 → -1.92
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - No active divergences
 
-**Trend** (+4.38 = +3.50 × 1.25 convergence) → momentum +0.40 (capped ±1)
+**Trend** (+5.62 = +4.50 × 1.25 convergence) → momentum +0.51 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.17 pullback + +0.00 overextension + +0.00 confirmation + +0.40 momentum = -0.77 → **-0.77**
+**Score**: -1.92 pullback + +0.00 overextension + +0.00 confirmation + +0.51 momentum = -1.40 → **-1.40**

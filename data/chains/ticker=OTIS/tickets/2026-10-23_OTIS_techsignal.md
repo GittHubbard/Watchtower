@@ -1,18 +1,18 @@
 # Technical Signal: OTIS  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.2
+**Recommendation**: HOLD  |  **Score**: -2.5
 
-### Technical Signal: HOLD (-1.2 / confidence 12%)
+### Technical Signal: HOLD (-2.5 / confidence 25%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 31 vs -DI 14)  |  Vol: HIGH_IV (IV30 40.8%, RV20 22.2%)
+**Regime**: ADX TRENDING (ADX 29, +DI 40 vs -DI 11)  |  Vol: HIGH_IV (IV30 44.6%, RV20 24.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.75)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 67 → -1.75
+- RSI 75 → -2.00
 
-**Overextension penalties** (+0.00)
-- None
+**Overextension penalties** (-1.00)
+- RSI ≥ 75 (-1.0)
 
 **Confirmation** (+0.00)
 - No accumulation / turn signals
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.75 pullback + +0.00 overextension + +0.00 confirmation + +0.51 momentum = -1.24 → **-1.24**
+**Score**: -2.00 pullback + -1.00 overextension + +0.00 confirmation + +0.51 momentum = -2.49 → **-2.49**

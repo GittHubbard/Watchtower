@@ -1,15 +1,15 @@
 # Technical Signal: AXON  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.1
+**Recommendation**: HOLD  |  **Score**: +0.9
 
-### Technical Signal: HOLD (+1.1 / confidence 11%)
+### Technical Signal: HOLD (+0.9 / confidence 9%)
 
-**Regime**: ADX TRENDING (ADX 42, +DI 9 vs -DI 24)  |  Vol: HIGH_IV (IV30 80.9%, RV20 37.6%)
+**Regime**: ADX TRENDING (ADX 40, +DI 12 vs -DI 22)  |  Vol: HIGH_IV (IV30 79.0%, RV20 39.5%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+1.06)
+**Pullback setup** (+0.57)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 39 → +1.06
+- RSI 44 → +0.57
 
 **Overextension penalties** (+0.00)
 - None
@@ -20,8 +20,8 @@
 - ⏳ PENDING reg_bull on MACDHist (quality: strong)
 - ⏳ PENDING reg_bull on CMF (quality: strong)
 
-**Trend** (+1.00 = +1.00 × 1.00 convergence) → momentum +0.09 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
+**Trend** (+3.12 = +2.50 × 1.25 convergence) → momentum +0.28 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +1.06 pullback + +0.00 overextension + +0.00 confirmation + +0.09 momentum = +1.15 → **+1.15**
+**Score**: +0.57 pullback + +0.00 overextension + +0.00 confirmation + +0.28 momentum = +0.85 → **+0.85**

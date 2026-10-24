@@ -1,15 +1,15 @@
 # Technical Signal: ESS  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.5
+**Recommendation**: HOLD  |  **Score**: -1.5
 
-### Technical Signal: HOLD (-0.5 / confidence 5%)
+### Technical Signal: HOLD (-1.5 / confidence 15%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 22 vs -DI 17)  |  Vol: UNKNOWN (IV30 N/A, RV20 13.6%)
+**Regime**: ADX RANGING (ADX 18, +DI 30 vs -DI 14)  |  Vol: UNKNOWN (IV30 N/A, RV20 16.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.51)
+**Pullback setup** (-1.60)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 55 → -0.51
+- RSI 66 → -1.60
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,9 +19,9 @@
 **Divergence** (-1.0) → -0.25 toward Confirmation
 - ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
 
-**Trend** (+2.50 = +2.00 × 1.25 convergence) → momentum +0.23 (capped ±1)
+**Trend** (+3.75 = +3.00 × 1.25 convergence) → momentum +0.34 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: DIST
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.51 pullback + +0.00 overextension + -0.25 confirmation + +0.23 momentum = -0.53 → **-0.53**
+**Score**: -1.60 pullback + +0.00 overextension + -0.25 confirmation + +0.34 momentum = -1.51 → **-1.51**
 Note: IV30 not available — using RV-only vol regime

@@ -1,15 +1,15 @@
 # Technical Signal: ICE  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.1
+**Recommendation**: HOLD  |  **Score**: -0.9
 
-### Technical Signal: HOLD (+0.1 / confidence 1%)
+### Technical Signal: HOLD (-0.9 / confidence 9%)
 
-**Regime**: ADX RANGING (ADX 13, +DI 19 vs -DI 16)  |  Vol: NORMAL_IV (IV30 35.1%, RV20 18.4%)
+**Regime**: ADX RANGING (ADX 15, +DI 25 vs -DI 14)  |  Vol: HIGH_IV (IV30 37.4%, RV20 22.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.41)
+**Pullback setup** (-1.45)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 54 → -0.41
+- RSI 65 → -1.45
 
 **Overextension penalties** (+0.00)
 - None
@@ -22,8 +22,8 @@
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
-**Trend** (+3.00 = +3.00 × 1.00 convergence) → momentum +0.27 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: DIST
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (+3.50 = +3.50 × 1.00 convergence) → momentum +0.32 (capped ±1)
+- Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
+- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.41 pullback + +0.00 overextension + +0.25 confirmation + +0.27 momentum = +0.11 → **+0.11**
+**Score**: -1.45 pullback + +0.00 overextension + +0.25 confirmation + +0.32 momentum = -0.88 → **-0.88**

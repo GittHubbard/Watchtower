@@ -1,15 +1,15 @@
 # Technical Signal: AFL  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.1
+**Recommendation**: HOLD  |  **Score**: -0.7
 
-### Technical Signal: HOLD (-0.1 / confidence 1%)
+### Technical Signal: HOLD (-0.7 / confidence 7%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 22 vs -DI 16)  |  Vol: NORMAL_IV (IV30 27.0%, RV20 16.0%)
+**Regime**: ADX TRENDING (ADX 26, +DI 27 vs -DI 14)  |  Vol: HIGH_IV (IV30 29.1%, RV20 17.3%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.43)
+**Pullback setup** (-2.00)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 64 → -1.43
+- RSI 71 → -2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -22,6 +22,6 @@
 
 **Trend** (+3.50 = +3.50 × 1.00 convergence) → momentum +0.32 (capped ±1)
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: DRY
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.43 pullback + +0.00 overextension + +1.00 confirmation + +0.32 momentum = -0.11 → **-0.11**
+**Score**: -2.00 pullback + +0.00 overextension + +1.00 confirmation + +0.32 momentum = -0.68 → **-0.68**

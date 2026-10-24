@@ -1,15 +1,15 @@
 # Technical Signal: MRNA  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.3
+**Recommendation**: HOLD  |  **Score**: +0.1
 
-### Technical Signal: HOLD (-1.3 / confidence 13%)
+### Technical Signal: HOLD (+0.1 / confidence 1%)
 
-**Regime**: ADX TRENDING (ADX 62, +DI 31 vs -DI 7)  |  Vol: NORMAL_IV (IV30 91.9%, RV20 85.6%)
+**Regime**: ADX TRENDING (ADX 54, +DI 25 vs -DI 24)  |  Vol: NORMAL_IV (IV30 90.0%, RV20 110.7%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.91)
+**Pullback setup** (-0.10)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 69 → -1.91
+- RSI 51 → -0.10
 
 **Overextension penalties** (+0.00)
 - None
@@ -22,8 +22,8 @@
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
 
-**Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (-0.62 = -0.50 × 1.25 convergence) → momentum -0.06 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.91 pullback + +0.00 overextension + +0.25 confirmation + +0.41 momentum = -1.25 → **-1.25**
+**Score**: -0.10 pullback + +0.00 overextension + +0.25 confirmation + -0.06 momentum = +0.09 → **+0.09**

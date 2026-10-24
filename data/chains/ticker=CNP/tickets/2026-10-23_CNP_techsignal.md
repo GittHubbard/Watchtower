@@ -1,15 +1,15 @@
 # Technical Signal: CNP  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.2
+**Recommendation**: HOLD  |  **Score**: -0.7
 
-### Technical Signal: HOLD (-0.2 / confidence 2%)
+### Technical Signal: HOLD (-0.7 / confidence 7%)
 
-**Regime**: ADX WEAK_TREND (ADX 25, +DI 23 vs -DI 12)  |  Vol: HIGH_IV (IV30 32.9%, RV20 17.3%)
+**Regime**: ADX TRENDING (ADX 27, +DI 28 vs -DI 11)  |  Vol: HIGH_IV (IV30 40.6%, RV20 17.6%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.32)
+**Pullback setup** (-1.88)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 63 → -1.32
+- RSI 69 → -1.88
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.32 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.16 → **-0.16**
+**Score**: -1.88 pullback + +0.00 overextension + +0.75 confirmation + +0.41 momentum = -0.72 → **-0.72**

@@ -1,15 +1,15 @@
 # Technical Signal: AKAM  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.2
+**Recommendation**: HOLD  |  **Score**: +1.0
 
-### Technical Signal: HOLD (+1.2 / confidence 12%)
+### Technical Signal: HOLD (+1.0 / confidence 10%)
 
-**Regime**: ADX RANGING (ADX 18, +DI 17 vs -DI 28)  |  Vol: HIGH_IV (IV30 74.4%, RV20 57.4%)
+**Regime**: ADX RANGING (ADX 18, +DI 17 vs -DI 27)  |  Vol: HIGH_IV (IV30 73.0%, RV20 53.8%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+1.49)
+**Pullback setup** (+1.34)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 35 → +1.49
+- RSI 37 → +1.34
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
 - OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +1.49 pullback + +0.00 overextension + +0.00 confirmation + -0.32 momentum = +1.17 → **+1.17**
+**Score**: +1.34 pullback + +0.00 overextension + +0.00 confirmation + -0.32 momentum = +1.02 → **+1.02**

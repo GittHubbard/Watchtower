@@ -1,15 +1,15 @@
 # Technical Signal: EIX  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.6
+**Recommendation**: HOLD  |  **Score**: +0.3
 
-### Technical Signal: HOLD (+0.6 / confidence 6%)
+### Technical Signal: HOLD (+0.3 / confidence 3%)
 
-**Regime**: ADX WEAK_TREND (ADX 21, +DI 19 vs -DI 21)  |  Vol: NORMAL_IV (IV30 43.6%, RV20 21.0%)
+**Regime**: ADX RANGING (ADX 20, +DI 20 vs -DI 19)  |  Vol: HIGH_IV (IV30 46.7%, RV20 19.4%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.70)
+**Pullback setup** (-1.02)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 57 → -0.70
+- RSI 60 → -1.02
 
 **Overextension penalties** (+0.00)
 - None
@@ -24,4 +24,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
 - OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.70 pullback + +0.00 overextension + +1.00 confirmation + +0.32 momentum = +0.62 → **+0.62**
+**Score**: -1.02 pullback + +0.00 overextension + +1.00 confirmation + +0.32 momentum = +0.30 → **+0.30**

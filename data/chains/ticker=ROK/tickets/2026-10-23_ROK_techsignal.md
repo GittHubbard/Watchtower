@@ -1,15 +1,15 @@
 # Technical Signal: ROK  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -0.7
+**Recommendation**: HOLD  |  **Score**: +0.3
 
-### Technical Signal: HOLD (-0.7 / confidence 7%)
+### Technical Signal: HOLD (+0.3 / confidence 3%)
 
-**Regime**: ADX RANGING (ADX 15, +DI 24 vs -DI 25)  |  Vol: HIGH_IV (IV30 48.0%, RV20 20.5%)
+**Regime**: ADX RANGING (ADX 16, +DI 21 vs -DI 28)  |  Vol: HIGH_IV (IV30 48.0%, RV20 23.9%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.49)
+**Pullback setup** (+0.57)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 55 → -0.49
+- RSI 44 → +0.57
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,8 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - No active divergences
 
-**Trend** (-2.00 = -2.00 × 1.00 convergence) → momentum -0.18 (capped ±1)
+**Trend** (-3.00 = -3.00 × 1.00 convergence) → momentum -0.27 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: ACCUM
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: -0.49 pullback + +0.00 overextension + +0.00 confirmation + -0.18 momentum = -0.68 → **-0.68**
+**Score**: +0.57 pullback + +0.00 overextension + +0.00 confirmation + -0.27 momentum = +0.30 → **+0.30**

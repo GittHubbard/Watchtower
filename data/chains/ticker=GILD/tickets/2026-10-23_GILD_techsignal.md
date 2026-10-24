@@ -1,33 +1,28 @@
 # Technical Signal: GILD  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.5
+**Recommendation**: HOLD  |  **Score**: -0.7
 
-### Technical Signal: HOLD (-1.5 / confidence 15%)
+### Technical Signal: HOLD (-0.7 / confidence 7%)
 
-**Regime**: ADX WEAK_TREND (ADX 24, +DI 25 vs -DI 19)  |  Vol: HIGH_IV (IV30 43.5%, RV20 27.4%)
+**Regime**: ADX WEAK_TREND (ADX 24, +DI 26 vs -DI 17)  |  Vol: HIGH_IV (IV30 44.2%, RV20 28.2%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-0.59)
+**Pullback setup** (-1.08)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 56 → -0.59
+- RSI 61 → -1.08
 
 **Overextension penalties** (+0.00)
 - None
 
-**Confirmation** (-1.00)
+**Confirmation** (+0.25)
 - No accumulation / turn signals
-**Divergence** (-4.0) → -1.00 toward Confirmation
-- ✓ CONFIRMED reg_bear on RSI (quality: standard)
+**Divergence** (+1.0) → +0.25 toward Confirmation
 - ⏳ PENDING reg_bear on RSI (quality: standard)
 - ✓ CONFIRMED hid_bull on RSI (quality: standard)
-- ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
 - ⏳ PENDING reg_bear on MACDLine (quality: strong)
-- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
 - ✓ CONFIRMED hid_bull on MACDHist (quality: strong)
-- ✓ CONFIRMED reg_bear on CMF (quality: strong)
 - ⏳ PENDING reg_bear on CMF (quality: strong)
 - ✓ CONFIRMED hid_bull on CMF (quality: standard)
-- ✓ CONFIRMED reg_bear on OBV (quality: standard)
 - ⏳ PENDING reg_bear on OBV (quality: standard)
 - ✓ CONFIRMED hid_bull on OBV (quality: standard)
 
@@ -35,4 +30,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: NEUTRAL
 - OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -0.59 pullback + +0.00 overextension + -1.00 confirmation + +0.14 momentum = -1.46 → **-1.46**
+**Score**: -1.08 pullback + +0.00 overextension + +0.25 confirmation + +0.14 momentum = -0.69 → **-0.69**

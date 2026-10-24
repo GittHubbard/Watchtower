@@ -1,15 +1,15 @@
 # Technical Signal: JBL  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.7
+**Recommendation**: HOLD  |  **Score**: +2.1
 
-### Technical Signal: HOLD (+1.7 / confidence 17%)
+### Technical Signal: HOLD (+2.1 / confidence 21%)
 
-**Regime**: ADX RANGING (ADX 17, +DI 15 vs -DI 24)  |  Vol: LOW_IV (IV30 53.2%, RV20 57.4%)
+**Regime**: ADX RANGING (ADX 20, +DI 13 vs -DI 31)  |  Vol: NORMAL_IV (IV30 54.4%, RV20 59.4%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.99)
+**Pullback setup** (+1.50)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 40 → +0.99
+- RSI 35 → +1.50
 
 **Overextension penalties** (+0.00)
 - None
@@ -22,8 +22,8 @@
 - ✓ CONFIRMED reg_bull on CMF (quality: strong)
 - ✓ CONFIRMED reg_bull on OBV (quality: standard)
 
-**Trend** (-3.12 = -2.50 × 1.25 convergence) → momentum -0.28 (capped ±1)
+**Trend** (-4.38 = -3.50 × 1.25 convergence) → momentum -0.40 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: NEUTRAL
-- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
 
-**Score**: +0.99 pullback + +0.00 overextension + +1.00 confirmation + -0.28 momentum = +1.70 → **+1.70**
+**Score**: +1.50 pullback + +0.00 overextension + +1.00 confirmation + -0.40 momentum = +2.10 → **+2.10**

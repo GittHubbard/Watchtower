@@ -1,15 +1,15 @@
 # Technical Signal: BA  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +0.3
+**Recommendation**: HOLD  |  **Score**: +0.9
 
-### Technical Signal: HOLD (+0.3 / confidence 3%)
+### Technical Signal: HOLD (+0.9 / confidence 9%)
 
-**Regime**: ADX TRENDING (ADX 26, +DI 17 vs -DI 22)  |  Vol: HIGH_IV (IV30 39.9%, RV20 33.4%)
+**Regime**: ADX TRENDING (ADX 26, +DI 16 vs -DI 23)  |  Vol: HIGH_IV (IV30 41.1%, RV20 34.1%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (+0.29)
+**Pullback setup** (+0.90)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 47 → +0.29
+- RSI 41 → +0.90
 
 **Overextension penalties** (+0.00)
 - None
@@ -23,4 +23,4 @@
 - Price: NEUTRAL  MACD: BULLISH  CMF: DIST
 - OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: +0.29 pullback + +0.00 overextension + +0.00 confirmation + +0.00 momentum = +0.29 → **+0.29**
+**Score**: +0.90 pullback + +0.00 overextension + +0.00 confirmation + +0.00 momentum = +0.90 → **+0.90**

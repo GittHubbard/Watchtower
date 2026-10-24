@@ -1,15 +1,15 @@
 # Technical Signal: TECH  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.2
+**Recommendation**: HOLD  |  **Score**: -1.1
 
-### Technical Signal: HOLD (-1.2 / confidence 12%)
+### Technical Signal: HOLD (-1.1 / confidence 11%)
 
-**Regime**: ADX TRENDING (ADX 39, +DI 21 vs -DI 8)  |  Vol: UNKNOWN (IV30 N/A, RV20 2.0%)
+**Regime**: ADX TRENDING (ADX 40, +DI 21 vs -DI 7)  |  Vol: UNKNOWN (IV30 N/A, RV20 2.0%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.02)
+**Pullback setup** (-0.91)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 60 → -1.02
+- RSI 59 → -0.91
 
 **Overextension penalties** (+0.00)
 - None
@@ -21,9 +21,9 @@
 - ⏳ PENDING reg_bear on MACDLine (quality: strong)
 - ⏳ PENDING reg_bear on CMF (quality: standard)
 
-**Trend** (-1.50 = -1.50 × 1.00 convergence) → momentum -0.14 (capped ±1)
+**Trend** (-2.50 = -2.50 × 1.00 convergence) → momentum -0.23 (capped ±1)
 - Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: SURGE
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: DRY
 
-**Score**: -1.02 pullback + +0.00 overextension + +0.00 confirmation + -0.14 momentum = -1.15 → **-1.15**
+**Score**: -0.91 pullback + +0.00 overextension + +0.00 confirmation + -0.23 momentum = -1.13 → **-1.13**
 Note: IV30 not available — using RV-only vol regime

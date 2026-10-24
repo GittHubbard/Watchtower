@@ -1,15 +1,15 @@
 # Technical Signal: PSX  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: -1.3
+**Recommendation**: HOLD  |  **Score**: -1.1
 
-### Technical Signal: HOLD (-1.3 / confidence 13%)
+### Technical Signal: HOLD (-1.1 / confidence 11%)
 
-**Regime**: ADX TRENDING (ADX 35, +DI 25 vs -DI 11)  |  Vol: HIGH_IV (IV30 48.5%, RV20 27.0%)
+**Regime**: ADX TRENDING (ADX 33, +DI 22 vs -DI 15)  |  Vol: HIGH_IV (IV30 48.4%, RV20 28.3%)
 **Long-term context** (not scored): price below 200-day average (+nan%)
 
-**Pullback setup** (-1.66)
+**Pullback setup** (-0.99)
 - Price vs 20-day average: N/A ATR → +0.00
-- RSI 67 → -1.66
+- RSI 60 → -0.99
 
 **Overextension penalties** (+0.00)
 - None
@@ -22,8 +22,8 @@
 - ⏳ PENDING reg_bear on CMF (quality: standard)
 - ⏳ PENDING reg_bear on OBV (quality: standard)
 
-**Trend** (+4.50 = +4.50 × 1.00 convergence) → momentum +0.41 (capped ±1)
-- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
-- OBV: BULLISH  aVWAP: UNAVAILABLE  Volume: DRY
+**Trend** (-0.62 = -0.50 × 1.25 convergence) → momentum -0.06 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: UNAVAILABLE  Volume: NORMAL
 
-**Score**: -1.66 pullback + +0.00 overextension + +0.00 confirmation + +0.41 momentum = -1.25 → **-1.25**
+**Score**: -0.99 pullback + +0.00 overextension + +0.00 confirmation + -0.06 momentum = -1.05 → **-1.05**

@@ -1,15 +1,15 @@
 # Technical Signal: AMAT  2026-10-23
 
-**Recommendation**: HOLD  |  **Score**: +1.4
+**Recommendation**: BUY  |  **Score**: +4.5
 
-### Technical Signal: HOLD (+1.4 / confidence 14%)
+### Technical Signal: BUY (+4.5 / confidence 45%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 15 vs -DI 39)  |  Vol: NORMAL_IV (IV30 59.8%, RV20 46.1%)
-**Long-term context** (not scored): price below 200-day average (+nan%)
+**Regime**: ADX TRENDING (ADX 30, +DI 13 vs -DI 47)  |  Vol: NORMAL_IV (IV30 57.0%, RV20 52.4%)
+**Long-term context** (not scored): price below 200-day average (-14.5%)
 
-**Pullback setup** (+1.90)
-- Price vs 20-day average: N/A ATR → +0.00
-- RSI 31 → +1.90
+**Pullback setup** (+5.00)
+- Price vs 20-day average: -4.8 ATR → +3.00
+- RSI 26 → +2.00
 
 **Overextension penalties** (+0.00)
 - None
@@ -19,8 +19,9 @@
 **Divergence** (+0.0) → +0.00 toward Confirmation
 - No active divergences
 
-**Trend** (-5.00 = -4.00 × 1.25 convergence) → momentum -0.45 (capped ±1)
-- Price: NEUTRAL  MACD: BEARISH  CMF: DIST
-- OBV: BEARISH  aVWAP: UNAVAILABLE  Volume: SURGE
+**Trend** (-5.31 = -4.25 × 1.25 convergence) → momentum -0.48 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: BELOW_BOTH  Volume: NORMAL
+- aVWAP-high 449.12 (anchor 15 bars ago), aVWAP-low 457.95 (anchor 26 bars ago)
 
-**Score**: +1.90 pullback + +0.00 overextension + +0.00 confirmation + -0.45 momentum = +1.44 → **+1.44**
+**Score**: +5.00 pullback + +0.00 overextension + +0.00 confirmation + -0.48 momentum = +4.52 → **+4.52**
