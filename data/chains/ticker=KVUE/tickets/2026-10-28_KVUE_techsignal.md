@@ -1,0 +1,23 @@
+# Technical Signal: KVUE  2026-10-28
+
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+
+**Regime**: ADX TRENDING (ADX 31, +DI 33 vs -DI 12)  |  Vol: HIGH_IV (IV30 68.0%, RV20 26.1%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+6.25 = +6.25 × 1.00 convergence)
+- Price: STRONG_UP  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BEARISH  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 18.29 (anchor 20 bars ago), aVWAP-low 18.39 (anchor 18 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution +0.00)
+- RSI 63: neutral  Bollinger: neutral
+
+**Divergence** (+5.0)
+- ✓ CONFIRMED reg_bull on RSI (quality: standard)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bull on OBV (quality: standard)
+
+**Score**: +6.25 + +0.00 + +5.00 = +11.25 → **+10.00**

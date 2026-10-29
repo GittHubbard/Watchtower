@@ -1,0 +1,21 @@
+# Technical Signal: LDOS  2026-10-29
+
+**Recommendation**: STRONG_BUY  |  **Score**: +7.8
+
+### Technical Signal: STRONG_BUY (+7.8 / confidence 78%)
+
+**Regime**: ADX TRENDING (ADX 28, +DI 41 vs -DI 13)  |  Vol: HIGH_IV (IV30 62.8%, RV20 34.0%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+5.31 = +4.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: DRY
+- aVWAP-high 129.02 (anchor 50 bars ago), aVWAP-low 126.28 (anchor 16 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution -0.50)
+- RSI 73: overbought  Bollinger: neutral
+
+**Divergence** (+3.0)
+- ✓ CONFIRMED reg_bull on MACDHist (quality: strong)
+
+**Score**: +5.31 + -0.50 + +3.00 = +7.81 → **+7.81**

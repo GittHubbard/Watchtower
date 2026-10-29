@@ -1,0 +1,24 @@
+# Technical Signal: PPG  2026-10-28
+
+**Recommendation**: STRONG_BUY  |  **Score**: +10.0
+
+### Technical Signal: STRONG_BUY (+10.0 / confidence 100%)
+
+**Regime**: ADX TRENDING (ADX 25, +DI 42 vs -DI 10)  |  Vol: HIGH_IV (IV30 43.6%, RV20 25.8%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+7.19 = +5.75 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: SURGE
+- aVWAP-high 107.94 (anchor 42 bars ago), aVWAP-low 110.03 (anchor 12 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution -0.75)
+- RSI 72: overbought  Bollinger: upper-break
+
+**Divergence** (+5.0)
+- ✓ CONFIRMED reg_bull on RSI (quality: standard)
+- ✓ CONFIRMED reg_bull on MACDLine (quality: strong)
+- ✓ CONFIRMED reg_bull on CMF (quality: strong)
+- ✓ CONFIRMED reg_bull on OBV (quality: standard)
+
+**Score**: +7.19 + -0.75 + +5.00 = +11.44 → **+10.00**

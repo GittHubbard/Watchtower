@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-15",
+  "asof": "2026-10-23",
   "scalars": {
     "analyst_consensus": 1.32,
     "analyst_coverage_count": 24.0,
@@ -9,9 +9,9 @@
     "analyst_upgrades_3m": 0.0,
     "debt_to_equity": 88.549,
     "eps_beat_streak": 0.0,
-    "eps_estimate_trend": -0.5983000000000003,
+    "eps_estimate_trend": -0.5705,
     "eps_surprise_avg_4q": 0.0349500025,
-    "forward_pe": 10.456327,
+    "forward_pe": 10.5201,
     "net_income_margin_ttm": 0.057844099169680904,
     "revenue_growth_yoy": 0.211
   }

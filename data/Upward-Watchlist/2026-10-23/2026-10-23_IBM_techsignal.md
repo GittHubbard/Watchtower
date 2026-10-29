@@ -1,0 +1,21 @@
+# Technical Signal: IBM  2026-10-23
+
+**Recommendation**: STRONG_BUY  |  **Score**: +5.8
+
+### Technical Signal: STRONG_BUY (+5.8 / confidence 58%)
+
+**Regime**: ADX WEAK_TREND (ADX 20, +DI 31 vs -DI 11)  |  Vol: LOW_IV (IV30 36.4%, RV20 25.9%)
+**Gate**: MR weight = 0.50
+
+**Trend** (+6.56 = +5.25 × 1.25 convergence)
+- Price: NEUTRAL  MACD: BULLISH  CMF: STRONG_ACCUM
+- OBV: BULLISH  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 232.88 (anchor 28 bars ago), aVWAP-low 233.04 (anchor 17 bars ago)
+
+**Mean Reversion** (gate 0.50 → contribution -0.75)
+- RSI 71: overbought  Bollinger: upper-break
+
+**Divergence** (+0.0)
+- No active divergences
+
+**Score**: +6.56 + -0.75 + +0.00 = +5.81 → **+5.81**
