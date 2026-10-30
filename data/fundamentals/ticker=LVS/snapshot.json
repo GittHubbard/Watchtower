@@ -3,11 +3,11 @@
   "scalars": {
     "analyst_consensus": 1.80952,
     "analyst_coverage_count": 19.0,
-    "analyst_downgrades_3m": 1.0,
+    "analyst_downgrades_3m": 0.0,
     "analyst_pct_buy": 0.6666666666666666,
     "analyst_steady_3m": 17.0,
     "analyst_upgrades_3m": 0.0,
-    "debt_to_equity": 1703.902,
+    "debt_to_equity": NaN,
     "eps_beat_streak": 0.0,
     "eps_estimate_trend": -0.11067000000000005,
     "eps_surprise_avg_4q": -0.031099998999999996,

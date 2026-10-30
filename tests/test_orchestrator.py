@@ -25,6 +25,8 @@ def _isolate_storage(tmp_path, monkeypatch):
     monkeypatch.setattr(storage, "RATES_DIR", tmp_path / "rates")
     monkeypatch.setattr(storage, "CHAINS_DIR", tmp_path / "chains")
     monkeypatch.setattr(storage, "POSITIONS_PATH", tmp_path / "positions.json")
+    monkeypatch.setattr(storage, "UPWARD_WATCHLIST_DIR", tmp_path / "Upward-Watchlist")
+    monkeypatch.setattr(storage, "DOWNWARD_WATCHLIST_DIR", tmp_path / "Downward-Watchlist")
     yield
 
 

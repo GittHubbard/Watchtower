@@ -3,9 +3,9 @@
   "scalars": {
     "analyst_consensus": 2.5,
     "analyst_coverage_count": 6.0,
-    "analyst_downgrades_3m": 1.0,
+    "analyst_downgrades_3m": 0.0,
     "analyst_pct_buy": 0.25,
-    "analyst_steady_3m": 3.0,
+    "analyst_steady_3m": 2.0,
     "analyst_upgrades_3m": 0.0,
     "debt_to_equity": 5.255,
     "eps_beat_streak": 0.0,

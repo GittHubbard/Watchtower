@@ -1,11 +1,11 @@
 {
   "asof": "2026-10-23",
   "scalars": {
-    "analyst_consensus": 2.2381,
+    "analyst_consensus": 2.28571,
     "analyst_coverage_count": 19.0,
     "analyst_downgrades_3m": 0.0,
     "analyst_pct_buy": 0.47619047619047616,
-    "analyst_steady_3m": 6.0,
+    "analyst_steady_3m": 7.0,
     "analyst_upgrades_3m": 0.0,
     "debt_to_equity": 55.851,
     "eps_beat_streak": 0.0,

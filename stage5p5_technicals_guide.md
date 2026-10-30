@@ -85,7 +85,7 @@ shown on the chart for context but no longer affect the score.
 ## 5. Indicator states and what they mean
 
 Each indicator is reduced to a categorical state. These are what you'll see in the
-memo's **Trend** / **Mean Reversion** lines.
+memo's **Trend** line (the momentum readout).
 
 ### 5.1 Price trend (`trend_price`) — 7 states
 Based on the ladder of price vs SMA 20 / 50 / 200 and the ATR-normalized slope of
@@ -231,27 +231,52 @@ lower-lows): the trend is confirmed by its momentum, so trend-following is favor
 
 ## 7. How the score is built
 
-The final score (−10 … +10) is the sum of three parts; the first is multiplied, the
-second is gated:
+> **Redesigned (Sep 2026).** The score used to be dominated by the trend group
+> (up to ±13.75 points), which in practice measured momentum — and momentum proved
+> inversely predictive of 1-month forward alpha. The score now looks for stocks
+> **set up for a leg up**: pulled back, not overextended, with signs of buying.
+
+The final score (−10 … +10) is the sum of four parts:
 
 ```
-base_trend = trend_score × convergence_multiplier        # §6.5 (×1.0 or ×1.25)
-raw        = base_trend + (regime_gate × mean_reversion) + divergence_score
-score      = clamp(raw, −10, +10)
-confidence = |score| / 10
+pullback      = clip(−0.75 × (close − SMA20) / ATR20, −3, +3)    # below the 20-day → positive
+              + clip((50 − RSI14) / 10, −2, +2)                  # low RSI → positive
+overextension = −1 for each of: close above upper Bollinger band, RSI ≥ 75,
+                >15% above SMA50, >25% above SMA50, >3 ATR above SMA20   (never positive)
+confirmation  = +0.5 CMF > 0.05 and +0.5 OBV bullish   (only while price is below SMA20)
+              + 0.5 MACD bull cross while MACD < 0      (momentum turning up from a dip)
+              + divergence score / 4, capped at ±1
+momentum      = legacy trend score × convergence / 11, capped at ±1
+score         = clamp(sum, −10, +10);  confidence = |score| / 10
 ```
 
-- **Trend score** (always counts): price state, MACD, CMF, OBV, aVWAP, volume
-  confirmation. Up-trend states add, down-trend states subtract.
-- **Mean-reversion score** (RSI zones + Bollinger breaks), **gated** by the
-  `(ADX regime × vol regime)` matrix — fully counted only in ranging markets,
-  suppressed (×0) in strong trends.
-- **Divergence score** (**capped**, as-built): count **distinct indicators** with a
-  confirmed divergence — regular: 1 → ±2, ≥2 → ±4; "strong" quality → ±1 once;
-  any confirmed hidden → ±1 once. (This cap replaced an earlier per-event sum that
-  pinned everything to +10 — see `stage_5p5_update.md`.)
+- **Pullback** is the core. It rewards buying weakness and penalises chasing.
+- **Overextension** adds explicit penalties for stretched names.
+- **Confirmation** rewards evidence that the dip is being bought.
+- **Momentum** (the old trend group: price state, MACD, CMF, OBV, aVWAP, volume)
+  is still computed and shown on the ticket, but can move the score by ±1 at most.
+- The old ADX × IV mean-reversion gate is gone; ADX/IV regime and price vs the
+  200-day are shown as context only.
 
----
+### 7.1 How the redesign tested
+
+`research/backtest_setup_score.py` runs the production scorer every 5 trading
+days over ~10 years of daily prices for ~512 watchlist names (2017–2026,
+~154k samples on full-universe dates), rebuilding the old score alongside.
+"Excess" = return minus the average watchlist stock over the same window.
+
+| | Old score 2017–21 | Old 2022–26 | New score 2017–21 | New 2022–26 |
+|---|---|---|---|---|
+| Rank-IC vs 60-day excess | −0.021 | −0.002 | **+0.026** | **+0.015** |
+| Buy/Strong Buy: mean 60-day excess | −0.26% | +0.05% | **+1.02%** | **+0.37%** |
+| Buy/Strong Buy: median 60-day excess | −0.50% | −0.99% | **+0.32%** | −0.28% |
+
+The new score is better than the old one in both halves, but the edge over ten
+years is **small** — much smaller than in the Jun–Sep 2026 live log (where new-style
+Buys beat the average stock by ~3% a month). Treat the rating as one input, not a
+stand-alone trading signal. Caveats: current index members only (survivorship
+bias); divergence and aVWAP use the same code as production; IV regime is not
+available historically.
 
 ## 8. Recommendation buckets and hysteresis
 
