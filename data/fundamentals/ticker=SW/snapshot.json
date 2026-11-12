@@ -1,5 +1,5 @@
 {
-  "asof": "2026-11-05",
+  "asof": "2026-11-12",
   "scalars": {
     "analyst_consensus": 1.3125,
     "analyst_coverage_count": 15.0,
@@ -9,9 +9,9 @@
     "analyst_upgrades_3m": 0.0,
     "debt_to_equity": 77.989,
     "eps_beat_streak": 0.0,
-    "eps_estimate_trend": -0.24652000000000007,
+    "eps_estimate_trend": -0.17504000000000008,
     "eps_surprise_avg_4q": -0.24722499999999997,
-    "forward_pe": 13.765435,
+    "forward_pe": 13.668734,
     "net_income_margin_ttm": 0.015023504002032778,
     "revenue_growth_yoy": 0.02
   }
