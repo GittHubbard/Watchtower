@@ -1,0 +1,31 @@
+# Technical Signal: TMO  2026-11-14
+
+**Recommendation**: HOLD  |  **Score**: -1.2
+
+### Technical Signal: HOLD (-1.2 / confidence 12%)
+
+**Regime**: ADX RANGING (ADX 18, +DI 22 vs -DI 27)  |  Vol: NORMAL_IV (IV30 35.5%, RV20 32.2%)
+**Long-term context** (not scored): price above 200-day average (+26.2%)
+
+**Pullback setup** (-0.52)
+- Price vs 20-day average: +0.2 ATR → -0.15
+- RSI 54 → -0.37
+
+**Overextension penalties** (+0.00)
+- None
+
+**Confirmation** (-1.00)
+- No accumulation / turn signals
+**Divergence** (-4.0) → -1.00 toward Confirmation
+- ✓ CONFIRMED reg_bear on RSI (quality: strong)
+- ✓ CONFIRMED reg_bear on MACDLine (quality: strong)
+- ✓ CONFIRMED reg_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED reg_bear on CMF (quality: strong)
+- ✓ CONFIRMED hid_bull on CMF (quality: standard)
+
+**Trend** (+3.44 = +2.75 × 1.25 convergence) → momentum +0.31 (capped ±1)
+- Price: STRONG_UP  MACD: BEARISH  CMF: ACCUM
+- OBV: NEUTRAL  aVWAP: ABOVE_BOTH  Volume: NORMAL
+- aVWAP-high 664.98 (anchor 57 bars ago), aVWAP-low 687.31 (anchor 26 bars ago)
+
+**Score**: -0.52 pullback + +0.00 overextension + -1.00 confirmation + +0.31 momentum = -1.21 → **-1.21**
