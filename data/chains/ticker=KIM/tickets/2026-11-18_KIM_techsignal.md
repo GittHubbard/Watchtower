@@ -4,7 +4,7 @@
 
 ### Technical Signal: SELL (-2.6 / confidence 26%)
 
-**Regime**: ADX TRENDING (ADX 45, +DI 35 vs -DI 15)  |  Vol: LOW_IV (IV30 44.2%, RV20 26.0%)
+**Regime**: ADX TRENDING (ADX 45, +DI 35 vs -DI 15)  |  Vol: LOW_IV (IV30 7.2%, RV20 26.0%)
 **Long-term context** (not scored): price above 200-day average (+9.1%)
 
 **Pullback setup** (-2.97)

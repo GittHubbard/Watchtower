@@ -4,7 +4,7 @@
 
 ### Technical Signal: HOLD (-0.5 / confidence 5%)
 
-**Regime**: ADX RANGING (ADX 20, +DI 26 vs -DI 19)  |  Vol: HIGH_IV (IV30 40.4%, RV20 20.8%)
+**Regime**: ADX RANGING (ADX 20, +DI 26 vs -DI 19)  |  Vol: HIGH_IV (IV30 32.9%, RV20 20.8%)
 **Long-term context** (not scored): price below 200-day average (-2.8%)
 
 **Pullback setup** (-1.26)

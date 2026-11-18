@@ -4,7 +4,7 @@
 
 ### Technical Signal: HOLD (-0.5 / confidence 5%)
 
-**Regime**: ADX TRENDING (ADX 28, +DI 31 vs -DI 18)  |  Vol: NORMAL_IV (IV30 32.5%, RV20 45.6%)
+**Regime**: ADX TRENDING (ADX 28, +DI 31 vs -DI 18)  |  Vol: LOW_IV (IV30 2.3%, RV20 45.6%)
 **Long-term context** (not scored): price above 200-day average (+4.0%)
 
 **Pullback setup** (-0.21)

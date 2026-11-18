@@ -4,7 +4,7 @@
 
 ### Technical Signal: BUY (+4.4 / confidence 44%)
 
-**Regime**: ADX TRENDING (ADX 40, +DI 14 vs -DI 44)  |  Vol: NORMAL_IV (IV30 54.3%, RV20 117.8%)
+**Regime**: ADX TRENDING (ADX 40, +DI 14 vs -DI 44)  |  Vol: LOW_IV (IV30 2.3%, RV20 117.8%)
 **Long-term context** (not scored): price below 200-day average (-18.2%)
 
 **Pullback setup** (+4.88)

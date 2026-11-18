@@ -4,7 +4,7 @@
 
 ### Technical Signal: STRONG_SELL (-6.0 / confidence 60%)
 
-**Regime**: ADX TRENDING (ADX 41, +DI 38 vs -DI 15)  |  Vol: NORMAL_IV (IV30 62.8%, RV20 121.5%)
+**Regime**: ADX TRENDING (ADX 41, +DI 38 vs -DI 15)  |  Vol: LOW_IV (IV30 1.3%, RV20 121.5%)
 **Long-term context** (not scored): price below 200-day average (-1.5%)
 
 **Pullback setup** (-4.48)
