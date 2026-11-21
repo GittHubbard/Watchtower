@@ -1,0 +1,27 @@
+# Technical Signal: NDAQ  2026-11-21
+
+**Recommendation**: HOLD  |  **Score**: +1.2
+
+### Technical Signal: HOLD (+1.2 / confidence 12%)
+
+**Regime**: ADX TRENDING (ADX 35, +DI 23 vs -DI 21)  |  Vol: NORMAL_IV (IV30 35.2%, RV20 24.6%)
+**Long-term context** (not scored): price above 200-day average (+13.0%)
+
+**Pullback setup** (+1.55)
+- Price vs 20-day average: -1.6 ATR → +1.22
+- RSI 47 → +0.33
+
+**Overextension penalties** (+0.00)
+- None
+
+**Confirmation** (+0.00)
+- No accumulation / turn signals
+**Divergence** (+0.0) → +0.00 toward Confirmation
+- No active divergences
+
+**Trend** (-4.38 = -3.50 × 1.25 convergence) → momentum -0.40 (capped ±1)
+- Price: UP  MACD: BEARISH  CMF: DIST
+- OBV: BEARISH  aVWAP: BREAKDOWN_LOW  Volume: SURGE
+- aVWAP-high 107.41 (anchor 11 bars ago), aVWAP-low 102.94 (anchor 32 bars ago)
+
+**Score**: +1.55 pullback + +0.00 overextension + +0.00 confirmation + -0.40 momentum = +1.15 → **+1.15**
