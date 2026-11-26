@@ -1,7 +1,7 @@
 {
-  "asof": "2026-11-19",
+  "asof": "2026-11-26",
   "scalars": {
-    "analyst_consensus": NaN,
+    "analyst_consensus": 3.0,
     "analyst_coverage_count": 8.0,
     "analyst_downgrades_3m": 0.0,
     "analyst_pct_buy": 0.0,

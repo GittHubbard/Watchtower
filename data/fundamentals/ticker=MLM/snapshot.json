@@ -1,5 +1,5 @@
 {
-  "asof": "2026-11-19",
+  "asof": "2026-11-26",
   "scalars": {
     "analyst_consensus": 1.75,
     "analyst_coverage_count": 24.0,
@@ -11,7 +11,7 @@
     "eps_beat_streak": 0.0,
     "eps_estimate_trend": -1.37519,
     "eps_surprise_avg_4q": 0.0039000007499999986,
-    "forward_pe": 29.127474,
+    "forward_pe": 30.139732,
     "net_income_margin_ttm": 0.3188184717792262,
     "revenue_growth_yoy": 0.283
   }
