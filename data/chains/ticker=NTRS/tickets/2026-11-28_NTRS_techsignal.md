@@ -1,0 +1,30 @@
+# Technical Signal: NTRS  2026-11-28
+
+**Recommendation**: HOLD  |  **Score**: +0.1
+
+### Technical Signal: HOLD (+0.1 / confidence 1%)
+
+**Regime**: ADX WEAK_TREND (ADX 21, +DI 19 vs -DI 28)  |  Vol: HIGH_IV (IV30 36.2%, RV20 30.9%)
+**Long-term context** (not scored): price above 200-day average (+1.5%)
+
+**Pullback setup** (+0.70)
+- Price vs 20-day average: -0.6 ATR → +0.43
+- RSI 47 → +0.26
+
+**Overextension penalties** (+0.00)
+- None
+
+**Confirmation** (-0.25)
+- No accumulation / turn signals
+**Divergence** (-1.0) → -0.25 toward Confirmation
+- ✓ CONFIRMED hid_bear on RSI (quality: standard)
+- ✓ CONFIRMED hid_bear on MACDHist (quality: strong)
+- ✓ CONFIRMED hid_bear on CMF (quality: standard)
+- ✓ CONFIRMED hid_bear on OBV (quality: standard)
+
+**Trend** (-3.75 = -3.00 × 1.25 convergence) → momentum -0.34 (capped ±1)
+- Price: NEUTRAL  MACD: BEARISH  CMF: STRONG_DIST
+- OBV: NEUTRAL  aVWAP: TESTING_SUPPORT  Volume: DRY
+- aVWAP-high 170.70 (anchor 11 bars ago), aVWAP-low 169.82 (anchor 31 bars ago)
+
+**Score**: +0.70 pullback + +0.00 overextension + -0.25 confirmation + -0.34 momentum = +0.11 → **+0.11**
